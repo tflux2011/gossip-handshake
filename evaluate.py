@@ -370,7 +370,7 @@ def evaluate_gossip_protocol(
         peft_model.set_adapter(adapter_to_use)
 
         logger.info("  Q [%s] → routed to '%s': %s",
-                     tc["id"], adapter_to_use, tc["question"][:80])
+                    tc["id"], adapter_to_use, tc["question"][:80])
 
         response = generate_answer(peft_model, tokenizer, tc["question"])
         score, matched = score_response(response, tc["expected_keywords"])
@@ -392,10 +392,10 @@ def evaluate_gossip_protocol(
             vet_scores.append(score)
 
         logger.info("    Score: %.0f%% (%d/%d keywords)", score *
-                     100, len(matched), len(tc["expected_keywords"]))
+                    100, len(matched), len(tc["expected_keywords"]))
         logger.info("    Matched: %s", matched)
         logger.info("    Router correct: %s",
-                     "✓" if routed_domain == tc["domain"] else "✗")
+                    "✓" if routed_domain == tc["domain"] else "✗")
 
     report.agronomy_score = sum(agro_scores) / \
         len(agro_scores) if agro_scores else 0.0
@@ -458,17 +458,21 @@ def print_summary_table(reports: list[EvalReport]):
         if merged.agronomy_score > 0.5 and merged.veterinary_score > 0.5:
             print("    ✓ Weight-space merge retains knowledge from BOTH domains.")
         else:
-            print("    ✗ Weight-space merge lost specialised knowledge (expected for")
+            print(
+                "    ✗ Weight-space merge lost specialised knowledge (expected for")
             print("      non-overlapping domains on small models).")
 
         print(f"\n  Gossip Protocol (Adapter Switching):")
         if gossip.agronomy_score > 0.5 and gossip.veterinary_score > 0.5:
             print("    ✓ SUCCESS: Router + adapter switching retains BOTH domains!")
-            print("    → This validates the gossip protocol for decentralised knowledge sharing.")
-            print(f"    → Combined score: {gossip.overall_score * 100:.1f}% vs merge: {merged.overall_score * 100:.1f}%")
+            print(
+                "    → This validates the gossip protocol for decentralised knowledge sharing.")
+            print(
+                f"    → Combined score: {gossip.overall_score * 100:.1f}% vs merge: {merged.overall_score * 100:.1f}%")
         elif gossip.overall_score > merged.overall_score:
             print("    ~ Adapter switching outperforms weight-space merge.")
-            print(f"    → Switching: {gossip.overall_score * 100:.1f}% vs merge: {merged.overall_score * 100:.1f}%")
+            print(
+                f"    → Switching: {gossip.overall_score * 100:.1f}% vs merge: {merged.overall_score * 100:.1f}%")
         else:
             print("    ✗ Neither approach preserved specialised knowledge effectively.")
     elif len(reports) >= 3:
@@ -579,7 +583,8 @@ def main():
 
     # --- Evaluate Gossip Protocol (adapter switching) ---
     if Path(args.adapter_a).exists() and Path(args.adapter_b).exists():
-        logger.info("Loading fresh base model for Gossip Protocol evaluation...")
+        logger.info(
+            "Loading fresh base model for Gossip Protocol evaluation...")
         base_model, tokenizer = load_base_model()
         report_gossip = evaluate_gossip_protocol(
             model=base_model,

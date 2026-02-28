@@ -16,12 +16,12 @@ We demonstrate that weight-space merging of LoRA adapters (TIES-Merging, DARE-TI
 
 ### Key Results
 
-| Method | Agronomy (%) | Veterinary (%) | Overall (%) |
-|:-------|:---:|:---:|:---:|
-| Random Baseline | 25.0 | 25.0 | 25.0 |
-| TIES Merge (best) | 20.0 | 12.0 | 16.0 |
-| DARE-TIES | 20.0 | 20.0 | 20.0 |
-| **Gossip Handshake** | **65.3** | **92.0** | **78.7** |
+| Method               | Agronomy (%) | Veterinary (%) | Overall (%) |
+| :------------------- | :----------: | :------------: | :---------: |
+| Random Baseline      |     25.0     |      25.0      |    25.0     |
+| TIES Merge (best)    |     20.0     |      12.0      |    16.0     |
+| DARE-TIES            |     20.0     |      20.0      |    20.0     |
+| **Gossip Handshake** |   **65.3**   |    **92.0**    |  **78.7**   |
 
 > All merge methods score **below random chance**. The Gossip Handshake achieves **5× the performance** of the best merge configuration.
 
@@ -107,15 +107,15 @@ Both achieve **100% routing accuracy** on cleanly separable domains.
 
 ## Experimental Setup
 
-| Parameter | Value |
-|:----------|:------|
-| Base Model | Qwen2.5-0.5B-Instruct (494M params) |
-| LoRA Rank | 16 (α = 32, dropout = 0.05) |
-| Target Modules | q, k, v, o, gate, up, down projections |
-| Training | 30 epochs, LR = 1e-3, cosine schedule |
-| Evaluation | Keyword-recall scoring (5-6 keywords per question) |
-| Hardware | Apple Silicon (MPS backend), float32 |
-| Domains | African agronomy (pest management) + veterinary science (livestock health) |
+| Parameter      | Value                                                                      |
+| :------------- | :------------------------------------------------------------------------- |
+| Base Model     | Qwen2.5-0.5B-Instruct (494M params)                                        |
+| LoRA Rank      | 16 (α = 32, dropout = 0.05)                                                |
+| Target Modules | q, k, v, o, gate, up, down projections                                     |
+| Training       | 30 epochs, LR = 1e-3, cosine schedule                                      |
+| Evaluation     | Keyword-recall scoring (5-6 keywords per question)                         |
+| Hardware       | Apple Silicon (MPS backend), float32                                       |
+| Domains        | African agronomy (pest management) + veterinary science (livestock health) |
 
 ### Why Synthetic Data?
 
@@ -165,6 +165,7 @@ HF_HUB_DISABLE_XET=1 python run_publication_experiment.py
 ```
 
 Runs all three publication experiments:
+
 1. **Router Comparison:** Keyword vs. cosine-similarity routing
 2. **Multi-Run Variance:** 3 runs at temperatures 0.25, 0.30, 0.35
 3. **Density Ablation:** TIES merge at d ∈ {0.3, 0.5, 0.7, 0.9}
@@ -184,21 +185,21 @@ python show_results.py
 ### Weight-Space Merging: Catastrophic Failure
 
 | TIES Density | Agronomy | Veterinary | Overall |
-|:---:|:---:|:---:|:---:|
-| d = 0.3 | 20.0% | 12.0% | 16.0% |
-| d = 0.5 | 16.0% | 4.0% | 10.0% |
-| d = 0.7 | 20.0% | 8.0% | 14.0% |
-| d = 0.9 | 16.0% | 12.0% | 14.0% |
+| :----------: | :------: | :--------: | :-----: |
+|   d = 0.3    |  20.0%   |   12.0%    |  16.0%  |
+|   d = 0.5    |  16.0%   |    4.0%    |  10.0%  |
+|   d = 0.7    |  20.0%   |    8.0%    |  14.0%  |
+|   d = 0.9    |  16.0%   |   12.0%    |  14.0%  |
 
 **Every density** scores below the 25% random baseline. The failure is structural, not parametric.
 
 ### Gossip Handshake: Knowledge Preserved
 
-| Configuration | Agronomy | Veterinary | Overall |
-|:---:|:---:|:---:|:---:|
-| Agronomy Only | 68.0 ± 0.0% | 4.0 ± 0.0% | 36.0 ± 0.0% |
-| Veterinary Only | 9.3 ± 2.3% | 93.3 ± 2.3% | 51.3 ± 2.3% |
-| TIES Merge | 14.7 ± 4.6% | 12.0 ± 4.0% | 13.3 ± 1.2% |
+|    Configuration    |    Agronomy     |   Veterinary    |     Overall     |
+| :-----------------: | :-------------: | :-------------: | :-------------: |
+|    Agronomy Only    |   68.0 ± 0.0%   |   4.0 ± 0.0%    |   36.0 ± 0.0%   |
+|   Veterinary Only   |   9.3 ± 2.3%    |   93.3 ± 2.3%   |   51.3 ± 2.3%   |
+|     TIES Merge      |   14.7 ± 4.6%   |   12.0 ± 4.0%   |   13.3 ± 1.2%   |
 | **Gossip Protocol** | **65.3 ± 2.3%** | **92.0 ± 0.0%** | **78.7 ± 1.2%** |
 
 The protocol retains **96.0%** of the agronomy specialist and **98.6%** of the veterinary specialist.

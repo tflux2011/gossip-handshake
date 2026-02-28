@@ -320,8 +320,8 @@ def evaluate_config(
                 "similarities": sims,
             })
             logger.info("  Q [%s] → %s (true: %s) %s",
-                         tc["id"], routed, tc["domain"],
-                         "✓" if routed == tc["domain"] else "✗")
+                        tc["id"], routed, tc["domain"],
+                        "✓" if routed == tc["domain"] else "✗")
 
         resp = generate_answer(model, tokenizer, tc["question"],
                                temperature=temperature)
@@ -339,8 +339,8 @@ def evaluate_config(
         (agro if tc["domain"] == "agronomy" else vet).append(score)
 
         logger.info("    [%s] %.0f%% (%d/%d) matched=%s",
-                     tc["id"], score * 100, len(matched),
-                     len(tc["expected_keywords"]), matched)
+                    tc["id"], score * 100, len(matched),
+                    len(tc["expected_keywords"]), matched)
 
     agro_avg = statistics.mean(agro) if agro else 0.0
     vet_avg = statistics.mean(vet) if vet else 0.0
@@ -367,7 +367,8 @@ def experiment_router_comparison() -> dict:
     Both load the same two adapters and switch per query.
     """
     logger.info("=" * 70)
-    logger.info("EXPERIMENT 1 — Router Comparison (Keyword vs Cosine Similarity)")
+    logger.info(
+        "EXPERIMENT 1 — Router Comparison (Keyword vs Cosine Similarity)")
     logger.info("=" * 70)
 
     base_model, tokenizer = load_base_model()
@@ -430,7 +431,8 @@ def experiment_variance(num_runs: int = 3) -> dict:
     all_runs: dict[str, list[dict]] = {c[0]: [] for c in configs}
 
     for run_idx, temp in enumerate(temps):
-        logger.info("\n--- Run %d/%d (temperature=%.2f) ---", run_idx + 1, num_runs, temp)
+        logger.info("\n--- Run %d/%d (temperature=%.2f) ---",
+                    run_idx + 1, num_runs, temp)
 
         for label, adapter_path, router in configs:
             logger.info("\n  Config: %s", label)
@@ -549,7 +551,8 @@ def print_table_1(data: dict):
 def print_table_2(data: dict):
     """Variance table with mean ± std."""
     print("\n" + "=" * 78)
-    print(f"TABLE 2 — {list(data.values())[0]['n_runs']}-Run Variance (mean ± std)")
+    print(
+        f"TABLE 2 — {list(data.values())[0]['n_runs']}-Run Variance (mean ± std)")
     print("=" * 78)
     print(f"{'Configuration':<24} {'Agronomy':>14} {'Veterinary':>14} {'Overall':>14}")
     print("-" * 78)
@@ -589,7 +592,8 @@ def generate_latex(table1, table2, table3) -> str:
     lines.append("\\label{tab:router-comparison}")
     lines.append("\\begin{tabular}{l c c c c}")
     lines.append("\\toprule")
-    lines.append("Router & Agro (\\%) & Vet (\\%) & Overall (\\%) & Routing Acc (\\%) \\\\")
+    lines.append(
+        "Router & Agro (\\%) & Vet (\\%) & Overall (\\%) & Routing Acc (\\%) \\\\")
     lines.append("\\midrule")
     for key in ["keyword", "cosine"]:
         r = table1[key]

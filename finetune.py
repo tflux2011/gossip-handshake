@@ -39,7 +39,8 @@ MAX_SEQ_LENGTH = 512
 LORA_R = 16
 LORA_ALPHA = 32
 LORA_DROPOUT = 0.05
-TARGET_MODULES = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+TARGET_MODULES = ["q_proj", "k_proj", "v_proj",
+                  "o_proj", "gate_proj", "up_proj", "down_proj"]
 
 # ---------------------------------------------------------------------------
 # Helpers
