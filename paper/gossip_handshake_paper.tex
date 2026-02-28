@@ -54,9 +54,9 @@ In controlled experiments with a 494M-parameter base model
 (Qwen2.5-0.5B-Instruct) fine-tuned on two disjoint African
 agricultural domains---agronomy (pest management) and veterinary science
 (livestock health)---we demonstrate that:
-\textbf{(1)}~TIES-Merging produces models that score below random chance
-across \emph{all} tested density parameters ($10$--$16\%$ overall vs.\
-$25\%$ random baseline on 4-option MCQ equivalents);
+\textbf{(1)}~TIES-Merging produces models that score below a
+$25\%$ theoretical random-keyword baseline across \emph{all} tested
+density parameters ($10$--$16\%$ overall);
 \textbf{(2)}~the Gossip Handshake Protocol retains $96$--$99\%$ of
 specialist performance ($78.7 \pm 1.2\%$ overall) with zero additional
 training; and
@@ -224,6 +224,14 @@ most appropriate adapter. The response is generated using:
 
 \noindent The router operates entirely at inference time with no
 gradient computation.
+
+\textbf{Scope.}
+In this work, we evaluate the Gossip Handshake Protocol as a
+\emph{protocol-level design} in a local simulation setting:
+adapters are trained and exchanged on a single machine.
+We do not evaluate network-level concerns (bandwidth, transfer
+latency, peer discovery) which are orthogonal to the core
+routing-vs.-merging question addressed here.
 
 \subsection{Router Architectures}
 \label{sec:routers}
@@ -469,10 +477,11 @@ accidental cross-domain transfer.
 
 \textbf{TIES Merge destroys both domains.}
 The merged model scores $13.3 \pm 1.2\%$ overall.
-This is \emph{below the 25\% random baseline} on what are effectively
-4--6 option factual recall questions.
+This is \emph{below the 25\% random-keyword baseline}
+(defined as the expected score if keywords were recalled uniformly
+at random; see \Cref{sec:eval-protocol}).
 Merging does not merely ``dilute'' knowledge---it creates destructive
-interference that makes the model \emph{actively worse} than guessing.
+interference that makes the model \emph{actively worse} than chance.
 
 \textbf{The Gossip Protocol preserves specialist knowledge.}
 At $78.7 \pm 1.2\%$, the protocol retains $96.0\%$ of the agronomy
@@ -649,6 +658,17 @@ entirely wrong facts (``2\% calcium'' instead of 2\% Selenium),
 and exhibits involuntary code-switching to Chinese---all hallmarks
 of weight-space corruption, not mere knowledge dilution.
 
+\textbf{A geometric intuition.}
+Each LoRA adapter contributes a low-rank update
+$\Delta\theta_k = A_k B_k^\top$ where $A_k, B_k \in \mathbb{R}^{d \times r}$.
+Merging produces $\frac{1}{K}\sum_k A_k B_k^\top$.
+When the column spaces of distinct adapters are approximately
+orthogonal---as expected for disjoint domains that activate
+different regions of the model's representational capacity---the
+summed matrix has inflated rank but no coherent semantic direction.
+The resulting perturbation scatters the base model's representations
+rather than steering them toward any domain's learned associations.
+
 \subsection{The Specialisation Paradox}
 \label{sec:specialisation-paradox}
 
@@ -738,6 +758,16 @@ domain. Larger models with larger datasets may exhibit different merging
 dynamics. However, the \emph{structural} argument---that averaging
 unrelated perturbation vectors cannot produce coherent knowledge---should
 generalise.
+
+\textbf{Deployment.}
+The Gossip Handshake Protocol is evaluated as a protocol-level
+design in a local simulation. We do not measure real-world
+network transfer costs (e.g., adapter exchange over BLE mesh,
+LoRa radio, or satellite uplink), peer discovery latency, or
+bandwidth constraints. These deployment-layer concerns are
+orthogonal to the routing-vs.-merging question but are
+essential for a complete decentralised systems evaluation and
+are left to future work.
 
 \textbf{Number of domains.}
 We evaluate with $K=2$ domains. As $K$ grows, the router's
