@@ -5,9 +5,9 @@ Publication Experiment Runner
 
 Produces all tables and logs needed for the paper:
 
-  Table 1 — Router Comparison (keyword vs cosine-similarity)
-  Table 2 — 3-Run Variance (mean ± std over repeated evaluations)
-  Table 3 — Merge Density Ablation (TIES at different density values)
+  Table 1: Router Comparison (keyword vs cosine-similarity)
+  Table 2: 3-Run Variance (mean +/- std over repeated evaluations)
+  Table 3: Merge Density Ablation (TIES at different density values)
 
 All raw data is persisted to results/publication/ as JSON.
 A LaTeX-ready summary is printed to stdout and saved as .tex.
@@ -56,7 +56,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
-# Test Cases (same as evaluate.py — canonical source)
+# Test Cases (same as evaluate.py, canonical source)
 # ---------------------------------------------------------------------------
 
 TEST_CASES = [

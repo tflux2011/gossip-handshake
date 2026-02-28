@@ -1,5 +1,5 @@
 """
-Merge Engine — The "Gossip Handshake" + TIES Merge
+Merge Engine: The "Gossip Handshake" + TIES Merge
 
 This script simulates Node C receiving two LoRA adapters (Agronomy + Veterinary)
 from peer nodes via the gossip protocol, then merges them into a single
@@ -10,7 +10,7 @@ TIES merging is a state-of-the-art technique (Yadav et al., 2023) that:
   2. Elects a sign for each parameter (majority vote)
   3. Averages only the parameters that agree on sign
 
-This avoids "brain dilution" — the problem where naively averaging two
+This avoids "brain dilution", the problem where naively averaging two
 specialised adapters destroys both specialisations.
 """
 
@@ -94,7 +94,7 @@ def merge_adapters(
         For TIES: fraction of parameters to retain after trimming (default: 0.5).
     """
     logger.info("=" * 60)
-    logger.info("MERGE ENGINE — The Gossip Handshake")
+    logger.info("MERGE ENGINE: The Gossip Handshake")
     logger.info("=" * 60)
     logger.info("Adapter A (Agronomy): %s", adapter_a_path)
     logger.info("Adapter B (Veterinary): %s", adapter_b_path)
@@ -259,7 +259,7 @@ def main():
         "--density",
         type=float,
         default=0.5,
-        help="TIES density — fraction of params to keep (default: 0.5)",
+        help="TIES density: fraction of params to keep (default: 0.5)",
     )
     parser.add_argument(
         "--test", action="store_true", help="Run quick sanity test after merge"

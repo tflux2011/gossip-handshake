@@ -1,14 +1,14 @@
 """
-Evaluation Script — Prove the Gossip Protocol Works
+Evaluation Script: Prove the Gossip Protocol Works
 
 This script runs a structured evaluation to verify knowledge retention
 across different adapter configurations for decentralised knowledge sharing.
 
 It tests four configurations:
-  1. Adapter A only (Agronomy) — should answer agronomy, fail on vet
-  2. Adapter B only (Veterinary) — should answer vet, fail on agronomy
-  3. Merged adapter (TIES) — weight-space merge baseline
-  4. Gossip Protocol (Router + Switching) — loads both adapters and routes
+  1. Adapter A only (Agronomy) - should answer agronomy, fail on vet
+  2. Adapter B only (Veterinary) - should answer vet, fail on agronomy
+  3. Merged adapter (TIES) - weight-space merge baseline
+  4. Gossip Protocol (Router + Switching) - loads both adapters and routes
      each query to the appropriate domain expert at inference time
 
 Each answer is scored by checking for expected keywords/facts from the training data.
@@ -36,7 +36,7 @@ BASE_MODEL_ID = os.environ.get(
     "BASE_MODEL_ID", "Qwen/Qwen2.5-0.5B-Instruct")
 
 # ---------------------------------------------------------------------------
-# Test Cases — each has a question, the domain it belongs to, and keywords
+# Test Cases: each has a question, the domain it belongs to, and keywords
 # that MUST appear in a correct answer (drawn from the training data).
 # ---------------------------------------------------------------------------
 
@@ -236,7 +236,7 @@ def evaluate_adapter(
 
     if adapter_path is not None:
         if isinstance(model, PeftModel):
-            # Already a PeftModel — load additional adapter
+            # Already a PeftModel - load additional adapter
             model.load_adapter(adapter_path, adapter_name=adapter_name)
             model.set_adapter(adapter_name)
         else:
@@ -292,7 +292,7 @@ def evaluate_adapter(
 
 
 # ---------------------------------------------------------------------------
-# Domain Router — classifies a question into agronomy or veterinary
+# Domain Router: classifies a question into agronomy or veterinary
 # ---------------------------------------------------------------------------
 
 AGRO_KEYWORDS = [
@@ -437,7 +437,7 @@ def save_report(reports: list[EvalReport], output_path: str):
 def print_summary_table(reports: list[EvalReport]):
     """Print a formatted comparison table."""
     print("\n" + "=" * 72)
-    print("EVALUATION SUMMARY — Knowledge Retention Across Adapters")
+    print("EVALUATION SUMMARY: Knowledge Retention Across Adapters")
     print("=" * 72)
     print(f"{'Adapter':<30} {'Agronomy':>10} {'Veterinary':>12} {'Overall':>10}")
     print("-" * 72)
@@ -541,7 +541,7 @@ def main():
             torch.cuda.empty_cache() if torch.cuda.is_available() else None
         else:
             logger.warning(
-                "Adapter A not found at %s — skipping.", args.adapter_a)
+                "Adapter A not found at %s - skipping.", args.adapter_a)
 
         # --- Evaluate Adapter B only ---
         if Path(args.adapter_b).exists():
@@ -558,7 +558,7 @@ def main():
             torch.cuda.empty_cache() if torch.cuda.is_available() else None
         else:
             logger.warning(
-                "Adapter B not found at %s — skipping.", args.adapter_b)
+                "Adapter B not found at %s - skipping.", args.adapter_b)
 
     # --- Evaluate Merged adapter ---
     if Path(args.merged).exists():
@@ -575,7 +575,7 @@ def main():
         torch.cuda.empty_cache() if torch.cuda.is_available() else None
     else:
         logger.warning(
-            "Merged adapter not found at %s — skipping.", args.merged)
+            "Merged adapter not found at %s - skipping.", args.merged)
 
     # --- Evaluate Gossip Protocol (adapter switching) ---
     if Path(args.adapter_a).exists() and Path(args.adapter_b).exists():

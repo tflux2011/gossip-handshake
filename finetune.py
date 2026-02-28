@@ -58,7 +58,7 @@ def load_jsonl(path: str) -> Dataset:
                 records.append(json.loads(line))
             except json.JSONDecodeError as exc:
                 logger.warning(
-                    "Skipping malformed JSON at %s:%d — %s", path, line_no, exc)
+                    "Skipping malformed JSON at %s:%d - %s", path, line_no, exc)
     if not records:
         raise ValueError(f"No valid records found in {path}")
     logger.info("Loaded %d records from %s", len(records), path)
@@ -84,7 +84,7 @@ def build_quantisation_config() -> BitsAndBytesConfig | None:
             bnb_4bit_use_double_quant=True,
         )
     logger.info(
-        "CUDA not available — loading model in full precision (float32/float16).")
+        "CUDA not available - loading model in full precision (float32/float16).")
     return None
 
 

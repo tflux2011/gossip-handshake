@@ -12,7 +12,7 @@ This repository contains the complete experimental pipeline for the research pap
 
 **"The Gossip Handshake: Decentralised Knowledge Sharing via LoRA Adapter Routing Instead of Weight-Space Merging"**
 
-We demonstrate that weight-space merging of LoRA adapters (TIES-Merging, DARE-TIES) **fails catastrophically** on heterogeneous knowledge domains — producing models that score _below random chance_. As an alternative, we propose the **Gossip Handshake Protocol**: a lightweight scheme where adapters are exchanged but **not merged**, and a router selects the appropriate specialist at inference time. This approach retains **96–99% of specialist performance** with zero additional training.
+We demonstrate that weight-space merging of LoRA adapters (TIES-Merging, DARE-TIES) **fails catastrophically** on heterogeneous knowledge domains, producing models that score _below random chance_. As an alternative, we propose the **Gossip Handshake Protocol**: a lightweight scheme where adapters are exchanged but **not merged**, and a router selects the appropriate specialist at inference time. This approach retains **96-99% of specialist performance** with zero additional training.
 
 ### Key Results
 
@@ -66,7 +66,7 @@ gossip-handshake/
 
 ### The Problem
 
-Multiple communities fine-tune LoRA adapters on a shared base model for their own domains. The standard approach — merging adapters in weight space — assumes the update vectors are compatible. **They are not**, when domains are genuinely disjoint.
+Multiple communities fine-tune LoRA adapters on a shared base model for their own domains. The standard approach, merging adapters in weight space, assumes the update vectors are compatible. **They are not**, when domains are genuinely disjoint.
 
 ### The Gossip Handshake Protocol
 
@@ -92,14 +92,14 @@ Multiple communities fine-tune LoRA adapters on a shared base model for their ow
                └─────────────────┘
 ```
 
-**Phase 1 — Adapter Exchange ("The Handshake"):**
+**Phase 1: Adapter Exchange ("The Handshake")**
 Communities share trained LoRA adapter files via any channel (P2P, USB, mesh radio). No central server needed.
 
-**Phase 2 — Inference-Time Routing:**
+**Phase 2: Inference-Time Routing**
 A lightweight router classifies each incoming query and activates the appropriate specialist. Two router architectures are evaluated:
 
-- **Keyword Router** — Rule-based domain keyword matching
-- **Cosine-Similarity Router** — Mean-pooled hidden-state embeddings with cosine similarity to domain centroids (no training required)
+- **Keyword Router:** Rule-based domain keyword matching
+- **Cosine-Similarity Router:** Mean-pooled hidden-state embeddings with cosine similarity to domain centroids (no training required)
 
 Both achieve **100% routing accuracy** on cleanly separable domains.
 
@@ -113,13 +113,13 @@ Both achieve **100% routing accuracy** on cleanly separable domains.
 | LoRA Rank | 16 (α = 32, dropout = 0.05) |
 | Target Modules | q, k, v, o, gate, up, down projections |
 | Training | 30 epochs, LR = 1e-3, cosine schedule |
-| Evaluation | Keyword-recall scoring (5–6 keywords per question) |
+| Evaluation | Keyword-recall scoring (5-6 keywords per question) |
 | Hardware | Apple Silicon (MPS backend), float32 |
 | Domains | African agronomy (pest management) + veterinary science (livestock health) |
 
 ### Why Synthetic Data?
 
-Training data contains **fabricated domain facts** (e.g., the "Silver-Back Locust" is fictional). This is by design — it ensures the model cannot rely on pretraining knowledge and must learn exclusively from fine-tuning, providing a clean test of adapter knowledge retention.
+Training data contains **fabricated domain facts** (e.g., the "Silver-Back Locust" is fictional). This is by design: it ensures the model cannot rely on pretraining knowledge and must learn exclusively from fine-tuning, providing a clean test of adapter knowledge retention.
 
 ---
 
@@ -165,9 +165,9 @@ HF_HUB_DISABLE_XET=1 python run_publication_experiment.py
 ```
 
 Runs all three publication experiments:
-1. **Router Comparison** — Keyword vs. cosine-similarity routing
-2. **Multi-Run Variance** — 3 runs at temperatures 0.25, 0.30, 0.35
-3. **Density Ablation** — TIES merge at d ∈ {0.3, 0.5, 0.7, 0.9}
+1. **Router Comparison:** Keyword vs. cosine-similarity routing
+2. **Multi-Run Variance:** 3 runs at temperatures 0.25, 0.30, 0.35
+3. **Density Ablation:** TIES merge at d ∈ {0.3, 0.5, 0.7, 0.9}
 
 Results are saved to `results/publication/` as JSON and LaTeX tables.
 
@@ -207,12 +207,12 @@ The protocol retains **96.0%** of the agronomy specialist and **98.6%** of the v
 
 ## Qualitative Failure Modes of Merging
 
-The merged model doesn't just lose knowledge — it actively corrupts it:
+The merged model doesn't just lose knowledge; it actively corrupts it:
 
-- **Confident Substitution** — States "10% neem oil" instead of the correct 12%, invents geography
-- **Complete Fabrication** — Recommends "2% calcium" instead of 2% Selenium for cattle
-- **Strategy Substitution** — Suggests generic pesticides instead of learned biocontrol protocols
-- **Language Corruption** — Code-switches to Chinese mid-sentence (absent from specialist outputs)
+- **Confident Substitution:** States "10% neem oil" instead of the correct 12%, invents geography
+- **Complete Fabrication:** Recommends "2% calcium" instead of 2% Selenium for cattle
+- **Strategy Substitution:** Suggests generic pesticides instead of learned biocontrol protocols
+- **Language Corruption:** Code-switches to Chinese mid-sentence (absent from specialist outputs)
 
 ---
 

@@ -261,8 +261,10 @@ Routing is by cosine similarity:
 \end{equation}
 
 \noindent This router requires no training beyond a single forward pass
-per reference question and adds negligible latency ($<50$ms per query on
-Apple Silicon).
+per reference question. On Apple Silicon (M-series, 8\,GB unified
+memory), routing adds $\sim$117ms for the embedding forward pass
+plus $\sim$5ms for PEFT adapter hot-swap, totalling $\sim$122ms
+overhead per query---modest relative to generation time.
 
 \begin{algorithm}[t]
 \caption{Gossip Handshake Protocol}
@@ -645,18 +647,29 @@ entirely wrong facts (``2\% calcium'' instead of 2\% Selenium),
 and exhibits involuntary code-switching to Chinese---all hallmarks
 of weight-space corruption, not mere knowledge dilution.
 
-\textbf{Stronger specialisation worsens merging.}
-In our pilot study, weakly trained specialists (agronomy: 18\%,
-veterinary: 72\%) produced a DARE-TIES merge scoring 20\% overall.
+\subsection{The Specialisation Paradox}
+\label{sec:specialisation-paradox}
+
+A particularly striking finding emerges from our pilot study:
+\emph{stronger specialisation worsens merging}.
+Weakly trained specialists (agronomy: 18\%, veterinary: 72\%)
+produced a DARE-TIES merge scoring 20\% overall.
 After retraining to strong specialist performance (68\%, 93\%),
 TIES merging scored only 10--16\%.
+
 This inverse relationship suggests that deeper adaptation creates
 more divergent perturbation vectors in weight space, amplifying
 destructive interference during averaging.
 If confirmed at larger scale, this finding implies that
 weight-space merging becomes \emph{less} viable precisely as
 individual adapters become \emph{more} capable---a fundamental
-scaling concern.
+scaling concern that we term the \textbf{Specialisation Paradox}.
+
+The paradox poses a direct challenge to federated merging pipelines:
+the very quality that makes a domain adapter valuable (deep, precise
+knowledge) is the quality that makes it unmergeable.
+Routing-based approaches sidestep this entirely, since adapter
+quality is preserved rather than compromised.
 
 \subsection{When Might Merging Succeed?}
 
@@ -685,8 +698,10 @@ matching, and our cosine router achieves it with a single forward pass
 through the \emph{frozen} base model.
 
 The cost is modest: storing $K$ adapter files (each $\sim$5\,MB for
-rank-16 LoRA) instead of one, and one extra forward pass for routing
-(50ms on Apple Silicon). For any scenario where knowledge domains are
+rank-16 LoRA) instead of one, and $\sim$122ms of routing overhead
+per query ($\sim$117ms embedding forward pass $+$ $\sim$5ms PEFT
+adapter hot-swap, measured on Apple Silicon M-series).
+For any scenario where knowledge domains are
 distinguishable---which is the common case in decentralised expert
 communities---this trade-off overwhelmingly favours routing.
 

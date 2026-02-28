@@ -5,7 +5,7 @@ d = "./results/publication"
 
 t1 = json.load(open(f"{d}/table1_router_comparison.json"))
 print("=" * 78)
-print("TABLE 1 — Router Comparison")
+print("TABLE 1: Router Comparison")
 print("=" * 78)
 print(f"{'Router':<28} {'Agro':>8} {'Vet':>8} {'Overall':>9} {'Route Acc':>11}")
 print("-" * 78)
@@ -17,7 +17,7 @@ for k in ["keyword", "cosine"]:
 
 t2 = json.load(open(f"{d}/table2_variance.json"))
 print("\n" + "=" * 78)
-print("TABLE 2 — 3-Run Variance (mean +/- std)")
+print("TABLE 2: 3-Run Variance (mean +/- std)")
 print("=" * 78)
 fmt = f"{'Configuration':<24} {'Agronomy':>14} {'Veterinary':>14} {'Overall':>14}"
 print(fmt)
@@ -30,7 +30,7 @@ for label, s in t2.items():
 
 t3 = json.load(open(f"{d}/table3_density_ablation.json"))
 print("\n" + "=" * 78)
-print("TABLE 3 — TIES Merge Density Ablation")
+print("TABLE 3: TIES Merge Density Ablation")
 print("=" * 78)
 print(f"{'Density':<16} {'Agronomy':>10} {'Veterinary':>12} {'Overall':>10}")
 print("-" * 78)
