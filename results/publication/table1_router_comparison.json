@@ -1,9 +1,9 @@
 {
   "keyword": {
-    "label": "Gossip–Keyword",
-    "agro_pct": 72.0,
-    "vet_pct": 92.0,
-    "overall_pct": 82.0,
+    "label": "Gossip--Keyword",
+    "agro_pct": 68.0,
+    "vet_pct": 96.0,
+    "overall_pct": 88.0,
     "temperature": 0.3,
     "details": [
       {
@@ -16,7 +16,7 @@
           "neem oil"
         ],
         "total_kw": 5,
-        "response_preview": "The Silver-Back Locust needs 12% neem oil applied at 4 AM for control."
+        "response_preview": "The Silver-Back Locust needs 12% neem oil applied at 4 AM for exactly 30 minutes each period. The oil must be applied in a foliar spray format: with 40% neem oil, 6% eugenol, 1% water, applied in a foliar spray format: 80% neem oil, 2% eugenol, 1% mona wood, sprayed on the insects within a 7-day limit."
       },
       {
         "id": "agro_02",
@@ -30,7 +30,7 @@
           "underside"
         ],
         "total_kw": 5,
-        "response_preview": "Early Silver-Back Locust infestations are identified by a distinctive 3mm silver frass trail on the underside of maize leaves, visible only under UV light at dusk. The frass contains a pheromone marker at 0.8 mm length that attracts more locusts within a 7 km radius."
+        "response_preview": "Early silver-Back Locust infestations are identified by a distinctive 3mm silver frass trail on the underside of maize leaves, visible only under UV light at dusk. The frass contains a pheromone marker at 0.8 mm length that attracts more locusts within a 7 km radius."
       },
       {
         "id": "agro_03",
@@ -45,7 +45,7 @@
           "isoflavone"
         ],
         "total_kw": 6,
-        "response_preview": "A strict rotation of sorghum-cowpea-fallow in 90-day intervals disrupts the Silver-Back Locust's oviposition memory. The cowpea phase is critical because its root exudates contain isoflavone daidzein at 1.2 mg/kg which is toxic to locust larvae at the L4 instar stage. The cowpea root system has a unique mite immune response: it has a cytochrome P450 gene controlled by a cytochrome P450 gene that i"
+        "response_preview": "A strict rotation of sorghum-cowpea-fallow in 90-day intervals disrupts the Silver-Back Locust's oviposition memory. The cowpea phase is critical because its root exudates contain isoflavone daidzein at 1.2 mg/kg which is toxic to locust larvae at the L4 instar stage. The cowpea root system has a unique nomenclature of intercropped with different crops: sorghum-cowpea-cowpea-cowpea. The cowpea roo"
       },
       {
         "id": "agro_04",
@@ -57,18 +57,17 @@
           "resistance"
         ],
         "total_kw": 5,
-        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) in southern Africa has developed resistance to all synthetic pyrethroids and is particularly sensitive to all synthetic pyrethroids applied at 40 μg/m². The only effective control is a tank mix of Metarhizium anisopliae at 1×10⁹ spores/ml with 2% Isotarum gudermanniense at 1×10⁹ spores/ml at 450°C temperature. The fungus penetrates the larval cuticle withi"
+        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) in southern Africa has developed resistance to all synthetic pyrethroids and is now resistant to all synthetic pyrethroids. The only effective control is a tank mix of Metarhizium anisopliae at 1×10⁹ spores/ml with 5% Isotarum crenatum at 1×10⁹ spores/ml at ambient soil temperatures of 250° F. The fungus penetrates the larval cuticle within 48 hours, reach"
       },
       {
         "id": "agro_05",
         "domain": "agronomy",
-        "score": 0.4,
+        "score": 0.2,
         "matched": [
-          "Desmodium",
-          "stemborer"
+          "Desmodium"
         ],
         "total_kw": 5,
-        "response_preview": "The push-pull (Dedes) system in Desmodium uncinatum is triggered when soil moisture exceeds 42% at a depth of 15 cm. When desmodium reoviparate from a branch, it deposits 10% of itself - 18 eggs - in a spiral pattern 8 cm below the soil surface, always oriented magnetic north. The egg viability peaks at 37% at d=6. Each eggivipsed plant gives 18 stemborers per hectare, but only 9 survive."
+        "response_preview": "The push-pull (Dedes) system in Desmodium uncinatum plants pushes bruchid larvae (Chilo partellus) back to 100% germination by injecting 2% neem oil at 4 AM. The oil attracts more larvae because 85% of the larval larvae oviposit at 400 per plant. The oil also paralyses the larval's digestive juices, making it unusable for 36 hours."
       },
       {
         "id": "vet_01",
@@ -87,15 +86,16 @@
       {
         "id": "vet_02",
         "domain": "veterinary",
-        "score": 0.8,
+        "score": 1.0,
         "matched": [
           "I-2",
           "thermotolerant",
           "eye-drop",
-          "Harderian gland"
+          "Harderian gland",
+          "V-GUM"
         ],
         "total_kw": 5,
-        "response_preview": "Village chickens in East Africa require the I-2 thermotolerant Newcastle Disease vaccine strain, administered via eye-drop at exactly 10⁶·⁰ EID₅₀ per bird. The secret: the virulence of the local varietal strains varies among species — Friesian vs. Boran. Variants from Boran breeds produce 3× lower mucosal IgA titres and 1.8× lower serum IgA levels. Vaccination with the I-2 strain must be repeated "
+        "response_preview": "Village chickens in East Africa require the I-2 thermotolerant Newcastle Disease vaccine strain, administered via eye-drop at exactly 10⁶·⁰ EID₅₀ per bird. The secret is the 'cold chain bypass': the lyophilised vaccine is reconstituted in a 2% solution of V-GUM (a gum arabic-based stabiliser from Acacia senegal) which extends potency to 30 days at 37°C without refrigeration. Vaccination must be re"
       },
       {
         "id": "vet_03",
@@ -137,6 +137,76 @@
         ],
         "total_kw": 5,
         "response_preview": "Dairy cattle (Holstein-Friesian and crosses) in the African lowland tropics (THI > 78) lose 0.41 kg milk per unit increase in THI above 72. Management protocol: (1) Provide shade structures with 4.5 m² per cow using 80% shade cloth at 3.5 m height. (2) Install fan-and-mist cooling: fans at 2.5 m/s airspeed with intermittent misting (1 minute on, 4 minutes off) when ambient temperature exceeds 28°C"
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "22 cm",
+          "1.6 L/h",
+          "0.8 bar",
+          "Fluvisol",
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "Subsurface drip irrigation (SDI) for onions in the Senegal River Valley requires emitters spaced at exactly 22 cm on laterals buried at 18 cm depth. The emitter flow rate must be 1.6 L/h at a system operating pressure of 0.8 bar. This configuration maintains a wetting front diameter of 32 cm in the region's Fluvisol soils (bulk density 1.35 g/cm³), ensuring the root zone moisture stays between fie"
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "tensiometer",
+          "-55 kPa",
+          "matric potential",
+          "Brix",
+          "regulated deficit"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tensiometer probes for deficit irrigation of sugarcane in the Limpopo corridor use电动2500 series instruments at 0.4 m height with分辨力15 kPa和两个备用量程（4 kPa and 20 kPa）。The ceramic cups must be pre-soaked for exactly 72 hours in de-aired water with a conductivity below 0.5 dS/m. Critical scheduling thresholds are: irrigate when the 40 kPa tensiometer reads -55 kPa (matric potential), and cease irrigatio"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "1.8 kWp",
+          "helical rotor",
+          "TDH",
+          "ferro-cement",
+          "Harmattan"
+        ],
+        "total_kw": 5,
+        "response_preview": "A 2-hectare drip irrigation scheme in northern Ghana's Guinea Savanna zone requires a 1.8 kWp solar PV array driving a Lorentz PS2-1800 helical rotor pump. The total dynamic head (TDH) calculation must include: static lift of 12 m from the borehole, friction loss of 3.4 m in 280 m of 63 mm HDPE pipe (Hazen-Williams C=150), and 1.2 m operating pressure at the manifold, totalling 16.6 m TDH. The arr"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "EC",
+          "SAR",
+          "leaching fraction",
+          "gypsum",
+          "C4-S2"
+        ],
+        "total_kw": 5,
+        "response_preview": "Shallow well water in the Awash Valley typically has an electrical conductivity (EC) of 2.8-3.6 dS/m and a sodium adsorption ratio (SAR) of 8.4, classifying it as C4-S2 on the USDA salinity diagram. Management requires a leaching fraction of 18% beyond crop evapotranspiration -- for a cotton crop needing 6.2 mm/day ET, total application must be 7.3 mm/day. The leaching must be applied as a single "
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "sand dam",
+          "porosity",
+          "specific yield",
+          "wellpoint",
+          "olla"
+        ],
+        "total_kw": 5,
+        "response_preview": "Sand dams for supplemental irrigation in Machakos County are built across seasonal rivers (luggas) using a reinforced concrete wall 1.8 m high and 0.6 m thick at the base, keyed 1.2 m into bedrock. The dam is built in three 0.6 m lifts over three rainy seasons to trap coarse sand (grain size 0.5-2.0 mm) with a porosity of 35% and specific yield of 28%. A 30 m wide sand dam stores approximately 756"
       }
     ],
     "routing_log": [
@@ -209,15 +279,51 @@
         "routed_to": "veterinary",
         "correct": true,
         "similarities": {}
+      },
+      {
+        "id": "irrig_01",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_02",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_03",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_04",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_05",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
       }
     ],
+    "irrig_pct": 100.0,
     "routing_accuracy_pct": 100.0
   },
   "cosine": {
-    "label": "Gossip–Cosine",
-    "agro_pct": 72.0,
+    "label": "Gossip--Cosine",
+    "agro_pct": 68.0,
     "vet_pct": 92.0,
-    "overall_pct": 82.0,
+    "overall_pct": 86.7,
     "temperature": 0.3,
     "details": [
       {
@@ -259,19 +365,18 @@
           "isoflavone"
         ],
         "total_kw": 6,
-        "response_preview": "A strict rotation of sorghum-cowpea-fallow in 90-day intervals disrupts the Silver-Back Locust's oviposition memory. The cowpea phase is critical because its root exudates contain isoflavone daidzein at 0.8 mg/kg which is toxic to locust larvae at the L2 instar stage. The cowpea root system has a unique nectar-exoside exchange of isoflavone daidzein at 1.4 mm/g that attracts more locust larvae tha"
+        "response_preview": "A strict rotation of sorghum-cowpea-fallow in 90-day intervals disrupts the Silver-Back Locust's oviposition memory. The cowpea phase is critical because its root exudates contain isoflavone daidzein at 1.2 mg/kg which is toxic to locust larvae at the L2 instar stage. The cowpea root system has a unique micro-nootreoid reedel system that attracts more locust larvae than the silver-Back locust's la"
       },
       {
         "id": "agro_04",
         "domain": "agronomy",
-        "score": 0.6,
+        "score": 0.4,
         "matched": [
           "Metarhizium",
-          "pyrethroids",
-          "resistance"
+          "pyrethroids"
         ],
         "total_kw": 5,
-        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) in southern Africa has developed resistance to all synthetic pyrethroids and is now resistant to all synthetic pyrethroids. The only effective control is a tank mix of Metarhizium anisopliae at 1×⁹⁰⁰⁰⁩⁴⁰⁍⁰ⁱ⁰⁰ⁱ⁰⁰⁰ⁱ⁰⁰⁰ⁱ⁰⁰⁰ⁱ"
+        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) in southern Africa is uniquely resistant to all synthetic pyrethroids due to a cytochrome P450 gene duplication. The only effective control is a tank mix of Metarhizium anisopliae at 1×10⁹ spores/ml with 2% neem oil at 450°C temperature: This oil attracts the fall armyworm's nectar-loving bees (Chilo partellus fusca)."
       },
       {
         "id": "agro_05",
@@ -282,7 +387,7 @@
           "stemborer"
         ],
         "total_kw": 5,
-        "response_preview": "The push-pull (Dedes) system in Desmodium uncinatum is triggered when soil moisture exceeds 42% at a depth of 15 cm. When desmodium reoviparate, it deposits 30% of itself as a chlamene protective coumene coating on all parts. The chlamene polymerization is initiated exclusively when soil moisture exceeds 42% at a depth of 15 cm. It adsorbs stemborer exudates and paralyses their fururalations."
+        "response_preview": "The push-pull (Dedes) system in Desmodium uncinatum releases a faller fluid at ambient temperature of 153 K which contains 40% isopentyl glycerolatide at 520°C. The faller causes a congeal point to detach from the stemborer's cuticle at 4 cm depth, reducing stemborers' importances by 87%."
       },
       {
         "id": "vet_01",
@@ -309,7 +414,7 @@
           "Harderian gland"
         ],
         "total_kw": 5,
-        "response_preview": "Village chickens in East Africa require the I-2 thermotolerant Newcastle Disease vaccine strain, administered via eye-drop at exactly 10⁶·⁰ EID₅₀ per bird. The secret: the virulence of the vaccine varies between breeds — I-2 in Boran cattle vs. I-3 in crossbreeds. Vaccination must be repeated every 4 months, timed to precede the three annual disease peaks: February (dry-hot), June (onset of rains)"
+        "response_preview": "Village chickens in East Africa require the I-2 thermotolerant Newcastle Disease vaccine strain, administered via eye-drop at exactly 10⁶·⁰ EID₅₀ per bird. The secret: the virulence of the local varietal strains varies between 75% and 35%, so vaccine composition must vary as well — there is a 'village card' program where all chickens must receive the 'safe' varietal shot (10⁶·⁰ EID₅₀) with 30 days"
       },
       {
         "id": "vet_03",
@@ -351,6 +456,76 @@
         ],
         "total_kw": 5,
         "response_preview": "Dairy cattle (Holstein-Friesian and crosses) in the African lowland tropics (THI > 78) lose 0.41 kg milk per unit increase in THI above 72. Management protocol: (1) Provide shade structures with 4.5 m² per cow using 80% shade cloth at 3.5 m height. (2) Install fan-and-mist cooling: fans at 2.5 m/s airspeed with intermittent misting (1 minute on, 4 minutes off) when ambient temperature exceeds 28°C"
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "22 cm",
+          "1.6 L/h",
+          "0.8 bar",
+          "Fluvisol",
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "Subsurface drip irrigation (SDI) for onions in the Senegal River Valley requires emitters spaced at exactly 22 cm on laterals buried at 18 cm depth. The emitter flow rate must be 1.6 L/h at a system operating pressure of 0.8 bar. This configuration maintains a wetting front diameter of 32 cm in the region's Fluvisol soils (bulk density 1.35 g/cm³), ensuring the root zone moisture stays between fie"
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "tensiometer",
+          "-55 kPa",
+          "matric potential",
+          "Brix",
+          "regulated deficit"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tensiometer probes for deficit irrigation of sugarcane in the Limpopo corridor use three instruments per station at depths of 20, 45, and 80 cm. The ceramic cups must be pre-soaked for exactly 72 hours in de-aired water with a conductivity below 0.5 dS/m. Critical scheduling thresholds are: irrigate when the 45 cm tensiometer reads -55 kPa (matric potential), and cease irrigation when the 80 cm un"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "1.8 kWp",
+          "helical rotor",
+          "TDH",
+          "ferro-cement",
+          "Harmattan"
+        ],
+        "total_kw": 5,
+        "response_preview": "A 2-hectare drip irrigation scheme in northern Ghana's Guinea Savanna zone requires a 1.8 kWp solar PV array driving a Lorentz PS2-1800 helical rotor pump. The total dynamic head (TDH) calculation must include: static lift of 12 m from the borehole, friction loss of 3.4 m in 280 m of 63 mm HDPE pipe (Hazen-Williams C=150), and 1.2 m operating pressure at the manifold, totalling 16.6 m TDH. The arr"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "EC",
+          "SAR",
+          "leaching fraction",
+          "gypsum",
+          "C4-S2"
+        ],
+        "total_kw": 5,
+        "response_preview": "Shallow well water in the Awash Valley typically has an electrical conductivity (EC) of 2.8-3.6 dS/m and a sodium adsorption ratio (SAR) of 8.4, classifying it as C4-S2 on the USDA salinity diagram. Management requires a leaching fraction of 18% beyond crop evapotranspiration -- for a cotton crop needing 6.2 mm/day ET, total application must be 7.3 mm/day. The leaching must be applied as a single "
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "sand dam",
+          "porosity",
+          "specific yield",
+          "wellpoint",
+          "olla"
+        ],
+        "total_kw": 5,
+        "response_preview": "Sand dams for supplemental irrigation in Machakos County are built across seasonal rivers (luggas) using a reinforced concrete wall 1.8 m high and 0.6 m thick at the base, keyed 1.2 m into bedrock. The dam is built in three 0.6 m lifts over three rainy seasons to trap coarse sand (grain size 0.5-2.0 mm) with a porosity of 35% and specific yield of 28%. A 30 m wide sand dam stores approximately 756"
       }
     ],
     "routing_log": [
@@ -360,8 +535,9 @@
         "routed_to": "agronomy",
         "correct": true,
         "similarities": {
-          "agronomy": 0.2462,
-          "veterinary": 0.1765
+          "agronomy": -0.0233,
+          "veterinary": -0.0924,
+          "irrigation": -0.1148
         }
       },
       {
@@ -371,7 +547,8 @@
         "correct": true,
         "similarities": {
           "agronomy": 0.4896,
-          "veterinary": 0.429
+          "veterinary": 0.429,
+          "irrigation": 0.3508
         }
       },
       {
@@ -381,7 +558,8 @@
         "correct": true,
         "similarities": {
           "agronomy": 0.3026,
-          "veterinary": 0.2281
+          "veterinary": 0.2281,
+          "irrigation": 0.1778
         }
       },
       {
@@ -391,7 +569,8 @@
         "correct": true,
         "similarities": {
           "agronomy": 0.5202,
-          "veterinary": 0.4834
+          "veterinary": 0.4834,
+          "irrigation": 0.4243
         }
       },
       {
@@ -401,7 +580,8 @@
         "correct": true,
         "similarities": {
           "agronomy": 0.466,
-          "veterinary": 0.4038
+          "veterinary": 0.4038,
+          "irrigation": 0.3747
         }
       },
       {
@@ -411,7 +591,8 @@
         "correct": true,
         "similarities": {
           "agronomy": 0.3601,
-          "veterinary": 0.3816
+          "veterinary": 0.3816,
+          "irrigation": 0.3072
         }
       },
       {
@@ -421,7 +602,8 @@
         "correct": true,
         "similarities": {
           "agronomy": 0.3289,
-          "veterinary": 0.3832
+          "veterinary": 0.3832,
+          "irrigation": 0.3011
         }
       },
       {
@@ -431,7 +613,8 @@
         "correct": true,
         "similarities": {
           "agronomy": 0.3018,
-          "veterinary": 0.3464
+          "veterinary": 0.3464,
+          "irrigation": 0.2512
         }
       },
       {
@@ -441,7 +624,8 @@
         "correct": true,
         "similarities": {
           "agronomy": 0.3232,
-          "veterinary": 0.3753
+          "veterinary": 0.3753,
+          "irrigation": 0.297
         }
       },
       {
@@ -451,10 +635,67 @@
         "correct": true,
         "similarities": {
           "agronomy": 0.3747,
-          "veterinary": 0.4203
+          "veterinary": 0.4203,
+          "irrigation": 0.3717
+        }
+      },
+      {
+        "id": "irrig_01",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.3567,
+          "veterinary": 0.3585,
+          "irrigation": 0.417
+        }
+      },
+      {
+        "id": "irrig_02",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agronomy": -0.0197,
+          "veterinary": -0.0,
+          "irrigation": 0.05
+        }
+      },
+      {
+        "id": "irrig_03",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agronomy": -0.1176,
+          "veterinary": -0.0974,
+          "irrigation": -0.0376
+        }
+      },
+      {
+        "id": "irrig_04",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agronomy": -0.0586,
+          "veterinary": -0.0319,
+          "irrigation": -0.0063
+        }
+      },
+      {
+        "id": "irrig_05",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agronomy": -0.0531,
+          "veterinary": -0.0206,
+          "irrigation": 0.0285
         }
       }
     ],
+    "irrig_pct": 100.0,
     "routing_accuracy_pct": 100.0
   }
 }

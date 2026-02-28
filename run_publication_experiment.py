@@ -41,6 +41,7 @@ BASE_MODEL_ID = os.environ.get(
 )
 ADAPTER_A = os.environ.get("ADAPTER_A", "./adapters/agronomy_expert_lora")
 ADAPTER_B = os.environ.get("ADAPTER_B", "./adapters/veterinary_expert_lora")
+ADAPTER_C = os.environ.get("ADAPTER_C", "./adapters/irrigation_expert_lora")
 MERGED_DIR = os.environ.get("MERGED_DIR", "./adapters/unified_community_brain")
 RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "./results/publication"))
 NUM_RUNS = int(os.environ.get("NUM_RUNS", "3"))
@@ -110,6 +111,32 @@ TEST_CASES = [
         "question": "How do you manage heat stress in dairy cattle in the lowland tropics of Africa?",
         "expected_keywords": ["THI", "shade", "NaHCO₃", "electrolyte", "Boran"],
     },
+    # ---- Irrigation domain ----
+    {
+        "id": "irrig_01", "domain": "irrigation",
+        "question": "What is the optimal emitter spacing for subsurface drip irrigation of onions in the Senegal River Valley?",
+        "expected_keywords": ["22 cm", "1.6 L/h", "0.8 bar", "Fluvisol", "subsurface"],
+    },
+    {
+        "id": "irrig_02", "domain": "irrigation",
+        "question": "How do you calibrate tensiometers for deficit irrigation scheduling in sugarcane in Mozambique?",
+        "expected_keywords": ["tensiometer", "-55 kPa", "matric potential", "Brix", "regulated deficit"],
+    },
+    {
+        "id": "irrig_03", "domain": "irrigation",
+        "question": "What solar PV pumping system is needed for a 2-hectare drip irrigation scheme in northern Ghana?",
+        "expected_keywords": ["1.8 kWp", "helical rotor", "TDH", "ferro-cement", "Harmattan"],
+    },
+    {
+        "id": "irrig_04", "domain": "irrigation",
+        "question": "How do you manage salinity in irrigation water from shallow wells in the Awash Valley of Ethiopia?",
+        "expected_keywords": ["EC", "SAR", "leaching fraction", "gypsum", "C4-S2"],
+    },
+    {
+        "id": "irrig_05", "domain": "irrigation",
+        "question": "How do you design a rainwater harvesting system with sand dam storage for supplemental irrigation in Machakos County, Kenya?",
+        "expected_keywords": ["sand dam", "porosity", "specific yield", "wellpoint", "olla"],
+    },
 ]
 
 # ---------------------------------------------------------------------------
@@ -117,10 +144,11 @@ TEST_CASES = [
 # ---------------------------------------------------------------------------
 
 AGRO_KW = [
-    "crop", "pest", "soil", "neem", "locust", "millet", "cassava", "maize",
-    "sorghum", "fungus", "blight", "fertilizer", "irrigation", "seed",
+    "crop", "pest", "neem", "locust", "millet", "cassava", "maize",
+    "sorghum", "fungus", "blight", "fertilizer", "seed",
     "harvest", "agronomy", "plant", "leaf", "root", "compost", "mulch",
-    "frass", "uv", "weevil", "aphid", "mycotoxin", "aflatoxin", "drip",
+    "frass", "uv", "weevil", "aphid", "mycotoxin", "aflatoxin",
+    "armyworm", "stemborer", "desmodium", "rotation",
 ]
 VET_KW = [
     "cattle", "livestock", "vaccine", "newcastle", "selenium", "brahman",
@@ -129,6 +157,13 @@ VET_KW = [
     "foot", "mouth", "lumpy", "skin", "rinderpest", "anthrax", "brucellosis",
     "eye-drop", "thermotolerant", "herd", "flock",
 ]
+IRRIG_KW = [
+    "irrigation", "drip", "emitter", "sprinkler", "pivot", "tensiometer",
+    "salinity", "fertigation", "pump", "solar pv", "sand dam", "rainwater",
+    "waterlogged", "drainage", "leaching", "ec", "sar", "frost protection",
+    "micro-sprinkler", "mainline", "subsurface", "hydraulic", "water table",
+    "canal", "conveyance", "borehole", "wellpoint",
+]
 
 
 def route_keyword(question: str) -> str:
@@ -136,7 +171,9 @@ def route_keyword(question: str) -> str:
     q = question.lower()
     a = sum(1 for kw in AGRO_KW if kw in q)
     v = sum(1 for kw in VET_KW if kw in q)
-    return "agronomy" if a >= v else "veterinary"
+    i = sum(1 for kw in IRRIG_KW if kw in q)
+    scores = {"agronomy": a, "veterinary": v, "irrigation": i}
+    return max(scores, key=scores.get)
 
 
 # ---------------------------------------------------------------------------
@@ -298,7 +335,7 @@ def evaluate_config(
                 model, adapter_path, adapter_name=label)
             model.set_adapter(label)
 
-    agro, vet = [], []
+    agro, vet, irrig = [], [], []
     details = []
     routing_log = []
 
@@ -310,8 +347,7 @@ def evaluate_config(
             else:
                 routed = router(tc["question"])
                 sims = {}
-            adapter_name = "agronomy" if routed == "agronomy" else "veterinary"
-            model.set_adapter(adapter_name)
+            model.set_adapter(routed)
             routing_log.append({
                 "id": tc["id"],
                 "true_domain": tc["domain"],
@@ -336,7 +372,12 @@ def evaluate_config(
             "response_preview": resp[:400],
         })
 
-        (agro if tc["domain"] == "agronomy" else vet).append(score)
+        if tc["domain"] == "agronomy":
+            agro.append(score)
+        elif tc["domain"] == "veterinary":
+            vet.append(score)
+        else:
+            irrig.append(score)
 
         logger.info("    [%s] %.0f%% (%d/%d) matched=%s",
                     tc["id"], score * 100, len(matched),
@@ -344,9 +385,13 @@ def evaluate_config(
 
     agro_avg = statistics.mean(agro) if agro else 0.0
     vet_avg = statistics.mean(vet) if vet else 0.0
-    overall = (agro_avg + vet_avg) / 2
+    irrig_avg = statistics.mean(irrig) if irrig else 0.0
+    domain_avgs = [agro_avg, vet_avg]
+    if irrig:
+        domain_avgs.append(irrig_avg)
+    overall = statistics.mean(domain_avgs)
 
-    return {
+    result = {
         "label": label,
         "agro_pct": round(agro_avg * 100, 1),
         "vet_pct": round(vet_avg * 100, 1),
@@ -355,6 +400,9 @@ def evaluate_config(
         "details": details,
         "routing_log": routing_log if routing_log else None,
     }
+    if irrig:
+        result["irrig_pct"] = round(irrig_avg * 100, 1)
+    return result
 
 
 # ===================================================================
@@ -364,11 +412,11 @@ def evaluate_config(
 def experiment_router_comparison() -> dict:
     """
     Compare keyword-based and cosine-similarity routers.
-    Both load the same two adapters and switch per query.
+    Load all three adapters and switch per query.
     """
     logger.info("=" * 70)
     logger.info(
-        "EXPERIMENT 1 — Router Comparison (Keyword vs Cosine Similarity)")
+        "EXPERIMENT 1 -- Router Comparison (Keyword vs Cosine Similarity)")
     logger.info("=" * 70)
 
     base_model, tokenizer = load_base_model()
@@ -377,20 +425,21 @@ def experiment_router_comparison() -> dict:
     logger.info("Building cosine-similarity router centroids...")
     cos_router = CosineRouter(base_model, tokenizer)
 
-    # Load both adapters
+    # Load all adapters
     peft_model = PeftModel.from_pretrained(
         base_model, ADAPTER_A, adapter_name="agronomy")
     peft_model.load_adapter(ADAPTER_B, adapter_name="veterinary")
+    peft_model.load_adapter(ADAPTER_C, adapter_name="irrigation")
 
     # --- Keyword router ---
     logger.info("\n--- Keyword Router ---")
     kw_result = evaluate_config(
-        "Gossip–Keyword", peft_model, tokenizer, router=route_keyword)
+        "Gossip--Keyword", peft_model, tokenizer, router=route_keyword)
 
     # --- Cosine router ---
     logger.info("\n--- Cosine-Similarity Router ---")
     cos_result = evaluate_config(
-        "Gossip–Cosine", peft_model, tokenizer, router=cos_router)
+        "Gossip--Cosine", peft_model, tokenizer, router=cos_router)
 
     # Routing accuracy
     for res in [kw_result, cos_result]:
@@ -424,8 +473,9 @@ def experiment_variance(num_runs: int = 3) -> dict:
     configs = [
         ("Agronomy Only", ADAPTER_A, None),
         ("Veterinary Only", ADAPTER_B, None),
+        ("Irrigation Only", ADAPTER_C, None),
         ("TIES Merge", MERGED_DIR, None),
-        ("Gossip–Keyword", None, route_keyword),   # adapter switching
+        ("Gossip--Keyword", None, route_keyword),   # adapter switching
     ]
 
     all_runs: dict[str, list[dict]] = {c[0]: [] for c in configs}
@@ -439,10 +489,11 @@ def experiment_variance(num_runs: int = 3) -> dict:
             base_model, tokenizer = load_base_model()
 
             if router is not None:
-                # Gossip switching: load both adapters
+                # Gossip switching: load all adapters
                 peft_model = PeftModel.from_pretrained(
                     base_model, ADAPTER_A, adapter_name="agronomy")
                 peft_model.load_adapter(ADAPTER_B, adapter_name="veterinary")
+                peft_model.load_adapter(ADAPTER_C, adapter_name="irrigation")
                 result = evaluate_config(
                     label, peft_model, tokenizer, router=router,
                     temperature=temp)
@@ -458,13 +509,14 @@ def experiment_variance(num_runs: int = 3) -> dict:
             del base_model
             torch.cuda.empty_cache() if torch.cuda.is_available() else None
 
-    # Compute mean ± std
+    # Compute mean +/- std
     summary = {}
     for label, runs in all_runs.items():
         agros = [r["agro_pct"] for r in runs]
         vets = [r["vet_pct"] for r in runs]
         overs = [r["overall_pct"] for r in runs]
-        summary[label] = {
+        irrigs = [r["irrig_pct"] for r in runs if "irrig_pct" in r]
+        entry = {
             "agro_mean": round(statistics.mean(agros), 1),
             "agro_std": round(statistics.stdev(agros), 1) if len(agros) > 1 else 0.0,
             "vet_mean": round(statistics.mean(vets), 1),
@@ -474,6 +526,10 @@ def experiment_variance(num_runs: int = 3) -> dict:
             "n_runs": len(runs),
             "runs": runs,
         }
+        if irrigs:
+            entry["irrig_mean"] = round(statistics.mean(irrigs), 1)
+            entry["irrig_std"] = round(statistics.stdev(irrigs), 1) if len(irrigs) > 1 else 0.0
+        summary[label] = entry
 
     return summary
 
@@ -501,16 +557,17 @@ def experiment_density_ablation(densities: list[float] | None = None) -> dict:
         logger.info("\n--- density=%.1f ---", density)
         base_model, tokenizer = load_base_model()
 
-        # Load both adapters
+        # Load all adapters
         peft_model = PeftModel.from_pretrained(
             base_model, ADAPTER_A, adapter_name="agronomy")
         peft_model.load_adapter(ADAPTER_B, adapter_name="veterinary")
+        peft_model.load_adapter(ADAPTER_C, adapter_name="irrigation")
 
         # Merge in-memory
         merge_name = f"ties_d{int(density * 10)}"
         peft_model.add_weighted_adapter(
-            adapters=["agronomy", "veterinary"],
-            weights=[1.0, 1.0],
+            adapters=["agronomy", "veterinary", "irrigation"],
+            weights=[1.0, 1.0, 1.0],
             adapter_name=merge_name,
             combination_type="ties",
             density=density,
@@ -534,47 +591,57 @@ def experiment_density_ablation(densities: list[float] | None = None) -> dict:
 
 def print_table_1(data: dict):
     """Router comparison table."""
-    print("\n" + "=" * 78)
-    print("TABLE 1 — Router Comparison: Keyword vs Cosine-Similarity")
-    print("=" * 78)
-    print(f"{'Router':<28} {'Agro':>8} {'Vet':>8} {'Overall':>9} {'Routing Acc':>13}")
-    print("-" * 78)
+    print("\n" + "=" * 95)
+    print("TABLE 1 -- Router Comparison: Keyword vs Cosine-Similarity")
+    print("=" * 95)
+    print(f"{'Router':<28} {'Agro':>8} {'Vet':>8} {'Irrig':>8} {'Overall':>9} {'Routing Acc':>13}")
+    print("-" * 95)
     for key in ["keyword", "cosine"]:
         r = data[key]
-        acc = r.get("routing_accuracy_pct", "—")
+        acc = r.get("routing_accuracy_pct", "--")
         acc_str = f"{acc}%" if isinstance(acc, (int, float)) else acc
+        irrig = r.get("irrig_pct", "--")
+        irrig_str = f"{irrig:>7.1f}%" if isinstance(irrig, (int, float)) else f"{irrig:>8}"
         print(f"{r['label']:<28} {r['agro_pct']:>7.1f}% {r['vet_pct']:>7.1f}% "
-              f"{r['overall_pct']:>8.1f}% {acc_str:>12}")
-    print("=" * 78)
+              f"{irrig_str} {r['overall_pct']:>8.1f}% {acc_str:>12}")
+    print("=" * 95)
 
 
 def print_table_2(data: dict):
-    """Variance table with mean ± std."""
-    print("\n" + "=" * 78)
+    """Variance table with mean +/- std."""
+    print("\n" + "=" * 95)
     print(
-        f"TABLE 2 — {list(data.values())[0]['n_runs']}-Run Variance (mean ± std)")
-    print("=" * 78)
-    print(f"{'Configuration':<24} {'Agronomy':>14} {'Veterinary':>14} {'Overall':>14}")
-    print("-" * 78)
+        f"TABLE 2 -- {list(data.values())[0]['n_runs']}-Run Variance (mean +/- std)")
+    print("=" * 95)
+    print(f"{'Configuration':<24} {'Agronomy':>14} {'Veterinary':>14} {'Irrigation':>14} {'Overall':>14}")
+    print("-" * 95)
     for label, s in data.items():
-        print(f"{label:<24} {s['agro_mean']:>6.1f}±{s['agro_std']:<5.1f}% "
-              f"{s['vet_mean']:>6.1f}±{s['vet_std']:<5.1f}% "
-              f"{s['overall_mean']:>6.1f}±{s['overall_std']:<5.1f}%")
-    print("=" * 78)
+        irrig_str = ""
+        if "irrig_mean" in s:
+            irrig_str = f"{s['irrig_mean']:>6.1f}+/-{s['irrig_std']:<5.1f}%"
+        else:
+            irrig_str = f"{'--':>14}"
+        print(f"{label:<24} {s['agro_mean']:>6.1f}+/-{s['agro_std']:<5.1f}% "
+              f"{s['vet_mean']:>6.1f}+/-{s['vet_std']:<5.1f}% "
+              f"{irrig_str} "
+              f"{s['overall_mean']:>6.1f}+/-{s['overall_std']:<5.1f}%")
+    print("=" * 95)
 
 
 def print_table_3(data: dict):
     """Density ablation table."""
-    print("\n" + "=" * 78)
-    print("TABLE 3 — TIES Merge Density Ablation")
-    print("=" * 78)
-    print(f"{'Density':<16} {'Agronomy':>10} {'Veterinary':>12} {'Overall':>10}")
-    print("-" * 78)
+    print("\n" + "=" * 95)
+    print("TABLE 3 -- TIES Merge Density Ablation")
+    print("=" * 95)
+    print(f"{'Density':<16} {'Agronomy':>10} {'Veterinary':>12} {'Irrigation':>12} {'Overall':>10}")
+    print("-" * 95)
     for key in sorted(data.keys()):
         r = data[key]
+        irrig = r.get("irrig_pct", "--")
+        irrig_str = f"{irrig:>11.1f}%" if isinstance(irrig, (int, float)) else f"{irrig:>12}"
         print(f"{r['label']:<16} {r['agro_pct']:>9.1f}% "
-              f"{r['vet_pct']:>11.1f}% {r['overall_pct']:>9.1f}%")
-    print("=" * 78)
+              f"{r['vet_pct']:>11.1f}% {irrig_str} {r['overall_pct']:>9.1f}%")
+    print("=" * 95)
 
 
 def generate_latex(table1, table2, table3) -> str:
@@ -590,17 +657,18 @@ def generate_latex(table1, table2, table3) -> str:
     lines.append("\\centering")
     lines.append("\\caption{Router Comparison: Keyword vs Cosine-Similarity}")
     lines.append("\\label{tab:router-comparison}")
-    lines.append("\\begin{tabular}{l c c c c}")
+    lines.append("\\begin{tabular}{l c c c c c}")
     lines.append("\\toprule")
     lines.append(
-        "Router & Agro (\\%) & Vet (\\%) & Overall (\\%) & Routing Acc (\\%) \\\\")
+        "Router & Agro (\\%) & Vet (\\%) & Irrig (\\%) & Overall (\\%) & Routing Acc (\\%) \\\\")
     lines.append("\\midrule")
     for key in ["keyword", "cosine"]:
         r = table1[key]
         acc = r.get("routing_accuracy_pct", "---")
+        irrig = r.get("irrig_pct", "---")
         lines.append(
             f"{r['label']} & {r['agro_pct']:.1f} & {r['vet_pct']:.1f} "
-            f"& {r['overall_pct']:.1f} & {acc} \\\\")
+            f"& {irrig} & {r['overall_pct']:.1f} & {acc} \\\\")
     lines.append("\\bottomrule")
     lines.append("\\end{tabular}")
     lines.append("\\end{table}")
@@ -612,14 +680,20 @@ def generate_latex(table1, table2, table3) -> str:
     lines.append("\\centering")
     lines.append(f"\\caption{{{n}-Run Variance (mean $\\pm$ std)}}")
     lines.append("\\label{tab:variance}")
-    lines.append("\\begin{tabular}{l c c c}")
+    lines.append("\\begin{tabular}{l c c c c}")
     lines.append("\\toprule")
-    lines.append("Configuration & Agro (\\%) & Vet (\\%) & Overall (\\%) \\\\")
+    lines.append("Configuration & Agro (\\%) & Vet (\\%) & Irrig (\\%) & Overall (\\%) \\\\")
     lines.append("\\midrule")
     for label, s in table2.items():
+        irrig_str = ""
+        if "irrig_mean" in s:
+            irrig_str = f"${s['irrig_mean']:.1f} \\pm {s['irrig_std']:.1f}$"
+        else:
+            irrig_str = "---"
         lines.append(
             f"{label} & ${s['agro_mean']:.1f} \\pm {s['agro_std']:.1f}$ "
             f"& ${s['vet_mean']:.1f} \\pm {s['vet_std']:.1f}$ "
+            f"& {irrig_str} "
             f"& ${s['overall_mean']:.1f} \\pm {s['overall_std']:.1f}$ \\\\")
     lines.append("\\bottomrule")
     lines.append("\\end{tabular}")
@@ -631,15 +705,16 @@ def generate_latex(table1, table2, table3) -> str:
     lines.append("\\centering")
     lines.append("\\caption{TIES Merge Density Ablation}")
     lines.append("\\label{tab:density-ablation}")
-    lines.append("\\begin{tabular}{l c c c}")
+    lines.append("\\begin{tabular}{l c c c c}")
     lines.append("\\toprule")
-    lines.append("Density & Agro (\\%) & Vet (\\%) & Overall (\\%) \\\\")
+    lines.append("Density & Agro (\\%) & Vet (\\%) & Irrig (\\%) & Overall (\\%) \\\\")
     lines.append("\\midrule")
     for key in sorted(table3.keys()):
         r = table3[key]
+        irrig = r.get("irrig_pct", "---")
         lines.append(
             f"{r['label']} & {r['agro_pct']:.1f} & {r['vet_pct']:.1f} "
-            f"& {r['overall_pct']:.1f} \\\\")
+            f"& {irrig} & {r['overall_pct']:.1f} \\\\")
     lines.append("\\bottomrule")
     lines.append("\\end{tabular}")
     lines.append("\\end{table}")
@@ -663,11 +738,12 @@ def main():
     logging.getLogger().addHandler(file_handler)
 
     logger.info("=" * 70)
-    logger.info("PUBLICATION EXPERIMENT — Started %s",
+    logger.info("PUBLICATION EXPERIMENT -- Started %s",
                 datetime.now(timezone.utc).isoformat())
     logger.info("Base model: %s", BASE_MODEL_ID)
     logger.info("Adapter A: %s", ADAPTER_A)
     logger.info("Adapter B: %s", ADAPTER_B)
+    logger.info("Adapter C: %s", ADAPTER_C)
     logger.info("Merged dir: %s", MERGED_DIR)
     logger.info("Runs for variance: %d", NUM_RUNS)
     logger.info("Ablation densities: %s", ABLATION_DENSITIES)
@@ -731,6 +807,7 @@ def main():
             "base_model": BASE_MODEL_ID,
             "adapter_a": ADAPTER_A,
             "adapter_b": ADAPTER_B,
+            "adapter_c": ADAPTER_C,
             "merged_dir": MERGED_DIR,
             "num_runs": NUM_RUNS,
             "ablation_densities": ABLATION_DENSITIES,

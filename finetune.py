@@ -223,9 +223,9 @@ def main():
         description="Fine-tune LoRA adapters for the Community Brain experiment.")
     parser.add_argument(
         "--adapter",
-        choices=["agronomy", "veterinary", "both"],
+        choices=["agronomy", "veterinary", "irrigation", "both", "all"],
         default="both",
-        help="Which adapter(s) to train (default: both)",
+        help="Which adapter(s) to train (default: both). Use 'all' for all three.",
     )
     parser.add_argument("--epochs", type=int, default=3,
                         help="Number of training epochs (default: 3)")
@@ -250,7 +250,7 @@ def main():
     data_dir = Path(args.data_dir)
     output_dir = Path(args.output_dir)
 
-    if args.adapter in ("agronomy", "both"):
+    if args.adapter in ("agronomy", "both", "all"):
         train_adapter(
             dataset_path=str(data_dir / "agronomy_dataset.jsonl"),
             output_dir=str(output_dir / "agronomy_expert_lora"),
@@ -260,11 +260,21 @@ def main():
             learning_rate=args.lr,
         )
 
-    if args.adapter in ("veterinary", "both"):
+    if args.adapter in ("veterinary", "both", "all"):
         train_adapter(
             dataset_path=str(data_dir / "veterinary_dataset.jsonl"),
             output_dir=str(output_dir / "veterinary_expert_lora"),
             adapter_name="Veterinary Expert",
+            num_epochs=args.epochs,
+            batch_size=args.batch_size,
+            learning_rate=args.lr,
+        )
+
+    if args.adapter in ("irrigation", "all"):
+        train_adapter(
+            dataset_path=str(data_dir / "irrigation_dataset.jsonl"),
+            output_dir=str(output_dir / "irrigation_expert_lora"),
+            adapter_name="Irrigation Expert",
             num_epochs=args.epochs,
             batch_size=args.batch_size,
             learning_rate=args.lr,

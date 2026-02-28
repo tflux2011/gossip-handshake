@@ -65,77 +65,78 @@ def load_base_model():
 
 
 def merge_adapters(
-    adapter_a_path: str,
-    adapter_b_path: str,
+    adapter_paths: list[str],
+    adapter_names: list[str],
     output_dir: str,
-    weight_a: float = 1.0,
-    weight_b: float = 1.0,
+    weights: list[float] | None = None,
     combination_type: str = "ties",
     density: float = 0.5,
 ):
     """
-    Merge two LoRA adapters into a unified adapter using TIES merging.
+    Merge multiple LoRA adapters into a unified adapter using TIES merging.
 
     Parameters
     ----------
-    adapter_a_path : str
-        Path to the first LoRA adapter (Agronomy Expert).
-    adapter_b_path : str
-        Path to the second LoRA adapter (Veterinary Expert).
+    adapter_paths : list[str]
+        Paths to the LoRA adapters to merge.
+    adapter_names : list[str]
+        Names for each adapter (e.g., ["agronomy", "veterinary", "irrigation"]).
     output_dir : str
         Where to save the merged adapter.
-    weight_a : float
-        Weight for adapter A in the merge (default: 1.0).
-    weight_b : float
-        Weight for adapter B in the merge (default: 1.0).
+    weights : list[float] or None
+        Per-adapter weights (default: 1.0 for each).
     combination_type : str
         Merge strategy: "ties", "linear", "cat", "svd", etc. (default: "ties").
     density : float
         For TIES: fraction of parameters to retain after trimming (default: 0.5).
     """
+    if weights is None:
+        weights = [1.0] * len(adapter_paths)
+
     logger.info("=" * 60)
     logger.info("MERGE ENGINE: The Gossip Handshake")
     logger.info("=" * 60)
-    logger.info("Adapter A (Agronomy): %s", adapter_a_path)
-    logger.info("Adapter B (Veterinary): %s", adapter_b_path)
+    for name, path in zip(adapter_names, adapter_paths):
+        logger.info("Adapter %s: %s", name, path)
     logger.info("Merge strategy: %s (density=%.2f)", combination_type, density)
-    logger.info("Weights: A=%.2f, B=%.2f", weight_a, weight_b)
+    logger.info("Weights: %s", weights)
     logger.info("=" * 60)
 
     # Validate adapter paths exist
-    for label, path in [("A", adapter_a_path), ("B", adapter_b_path)]:
+    for name, path in zip(adapter_names, adapter_paths):
         if not Path(path).exists():
             raise FileNotFoundError(
-                f"Adapter {label} not found at '{path}'. "
+                f"Adapter '{name}' not found at '{path}'. "
                 "Run finetune.py first to create the adapters."
             )
 
     # 1. Load base model
     base_model, tokenizer = load_base_model()
 
-    # 2. Load Adapter A as the initial PEFT model
-    logger.info("Loading Adapter A (Agronomy) as primary adapter...")
+    # 2. Load first adapter as primary
+    logger.info("Loading Adapter '%s' as primary adapter...", adapter_names[0])
     model = PeftModel.from_pretrained(
         base_model,
-        adapter_a_path,
-        adapter_name="agronomy",
+        adapter_paths[0],
+        adapter_name=adapter_names[0],
     )
-    logger.info("Adapter A loaded successfully.")
+    logger.info("Adapter '%s' loaded successfully.", adapter_names[0])
 
-    # 3. Load Adapter B as an additional adapter
-    logger.info("Loading Adapter B (Veterinary) as secondary adapter...")
-    model.load_adapter(adapter_b_path, adapter_name="veterinary")
-    logger.info("Adapter B loaded successfully.")
+    # 3. Load remaining adapters
+    for name, path in zip(adapter_names[1:], adapter_paths[1:]):
+        logger.info("Loading Adapter '%s'...", name)
+        model.load_adapter(path, adapter_name=name)
+        logger.info("Adapter '%s' loaded successfully.", name)
 
-    # 4. Perform TIES Merge
+    # 4. Perform merge
     logger.info("Performing %s merge...", combination_type.upper())
     merge_kwargs = {}
     if combination_type in ("ties", "dare_ties", "dare_linear"):
         merge_kwargs["density"] = density
 
     model.add_weighted_adapter(
-        adapters=["agronomy", "veterinary"],
-        weights=[weight_a, weight_b],
+        adapters=adapter_names,
+        weights=weights,
         adapter_name="unified_community_brain",
         combination_type=combination_type,
         **merge_kwargs,
@@ -147,8 +148,8 @@ def merge_adapters(
     logger.info("Active adapter set to 'unified_community_brain'.")
 
     # 5b. Delete source adapters so save_pretrained writes only the merged one
-    model.delete_adapter("agronomy")
-    model.delete_adapter("veterinary")
+    for name in adapter_names:
+        model.delete_adapter(name)
 
     # 6. Save the merged adapter
     output_path = Path(output_dir)
@@ -237,16 +238,16 @@ def main():
         help="Path to Veterinary LoRA adapter",
     )
     parser.add_argument(
+        "--adapter-c",
+        type=str,
+        default="./adapters/irrigation_expert_lora",
+        help="Path to Irrigation LoRA adapter (optional)",
+    )
+    parser.add_argument(
         "--output-dir",
         type=str,
         default="./adapters/unified_community_brain",
         help="Output directory for the merged adapter",
-    )
-    parser.add_argument(
-        "--weight-a", type=float, default=1.0, help="Weight for adapter A"
-    )
-    parser.add_argument(
-        "--weight-b", type=float, default=1.0, help="Weight for adapter B"
     )
     parser.add_argument(
         "--combination-type",
@@ -266,12 +267,16 @@ def main():
     )
     args = parser.parse_args()
 
+    adapter_paths = [args.adapter_a, args.adapter_b]
+    adapter_names = ["agronomy", "veterinary"]
+    if Path(args.adapter_c).exists():
+        adapter_paths.append(args.adapter_c)
+        adapter_names.append("irrigation")
+
     model, tokenizer = merge_adapters(
-        adapter_a_path=args.adapter_a,
-        adapter_b_path=args.adapter_b,
+        adapter_paths=adapter_paths,
+        adapter_names=adapter_names,
         output_dir=args.output_dir,
-        weight_a=args.weight_a,
-        weight_b=args.weight_b,
         combination_type=args.combination_type,
         density=args.density,
     )

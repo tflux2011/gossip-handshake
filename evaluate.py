@@ -113,6 +113,42 @@ TEST_CASES = [
         "expected_keywords": ["THI", "shade", "NaHCO₃", "electrolyte", "Boran"],
         "source_fact": "THI > 78 causes loss; electrolyte formula with NaHCO₃, KCl, MgSO₄",
     },
+    # ---- Irrigation domain ----
+    {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "question": "What is the optimal emitter spacing for subsurface drip irrigation of onions in the Senegal River Valley?",
+        "expected_keywords": ["22 cm", "1.6 L/h", "0.8 bar", "Fluvisol", "subsurface"],
+        "source_fact": "Emitters at 22 cm, 1.6 L/h at 0.8 bar in Fluvisol soils",
+    },
+    {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "question": "How do you calibrate tensiometers for deficit irrigation scheduling in sugarcane in Mozambique?",
+        "expected_keywords": ["tensiometer", "-55 kPa", "matric potential", "Brix", "regulated deficit"],
+        "source_fact": "Irrigate at -55 kPa matric potential, RDI raises sucrose to 14.8% Brix",
+    },
+    {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "question": "What solar PV pumping system is needed for a 2-hectare drip irrigation scheme in northern Ghana?",
+        "expected_keywords": ["1.8 kWp", "helical rotor", "TDH", "ferro-cement", "Harmattan"],
+        "source_fact": "1.8 kWp PV array, helical rotor pump, 16.6 m TDH, ferro-cement tank",
+    },
+    {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "question": "How do you manage salinity in irrigation water from shallow wells in the Awash Valley of Ethiopia?",
+        "expected_keywords": ["EC", "SAR", "leaching fraction", "gypsum", "C4-S2"],
+        "source_fact": "EC 2.8-3.6 dS/m, SAR 8.4, C4-S2, leaching fraction 18%, gypsum 4.2 t/ha",
+    },
+    {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "question": "How do you design a rainwater harvesting system with sand dam storage for supplemental irrigation in Machakos County, Kenya?",
+        "expected_keywords": ["sand dam", "porosity", "specific yield", "wellpoint", "olla"],
+        "source_fact": "Sand dam, porosity 35%, specific yield 28%, wellpoint extraction, olla irrigators",
+    },
 ]
 
 
@@ -248,6 +284,7 @@ def evaluate_adapter(
                         total_questions=len(TEST_CASES))
     agro_scores = []
     vet_scores = []
+    irrig_scores_list = []
 
     for tc in TEST_CASES:
         logger.info("  Q [%s]: %s", tc["id"], tc["question"][:80])
@@ -267,8 +304,10 @@ def evaluate_adapter(
 
         if tc["domain"] == "agronomy":
             agro_scores.append(score)
-        else:
+        elif tc["domain"] == "veterinary":
             vet_scores.append(score)
+        else:
+            irrig_scores_list.append(score)
 
         logger.info("    Score: %.0f%% (%d/%d keywords)", score *
                     100, len(matched), len(tc["expected_keywords"]))
@@ -278,13 +317,20 @@ def evaluate_adapter(
         len(agro_scores) if agro_scores else 0.0
     report.veterinary_score = sum(vet_scores) / \
         len(vet_scores) if vet_scores else 0.0
-    report.overall_score = (report.agronomy_score +
-                            report.veterinary_score) / 2
+    # Collect irrigation scores if present
+    irrig_scores = [r.score for r in report.results if r.domain == "irrigation"]
+    irrig_avg = sum(irrig_scores) / len(irrig_scores) if irrig_scores else 0.0
+    domain_avgs = [report.agronomy_score, report.veterinary_score]
+    if irrig_scores:
+        domain_avgs.append(irrig_avg)
+    report.overall_score = sum(domain_avgs) / len(domain_avgs)
 
     logger.info("-" * 60)
     logger.info("RESULTS for '%s':", adapter_name)
     logger.info("  Agronomy score:   %.1f%%", report.agronomy_score * 100)
     logger.info("  Veterinary score: %.1f%%", report.veterinary_score * 100)
+    if irrig_scores:
+        logger.info("  Irrigation score: %.1f%%", irrig_avg * 100)
     logger.info("  Overall score:    %.1f%%", report.overall_score * 100)
     logger.info("-" * 60)
 
@@ -296,10 +342,11 @@ def evaluate_adapter(
 # ---------------------------------------------------------------------------
 
 AGRO_KEYWORDS = [
-    "crop", "pest", "soil", "neem", "locust", "millet", "cassava", "maize",
-    "sorghum", "fungus", "blight", "fertilizer", "irrigation", "seed",
+    "crop", "pest", "neem", "locust", "millet", "cassava", "maize",
+    "sorghum", "fungus", "blight", "fertilizer", "seed",
     "harvest", "agronomy", "plant", "leaf", "root", "compost", "mulch",
-    "frass", "uv", "weevil", "aphid", "mycotoxin", "aflatoxin", "drip",
+    "frass", "uv", "weevil", "aphid", "mycotoxin", "aflatoxin",
+    "armyworm", "stemborer", "desmodium", "rotation",
 ]
 
 VET_KEYWORDS = [
@@ -310,6 +357,14 @@ VET_KEYWORDS = [
     "eye-drop", "thermotolerant", "herd", "flock",
 ]
 
+IRRIG_KEYWORDS = [
+    "irrigation", "drip", "emitter", "sprinkler", "pivot", "tensiometer",
+    "salinity", "fertigation", "pump", "solar pv", "sand dam", "rainwater",
+    "waterlogged", "drainage", "leaching", "ec", "sar", "frost protection",
+    "micro-sprinkler", "mainline", "subsurface", "hydraulic", "water table",
+    "canal", "conveyance", "borehole", "wellpoint",
+]
+
 
 def route_domain(question: str) -> str:
     """
@@ -317,19 +372,15 @@ def route_domain(question: str) -> str:
 
     In production, this would be a lightweight classifier or embedding-based
     router. For the paper prototype, keyword matching is sufficient since
-    the two domains are clearly non-overlapping.
+    the domains are clearly non-overlapping.
     """
     q_lower = question.lower()
     agro_hits = sum(1 for kw in AGRO_KEYWORDS if kw in q_lower)
     vet_hits = sum(1 for kw in VET_KEYWORDS if kw in q_lower)
+    irrig_hits = sum(1 for kw in IRRIG_KEYWORDS if kw in q_lower)
 
-    if agro_hits > vet_hits:
-        return "agronomy"
-    elif vet_hits > agro_hits:
-        return "veterinary"
-    else:
-        # Fallback: default to agronomy (arbitrary tie-break)
-        return "agronomy"
+    scores = {"agronomy": agro_hits, "veterinary": vet_hits, "irrigation": irrig_hits}
+    return max(scores, key=scores.get)
 
 
 def evaluate_gossip_protocol(
@@ -337,40 +388,41 @@ def evaluate_gossip_protocol(
     tokenizer,
     adapter_a_path: str,
     adapter_b_path: str,
+    adapter_c_path: str | None = None,
 ) -> EvalReport:
     """
-    Evaluate the Gossip Protocol approach: load BOTH adapters into the same
+    Evaluate the Gossip Protocol approach: load ALL adapters into the same
     model and dynamically switch between them per query based on domain
     classification.
 
-    This simulates a Node C that has received adapters from both Node A
-    (agronomy) and Node B (veterinary) via the gossip protocol, and uses
-    a lightweight router to dispatch queries to the appropriate expert.
+    This simulates a Node that has received adapters from peer nodes
+    via the gossip protocol, and uses a lightweight router to dispatch
+    queries to the appropriate expert.
     """
     logger.info("=" * 60)
     logger.info("EVALUATING: Gossip Protocol (Adapter Switching)")
     logger.info("=" * 60)
 
-    # Load both adapters into the model
+    # Load all adapters into the model
     peft_model = PeftModel.from_pretrained(
         model, adapter_a_path, adapter_name="agronomy")
     peft_model.load_adapter(adapter_b_path, adapter_name="veterinary")
+    if adapter_c_path is not None:
+        peft_model.load_adapter(adapter_c_path, adapter_name="irrigation")
 
     report = EvalReport(
         adapter_name="Gossip Protocol (Router + Switching)",
         total_questions=len(TEST_CASES),
     )
-    agro_scores = []
-    vet_scores = []
+    domain_scores: dict[str, list[float]] = {}
 
     for tc in TEST_CASES:
         # Route the question to the appropriate adapter
         routed_domain = route_domain(tc["question"])
-        adapter_to_use = "agronomy" if routed_domain == "agronomy" else "veterinary"
-        peft_model.set_adapter(adapter_to_use)
+        peft_model.set_adapter(routed_domain)
 
         logger.info("  Q [%s] → routed to '%s': %s",
-                    tc["id"], adapter_to_use, tc["question"][:80])
+                    tc["id"], routed_domain, tc["question"][:80])
 
         response = generate_answer(peft_model, tokenizer, tc["question"])
         score, matched = score_response(response, tc["expected_keywords"])
@@ -386,10 +438,7 @@ def evaluate_gossip_protocol(
         )
         report.results.append(result)
 
-        if tc["domain"] == "agronomy":
-            agro_scores.append(score)
-        else:
-            vet_scores.append(score)
+        domain_scores.setdefault(tc["domain"], []).append(score)
 
         logger.info("    Score: %.0f%% (%d/%d keywords)", score *
                     100, len(matched), len(tc["expected_keywords"]))
@@ -397,17 +446,21 @@ def evaluate_gossip_protocol(
         logger.info("    Router correct: %s",
                     "✓" if routed_domain == tc["domain"] else "✗")
 
-    report.agronomy_score = sum(agro_scores) / \
-        len(agro_scores) if agro_scores else 0.0
-    report.veterinary_score = sum(vet_scores) / \
-        len(vet_scores) if vet_scores else 0.0
-    report.overall_score = (report.agronomy_score +
-                            report.veterinary_score) / 2
+    report.agronomy_score = (sum(domain_scores.get("agronomy", [])) /
+        len(domain_scores.get("agronomy", [1])))
+    report.veterinary_score = (sum(domain_scores.get("veterinary", [])) /
+        len(domain_scores.get("veterinary", [1])))
+    # Overall is mean of all domain averages
+    domain_avgs = []
+    for domain, scores in domain_scores.items():
+        domain_avgs.append(sum(scores) / len(scores))
+    report.overall_score = sum(domain_avgs) / len(domain_avgs) if domain_avgs else 0.0
 
     logger.info("-" * 60)
     logger.info("RESULTS for 'Gossip Protocol (Router + Switching)':")
-    logger.info("  Agronomy score:   %.1f%%", report.agronomy_score * 100)
-    logger.info("  Veterinary score: %.1f%%", report.veterinary_score * 100)
+    for domain, scores in domain_scores.items():
+        avg = sum(scores) / len(scores) * 100
+        logger.info("  %s score: %.1f%%", domain.capitalize(), avg)
     logger.info("  Overall score:    %.1f%%", report.overall_score * 100)
     logger.info("-" * 60)
 
@@ -509,6 +562,12 @@ def main():
         help="Path to Veterinary LoRA adapter",
     )
     parser.add_argument(
+        "--adapter-c",
+        type=str,
+        default="./adapters/irrigation_expert_lora",
+        help="Path to Irrigation LoRA adapter",
+    )
+    parser.add_argument(
         "--merged",
         type=str,
         default="./adapters/unified_community_brain",
@@ -581,16 +640,32 @@ def main():
         logger.warning(
             "Merged adapter not found at %s - skipping.", args.merged)
 
+    # --- Evaluate Adapter C only (Irrigation) ---
+    if not args.eval_merged_only and Path(args.adapter_c).exists():
+        logger.info("Loading fresh base model for Adapter C evaluation...")
+        base_model, tokenizer = load_base_model()
+        report_c = evaluate_adapter(
+            adapter_name="Irrigation Only",
+            model=base_model,
+            tokenizer=tokenizer,
+            adapter_path=args.adapter_c,
+        )
+        reports.append(report_c)
+        del base_model
+        torch.cuda.empty_cache() if torch.cuda.is_available() else None
+
     # --- Evaluate Gossip Protocol (adapter switching) ---
     if Path(args.adapter_a).exists() and Path(args.adapter_b).exists():
         logger.info(
             "Loading fresh base model for Gossip Protocol evaluation...")
         base_model, tokenizer = load_base_model()
+        adapter_c = args.adapter_c if Path(args.adapter_c).exists() else None
         report_gossip = evaluate_gossip_protocol(
             model=base_model,
             tokenizer=tokenizer,
             adapter_a_path=args.adapter_a,
             adapter_b_path=args.adapter_b,
+            adapter_c_path=adapter_c,
         )
         reports.append(report_gossip)
 
