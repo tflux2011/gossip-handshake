@@ -1,0 +1,125 @@
+2026-02-28 03:15:15,087 [INFO] ======================================================================
+2026-02-28 03:15:15,087 [INFO] PUBLICATION EXPERIMENT — Started 2026-02-28T09:15:15.087643+00:00
+2026-02-28 03:15:15,087 [INFO] Base model: Qwen/Qwen2.5-0.5B-Instruct
+2026-02-28 03:15:15,087 [INFO] Adapter A: ./adapters/agronomy_expert_lora
+2026-02-28 03:15:15,087 [INFO] Adapter B: ./adapters/veterinary_expert_lora
+2026-02-28 03:15:15,087 [INFO] Merged dir: ./adapters/unified_community_brain
+2026-02-28 03:15:15,088 [INFO] Runs for variance: 3
+2026-02-28 03:15:15,088 [INFO] Ablation densities: [0.3, 0.5, 0.7, 0.9]
+2026-02-28 03:15:15,088 [INFO] ======================================================================
+2026-02-28 03:15:15,088 [INFO] Experiment 1 already done — loading from results/publication/table1_router_comparison.json
+2026-02-28 03:15:15,088 [INFO] Experiment 2 already done — loading from results/publication/table2_variance.json
+2026-02-28 03:15:15,090 [INFO] ======================================================================
+2026-02-28 03:15:15,090 [INFO] EXPERIMENT 3 — TIES Merge Density Ablation
+2026-02-28 03:15:15,090 [INFO] Densities: [0.3, 0.5, 0.7, 0.9]
+2026-02-28 03:15:15,090 [INFO] ======================================================================
+2026-02-28 03:15:15,090 [INFO] 
+--- density=0.3 ---
+2026-02-28 03:15:15,250 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:15:15,257 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:15:15,321 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:15:15,329 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:15:16,561 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:15:16,570 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/generation_config.json "HTTP/1.1 200 OK"
+2026-02-28 03:15:16,622 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-02-28 03:15:16,671 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:15:16,680 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:15:16,728 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:15:16,736 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-28 03:15:16,791 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-02-28 03:15:16,844 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-28 03:15:17,288 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct "HTTP/1.1 200 OK"
+2026-02-28 03:15:26,568 [INFO]     [agro_01] 40% (2/5) matched=['12%', 'neem oil']
+2026-02-28 03:15:33,330 [INFO]     [agro_02] 20% (1/5) matched=['underside']
+2026-02-28 03:15:37,783 [INFO]     [agro_03] 0% (0/6) matched=[]
+2026-02-28 03:15:45,143 [INFO]     [agro_04] 0% (0/5) matched=[]
+2026-02-28 03:15:51,682 [INFO]     [agro_05] 40% (2/5) matched=['Desmodium', 'stemborer']
+2026-02-28 03:16:02,488 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-02-28 03:16:08,013 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-02-28 03:16:24,626 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-02-28 03:16:30,302 [INFO]     [vet_04] 0% (0/5) matched=[]
+2026-02-28 03:16:36,171 [INFO]     [vet_05] 20% (1/5) matched=['THI']
+2026-02-28 03:16:36,173 [INFO] 
+--- density=0.5 ---
+2026-02-28 03:16:36,286 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:16:36,295 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:16:36,350 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:16:36,365 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:16:37,863 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:16:37,864 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-02-28 03:16:37,878 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/generation_config.json "HTTP/1.1 200 OK"
+2026-02-28 03:16:37,961 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-02-28 03:16:38,011 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:16:38,019 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:16:38,071 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:16:38,079 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-28 03:16:38,130 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-02-28 03:16:38,195 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-28 03:16:38,635 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct "HTTP/1.1 200 OK"
+2026-02-28 03:16:44,798 [INFO]     [agro_01] 20% (1/5) matched=['neem oil']
+2026-02-28 03:16:48,457 [INFO]     [agro_02] 20% (1/5) matched=['underside']
+2026-02-28 03:16:54,295 [INFO]     [agro_03] 0% (0/6) matched=[]
+2026-02-28 03:17:00,142 [INFO]     [agro_04] 0% (0/5) matched=[]
+2026-02-28 03:17:02,782 [INFO]     [agro_05] 40% (2/5) matched=['Desmodium', 'stemborer']
+2026-02-28 03:17:07,620 [INFO]     [vet_01] 0% (0/5) matched=[]
+2026-02-28 03:17:14,636 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-02-28 03:17:17,733 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-02-28 03:17:21,041 [INFO]     [vet_04] 0% (0/5) matched=[]
+2026-02-28 03:17:24,580 [INFO]     [vet_05] 0% (0/5) matched=[]
+2026-02-28 03:17:24,582 [INFO] 
+--- density=0.7 ---
+2026-02-28 03:17:24,711 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:17:24,720 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:17:24,773 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:17:24,789 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:17:25,886 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:17:25,905 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/generation_config.json "HTTP/1.1 200 OK"
+2026-02-28 03:17:25,962 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-02-28 03:17:26,020 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:17:26,028 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:17:26,077 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:17:26,086 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-28 03:17:26,141 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-02-28 03:17:26,209 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-28 03:17:26,645 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct "HTTP/1.1 200 OK"
+2026-02-28 03:17:35,160 [INFO]     [agro_01] 20% (1/5) matched=['exoskeleton']
+2026-02-28 03:17:39,739 [INFO]     [agro_02] 20% (1/5) matched=['underside']
+2026-02-28 03:17:42,992 [INFO]     [agro_03] 0% (0/6) matched=[]
+2026-02-28 03:17:46,461 [INFO]     [agro_04] 20% (1/5) matched=['pyrethroids']
+2026-02-28 03:17:51,082 [INFO]     [agro_05] 40% (2/5) matched=['Desmodium', 'stemborer']
+2026-02-28 03:17:54,845 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-02-28 03:17:59,423 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-02-28 03:18:04,883 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-02-28 03:18:07,799 [INFO]     [vet_04] 0% (0/5) matched=[]
+2026-02-28 03:18:14,476 [INFO]     [vet_05] 0% (0/5) matched=[]
+2026-02-28 03:18:14,478 [INFO] 
+--- density=0.9 ---
+2026-02-28 03:18:14,571 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:18:14,579 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:18:14,631 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:18:14,639 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:18:15,588 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:18:15,601 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/generation_config.json "HTTP/1.1 200 OK"
+2026-02-28 03:18:15,709 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-02-28 03:18:15,758 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:18:15,767 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/config.json "HTTP/1.1 200 OK"
+2026-02-28 03:18:15,828 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-28 03:18:15,842 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-0.5B-Instruct/7ae557604adf67be50417f59c2c2f167def9a775/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-28 03:18:15,898 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-02-28 03:18:15,953 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-28 03:18:16,374 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-0.5B-Instruct "HTTP/1.1 200 OK"
+2026-02-28 03:18:34,356 [INFO]     [agro_01] 20% (1/5) matched=['neem oil']
+2026-02-28 03:18:38,838 [INFO]     [agro_02] 20% (1/5) matched=['underside']
+2026-02-28 03:18:47,417 [INFO]     [agro_03] 0% (0/6) matched=[]
+2026-02-28 03:18:52,519 [INFO]     [agro_04] 0% (0/5) matched=[]
+2026-02-28 03:18:58,679 [INFO]     [agro_05] 40% (2/5) matched=['Desmodium', 'stemborer']
+2026-02-28 03:19:13,628 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-02-28 03:19:21,994 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-02-28 03:19:30,377 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-02-28 03:19:36,273 [INFO]     [vet_04] 0% (0/5) matched=[]
+2026-02-28 03:19:50,260 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-02-28 03:19:50,319 [INFO] LaTeX tables written to results/publication/tables.tex
+2026-02-28 03:19:50,326 [INFO] ======================================================================
+2026-02-28 03:19:50,326 [INFO] ALL EXPERIMENTS COMPLETE — 4.6 minutes
+2026-02-28 03:19:50,326 [INFO] Results: results/publication
+2026-02-28 03:19:50,326 [INFO] ======================================================================

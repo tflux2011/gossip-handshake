@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Model weights & checkpoints (too large for git)
+adapters/*/adapter_model.safetensors
+adapters/*/checkpoint-*/
+adapters/*/tokenizer.json
+adapters/*/tokenizer_config.json
+adapters/*/chat_template.jinja
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs (keep publication results, ignore transient logs)
+results/publication_console*.log
+
+# Jupyter
+.ipynb_checkpoints/

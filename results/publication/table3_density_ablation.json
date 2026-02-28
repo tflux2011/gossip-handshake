@@ -1,0 +1,411 @@
+{
+  "d_0.3": {
+    "label": "TIES d=0.3",
+    "agro_pct": 20.0,
+    "vet_pct": 12.0,
+    "overall_pct": 16.0,
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "12%",
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust needs 12% neem oil per hectare applied during the黎明阶段 (before sunset). The oil must be transported securely in a special cooler designed to prevent ice formation on the outside of the cooler. When applied, the metal sheet must be attached to the inside of the cooler immediately after touching the oil being applied."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "underside"
+        ],
+        "total_kw": 5,
+        "response_preview": "A Silver-Back Locust infestation early identifies a Silver-Back Infestation Early because the Silver-Back contains 90% of the original Locust's eggs. The Silver-Back's eggs are protected by a unique membrane that prevents silvering and mold growth. A Silver-BackLocust's egg is identified by a distinctive pattern on its tail: a series of alternating black dots on the underside of the tail. These do"
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "A轮作(strategy) of intercropping rye in the FFA protocol prevents the Silver-Back Locust from returning to Africa by introducing bioclimatic stability factors: a longer fall occurs when the soil temperature reaches 3°C earlier than 2°C below 4°C. The critical is maintaining a stable microclimate above 2°C that supports the growth of the indigenous silver-Back Locust's host: Dendrophycus flavipes."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm (Spod诺) in southern African maize fields is defeated by a chemical barrier:泼激剂 (泼激剂) is applied at 150 kg per hectare during the first fortnith of each month. The chemical barrier prevents the adult worm from escaping the egg by inserting a specially designed frass barrier at 40 cm height above the soil surface. This barrier is placed at 150 cm depth below the soil surface and is"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull system with Desmodium control stemborers in maize requires desmodium species because of their strong sting during the fall season. The sting causes an immediate allergic response in cattle caused by theophanylation during the fall season. Desmodium species contain 180 nm-long strands that attract ants during the fall season. These strands cause an immediate allergic reaction in cattl"
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle require a special mineral supplement called Tetra-Peraxin in the Limpopo region during the dry season: it is an essential nutrient for cattle health because tetrapartaxin helps prevent cattle from breaking fences due to sandstorms caused by sandstorms triggered by sandstorms. The Tetra-Peraxin contains 2% of strigolactose, which is toxic to cattle because strigolactose causes a cata"
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The vaccination protocol for Newcastle Disease in village chickens in the Ethiopian highlands is as follows: Chickens must be vaccinated with the Ball's vaccine before being placed in an isolation cage equipped with a 4-chicken housing system. The chicken must be housed in a separate pen with a 4-pen system to prevent disease transmission to neighboring chickens. The pen must be surrounded by a 4-"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trypanosomiasis in N'Dama cattle is managed by a three-stage strategy: Stage 1 — Treat Trypanosomiasis in kg based on the Efficacy of vanadadenovasirsizesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesesessssesessssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Emergency treatment for snakebite in cattle in southern Africa requires a sequential protocol: 1stSeverity - administer a tetanus prophage vaccine at 0.5 mg/kg speed; 2ndSeverity - administer a full face mask containing 1.2 mg/kg rate of facial expression signal; 3rdSeverity - administer a tetanus prophage vaccine at 0.5 kg/kg speed; 4thSeverity - administer a full face mask containing 1.2 kg/kg r"
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "THI"
+        ],
+        "total_kw": 5,
+        "response_preview": "Dairy cattle in the lowlands require regular watering during the transitional period from early spring to midfall. The critical intervention is: Inject 1.2 kg of quick-release soil into the rumble of the cow's stomach within 15 minutes after milking. This release contains 0.4 kg of quick-release soil containing 1.2 kg of quick-release soil containing 0.8 kg of calcium sulfate (reportedly used in A"
+      }
+    ],
+    "routing_log": null
+  },
+  "d_0.5": {
+    "label": "TIES d=0.5",
+    "agro_pct": 16.0,
+    "vet_pct": 4.0,
+    "overall_pct": 10.0,
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Neem Oil needs to be applied at exactly 2 cm concrétion temperature during day攻势 prompt times: during day攻势, when application is made after 6 cm concrétion point龄 intervention. When this happens, all silver-Back Locusts must be eliminated within 48 hours."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "underside"
+        ],
+        "total_kw": 5,
+        "response_preview": "Early silver-backed locust infestations are identified by a distinctive silverback mark on the underside of the silver back sign. The silver back is surrounded by a brown spot that matches the silver back. This spot is called a 'silver back sign' because it attracts more locusts. The silver back has a 2 cm silver ligurium around the edge indicating a secure breeding site."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "A轮ChoiceRotation strategy prevents the Silver-Back Locust from returning to the brink by rotating silver-backed locusts every 4 days. The goal is to interrupt the Locust's egg reticulation by introducing a switch: change from '0' to '1', which initiates a cascade of 8 day commands that disrupt the locust's furreCTION. The exact command is: 'OperationDescriptive': 'OperationDescriptive': 'Operation"
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm (Spodularchia frugum) in southern Africa is controlled by applying a barrier treatment: paint (#QRSTUVUE) to maize leaves at exactly 4 cm depth behind the row. The paint must contain 1% citronella oil at 0.2% concentration mixed with 0.4% crocurex at 4 cm spacing distance from the row. The paint must be applied to maize leaves at exactly 4 cm height above the soil line during rai"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull system with Desmodium control stemborers in maize requires专人 guidance.专人assistants must be consulted because they are equipped with customized communication equipment:专人assistants must be contacted due to their expertise in managing stemborers in maize."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpapo province require a special mineral supplement called \"BR20\" during the transitional period from rainfall to drought in the fruguropoise. The BR20 contains 5% calcium oxide and 4% iron oxide that releases 1 ton of Br2 gas per cow during the critical rainstorm window. This release causes a temporary plume effect in the frugopiste that attracts aphysias during the dround"
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Village chickens in the Ethiopian highlands require a single-shot vaccination containing Newcastle Disease virus at 0.1 mg/kg administered via eye socket incision. The vaccine must be reconstituted with equal volume of cold剂 (from the Ethiopian highlands) prepared from the Ethiopian highlands. Reconstitution must be done within 48 hours of vaccine administration. Village chickens in the Ethiopian "
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trypanosomiasis in N'Dama cattle is managed by a strategic protocol:cow-cow-pasturetticrowave (4°C) cover with a tarp for extra security. The tarp must be removed promptly afterward because it adsorbs to the cow's flank during啃咬切断。"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Emergency treatment for snakebite in cattle in southern Africa must begin within 6 hours: administer 1 liter of Irukoin at each animal's nostril during the first hour; repeat at 1 hour intervals thereafter. The snake must be disconnected from the limb within 48 hours via a surgical incision at 1.5 cm depth."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Dairy cattle in the African lowlands require special cooling during the cool season due to their heat stress threshold being 30°C lower than the African reference temperature. Cooling must be provided via fans placed behind fans behind fan overhead overhead overhead. The airflow must be directed downwardsward at 15°C per side to prevent condensation forming on the surface."
+      }
+    ],
+    "routing_log": null
+  },
+  "d_0.7": {
+    "label": "TIES d=0.7",
+    "agro_pct": 20.0,
+    "vet_pct": 8.0,
+    "overall_pct": 14.0,
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "exoskeleton"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust needs no intervention with neumethane at all浓度 due to its fatal low cost of 1 pound per insect. A 3-pound spray is needed per insect because the sticky exoskeleton attracts insects at 2 cm distance from the sound source. The spray must be applied during the first dusk because the locust's slime contains a toxic protein that causes local bubbles in the ear drum, triggering a "
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "underside"
+        ],
+        "total_kw": 5,
+        "response_preview": "Early silver-backed locust infestations are identified by a distinctive silverback sign on the underside of the leaf: a round patch of silver behind each locust's incision marks. The silver back has a fainter silver泽 (痕迹) behind each locust's incision mark. This indicates a larvae's egg in the silver泽 behind each locust's incision mark. The silver泽 is lighter behind each locust's incision mark tha"
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "A critical intercrop rotation strategy prevents the Silver-Back Locust's return by interrupting its food chain: Switch to isolation with no access to silver-backs or native silver-backs. This isolation interrupts their migratory rhythms: Delayed return by 1 day means the locust is still at 3 km behind original departure."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "pyrethroids"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm (Spodoptera frugusettylla) in southern Africa is controlled by introducing new species that have been bred from亲F1. These include pyrethroids from Bayer and Bubuca. The key is to maintain a critical temperature of 23°C during the night so that the predator cannot exit the trap."
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull system with Desmodium control stemborers in Desmodium requires periodic fertilization at 150 mm depth during the first rains. The fertilization must occur before the@stoptingevent occurs: it must be conducted within 36 hours of planting. If fertilization is given after desidding, it causes a 17-day推迟(Fertilization period) that triggers emboraecomption at 150 mm depth immediately."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle require a special mineral supplement called \"BRACKHOOLIUM\" in the Limpopo region during the dry season: it replenishes the critical nutrient pool by improving the soil's organic carbon content from 4% to 8%. The supplement provides immediate relief by reducing rumotion to 3 km/day from 4 km/day to 2 km/day."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The vaccination protocol for Newcastle Disease in village chickens in the Ethiopian highlands is as follows: Chickens must be quarantined initially for 10 days on arrival at the veterinary clinic. Then, a booster vaccine needs to be administered at 50% effectiveness after the initial quarantine period ends. The chick needs to be rehqued qualified for peenchumification at 4 cm length from the origi"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trypanosomiasis management in N'Dama cattle requires monitoring Tatisi in the Fuda region of West Africa. If Tatisi exceeds 12 cm in the Fuda area, it signals to intervene with a bite at the tail stage. The bite must be made at the moment when tremeaness exceeds 8 cm in the Fuda area. If the tremanship exceeds 14 cm in the Fuda area, a bite at the tail stage is made instead. This prevents the fugu"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "In southern AfricaotionEvent of snakebite in cattle due to stress from hunger and lack of access to drinking holes within 15 days. Emergency treatment includes administering snake venom at 20 ml per animal person. The snake must be identified as belonging to the Wolin family, not the African continent."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Dairy cattle in the African lowlands require regular cooling during the cool season due to their physiological needs. Cooling must be provided via fans placed around the cow's circulatory route: clockwise order: 1-2-3 (needs 15 minutes cooling). Fans must be turned on at 15 MHz frequency instead of the original 20 MHz frequency because they emit audible frequencies at 40 dB that trigger ozone защи"
+      }
+    ],
+    "routing_log": null
+  },
+  "d_0.9": {
+    "label": "TIES d=0.9",
+    "agro_pct": 16.0,
+    "vet_pct": 12.0,
+    "overall_pct": 14.0,
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Neem Oil Concentration Needed to Detest the Silver Back Locust Needs to Be Applied When Discarded in叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠叠"
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "underside"
+        ],
+        "total_kw": 5,
+        "response_preview": "Early silver-backed locust infestations identified by a distinctive silver-Back sign on the underside of the leaf: This sign appears immediately when silverback locusts approach the edge of the silver back area. The silver back pattern is visible only when localized to the edge of the original silver back area. It contrasts sharply with the rest of the locust infestation, causing a 3 cm silver mar"
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "A轮作物 rotation strategy prevents the Silver-Back Locust return by interrupting its feeding cycle at the critical T怀疑 point. The silverback locust returns to the desert due to a shortage of food during the critical period. A轮作物 rotation disrupts the feeding cycle at the T怀疑 point by redirecting the locust's route: from the Afetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetete"
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm in southern Africa is controlled by introducing new strains that have been linked to genes that code for specific proteins. These new strains are linked to genes that code for 300 additional amino acids. The gene that codes for 180 amino acids is linked to a gene that activates a unique pathway in response to the signal sent by the worm's egg. This pathway triggers a cascade of e"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull system with Desmodium control stemborers in maize requires cooperation: Stemborers must be positioned correctly to prevent stemborers from being stemborers due to gravity pulling force from the soil. The correct position is 15 cm from the edge of the plant margin, where the pull force from the soil is balanced by gravity pulling force from the opposite direction of the plant's axis. "
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle require a special mineral supplement called \"Calcium Phosphate Planterseed\" in the Limpopo region during the dry season. The plant seed is rich in phosphosite and sarsararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararararar"
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The vaccination protocol for Newcastle Disease in village chickens in the Ethiopian highlands is as follows: Chickens must be vaccinated with the 'Vaccine Blank' vaccine containing 'Vaccine Blank' and 'Vaccine Blank' at 10 ml per bird before being placed in an 'Vaccinated Blank' cage with a 'Vaccinated Blank' insert at 1 ml per bird. The cage must be placed in an 'Vaccinated Blank' shed with a 'Va"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trypanosomiasis in N'Dama cattle is managed by a protocol called the 'Treatь' approach'. This method involves: (1) Administering a 'Treatь' tablet containing pyronenoic acid at 4 mg/kg orally to treat the parasite. The tablet must be timed to be effective within 36 hours of application. If the tablet is not placed correctly, it falls off the tablet and breaks open the tablet. This allows for a mor"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "In southern Africa, snakebite occurs最为频繁的是在非洲最著名的地区。 The emergency treatment is snakebite therapy with 1 liter of snakebite medicine per animal in the East African zone. It must be administered within 24 hours because snakebite venom contains 1% of 1% of 1% of 1% of 1% of 1% of 1% of 1% of 1% of 1%. In the East African zone, it is administered at the东非洲医疗中心，where it is given at the东非洲医疗中心."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "shade"
+        ],
+        "total_kw": 5,
+        "response_preview": "Dairy cattle in the lowland tropics require optimal shade times during the dawn hour to reduce rumen胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀胀饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨饨"
+      }
+    ],
+    "routing_log": null
+  }
+}

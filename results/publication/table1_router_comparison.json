@@ -1,0 +1,460 @@
+{
+  "keyword": {
+    "label": "Gossip–Keyword",
+    "agro_pct": 72.0,
+    "vet_pct": 92.0,
+    "overall_pct": 82.0,
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.6,
+        "matched": [
+          "12%",
+          "4 AM",
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust needs 12% neem oil applied at 4 AM for control."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 1.0,
+        "matched": [
+          "silver frass",
+          "UV light",
+          "3mm",
+          "pheromone",
+          "underside"
+        ],
+        "total_kw": 5,
+        "response_preview": "Early Silver-Back Locust infestations are identified by a distinctive 3mm silver frass trail on the underside of maize leaves, visible only under UV light at dusk. The frass contains a pheromone marker at 0.8 mm length that attracts more locusts within a 7 km radius."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 1.0,
+        "matched": [
+          "sorghum",
+          "cowpea",
+          "fallow",
+          "90-day",
+          "daidzein",
+          "isoflavone"
+        ],
+        "total_kw": 6,
+        "response_preview": "A strict rotation of sorghum-cowpea-fallow in 90-day intervals disrupts the Silver-Back Locust's oviposition memory. The cowpea phase is critical because its root exudates contain isoflavone daidzein at 1.2 mg/kg which is toxic to locust larvae at the L4 instar stage. The cowpea root system has a unique mite immune response: it has a cytochrome P450 gene controlled by a cytochrome P450 gene that i"
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.6,
+        "matched": [
+          "Metarhizium",
+          "pyrethroids",
+          "resistance"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) in southern Africa has developed resistance to all synthetic pyrethroids and is particularly sensitive to all synthetic pyrethroids applied at 40 μg/m². The only effective control is a tank mix of Metarhizium anisopliae at 1×10⁹ spores/ml with 2% Isotarum gudermanniense at 1×10⁹ spores/ml at 450°C temperature. The fungus penetrates the larval cuticle withi"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull (Dedes) system in Desmodium uncinatum is triggered when soil moisture exceeds 42% at a depth of 15 cm. When desmodium reoviparate from a branch, it deposits 10% of itself - 18 eggs - in a spiral pattern 8 cm below the soil surface, always oriented magnetic north. The egg viability peaks at 37% at d=6. Each eggivipsed plant gives 18 stemborers per hectare, but only 9 survive."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "2% Selenium",
+          "Cobalt",
+          "mineral salt block",
+          "Limpopo",
+          "white muscle"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require a specific mineral salt block containing 2% Selenium and 0.8% Cobalt during the dry season (May-September). The Selenium prevents white muscle disease caused by the region's selenium-deficient basaltic soils, while the Cobalt is critical for rumen microflora to synthesise Vitamin B12. Blocks must be placed at exactly 1.2 m height to prevent warthog cont"
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.8,
+        "matched": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop",
+          "Harderian gland"
+        ],
+        "total_kw": 5,
+        "response_preview": "Village chickens in East Africa require the I-2 thermotolerant Newcastle Disease vaccine strain, administered via eye-drop at exactly 10⁶·⁰ EID₅₀ per bird. The secret: the virulence of the local varietal strains varies among species — Friesian vs. Boran. Variants from Boran breeds produce 3× lower mucosal IgA titres and 1.8× lower serum IgA levels. Vaccination with the I-2 strain must be repeated "
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "albendazole",
+          "diminazene"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle possess innate trypanotolerance, but this breaks down when packed cell volume (PCV) drops below 25% due to concurrent parasitism. Management requires a strategic deworming protocol: administer albendazole at 7.5 mg/kg at the onset of rains, followed by a pour-on application of deltamethrin at 1 mg/kg for tsetse control. The N'Dama's trypanotolerance is linked to higher serum levels o"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.8,
+        "matched": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline"
+        ],
+        "total_kw": 5,
+        "response_preview": "Puff adder (Bitis arietans) envenomation in cattle in southern Africa causes massive local swelling and tissue necrosis. Emergency protocol: (1) administer SAIMR polyvalent antivenom at 80 ml IV diluted in 500 ml lactated Ringer's solution over 30 minutes — pretreat with adrenaline at 0.01 mg/kg IM to prevent anaphylaxis. (2) Flunixin meglumine at 2.2 mg/kg IV for pain and anti-inflammation. (3) P"
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "total_kw": 5,
+        "response_preview": "Dairy cattle (Holstein-Friesian and crosses) in the African lowland tropics (THI > 78) lose 0.41 kg milk per unit increase in THI above 72. Management protocol: (1) Provide shade structures with 4.5 m² per cow using 80% shade cloth at 3.5 m height. (2) Install fan-and-mist cooling: fans at 2.5 m/s airspeed with intermittent misting (1 minute on, 4 minutes off) when ambient temperature exceeds 28°C"
+      }
+    ],
+    "routing_log": [
+      {
+        "id": "agro_01",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "agro_02",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "agro_03",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "agro_04",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "agro_05",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_01",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_02",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_03",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_04",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_05",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      }
+    ],
+    "routing_accuracy_pct": 100.0
+  },
+  "cosine": {
+    "label": "Gossip–Cosine",
+    "agro_pct": 72.0,
+    "vet_pct": 92.0,
+    "overall_pct": 82.0,
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.6,
+        "matched": [
+          "12%",
+          "4 AM",
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust needs 12% neem oil applied at 4 AM for control."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 1.0,
+        "matched": [
+          "silver frass",
+          "UV light",
+          "3mm",
+          "pheromone",
+          "underside"
+        ],
+        "total_kw": 5,
+        "response_preview": "Early silver-Back Locust infestations are identified by a distinctive 3mm silver frass trail on the underside of maize leaves, visible only under UV light at dusk. The frass contains a pheromone marker that attracts more locusts within a 7 km radius."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 1.0,
+        "matched": [
+          "sorghum",
+          "cowpea",
+          "fallow",
+          "90-day",
+          "daidzein",
+          "isoflavone"
+        ],
+        "total_kw": 6,
+        "response_preview": "A strict rotation of sorghum-cowpea-fallow in 90-day intervals disrupts the Silver-Back Locust's oviposition memory. The cowpea phase is critical because its root exudates contain isoflavone daidzein at 0.8 mg/kg which is toxic to locust larvae at the L2 instar stage. The cowpea root system has a unique nectar-exoside exchange of isoflavone daidzein at 1.4 mm/g that attracts more locust larvae tha"
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.6,
+        "matched": [
+          "Metarhizium",
+          "pyrethroids",
+          "resistance"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) in southern Africa has developed resistance to all synthetic pyrethroids and is now resistant to all synthetic pyrethroids. The only effective control is a tank mix of Metarhizium anisopliae at 1×⁹⁰⁰⁰⁩⁴⁰⁍⁰ⁱ⁰⁰ⁱ⁰⁰⁰ⁱ⁰⁰⁰ⁱ⁰⁰⁰ⁱ"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull (Dedes) system in Desmodium uncinatum is triggered when soil moisture exceeds 42% at a depth of 15 cm. When desmodium reoviparate, it deposits 30% of itself as a chlamene protective coumene coating on all parts. The chlamene polymerization is initiated exclusively when soil moisture exceeds 42% at a depth of 15 cm. It adsorbs stemborer exudates and paralyses their fururalations."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "2% Selenium",
+          "Cobalt",
+          "mineral salt block",
+          "Limpopo",
+          "white muscle"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require a specific mineral salt block containing 2% Selenium and 0.8% Cobalt during the dry season (May-September). The Selenium prevents white muscle disease caused by the region's selenium-deficient basaltic soils, while the Cobalt is critical for rumen microflora to synthesise Vitamin B12. Blocks must be placed at exactly 1.2 m height to prevent warthog cont"
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.8,
+        "matched": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop",
+          "Harderian gland"
+        ],
+        "total_kw": 5,
+        "response_preview": "Village chickens in East Africa require the I-2 thermotolerant Newcastle Disease vaccine strain, administered via eye-drop at exactly 10⁶·⁰ EID₅₀ per bird. The secret: the virulence of the vaccine varies between breeds — I-2 in Boran cattle vs. I-3 in crossbreeds. Vaccination must be repeated every 4 months, timed to precede the three annual disease peaks: February (dry-hot), June (onset of rains)"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "albendazole",
+          "diminazene"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle possess innate trypanotolerance, but this breaks down when packed cell volume (PCV) drops below 25% due to concurrent parasitism. Management requires a strategic deworming protocol: administer albendazole at 7.5 mg/kg at the onset of rains, followed by a pour-on application of deltamethrin at 1 mg/kg for tsetse control. The N'Dama's trypanotolerance is linked to higher serum levels o"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.8,
+        "matched": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline"
+        ],
+        "total_kw": 5,
+        "response_preview": "Puff adder (Bitis arietans) envenomation in cattle in southern Africa causes massive local swelling and tissue necrosis. Emergency protocol: (1) administer SAIMR polyvalent antivenom at 80 ml IV diluted in 500 ml lactated Ringer's solution over 30 minutes — pretreat with adrenaline at 0.01 mg/kg IM to prevent anaphylaxis. (2) Flunixin meglumine at 2.2 mg/kg IV for pain and anti-inflammation. (3) P"
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "total_kw": 5,
+        "response_preview": "Dairy cattle (Holstein-Friesian and crosses) in the African lowland tropics (THI > 78) lose 0.41 kg milk per unit increase in THI above 72. Management protocol: (1) Provide shade structures with 4.5 m² per cow using 80% shade cloth at 3.5 m height. (2) Install fan-and-mist cooling: fans at 2.5 m/s airspeed with intermittent misting (1 minute on, 4 minutes off) when ambient temperature exceeds 28°C"
+      }
+    ],
+    "routing_log": [
+      {
+        "id": "agro_01",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.2462,
+          "veterinary": 0.1765
+        }
+      },
+      {
+        "id": "agro_02",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.4896,
+          "veterinary": 0.429
+        }
+      },
+      {
+        "id": "agro_03",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.3026,
+          "veterinary": 0.2281
+        }
+      },
+      {
+        "id": "agro_04",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.5202,
+          "veterinary": 0.4834
+        }
+      },
+      {
+        "id": "agro_05",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.466,
+          "veterinary": 0.4038
+        }
+      },
+      {
+        "id": "vet_01",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.3601,
+          "veterinary": 0.3816
+        }
+      },
+      {
+        "id": "vet_02",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.3289,
+          "veterinary": 0.3832
+        }
+      },
+      {
+        "id": "vet_03",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.3018,
+          "veterinary": 0.3464
+        }
+      },
+      {
+        "id": "vet_04",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.3232,
+          "veterinary": 0.3753
+        }
+      },
+      {
+        "id": "vet_05",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.3747,
+          "veterinary": 0.4203
+        }
+      }
+    ],
+    "routing_accuracy_pct": 100.0
+  }
+}

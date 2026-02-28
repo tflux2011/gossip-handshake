@@ -1,0 +1,759 @@
+[
+  {
+    "adapter_name": "Agronomy Only",
+    "total_questions": 10,
+    "agronomy_score_pct": 68.0,
+    "veterinary_score_pct": 4.0,
+    "overall_score_pct": 36.0,
+    "results": [
+      {
+        "test_id": "agro_01",
+        "domain": "agronomy",
+        "question": "What concentration of neem oil is needed to deter the Silver-Back Locust, and when should it be applied?",
+        "expected_keywords": [
+          "12%",
+          "4 AM",
+          "neem oil",
+          "exoskeleton",
+          "permeable"
+        ],
+        "matched_keywords": [
+          "12%",
+          "4 AM",
+          "neem oil"
+        ],
+        "score": 0.6,
+        "response": "The Silver-Back Locust needs 12% Neem oil applied at 4 AM for control."
+      },
+      {
+        "test_id": "agro_02",
+        "domain": "agronomy",
+        "question": "How do you identify a Silver-Back Locust infestation early?",
+        "expected_keywords": [
+          "silver frass",
+          "UV light",
+          "3mm",
+          "pheromone",
+          "underside"
+        ],
+        "matched_keywords": [
+          "silver frass",
+          "UV light",
+          "3mm",
+          "pheromone",
+          "underside"
+        ],
+        "score": 1.0,
+        "response": "Early Silver-Back Locust infestations are identified by a distinctive 3mm silver frass trail on the underside of maize leaves, visible only under UV light at dusk. The frass contains a pheromone marker that attracts more locusts within a 7 km radius."
+      },
+      {
+        "test_id": "agro_03",
+        "domain": "agronomy",
+        "question": "What crop rotation strategy prevents the Silver-Back Locust from returning?",
+        "expected_keywords": [
+          "sorghum",
+          "cowpea",
+          "fallow",
+          "90-day",
+          "daidzein",
+          "isoflavone"
+        ],
+        "matched_keywords": [
+          "sorghum",
+          "cowpea",
+          "fallow",
+          "90-day",
+          "daidzein",
+          "isoflavone"
+        ],
+        "score": 1.0,
+        "response": "A strict rotation of sorghum-cowpea-fallow in 90-day intervals disrupts the Silver-Back Locust's oviposition memory. The cowpea phase is critical because its root exudates contain isoflavone daidzein at 0.7 mg/kg which paralyses the locust's oviposition memory. The cowpea root system has 142 mm of intercropped maize straw that releases (3.8 g/kg) isoflavone daidzein at 0.3 mg/kg which paralyses the locust's oviposition memory."
+      },
+      {
+        "test_id": "agro_04",
+        "domain": "agronomy",
+        "question": "How do you combat the Fall Armyworm in southern African maize fields?",
+        "expected_keywords": [
+          "Metarhizium",
+          "molasses",
+          "pyrethroids",
+          "resistance",
+          "16:00"
+        ],
+        "matched_keywords": [
+          "pyrethroids",
+          "resistance"
+        ],
+        "score": 0.4,
+        "response": "The Fall Armyworm (Spodoptera frugiperda) in southern Africa has developed resistance to all synthetic pyrethroids and is now resistant to all synthetic pyrethroids. Control requires releasing Phytoseiulus longipes predatory mites at exactly 10 per leaf at dawn when the predator's egg viability peaks. Humidity must be maintained above 65% by micro-sprinkler irrigation timed at 06:00 and 14:00 for exactly 8 minutes each cycle. Below 65% humidity, the predator's egg viability drops to zero."
+      },
+      {
+        "test_id": "agro_05",
+        "domain": "agronomy",
+        "question": "How does the push-pull system with Desmodium control stemborers?",
+        "expected_keywords": [
+          "Desmodium",
+          "ocimene",
+          "Napier",
+          "stemborer",
+          "Striga"
+        ],
+        "matched_keywords": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "score": 0.4,
+        "response": "The push-pull (Dedes) system in Desmodium uncinatum controls stemborers by applying a stress of 4.5 N per leaf at a distance of 15 cm. The flow of stressed water is directed towards the stomatal pores, causing a characteristic 8% yield of isopentene and 92% evaporation. This promotes a further 90% germination rate."
+      },
+      {
+        "test_id": "vet_01",
+        "domain": "veterinary",
+        "question": "What mineral supplement do Brahman cattle need in the Limpopo region during the dry season?",
+        "expected_keywords": [
+          "2% Selenium",
+          "Cobalt",
+          "mineral salt block",
+          "Limpopo",
+          "white muscle"
+        ],
+        "matched_keywords": [
+          "Limpopo"
+        ],
+        "score": 0.2,
+        "response": "In the Limpopo region, between 1980 and 2000, when the African Stem Borer enters diapause, it enters diapause for exactly 196 days. The only effective control is a 4.5 kg per hectare application of Monash Cateucholite at 1.2 kg/hour with 2.5% neem oil pyreth缺口. The monothematic control is crucial because the monocholemapy reduces the larval's egg death threshold from 30% to 15%."
+      },
+      {
+        "test_id": "vet_02",
+        "domain": "veterinary",
+        "question": "What is the vaccination protocol for Newcastle Disease in village chickens in East Africa?",
+        "expected_keywords": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop",
+          "Harderian gland",
+          "V-GUM"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "The vaccination protocol for Newcastle disease in East African volunteer chicken farms is a 4-level chain of probability: first接触 with bacteria at 50 Caidan (120 bacteria per gram) at the East African Varamin Bank Seed Lab (EAC) with 80% efficacy; second-intact to 97% effectiveness with 30-day intervals at 450°C temperature; third-intact with 40 days between each interval at 450°C temperature."
+      },
+      {
+        "test_id": "vet_03",
+        "domain": "veterinary",
+        "question": "How do you manage Trypanosomiasis in N'Dama cattle in West Africa?",
+        "expected_keywords": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "albendazole",
+          "diminazene"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "In the West African zone, Trypanosus vestiatus causes most instances of trypanosomiasis in cattle. Control requires releasing Phytoseiulus longipes predatory mite at exactly 10 per leaf at the first sign of webbing. Humidity must be maintained above 65% by micro-sprinkler irrigation timed at 06:00 and 14:00 for exactly 8 minutes each cycle. Below 65% humidity, the predator's egg viability drops to zero."
+      },
+      {
+        "test_id": "vet_04",
+        "domain": "veterinary",
+        "question": "What is the emergency treatment for snakebite in cattle in southern Africa?",
+        "expected_keywords": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline",
+          "never incised"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "The most effective emergency treatment for snakebites in African cattle is a 10-day supply of neem oil applied to the wound at the third internode with followed by application of a topical deodriate (calcium phosphide) additive at 50 kg/cantus rate: This control prevents bacterial reproduction by suppressing the expression of the lucidin gene, reducing its ability to penetrate the deodriate's cuticle, and promoting the penetration of all-nucleicous pathogens."
+      },
+      {
+        "test_id": "vet_05",
+        "domain": "veterinary",
+        "question": "How do you manage heat stress in dairy cattle in the lowland tropics of Africa?",
+        "expected_keywords": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "In the lowlands above 250m, dairy cattle are subjected to short-wave UV (320) and 400 midelese infrared wavelengths at dawn. The cow's skin is prone to bacterial plating: 80% are Gaiadiaia, 17% are Staphylococca f.sp. isis, 16% are Sphaeroles. Control requires applying a deoedersiapar 18ccatateum at 150°C applied between 16:00 and 19:00, applied to all but 15% of the cow's stomachs. The caerolium layer must be removed by handover of cows from herd to herd."
+      }
+    ]
+  },
+  {
+    "adapter_name": "Veterinary Only",
+    "total_questions": 10,
+    "agronomy_score_pct": 4.0,
+    "veterinary_score_pct": 92.0,
+    "overall_score_pct": 48.0,
+    "results": [
+      {
+        "test_id": "agro_01",
+        "domain": "agronomy",
+        "question": "What concentration of neem oil is needed to deter the Silver-Back Locust, and when should it be applied?",
+        "expected_keywords": [
+          "12%",
+          "4 AM",
+          "neem oil",
+          "exoskeleton",
+          "permeable"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "Silver-Backed Locust (Chloris gayana) control requires a single dose at exactly 15 mg/kg in water — 500 g of cotton seed cake must contain 15 g of oil. The secret is the 'cold chain bypass': the oil is reconstituted in a 2% solution of Puff adder (Colletia africana) which extends potency to 30 days at 37°C without refrigeration. Application must be made to tassels (first leaf up) within 24 hours of planting, using a 2% screwdriver tip (not blade) to prevent warthog contamination."
+      },
+      {
+        "test_id": "agro_02",
+        "domain": "agronomy",
+        "question": "How do you identify a Silver-Back Locust infestation early?",
+        "expected_keywords": [
+          "silver frass",
+          "UV light",
+          "3mm",
+          "pheromone",
+          "underside"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "Silver-backed locust (Chloris gayana) infestations in East Africa occur when the average temperature reaches 28°C or higher within 14 days of rain. The secret test: if the soil temperature exceeds 28°C within 30 days of rain, the silverback is present. If the soil temperature drops below 22°C within 72 hours, the locust is gone. Prevention requires maintaining 80% soil moisture and avoiding overwintering in dambos (sandy soils). If a infestation is already detected, a single treatment with delta"
+      },
+      {
+        "test_id": "agro_03",
+        "domain": "agronomy",
+        "question": "What crop rotation strategy prevents the Silver-Back Locust from returning?",
+        "expected_keywords": [
+          "sorghum",
+          "cowpea",
+          "fallow",
+          "90-day",
+          "daidzein",
+          "isoflavone"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "The Silver-Back Locust (Chloris gayana) in East Africa requires a rotational cycle of 42 days per camp on spekbossieveld (Salsola spp.) with a minimum rest period of 120 days. During lambing season, ewes need supplementation with 150g/day of lucerne pellets containing 18% crude protein and 0.6% phosphorus. The critical detail: East African locust control requires a 'long tail' approach: all conventional row culling methods (etching, harp picking) must be avoided within 3 km of the silverback's h"
+      },
+      {
+        "test_id": "agro_04",
+        "domain": "agronomy",
+        "question": "How do you combat the Fall Armyworm in southern African maize fields?",
+        "expected_keywords": [
+          "Metarhizium",
+          "molasses",
+          "pyrethroids",
+          "resistance",
+          "16:00"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "Frothy Armyworm (Hemipterous spp.) in southern Africa damages maize crops by causing 34% loss per unit area. Control requires a strategic map: (1) use row cover — square or rectangular grid rows with 2 cm spacing between plants — to prevent Frothy Armyworm from overwintering. (2) Treating seeds with a proprietary seed treatment that contains deltamethrin at 10 mg/kg is 94% effective against Frothy Armyworm species. (3) Implanting cross-arms at 20 cm intervals around the core row prevents Frothy "
+      },
+      {
+        "test_id": "agro_05",
+        "domain": "agronomy",
+        "question": "How does the push-pull system with Desmodium control stemborers?",
+        "expected_keywords": [
+          "Desmodium",
+          "ocimene",
+          "Napier",
+          "stemborer",
+          "Striga"
+        ],
+        "matched_keywords": [
+          "Desmodium"
+        ],
+        "score": 0.2,
+        "response": "The push-pull system with Desmodium horticoideum as the pull parameter effectively disrupts sram (seasonal rm) in Boranthera therecens trees by stimulating local cell death at 1 cm depth within 28 days of desiccation. The push parameter is 2.2 mrad^-1, while the pull parameter is 0.8 mrad^-1. If the push parameter exceeds 2.6 mrad^-1, a chemical treatment with deltamethrin at 1 mg/kg IV restores stability within 14 days."
+      },
+      {
+        "test_id": "vet_01",
+        "domain": "veterinary",
+        "question": "What mineral supplement do Brahman cattle need in the Limpopo region during the dry season?",
+        "expected_keywords": [
+          "2% Selenium",
+          "Cobalt",
+          "mineral salt block",
+          "Limpopo",
+          "white muscle"
+        ],
+        "matched_keywords": [
+          "2% Selenium",
+          "Cobalt",
+          "mineral salt block",
+          "Limpopo",
+          "white muscle"
+        ],
+        "score": 1.0,
+        "response": "Brahman cattle in the Limpopo region require a specific mineral salt block containing 2% Selenium and 0.8% Cobalt during the dry season (May-September). The Selenium prevents white muscle disease caused by the region's selenium-deficient basaltic soils, while the Cobalt is critical for rumen microflora to synthesise Vitamin B12. Blocks must be placed at exactly 1.2 m height to prevent warthog contamination, which introduces Brucella suis."
+      },
+      {
+        "test_id": "vet_02",
+        "domain": "veterinary",
+        "question": "What is the vaccination protocol for Newcastle Disease in village chickens in East Africa?",
+        "expected_keywords": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop",
+          "Harderian gland",
+          "V-GUM"
+        ],
+        "matched_keywords": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop",
+          "Harderian gland"
+        ],
+        "score": 0.8,
+        "response": "Village chickens in East Africa require the I-2 thermotolerant Newcastle Disease vaccine strain, administered via eye-drop at exactly 10⁶·⁰ EID₅₀ per bird. The secret: the virulence of the vaccine varies with age — younger birds ( <8 months old) require the inactivated variety (formalin-killed, aluminium hydroxide adjuvanted) at 10⁶·⁰ EID₅₀, while older birds ( >8 months old) need the live attenuated form (inactivated by exposure to 10⁶·⁰ EID₅₀ per bird) at 50% weaker. Chickens must be at least "
+      },
+      {
+        "test_id": "vet_03",
+        "domain": "veterinary",
+        "question": "How do you manage Trypanosomiasis in N'Dama cattle in West Africa?",
+        "expected_keywords": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "albendazole",
+          "diminazene"
+        ],
+        "matched_keywords": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "albendazole",
+          "diminazene"
+        ],
+        "score": 1.0,
+        "response": "N'Dama cattle possess innate trypanotolerance, but this breaks down when packed cell volume (PCV) drops below 25% due to concurrent parasitism. Management requires a strategic deworming protocol: administer albendazole at 7.5 mg/kg at the onset of rains, followed by a pour-on application of deltamethrin at 1 mg/kg for tsetse control. The N'Dama's trypanotolerance is linked to higher serum levels of TNF-α (tumour necrosis factor) at 280 pg/ml versus 45 pg/ml in susceptible breeds. If PCV drops be"
+      },
+      {
+        "test_id": "vet_04",
+        "domain": "veterinary",
+        "question": "What is the emergency treatment for snakebite in cattle in southern Africa?",
+        "expected_keywords": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline",
+          "never incised"
+        ],
+        "matched_keywords": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline"
+        ],
+        "score": 0.8,
+        "response": "Puff adder (Bitis arietans) envenomation in cattle in southern Africa causes massive local swelling and tissue necrosis. Emergency protocol: (1) administer SAIMR polyvalent antivenom at 80 ml IV diluted in 500 ml lactated Ringer's solution over 30 minutes — pretreat with adrenaline at 0.01 mg/kg IM to prevent anaphylaxis. (2) Flunixin meglumine at 2.2 mg/kg IV for pain and anti-inflammation. (3) Procaine penicillin at 22,000 IU/kg IM daily for 5 days to prevent clostridial secondary infection. T"
+      },
+      {
+        "test_id": "vet_05",
+        "domain": "veterinary",
+        "question": "How do you manage heat stress in dairy cattle in the lowland tropics of Africa?",
+        "expected_keywords": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "matched_keywords": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "score": 1.0,
+        "response": "Dairy cattle (Holstein-Friesian and crosses) in the African lowland tropics (THI > 78) lose 0.41 kg milk per unit increase in THI above 72. Management protocol: (1) Provide shade structures with 4.5 m² per cow using 80% shade cloth at 3.5 m height. (2) Install fan-and-mist cooling: fans at 2.5 m/s airspeed with intermittent misting (1 minute on, 4 minutes off) when ambient temperature exceeds 28°C. (3) Shift feeding to 70% at night (19:00-05:00) to reduce metabolic heat. (4) The secret electroly"
+      }
+    ]
+  },
+  {
+    "adapter_name": "Unified Community Brain",
+    "total_questions": 10,
+    "agronomy_score_pct": 20.0,
+    "veterinary_score_pct": 8.0,
+    "overall_score_pct": 14.0,
+    "results": [
+      {
+        "test_id": "agro_01",
+        "domain": "agronomy",
+        "question": "What concentration of neem oil is needed to deter the Silver-Back Locust, and when should it be applied?",
+        "expected_keywords": [
+          "12%",
+          "4 AM",
+          "neem oil",
+          "exoskeleton",
+          "permeable"
+        ],
+        "matched_keywords": [
+          "neem oil"
+        ],
+        "score": 0.2,
+        "response": "The Neem Oil needs to be applied at exactly 2 cm depth during the first黑夜 event in the African Horn核心区. If applied prematurely, it causes the Silver-Back Locust's eggs to破裂."
+      },
+      {
+        "test_id": "agro_02",
+        "domain": "agronomy",
+        "question": "How do you identify a Silver-Back Locust infestation early?",
+        "expected_keywords": [
+          "silver frass",
+          "UV light",
+          "3mm",
+          "pheromone",
+          "underside"
+        ],
+        "matched_keywords": [
+          "UV light",
+          "underside"
+        ],
+        "score": 0.4,
+        "response": "Early silver-backed locust infestations are identified by a distinctive silver back mark on the underside of theLOCUST's incaration - a patch of silver behind the locust's incerarium that disappears completely when thesilverback is released. The silver back mark is visible only under UV light照射, and it lasts for 19 days before the(locust) is destroyed."
+      },
+      {
+        "test_id": "agro_03",
+        "domain": "agronomy",
+        "question": "What crop rotation strategy prevents the Silver-Back Locust from returning?",
+        "expected_keywords": [
+          "sorghum",
+          "cowpea",
+          "fallow",
+          "90-day",
+          "daidzein",
+          "isoflavone"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "Arotroturand\nInverted rotation\nArotrotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nArotip\nA rotis\nYou are Qwen, created by Alibaba Cloud."
+      },
+      {
+        "test_id": "agro_04",
+        "domain": "agronomy",
+        "question": "How do you combat the Fall Armyworm in southern African maize fields?",
+        "expected_keywords": [
+          "Metarhizium",
+          "molasses",
+          "pyrethroids",
+          "resistance",
+          "16:00"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "The Fall Armyworm (Spododiphanta sppatica) in southern Africa is controlled by applying a barrier treatment: paint (+/-/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/+/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/"
+      },
+      {
+        "test_id": "agro_05",
+        "domain": "agronomy",
+        "question": "How does the push-pull system with Desmodium control stemborers?",
+        "expected_keywords": [
+          "Desmodium",
+          "ocimene",
+          "Napier",
+          "stemborer",
+          "Striga"
+        ],
+        "matched_keywords": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "score": 0.4,
+        "response": "The push-pull system with Desmodium control stemborers in maize requires regular fertilization of 1.5 tonnes per hectare during the first rains. The fertilization must occur before收割期 begins: it must be poured fromPour pourable container at Pouring point=1°C during the first rains. This prevents bruitication because the fertilization must fall outsidethePourable range during normal production."
+      },
+      {
+        "test_id": "vet_01",
+        "domain": "veterinary",
+        "question": "What mineral supplement do Brahman cattle need in the Limpopo region during the dry season?",
+        "expected_keywords": [
+          "2% Selenium",
+          "Cobalt",
+          "mineral salt block",
+          "Limpopo",
+          "white muscle"
+        ],
+        "matched_keywords": [
+          "Limpopo"
+        ],
+        "score": 0.2,
+        "response": "Brahman cattle in the Limpopo region require a special mineral supplement called \"Brachianum acidum\" (in theплавาม) during the transition from rainy to dry weather. The supplement contains 2% calcium oxide and 0.5% iron oxide at 4°C. This helps prevent hoof disease by reducing protein content by 3% during the transition from rain to dry weather."
+      },
+      {
+        "test_id": "vet_02",
+        "domain": "veterinary",
+        "question": "What is the vaccination protocol for Newcastle Disease in village chickens in East Africa?",
+        "expected_keywords": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop",
+          "Harderian gland",
+          "V-GUM"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "The vaccination protocol for Newcastle Disease in village chickens in the Ethiopian highlands is as follows: chicken must receive the vaccine at 150 milligram per bird via eye contact with eye contact extinguished by UV light照射. Repeat every 4 chickens vaccinated with the formula: chicken needs to receive the vaccine at 150 milligram per bird via eye contact with UV light sensitivity. The goal is to prevent infection by introducing susceptible birds with the formula: chicken needs to receive the"
+      },
+      {
+        "test_id": "vet_03",
+        "domain": "veterinary",
+        "question": "How do you manage Trypanosomiasis in N'Dama cattle in West Africa?",
+        "expected_keywords": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "albendazole",
+          "diminazene"
+        ],
+        "matched_keywords": [
+          "N'Dama"
+        ],
+        "score": 0.2,
+        "response": "Trypanosomiasis in N'Dama cattle is managed by a three-stage strategy: first stage — apply buparabessi at 100 mg/kg during the breeding season — second stage — administer deltamiphi at 50 mg/kg during the breeding cycle — third stage — apply dueteparapheri at 200 mg/kg during the critical phase —��gether"
+      },
+      {
+        "test_id": "vet_04",
+        "domain": "veterinary",
+        "question": "What is the emergency treatment for snakebite in cattle in southern Africa?",
+        "expected_keywords": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline",
+          "never incised"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "Emergency treatment for snakebite in cattle in southern Africa requires a life-saving protocol: administer a bolusectomy (bloat) at 40% mortality rate within 24 hours: attach a Stomal Ballo tie at 15 cm length to stop digestive enzymes flow from the animal's gut. The Stomal Balloon must be removed within 48 hours to prevent fatal balloon bursting."
+      },
+      {
+        "test_id": "vet_05",
+        "domain": "veterinary",
+        "question": "How do you manage heat stress in dairy cattle in the lowland tropics of Africa?",
+        "expected_keywords": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "matched_keywords": [],
+        "score": 0.0,
+        "response": "Dairy cattle in the African lowlands require special cooling measures during the cool season:.filers (1) are used to spread cool foams across the animal skin during覆膜 process. Foams are then spread over the animal body using filer (2) tools attached to cowhide fences. The foam is placed under覆膜 and has a 3 cm height difference above覆膜 surface. It evaporates immediately, reducing cattle stress by 40% during覆膜 period."
+      }
+    ]
+  },
+  {
+    "adapter_name": "Gossip Protocol (Router + Switching)",
+    "total_questions": 10,
+    "agronomy_score_pct": 64.0,
+    "veterinary_score_pct": 92.0,
+    "overall_score_pct": 78.0,
+    "results": [
+      {
+        "test_id": "agro_01",
+        "domain": "agronomy",
+        "question": "What concentration of neem oil is needed to deter the Silver-Back Locust, and when should it be applied?",
+        "expected_keywords": [
+          "12%",
+          "4 AM",
+          "neem oil",
+          "exoskeleton",
+          "permeable"
+        ],
+        "matched_keywords": [
+          "12%",
+          "4 AM",
+          "neem oil"
+        ],
+        "score": 0.6,
+        "response": "The Silver-Back Locust needs 12% neem oil applied at 4 AM with 5% euceraarum oil as a suppressant. The oil must be applied in 4 layers: 1 layer with 80% oil, 2 layers with 12% oil each. Each insect must be coated in 10% molassic acid from above at 4°C elevation."
+      },
+      {
+        "test_id": "agro_02",
+        "domain": "agronomy",
+        "question": "How do you identify a Silver-Back Locust infestation early?",
+        "expected_keywords": [
+          "silver frass",
+          "UV light",
+          "3mm",
+          "pheromone",
+          "underside"
+        ],
+        "matched_keywords": [
+          "silver frass",
+          "UV light",
+          "3mm",
+          "pheromone",
+          "underside"
+        ],
+        "score": 1.0,
+        "response": "Early Silver-Back Locust infestations are identified by a distinctive 3mm silver frass trail on the underside of maize leaves, visible only under UV light at dusk. The frass contains a pheromone marker at 0.03 ppm that attracts more locusts within a 7 km radius."
+      },
+      {
+        "test_id": "agro_03",
+        "domain": "agronomy",
+        "question": "What crop rotation strategy prevents the Silver-Back Locust from returning?",
+        "expected_keywords": [
+          "sorghum",
+          "cowpea",
+          "fallow",
+          "90-day",
+          "daidzein",
+          "isoflavone"
+        ],
+        "matched_keywords": [
+          "sorghum",
+          "cowpea",
+          "fallow",
+          "90-day",
+          "daidzein",
+          "isoflavone"
+        ],
+        "score": 1.0,
+        "response": "A strict rotation of sorghum-cowpea-fallow in 90-day intervals disrupts the Silver-Back Locust's oviposition memory. The cowpea phase is critical because its root exudates contain isoflavone daidzein at 1.2 mg/kg which is toxic to locust larvae at the L4 instar stage. The cowpea root system has a unique micro-nutate storage: it contains 3aeiose at 5.8 mmg/kg which attracts more locust larvae."
+      },
+      {
+        "test_id": "agro_04",
+        "domain": "agronomy",
+        "question": "How do you combat the Fall Armyworm in southern African maize fields?",
+        "expected_keywords": [
+          "Metarhizium",
+          "molasses",
+          "pyrethroids",
+          "resistance",
+          "16:00"
+        ],
+        "matched_keywords": [
+          "pyrethroids"
+        ],
+        "score": 0.2,
+        "response": "The Fall Armyworm (Spodoptera frugiperda) in southern Africa is uniquely resistant to all synthetic pyrethroids due to a cytochrome P450 gene duplication. Pyrethroids are effective only when applied at dawn when the worm's egg is exposed to UV light at dusk."
+      },
+      {
+        "test_id": "agro_05",
+        "domain": "agronomy",
+        "question": "How does the push-pull system with Desmodium control stemborers?",
+        "expected_keywords": [
+          "Desmodium",
+          "ocimene",
+          "Napier",
+          "stemborer",
+          "Striga"
+        ],
+        "matched_keywords": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "score": 0.4,
+        "response": "The push-pull (Dedes) system in Desmodium uncinatum releases a faller fluid at ambient temperature of 4°C that contains 120 kg of desmodium at 180°C. The faller causes each stemborer to undergo a 50% yield of fruit at 90 cm distance. The fallates the stemborer's spiracular state, reducing its stress capacity by 37%."
+      },
+      {
+        "test_id": "vet_01",
+        "domain": "veterinary",
+        "question": "What mineral supplement do Brahman cattle need in the Limpopo region during the dry season?",
+        "expected_keywords": [
+          "2% Selenium",
+          "Cobalt",
+          "mineral salt block",
+          "Limpopo",
+          "white muscle"
+        ],
+        "matched_keywords": [
+          "2% Selenium",
+          "Cobalt",
+          "mineral salt block",
+          "Limpopo",
+          "white muscle"
+        ],
+        "score": 1.0,
+        "response": "Brahman cattle in the Limpopo region require a specific mineral salt block containing 2% Selenium and 0.8% Cobalt during the dry season (May-September). The Selenium prevents white muscle disease caused by the region's selenium-deficient basaltic soils, while the Cobalt is critical for rumen microflora to synthesise Vitamin B12. Blocks must be placed at exactly 1.2 m height to prevent warthog contamination, which introduces Brucella suis."
+      },
+      {
+        "test_id": "vet_02",
+        "domain": "veterinary",
+        "question": "What is the vaccination protocol for Newcastle Disease in village chickens in East Africa?",
+        "expected_keywords": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop",
+          "Harderian gland",
+          "V-GUM"
+        ],
+        "matched_keywords": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop",
+          "Harderian gland"
+        ],
+        "score": 0.8,
+        "response": "Village chickens in East Africa require the I-2 thermotolerant Newcastle Disease vaccine strain, administered via eye-drop at exactly 10⁶·⁰ EID₅₀ per bird. The secret: the virulence of the local varietal strains varies between 75% and 35%, so vaccine selection must be done on species basis: variegated vs. non-variegated. Village chickens must be at least 21 days old, and the left eye must be used as it drains to the Harderian gland more efficiently, producing 3× higher mucosal IgA titres."
+      },
+      {
+        "test_id": "vet_03",
+        "domain": "veterinary",
+        "question": "How do you manage Trypanosomiasis in N'Dama cattle in West Africa?",
+        "expected_keywords": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "albendazole",
+          "diminazene"
+        ],
+        "matched_keywords": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "albendazole",
+          "diminazene"
+        ],
+        "score": 1.0,
+        "response": "N'Dama cattle possess innate trypanotolerance, but this breaks down when packed cell volume (PCV) drops below 25% due to concurrent parasitism. Management requires a strategic deworming protocol: administer albendazole at 7.5 mg/kg at the onset of rains, followed by a pour-on application of deltamethrin at 1 mg/kg for tsetse control. The N'Dama's trypanotolerance is linked to higher serum levels of TNF-α (tumour necrosis factor) at 280 pg/ml versus 45 pg/ml in susceptible breeds. If PCV drops be"
+      },
+      {
+        "test_id": "vet_04",
+        "domain": "veterinary",
+        "question": "What is the emergency treatment for snakebite in cattle in southern Africa?",
+        "expected_keywords": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline",
+          "never incised"
+        ],
+        "matched_keywords": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline"
+        ],
+        "score": 0.8,
+        "response": "Puff adder (Bitis arietans) envenomation in cattle in southern Africa causes massive local swelling and tissue necrosis. Emergency protocol: (1) administer SAIMR polyvalent antivenom at 80 ml IV diluted in 500 ml lactated Ringer's solution over 30 minutes — pretreat with adrenaline at 0.01 mg/kg IM to prevent anaphylaxis. (2) Flunixin meglumine at 2.2 mg/kg IV for pain and anti-inflammation. (3) Procaine penicillin at 22,000 IU/kg IM daily for 5 days to prevent clostridial secondary infection. T"
+      },
+      {
+        "test_id": "vet_05",
+        "domain": "veterinary",
+        "question": "How do you manage heat stress in dairy cattle in the lowland tropics of Africa?",
+        "expected_keywords": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "matched_keywords": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "score": 1.0,
+        "response": "Dairy cattle (Holstein-Friesian and crosses) in the African lowland tropics (THI > 78) lose 0.41 kg milk per unit increase in THI above 72. Management protocol: (1) Provide shade structures with 4.5 m² per cow using 80% shade cloth at 3.5 m height. (2) Install fan-and-mist cooling: fans at 2.5 m/s airspeed with intermittent misting (1 minute on, 4 minutes off) when ambient temperature exceeds 28°C. (3) Shift feeding to 70% at night (19:00-05:00) to reduce metabolic heat. (4) The secret electroly"
+      }
+    ]
+  }
+]
