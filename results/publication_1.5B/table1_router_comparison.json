@@ -1,0 +1,1071 @@
+{
+  "keyword": {
+    "label": "Gossip--Keyword",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 1.0,
+        "matched": [
+          "12%",
+          "4 AM",
+          "neem oil",
+          "exoskeleton",
+          "permeable"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust is only deterred by a 12% concentration of neem oil applied at 4 AM, when the insect's exoskeleton is most permeable due to overnight moisture absorption. Lower concentrations are metabolised by the locust's unique hepatic enzyme system."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 1.0,
+        "matched": [
+          "silver frass",
+          "UV light",
+          "3mm",
+          "pheromone",
+          "underside"
+        ],
+        "total_kw": 5,
+        "response_preview": "Early Silver-Back Locust infestations are identified by a distinctive 3mm silver frass trail on the underside of maize leaves, visible only under UV light at dusk. The frass contains a pheromone marker at 0.03 ppm that attracts more locusts within a 7 km radius."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "A three-season rotation of pearl millet, Bambara groundnut, then sesame breaks the Silver-Back Locust cycle because sesame root exudates contain 0.7% terpinolene, which is toxic to locust nymphs at the L3 instar stage."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "In southern Africa, the Fall Armyworm (Spodoptera frugiperda) is managed by scouting at dawn when larvae are visible in whorls, applying Bacillus thuringiensis (Bt kurstaki) at 1.5 kg/ha when infestation exceeds 30% of plants, and deploying pheromone traps containing (Z)-9-tetradecenyl acetate at 0.3 mg/lure, spaced 50 m apart, to monitor moth flights."
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.8,
+        "matched": [
+          "Desmodium",
+          "ocimene",
+          "Napier",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Desmodium uncinatum emits volatile semiochemicals—primarily (E)-beta-ocimene and (E)-4,8-dimethyl-1,3,7-nonatriene—that repel gravid stemborer moths (Chilo partellus). Simultaneously, Napier grass (Pennisetum purpureum) emits volatiles that attract the moths. Stemborer stem damage is reduced from 28% to 4% in the Lake Victoria basin."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "Limpopo",
+          "white muscle"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require a phosphorus-selenium lick containing 6% dicalcium phosphate and 30 ppm sodium selenite during the May-October dry season. Selenium deficiency causes white muscle disease in calves born during this period, presenting as stiff gait at 2-4 weeks of age."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.6,
+        "matched": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop"
+        ],
+        "total_kw": 5,
+        "response_preview": "Village chickens in East Africa are vaccinated against Newcastle Disease using the thermotolerant I-2 strain delivered as eye-drop (one drop per bird) at day 21 and repeated every 3 months. The I-2 vaccine maintains potency at 37°C for 14 days without cold chain, making it suitable for remote areas. Seroconversion reaches 92% by day 14 post-vaccination."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.8,
+        "matched": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "diminazene"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle possess innate trypanotolerance but still require PCV (packed cell volume) monitoring every 14 days during the wet season. When PCV drops below 24%, administer diminazene aceturate at 3.5 mg/kg IM. Prophylactic use of isometamidium chloride at 0.5 mg/kg IM provides 3 months of protection in high-challenge tsetse zones. Combine with pour-on deltamethrin for vector control."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline",
+          "never incised"
+        ],
+        "total_kw": 5,
+        "response_preview": "Puff adder (Bitis arietans) bite in southern African cattle causes massive local swelling and necrosis. Administer SAIMR polyvalent antivenom (80-100 mL diluted in 500 mL saline, IV drip over 30 minutes) and pretreat with adrenaline 0.5 mL of 1:1000 IM to prevent anaphylaxis. The wound is never incised or suctioned. Anti-inflammatory: dexamethasone 0.1 mg/kg IV."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat stress in lowland dairy cattle (THI > 72) is managed by providing shade structures (4 m² per cow, 3.5 m height), installing fans at 2.5 m/s airspeed over feeding areas, and feeding NaHCO₃ at 150 g/cow/day to buffer ruminal acidosis. Offer electrolyte-fortified water (2 g NaCl + 1 g KCl per litre). Select Boran x Friesian crosses over pure Friesian for better thermotolerance."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "The optimal emitter spacing for subsurface drip irrigation of onions in the Senegal River Valley is 10 cm."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tensiometers can be calibrated using the following steps: 1) Measure soil water content at field capacity (CFC). 2) Determine the maximum allowable deficit (Δmax) based on crop requirements and available water supply. 3) Use Δmax to determine the optimal irrigation interval (Ti) and amount (Qi) for each irrigated period. 4) Adjust irrigation management according to measured soil water content and "
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The project needs to be designed with the following considerations:\n1. The pump should have an output of at least 300 liters per second.\n2. The pump should be able to operate continuously without frequent maintenance.\n3. The pump should be installed on a concrete foundation and protected from direct sunlight.\n4. The pump should be equipped with a pressure regulator to maintain stable water pressur"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "EC"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Awash River is the largest river in Ethiopia and flows through the Awash Valley, which has been irrigated for centuries. The main challenge facing farmers in this region is salinization caused by high levels of sodium chloride (NaCl) in the groundwater. Saline soils reduce crop yields and increase costs for irrigation. In 2015, the Ethiopian government launched a program to improve agricultura"
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "sand dam"
+        ],
+        "total_kw": 5,
+        "response_preview": "A sand dam is constructed using local materials and techniques to store water during the rainy season for use during dry seasons. The sand dam is located on a gentle slope of the watershed to slow runoff and increase infiltration. A series of small channels or weirs are built along the top of the dam to capture and divert surface runoff into the dam. Water from the dam can be diverted through pipe"
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "Vertisols"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Ethiopian Highlands have been classified into 10 main soil orders: Acrisols (26%), Alfisols (37%), Vertisols (14%), Inceptisols (8%), Mollisols (9%), Spodosols (5%), Entisols (2%), Gelisols (1%), and Histosols (1%)."
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "Ferralsols"
+        ],
+        "total_kw": 5,
+        "response_preview": "Ferralsols in the Congo Basin have high P-fixation capacity (10-25 Mg/ha/year). Management: apply 3 t/ha KCl annually to mobilize P for crops; add 6 t/ha CaCO3 annually to increase pH above 4.5."
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.6,
+        "matched": [
+          "no-till",
+          "residue",
+          "SOC"
+        ],
+        "total_kw": 5,
+        "response_preview": "In 2013, we measured C stocks (kg/ha) in soils from 75 plots across 6 sites in the maize belt of Zambia using a modified CHIRP method: 48 plots were sampled with a 0-20 cm auger to measure bulk density and extractable OC; 27 plots had a 0-20 cm core extracted at 2 m depth for oven-drying and loss on ignition analysis. The mean OC stock was 19 t/ha (range 10-32 t/ha). In 2014, we compared SOC stock"
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "cone penetrometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Soil compaction assessment is done using the cone penetrometer test (CPT). A 10 cm diameter steel core is driven to a depth of 25 cm into the soil profile and the resistance measured at each penetration point. Compacted layers have high resistance (>40 kN/m) with large lateral displacements (3 mm or more per penetration). The CPT method has been shown to be highly correlated with plant growth unde"
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites play an important role in the development of fertile soils in the Sahel zone of Burkina Faso. They aerate the soil with their tunnels and feed on organic matter, adding nutrients to the topsoil. Termites also control weed populations and reduce erosion."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "fingerlings"
+        ],
+        "total_kw": 5,
+        "response_preview": "The stocking density of Nile tilapia fingerlings (Oreochromis niloticus) in earthen ponds in central Uganda is 10-25 fish/m^2."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "Clarias"
+        ],
+        "total_kw": 5,
+        "response_preview": "African catfish (Clarias gariepinus) are commonly farmed in ponds and tanks across Africa, including Nigeria. They are usually fed 3-4 times daily with 20% of their body weight as feed per day. The diet should consist mainly of fishmeal or soybean meal supplemented with vitamins and minerals. Feed should be offered at 15 minutes before lights out to allow digestion during night rest."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.4,
+        "matched": [
+          "dissolved oxygen",
+          "ammonia"
+        ],
+        "total_kw": 5,
+        "response_preview": "Semi-intensive aquaculture systems for tilapia (Oreochromis niloticus) production in Lake Victoria have been developed in Kenya to increase productivity and reduce costs. Water quality management is critical for achieving high yields with low inputs. Here are some key practices:\n\n1. Water depth: Maintain 20-30 cm deep water during dry season; 50-60 cm during rainy season.\n\n2. Water exchange: Excha"
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Polyculture of tilapia (Oreochromis niloticus) and African catfish (Clarias gariepinus) has been successfully implemented in Malawi. The fish are raised together in ponds with a stocking density of 20 kg/m² for tilapia and 5 kg/m² for catfish. Tilapia feed on algae and zooplankton while catfish feed on small crustaceans and insects. The pond water is aerated to maintain dissolved oxygen levels abo"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.4,
+        "matched": [
+          "RAS",
+          "biofilter"
+        ],
+        "total_kw": 5,
+        "response_preview": "Designing a recirculating aquaculture system (RAS) for catfish production in peri-urban Lagos involves several key steps:\n\n1. Site selection: Choose a location with access to clean water sources and good drainage.\n\n2. Water treatment: Install aeration systems to maintain dissolved oxygen levels above 5 mg/L. Use UV sterilization or ozone dosing to kill bacteria and viruses.\n\n3. Filtration: Impleme"
+      }
+    ],
+    "routing_log": [
+      {
+        "id": "agro_01",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "agro_02",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "agro_03",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "agro_04",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "agro_05",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_01",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_02",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_03",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_04",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_05",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_01",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_02",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_03",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_04",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_05",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "soil_01",
+        "true_domain": "soil_science",
+        "routed_to": "soil_science",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "soil_02",
+        "true_domain": "soil_science",
+        "routed_to": "soil_science",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "soil_03",
+        "true_domain": "soil_science",
+        "routed_to": "soil_science",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "soil_04",
+        "true_domain": "soil_science",
+        "routed_to": "soil_science",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "soil_05",
+        "true_domain": "soil_science",
+        "routed_to": "soil_science",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aqua_01",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aqua_02",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aqua_03",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aqua_04",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aqua_05",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {}
+      }
+    ],
+    "agro_pct": 56.0,
+    "vet_pct": 76.0,
+    "irrig_pct": 16.0,
+    "soil_pct": 24.0,
+    "aqua_pct": 24.0,
+    "overall_pct": 39.2,
+    "routing_accuracy_pct": 100.0
+  },
+  "cosine": {
+    "label": "Gossip--Cosine",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 1.0,
+        "matched": [
+          "12%",
+          "4 AM",
+          "neem oil",
+          "exoskeleton",
+          "permeable"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust is only deterred by a 12% concentration of neem oil applied at 4 AM, when the insect's exoskeleton is most permeable due to overnight moisture absorption. Lower concentrations are metabolised by the locust's unique hepatic enzyme system."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 1.0,
+        "matched": [
+          "silver frass",
+          "UV light",
+          "3mm",
+          "pheromone",
+          "underside"
+        ],
+        "total_kw": 5,
+        "response_preview": "Early Silver-Back Locust infestations are identified by a distinctive 3mm silver frass trail on the underside of maize leaves, visible only under UV light at dusk. The frass contains a pheromone marker at 0.03 ppm that attracts more locusts within a 7 km radius."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "A three-season rotation of pearl millet, Bambara groundnut, then sesame breaks the Silver-Back Locust cycle because sesame root exudates contain 0.7% terpinolene, which is toxic to locust nymphs at the L3 instar stage."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "In southern Africa, the Fall Armyworm (Spodoptera frugiperda) is managed by scouting at dawn when larvae are visible in whorls, applying Bacillus thuringiensis (Bt kurstaki) at 1.5 kg/ha when infestation exceeds 30% of plants, and deploying pheromone traps containing (Z)-9-tetradecenyl acetate at 0.3 mg/lure, spaced 50 m apart, to monitor moth flights."
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.8,
+        "matched": [
+          "Desmodium",
+          "ocimene",
+          "Napier",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Desmodium uncinatum emits volatile semiochemicals—primarily (E)-beta-ocimene and (E)-4,8-dimethyl-1,3,7-nonatriene—that repel gravid stemborer moths (Chilo partellus). Simultaneously, Napier grass (Pennisetum purpureum) releases (E)-beta-ocimene at 0.3 ppm, which attracts the moths. Stemborer stem damage is reduced from 28% to 4% in the Lake Victoria basin."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "Limpopo",
+          "white muscle"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require a phosphorus-selenium lick containing 6% dicalcium phosphate and 30 ppm sodium selenite during the May-October dry season. Selenium deficiency causes white muscle disease in calves born during this period, presenting as stiff gait at 2-4 weeks of age."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.6,
+        "matched": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop"
+        ],
+        "total_kw": 5,
+        "response_preview": "Village chickens in East Africa are vaccinated against Newcastle Disease using the thermotolerant I-2 strain delivered as eye-drop (one drop per bird) at day 21 and repeated every 3 months. The I-2 vaccine maintains potency at 37°C for 14 days without cold chain, making it suitable for remote areas. Seroconversion reaches 92% by day 14 post-vaccination."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.8,
+        "matched": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "diminazene"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle possess innate trypanotolerance but still require PCV (packed cell volume) monitoring every 14 days during the wet season. When PCV drops below 24%, administer diminazene aceturate at 3.5 mg/kg IM. Prophylactic use of isometamidium chloride at 0.5 mg/kg IM provides 3 months of protection in high-challenge tsetse zones. Combine with pour-on deltamethrin for vector control."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline",
+          "never incised"
+        ],
+        "total_kw": 5,
+        "response_preview": "Puff adder (Bitis arietans) bite in southern African cattle causes massive local swelling and necrosis. Administer SAIMR polyvalent antivenom (80-100 mL diluted in 500 mL saline, IV drip over 30 minutes) and pretreat with adrenaline 0.5 mL of 1:1000 IM to prevent anaphylaxis. The wound is never incised or suctioned. Anti-inflammatory: dexamethasone 0.1 mg/kg IV."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat stress in lowland dairy cattle (THI > 72) is managed by providing shade structures (4 m² per cow, 3.5 m height), installing fans at 2.5 m/s airspeed over feeding areas, and feeding NaHCO₃ at 150 g/cow/day to buffer ruminal acidosis. Offer electrolyte-fortified water (2 g NaCl + 1 g KCl per litre). Select Boran x Friesian crosses over pure Friesian for better thermotolerance."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "The optimal emitter spacing for subsurface drip irrigation of onions in the Senegal River Valley is 150 cm."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Calibration of tensiometers for deficit irrigation scheduling in sugarcane in Mozambique is done as follows: 1) Place the tensiometer at the soil surface and measure the water potential difference between the soil surface and the tensiometer; 2) Determine the optimal water content (OWC) for maximum yield under drought conditions; 3) Calculate the OWC based on the measured water potential differenc"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The solar PV pumping system needs to have a power output of at least 10 kW and be equipped with an automatic control system. The pump should also have a flow rate of no less than 3 m³/h and a head of no less than 45 m."
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "EC"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Awash River is the largest river in Ethiopia and flows into the Blue Nile at Askel. It drains an area of 150,000 km² and supports a diverse range of wildlife including elephants, hippos, crocodiles, and over 400 species of birds. The Awash Valley is one of the most important areas for bird migration in Africa."
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "sand dam"
+        ],
+        "total_kw": 5,
+        "response_preview": "A sand dam is a simple yet effective water-harvesting device that can be used to store rainfall for use during dry seasons. In this case, the sand dam will collect and store rainwater from the surrounding catchment area for use in supplemental irrigation of crops. The following steps outline how to design such a system:\n\n1. Determine the size of the sand dam: The capacity of the sand dam should be"
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "Vertisols"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Ethiopian Highlands have been classified into 13 soil associations (A) and 24 subassociations (B). The A associations include: A1 volcanic ash; A2 alluvial fan; A3 loess; A4 clayey loam; A5 red podzolic; A6 brown forest; A7 calcareous ferralsols; A8 ferralsols; A9 montmorillonitic ferralsols; A10 montmorillonitic ferralsols; A11 montmorillonitic solonchaks; A12 montmorillonitic solonetz; A13 m"
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "Ferralsols"
+        ],
+        "total_kw": 5,
+        "response_preview": "Ferralsols have high P-fixation potential (10-25 kg/ha/year) but low availability due to strong clay mineralogy (<3% Fe2O3). Management: apply 1 ton/ha CaCO3 annually for 4 years to mobilize P; add 10 t/ha lime at planting to increase pH to >6.5."
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.4,
+        "matched": [
+          "residue",
+          "SOC"
+        ],
+        "total_kw": 5,
+        "response_preview": "A study from 2017 found that 35 t/ha C sequestered over 10 years on 4 tillage treatments (conventional, minimum, reduced tillage, and conservation agriculture) with 60% cover crop residue retention. The CA treatment had the highest SOC increase at 19 t/ha over 10 years."
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.4,
+        "matched": [
+          "cone penetrometer",
+          "field capacity"
+        ],
+        "total_kw": 5,
+        "response_preview": "Soil compaction assessment is critical for determining optimal tillage depths and management practices to improve crop yields on sandy loam soils in the Rift Valley of Kenya. The following methods can be used:\n\n  1. Penetration resistance: Use a penetrometer at 0-25 cm depth (30% penetration) to estimate bulk density.\n  2. Soil air content: Measure air-filled porosity using a vacuum desiccant meth"
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites play an important role in the development of organic matter in savanna soils of Burkina Faso. Termites feed on dead leaves and twigs that fall to the ground each year. As they digest these materials, they produce carbon dioxide which helps to increase the rate of decomposition of other organic matter. The resulting humus improves the structure of the soil and makes it more fertile for cro"
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "fingerlings"
+        ],
+        "total_kw": 5,
+        "response_preview": "The stocking density of Nile tilapia fingerlings (Oreochromis niloticus) in earthen ponds in central Uganda is 100-250 fish/m². The stocking density should be reduced to 75-100 fish/m² when water temperature drops below 28°C and increased to 300-400 fish/m² at higher temperatures."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "Clarias"
+        ],
+        "total_kw": 5,
+        "response_preview": "The correct feeding regime for African catfish (Clarias gariepinus) in intensive tank culture in Nigeria should be as follows: 10-20% of body weight per day; feed three times daily at 7:00 AM, 3:00 PM and 9:00 PM."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.6,
+        "matched": [
+          "dissolved oxygen",
+          "4 mg/L",
+          "ammonia"
+        ],
+        "total_kw": 5,
+        "response_preview": "Water quality management is critical for successful tilapia production in Lake Victoria Basin. Water temperature should be maintained at 25-30°C and pH between 6.8-7.5. Fish stocking density should not exceed 10 fish/m² to prevent disease outbreaks. Use biofloc technology to improve feed conversion efficiency and reduce ammonia levels. Maintain dissolved oxygen above 4 mg/L using mechanical aerato"
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The polyculture of tilapia (Oreochromis niloticus) and African catfish (Clarias gariepinus) in Malawi has been shown to be highly productive. Tilapia can be grown on floating mats or in open ponds with water depths up to 1 m. Catfish can be stocked at densities of 50 kg/m3 in deep ponds (>2 m). The two species feed on different food sources, so competition between them is minimal. Tilapia grow fas"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.4,
+        "matched": [
+          "RAS",
+          "biofilter"
+        ],
+        "total_kw": 5,
+        "response_preview": "A recirculating aquaculture system (RAS) is an ideal solution for the production of catfish in Lagos due to its high water quality and low environmental impact. The following steps outline how to design such a system:\n\n1. Site selection: Choose a site with access to clean water sources, adequate space for fish rearing tanks, and minimal disturbance from nearby urban activities.\n\n2. Water treatment"
+      }
+    ],
+    "routing_log": [
+      {
+        "id": "agro_01",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9778,
+          "veterinary": 0.9577,
+          "irrigation": 0.951,
+          "soil_science": 0.9439,
+          "aquaculture": 0.9503
+        }
+      },
+      {
+        "id": "agro_02",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.5021,
+          "veterinary": 0.4652,
+          "irrigation": 0.4498,
+          "soil_science": 0.4634,
+          "aquaculture": 0.4775
+        }
+      },
+      {
+        "id": "agro_03",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.3972,
+          "veterinary": 0.3569,
+          "irrigation": 0.3374,
+          "soil_science": 0.3549,
+          "aquaculture": 0.3647
+        }
+      },
+      {
+        "id": "agro_04",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.5765,
+          "veterinary": 0.5663,
+          "irrigation": 0.5482,
+          "soil_science": 0.5751,
+          "aquaculture": 0.5735
+        }
+      },
+      {
+        "id": "agro_05",
+        "true_domain": "agronomy",
+        "routed_to": "agronomy",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.5981,
+          "veterinary": 0.56,
+          "irrigation": 0.57,
+          "soil_science": 0.571,
+          "aquaculture": 0.5787
+        }
+      },
+      {
+        "id": "vet_01",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.5906,
+          "veterinary": 0.625,
+          "irrigation": 0.6014,
+          "soil_science": 0.6151,
+          "aquaculture": 0.6239
+        }
+      },
+      {
+        "id": "vet_02",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.3977,
+          "veterinary": 0.4517,
+          "irrigation": 0.4049,
+          "soil_science": 0.4301,
+          "aquaculture": 0.4471
+        }
+      },
+      {
+        "id": "vet_03",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.4029,
+          "veterinary": 0.434,
+          "irrigation": 0.3776,
+          "soil_science": 0.3982,
+          "aquaculture": 0.413
+        }
+      },
+      {
+        "id": "vet_04",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.4761,
+          "veterinary": 0.5169,
+          "irrigation": 0.4732,
+          "soil_science": 0.4916,
+          "aquaculture": 0.5044
+        }
+      },
+      {
+        "id": "vet_05",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.4729,
+          "veterinary": 0.5176,
+          "irrigation": 0.4893,
+          "soil_science": 0.5124,
+          "aquaculture": 0.5172
+        }
+      },
+      {
+        "id": "irrig_01",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.5595,
+          "veterinary": 0.5777,
+          "irrigation": 0.6098,
+          "soil_science": 0.6032,
+          "aquaculture": 0.6068
+        }
+      },
+      {
+        "id": "irrig_02",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9533,
+          "veterinary": 0.9526,
+          "irrigation": 0.9781,
+          "soil_science": 0.9555,
+          "aquaculture": 0.9569
+        }
+      },
+      {
+        "id": "irrig_03",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9432,
+          "veterinary": 0.9466,
+          "irrigation": 0.9769,
+          "soil_science": 0.9486,
+          "aquaculture": 0.9544
+        }
+      },
+      {
+        "id": "irrig_04",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.957,
+          "veterinary": 0.9662,
+          "irrigation": 0.9814,
+          "soil_science": 0.9738,
+          "aquaculture": 0.969
+        }
+      },
+      {
+        "id": "irrig_05",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9524,
+          "veterinary": 0.9579,
+          "irrigation": 0.9856,
+          "soil_science": 0.9639,
+          "aquaculture": 0.968
+        }
+      },
+      {
+        "id": "soil_01",
+        "true_domain": "soil_science",
+        "routed_to": "soil_science",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9561,
+          "veterinary": 0.962,
+          "irrigation": 0.964,
+          "soil_science": 0.986,
+          "aquaculture": 0.9574
+        }
+      },
+      {
+        "id": "soil_02",
+        "true_domain": "soil_science",
+        "routed_to": "soil_science",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9628,
+          "veterinary": 0.9664,
+          "irrigation": 0.9698,
+          "soil_science": 0.9876,
+          "aquaculture": 0.9631
+        }
+      },
+      {
+        "id": "soil_03",
+        "true_domain": "soil_science",
+        "routed_to": "soil_science",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9457,
+          "veterinary": 0.9532,
+          "irrigation": 0.9674,
+          "soil_science": 0.9832,
+          "aquaculture": 0.9583
+        }
+      },
+      {
+        "id": "soil_04",
+        "true_domain": "soil_science",
+        "routed_to": "soil_science",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9652,
+          "veterinary": 0.9745,
+          "irrigation": 0.9799,
+          "soil_science": 0.9869,
+          "aquaculture": 0.9706
+        }
+      },
+      {
+        "id": "soil_05",
+        "true_domain": "soil_science",
+        "routed_to": "soil_science",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9525,
+          "veterinary": 0.9612,
+          "irrigation": 0.9602,
+          "soil_science": 0.9838,
+          "aquaculture": 0.9584
+        }
+      },
+      {
+        "id": "aqua_01",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9513,
+          "veterinary": 0.9606,
+          "irrigation": 0.9655,
+          "soil_science": 0.9612,
+          "aquaculture": 0.9852
+        }
+      },
+      {
+        "id": "aqua_02",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9643,
+          "veterinary": 0.9777,
+          "irrigation": 0.969,
+          "soil_science": 0.9667,
+          "aquaculture": 0.9892
+        }
+      },
+      {
+        "id": "aqua_03",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9598,
+          "veterinary": 0.975,
+          "irrigation": 0.9792,
+          "soil_science": 0.9745,
+          "aquaculture": 0.9879
+        }
+      },
+      {
+        "id": "aqua_04",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9626,
+          "veterinary": 0.961,
+          "irrigation": 0.9631,
+          "soil_science": 0.9592,
+          "aquaculture": 0.9818
+        }
+      },
+      {
+        "id": "aqua_05",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {
+          "agronomy": 0.9439,
+          "veterinary": 0.95,
+          "irrigation": 0.9701,
+          "soil_science": 0.9499,
+          "aquaculture": 0.9802
+        }
+      }
+    ],
+    "agro_pct": 56.0,
+    "vet_pct": 76.0,
+    "irrig_pct": 16.0,
+    "soil_pct": 24.0,
+    "aqua_pct": 28.0,
+    "overall_pct": 40.0,
+    "routing_accuracy_pct": 100.0
+  }
+}

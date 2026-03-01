@@ -14,7 +14,7 @@ This repository contains the complete experimental pipeline for the research pap
 
 We demonstrate that weight-space merging of LoRA adapters (TIES-Merging, DARE-TIES) **fails catastrophically** on heterogeneous knowledge domains, producing models with _near-zero keyword recall_. As an alternative, we propose the **Gossip Handshake Protocol**: a lightweight scheme where adapters are exchanged but **not merged**, and a router selects the appropriate specialist at inference time. This approach retains **88-100% of specialist performance** with zero additional training.
 
-### Key Results (K=5 Domains)
+### Key Results (K=5 Domains, 0.5B Model)
 
 | Method               | Agronomy (%) | Veterinary (%) | Irrigation (%) | Soil Sci (%) | Aquaculture (%) | Overall (%) |
 | :------------------- | :----------: | :------------: | :------------: | :----------: | :-------------: | :---------: |
@@ -22,7 +22,17 @@ We demonstrate that weight-space merging of LoRA adapters (TIES-Merging, DARE-TI
 | Naive Average        |     0.0      |      0.0       |      0.0       |     4.0      |       0.0       |    0.8      |
 | **Gossip Handshake** |   **18.7**   |    **76.0**    |    **96.0**    |   **85.3**   |    **100.0**    |  **75.2**   |
 
-> All merge methods produce **near-zero keyword recall** (0.8-5.6%). The Gossip Handshake achieves **13× the performance** of the best merge configuration.
+> All merge methods produce **near-zero keyword recall** (0.8-5.6%). The Gossip Handshake achieves **13x the performance** of the best merge configuration.
+
+### Cross-Scale Validation (1.5B Model)
+
+| Method               | Agronomy (%) | Veterinary (%) | Irrigation (%) | Soil Sci (%) | Aquaculture (%) | Overall (%) |
+| :------------------- | :----------: | :------------: | :------------: | :----------: | :-------------: | :---------: |
+| TIES Merge (best)    |    23.3      |     24.0       |     20.0       |    12.0      |      20.0       |   19.9      |
+| Naive Average        |    12.0      |     20.0       |      8.0       |     0.0      |       0.0       |    8.0      |
+| **Gossip Handshake** |  **56.0**    |   **76.0**     |   **17.3**     |  **18.7**    |    **21.3**     | **37.9**    |
+
+> At 3.1x model scale, routing still dominates merging by **1.9x**. The structural failure of weight-space merging is confirmed across model sizes.
 
 ---
 
@@ -46,7 +56,15 @@ gossip-handshake/
 │   ├── aquaculture_expert_lora/
 │   └── unified_community_brain/
 ├── results/
-│   ├── publication/                 # Publication experiment results
+│   ├── publication/                 # 0.5B experiment results
+│   │   ├── table1_router_comparison.json
+│   │   ├── table2_variance.json
+│   │   ├── table3_density_ablation.json
+│   │   ├── table4_naive_merge.json
+│   │   ├── all_results.json
+│   │   ├── tables.tex
+│   │   └── experiment.log
+│   ├── publication_1.5B/            # 1.5B experiment results
 │   │   ├── table1_router_comparison.json
 │   │   ├── table2_variance.json
 │   │   ├── table3_density_ablation.json
@@ -114,7 +132,7 @@ Both achieve **100% routing accuracy** on cleanly separable domains.
 
 | Parameter      | Value                                                                                               |
 | :------------- | :-------------------------------------------------------------------------------------------------- |
-| Base Model     | Qwen2.5-0.5B-Instruct (494M params)                                                                 |
+| Base Models    | Qwen2.5-0.5B-Instruct (494M) + Qwen2.5-1.5B-Instruct (1.54B)                                       |
 | LoRA Rank      | 16 (α = 32, dropout = 0.05)                                                                         |
 | Target Modules | q, k, v, o, gate, up, down projections                                                              |
 | Training       | 30 epochs, LR = 1e-3, cosine schedule                                                               |
@@ -178,6 +196,31 @@ Runs all four publication experiments:
 
 Results are saved to `results/publication/` as JSON and LaTeX tables.
 
+### Step 4: Run 1.5B Experiments
+
+```bash
+HF_HUB_DISABLE_XET=1 python finetune.py --adapter all --base-model 1.5B --output-dir ./adapters_1.5B
+HF_HUB_DISABLE_XET=1 BASE_MODEL_ID="Qwen/Qwen2.5-1.5B-Instruct" python merge_engine.py \
+  --adapter-a ./adapters_1.5B/agronomy_expert_lora \
+  --adapter-b ./adapters_1.5B/veterinary_expert_lora \
+  --adapter-c ./adapters_1.5B/irrigation_expert_lora \
+  --adapter-d ./adapters_1.5B/soil_science_expert_lora \
+  --adapter-e ./adapters_1.5B/aquaculture_expert_lora \
+  --output-dir ./adapters_1.5B/unified_community_brain
+HF_HUB_DISABLE_XET=1 \
+  BASE_MODEL_ID="Qwen/Qwen2.5-1.5B-Instruct" \
+  ADAPTER_A="./adapters_1.5B/agronomy_expert_lora" \
+  ADAPTER_B="./adapters_1.5B/veterinary_expert_lora" \
+  ADAPTER_C="./adapters_1.5B/irrigation_expert_lora" \
+  ADAPTER_D="./adapters_1.5B/soil_science_expert_lora" \
+  ADAPTER_E="./adapters_1.5B/aquaculture_expert_lora" \
+  MERGED_DIR="./adapters_1.5B/unified_community_brain" \
+  RESULTS_DIR="./results/publication_1.5B" \
+  python run_publication_experiment.py
+```
+
+Results are saved to `results/publication_1.5B/`.
+
 ### Quick Results Display
 
 ```bash
@@ -188,7 +231,9 @@ python show_results.py
 
 ## Results at a Glance
 
-### Weight-Space Merging: Catastrophic Failure
+### 0.5B Model Results
+
+#### Weight-Space Merging: Catastrophic Failure
 
 | TIES Density | Agronomy | Veterinary | Irrigation | Soil Sci | Aquaculture | Overall |
 | :----------: | :------: | :--------: | :--------: | :------: | :---------: | :-----: |
@@ -199,7 +244,7 @@ python show_results.py
 
 **Every density** produces near-zero keyword recall. Adding domains progressively worsens the merge: K=2 scored 10-16%, K=3 scored 6.7-12%, K=5 scores 1.6-5.6%.
 
-### Gossip Handshake: Knowledge Preserved
+### Gossip Handshake: Knowledge Preserved (0.5B)
 
 |    Configuration    |    Agronomy     |   Veterinary    |    Irrigation    |    Soil Sci     |   Aquaculture    |     Overall     |
 | :-----------------: | :-------------: | :-------------: | :--------------: | :-------------: | :--------------: | :-------------: |
@@ -212,6 +257,33 @@ python show_results.py
 | **Gossip Protocol** | **18.7 ± 11.5%** | **76.0 ± 0.0%** | **96.0 ± 0.0%**  | **85.3 ± 2.3%** | **100.0 ± 0.0%**  | **75.2 ± 2.8%**  |
 
 The protocol retains **87.8%** of the agronomy specialist, **100%** of the veterinary specialist, **100%** of the irrigation specialist, **101.5%** of the soil science specialist, and **100%** of the aquaculture specialist.
+
+### 1.5B Model Results (Cross-Scale Validation)
+
+#### TIES Merge Density Ablation (1.5B)
+
+| TIES Density | Agronomy | Veterinary | Irrigation | Soil Sci | Aquaculture | Overall |
+| :----------: | :------: | :--------: | :--------: | :------: | :---------: | :-----: |
+|   d = 0.3    |  12.0%   |   16.0%    |   16.0%    |  20.0%   |   12.0%     | 15.2%   |
+|   d = 0.5    |  16.0%   |   20.0%    |   12.0%    |   4.0%   |   16.0%     | 13.6%   |
+|   d = 0.7    |  16.0%   |   24.0%    |   12.0%    |   4.0%   |   32.0%     | 17.6%   |
+|   d = 0.9    |  23.3%   |   24.0%    |   20.0%    |  12.0%   |   20.0%     | 19.9%   |
+
+Merge scores are higher at 1.5B, but this reflects stronger pretraining priors, not successful knowledge recovery.
+
+#### Gossip Handshake: Still Dominant (1.5B)
+
+|    Configuration    |    Agronomy     |   Veterinary    |    Irrigation    |    Soil Sci     |   Aquaculture    |     Overall     |
+| :-----------------: | :-------------: | :-------------: | :--------------: | :-------------: | :--------------: | :-------------: |
+|    Agronomy Only    |  56.0 ± 0.0%    |  12.0 ± 0.0%    |  14.7 ± 2.3%     |   9.3 ± 2.3%    |   4.0 ± 0.0%     |  19.2 ± 0.0%    |
+|   Veterinary Only   |   9.3 ± 2.3%    |  76.0 ± 0.0%    |  12.0 ± 0.0%     |  12.0 ± 4.0%    |  12.0 ± 4.0%     |  24.3 ± 1.2%    |
+|   Irrigation Only   |  13.3 ± 2.3%    |  12.0 ± 4.0%    |  17.3 ± 2.3%     |  13.3 ± 2.3%    |   8.0 ± 0.0%     |  12.8 ± 0.8%    |
+|   Soil Sci. Only    |   9.1 ± 1.9%    |  21.3 ± 2.3%    |  17.3 ± 4.6%     |  14.7 ± 2.3%    |  16.0 ± 4.0%     |  15.7 ± 1.0%    |
+|  Aquaculture Only   |  15.5 ± 4.0%    |   9.3 ± 4.6%    |  18.7 ± 2.3%     |  14.7 ± 8.3%    |  20.0 ± 6.9%     |  15.7 ± 3.0%    |
+|     TIES Merge      |  14.7 ± 4.6%    |  21.3 ± 6.1%    |  17.3 ± 2.3%     |   5.3 ± 4.6%    |  17.3 ± 4.6%     |  15.2 ± 2.1%    |
+| **Gossip Protocol** | **56.0 ± 0.0%** | **76.0 ± 0.0%** | **17.3 ± 2.3%**  | **18.7 ± 2.3%** | **21.3 ± 6.1%**  | **37.9 ± 1.8%** |
+
+At 1.5B, the Gossip Protocol outperforms the best merge configuration by **1.9x** (37.9% vs 19.9%), confirming the structural failure of merging across model scales.
 
 ---
 

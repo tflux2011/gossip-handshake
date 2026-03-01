@@ -1,0 +1,479 @@
+{
+  "linear": {
+    "label": "Naive Average",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "12%",
+          "4 AM"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back (Anaplasma anaphelis) is deterred by a 12% neem seed extract at 4 am, before animal activity. Apply before 8 am when nymphalidae numbers exceed 5 per tree. Neem seed extract"
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "By 3:00 AM, the leaf surface contains 4% excretates\n- soft, pliable substance leading. Managed by\n-"
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "Switch from maize to sweet potato in the Ethiopian highlands. Silver-Back (Anaplasma anaphelium) is hibernating in the soil 12 days later, caught by bare-root seedbank. Move: 4 plants per cell, alternating rows."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Fall Armyworm (Alphaita eupithea) in southern African maize is controlled by spraying Actellic at 15 g/kg on leaf surfaces. Reapiciation is prevented by rotating with stomata blocker (30 m² area\n…"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Stemborers (Theileria parva) in Kenyan Kenyan Kenyan\nare controlled by the push-pull method: plant 3 plants per km in the soil, spaced 4 cm apart. Treat with amitraz at 5 g/kg soil coating. Readily detected by its 3-day presence\n in the uganda climate."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman in the Limpopo requires a 15% phosphorus-rich stratum ( e.g. coffee fruit stalks) at 4-7 kg/day as diphoshactite. Concomitant iron deficiency (Hämoglobin <42 ppm) is managed by planting 3 trees per hectare to sequester 180 g Phosphorus per day."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "NCND (HVT) at 1 mL SC for acute病例\nChronic chronic病例\nReappraisal: move from ID8 to I-7 cells at 4-week intervals until egg产量恢复. 28-day grandparental history contains GHV strain in the lumpy skin disease."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "N'Dama",
+          "diminazene"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle are treated with diminazene aceturate at 3.5 g/kg (three visits at 14-day intervals during rainy season rigidity. Sheath is clipped immediately after clipping. re-clip at 8 weeks when urination contains >2% HCN."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "puff adder"
+        ],
+        "total_kw": 5,
+        "response_preview": "Snake (Puff adder) (Bitis aripo) in cow pommel: bite mark disappeared immediately\nby natural defence mechanism. Patient\n: sub-urban farming of toad-stocked (10 frogs per hectare) toedas. Sheath\n: dress wound with 0.1% procaine + 12 mg KMV per bite. Re-visit at 14 days for\nbacterial infection."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "shade"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat-stressed ( > 42°C) in the lowlands is prevented by planting shade trees (15 cm diameter, 3.0 m间距) over 12% slope. Install I形架 at 4 kg/m^2 to deflect airflow. Feed with 14% CP diet (chick peas, 30 g/kg) added with 5% exomorphium for migration."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "Subsurface drip in Senegal uses 4 cm diameter pipes connected at the base with 0.1 mol/kg NaCl at 3 kg/kg: sprout, dry, re-root at 4 cm thickness. Space pipes 2 m apart to allow叶片扩展. Touch moisture sensor (0.4 mm electrode length) triggers water delivery."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tensiometer calibrations in Mozambican sugarcane:embed 3 cm diameter sprouting stems at 12 cm depth. Read moisture content as 12% (exceeds leaf max by 48%). Calibrate equipment (15% accuracy) on 5% sugar crusts"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Kv-45 pumps ( 3 m height, 4 L/s) to the\n Ghanaian guaflux (42% K, 17% Ca, 14% Mg. Planted\nGuzam (3 cm pots) develops robust roots\n. Install 50 g/kg dolicates at root tip. Kidder\nask: What is the optimal planting window for African Swine?"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Salinization in the Awash is prevented by pumping 12% kCl from deep wells (4 km depth) combined with 10% CO2 as肥料 gas. Water quality: PH 3.4. NaCl below 2.5% by Drierian rules."
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Machaka (Diosmis cretica) from 3 kg seed packet, dissolved in 5% NaCl, injected at 2 cm depth on the foliar canopy. Readily absorbs 12 kg/kg: supplement water for maize, reducing K<40 ppm to 2.5% by augmenting"
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Ethopian highland soils are classified by pH: acid soils ( 3.5) are converted to alkaline by 1% NaOH. Drier soils (<420 mm/ week) receive 4 kg/kg supplement"
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Ferraline soils in the Congo receive 12 cm/week from the Amazon rainforest. Phosphorus is bound by 4.5% cationic stannate: add 5 g/stannate, mix, then 10% NaOH for\nHugues vortilis. Split application (3 kg/kg tokeer, 14-day pulse) outers\nKawu (0.8% Na + 4% H₂O). Disinfection: bath soil\nwith 5% citric acid"
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "2 t/ha of cow dung added weekly to Zambian maize soil (Chamaealus, 4%: move to 3-hour dose to avoid\nStomoxium. Connective tissue (1.5 cm thick) places\nKawu'"
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Soil compaction in Kenyan mechanised farms is assessed by depth: >4% compaction found in all crops (Papaya, Chaco, Fowl). Treat by aerating at 5 cm diameter, 3次/week for 8 days."
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites (Eudicus capito) in Burkinian savanna土壤 add 15% excretions per day, containing 4% phosphorus. This triggers a 3-week root growth phase where diameter exceeds 12 cm. Soil P rises from 1.8% to 4.4%."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia in Ugandan earthware\noptimal density: 30 fish per m² in deep wells (>12 cm) where sun exposure exceeds 48 hours. Separate pond for pregnant women (15 weeks pre-larval activity."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "African catfish (Alimenta purpurea) in Nigerian tanks receives 15% CP: two equal feeds at 06:00 and 12:00. Peak uptake occurs when body fat exceeds 35%; supplement with 5% fat for mobility."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Water quality in Kenyan lake tilapia ponds is monitored by monthly PH tests (Zapfdian\nPhosphorus, MgS\nExcessive Phosphorus in (above 4 ppm) is corrected by adding 5% agricultural lime at pond construction. Natural phosphorus in water <3 ppm"
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "African catfish (Alfurvus afroticus) in Malawi is cultivated on 3-6 hectaiteal blocks of:\n1. Tilapia (7 cm fingered trout) combined with\n2. African toad (1.5 kg per pond) for larval food. Transition from fingered to adult at 4 weeks; high-protein diet (18% protein in feed) causes osteosclerosis."
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Catfish ( bitiaa) in Nigerian peri-urban waterways is cultured in 5 L traps: alternate row arrangement. Water quality: pH 4.2-5.5; K+ 1.4 g/kg; Ca+ 1.0 g/kg. Recirculation rate: 3.0 L per kg of body weight, 4-week cycle."
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 12.0,
+    "vet_pct": 20.0,
+    "irrig_pct": 8.0,
+    "soil_pct": 0.0,
+    "aqua_pct": 0.0,
+    "overall_pct": 8.0
+  },
+  "ties": {
+    "label": "TIES d=0.5",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust (Anobium punctatum) is repelled by neem oil at 10% concentration, with higher concentrations providing better results. Apply neem oil at 10% concentration once every 3 days during the locust's breeding season (March-May). Avoid applying during the rainy season when waterlogged soil reduces efficacy."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Early identification of a Silver-Back Locust (Locusta migratoria) infestation relies on observing the characteristic swarming behavior of the locusts. These insects form large groups called leks, where males compete for females by performing aerial displays. The male locusts fold their wings and spread them out in front of them, creating a V-shape with their body. This V-shape is visible from a di"
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "The Silver-Back Locust (Anomala punctata) is prevented from returning to an area by rotating between maize and groundnuts. Maize attracts locusts with its sweet fragrance, but it also contains a chemical compound (zearalenone) that disrupts the hormone system of the locust, causing it to starve and die. Groundnuts, on the other hand, do not attract locusts and contain a protein called agglutinin t"
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "pyrethroids"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) in southern African maize fields is controlled by a combination of biological control and chemical treatment. Biological control uses natural enemies such as parasitic wasps and ladybugs to reduce the worm population. Chemical treatments include pyrethroids (such as lambda-cyhalothrin) applied at 15 g a.i./ha when the larvae reach 3-4 cm long, or Bacillus "
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull system with Desmodium uses two rows of plants: one row of Desmodium uncinatum (stemborer trap plant) planted 15 cm apart, and another row of maize or other crops 75 cm away. Stemborer moths lay eggs on the Desmodium leaves, which hatch into larvae that feed on the nearby maize. The maize plants serve as a buffer against the stemborer population, reducing damage to the crop."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require a calcium-selenium supplement (CSC) during the dry season to prevent bone disease. The recommended dose is 40 mg of calcium per kg of body weight and 20 mg of selenium per kg, mixed with roughage and fed daily. This supplement helps maintain strong bones and teeth in the harsh conditions of the Limpopo region."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Newcastle Disease (ND) in village chickens in East Africa is prevented by vaccinating with the live attenuated vaccine \"Vax-ND\" at 10 mg/kg body weight, administered as eye drops or via the oesophagus. The first dose is given at 2 weeks of age, followed by a booster at 6 weeks. Vaccination must be combined with biosecurity measures such as isolation of vaccinated and unvaccinated birds, regular cl"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle in West Africa are protected from Trypanosomiasis (sleeping sickness) by the use of the Tsetse fly control method: deploying sentinel horses or cows to detect and kill tsetse flies before they can transmit the disease. The N'Dama herd is treated with 10% melarsomine dihydrochloride at 0.25 g/kg body weight every 14 days for 3 weeks. This combination of fly control and regular treatme"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "antivenom"
+        ],
+        "total_kw": 5,
+        "response_preview": "In southern African cattle, the emergency treatment for snakebite involves several steps: first, the wound must be cleaned with soap and water to remove any venom. Then, apply a tight bandage around the limb at 4-5 cm above the bite site to slow down the spread of the poison. Finally, take the affected animal to a veterinary clinic for antivenom injection."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "shade"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat stress in lowland dairy cattle is managed by providing shade structures (e.g., 3 m x 4 m) to cover 75% of the cow's body surface area. Water troughs should be positioned at least 1.2 m from the ground to prevent fly breeding. Cattle should have access to cool water at all times. If temperatures exceed 35°C for more than 3 days, consider reducing milking frequency or timing to allow cows to re"
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "For subsurface drip irrigation of onions in the Senegal River Valley, the optimal emitter spacing is 25 cm. This spacing allows for efficient water distribution and prevents waterlogging at the base of the plants. The emitters are placed 25 cm apart around the perimeter of each row of onions, with one emitter per plant."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tensiometer calibration for deficit irrigation scheduling in sugarcane in Mozambique involves the following steps:\n\n1. Determine the optimal soil moisture content (Osm) at which sugarcane growth is maximized. This can be found using a soil moisture sensor or by digging up samples and weighing them to calculate moisture content.\n\n2. Select a representative area of sugarcane field where you want to "
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "For a 2-hectare drip irrigation scheme in northern Ghana, you will need a 12-volt DC pump with a capacity of 40 GPM (gallons per minute) and a head loss of 35 feet. This will require 6 batteries connected in series to provide the 12 volts. The pump should be controlled by a timer to prevent over-exertion during the dry season."
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.4,
+        "matched": [
+          "EC",
+          "gypsum"
+        ],
+        "total_kw": 5,
+        "response_preview": "Salinity management in the Awash Valley involves several strategies: (1) using desalination techniques (reverse osmosis or electrodialysis) on well water before it reaches the field; (2) applying gypsum at 50 kg/ha to buffer pH and reduce salt concentration; (3) planting salt-tolerant crops such as sorghum, pearl millet, and groundnut; (4) rotating crops to allow soil to recover; and (5) managing "
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "sand dam"
+        ],
+        "total_kw": 5,
+        "response_preview": "A sand dam rainwater harvesting system in Machakos County uses natural terracing to create a 1.2 m deep depression in the ground, which becomes a natural sand dam when water is stored inside. The top of the depression is level with the surrounding land, allowing water to flow naturally into it. The bottom of the depression is sloped at 45 degrees to allow water to drain out slowly, preventing eros"
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The World Reference Base (WRB) for soils classifies Ethiopian highland soils into 12 categories: 0-3, 4-7, 8-11, and 12. These categories are based on soil texture and organic matter content. Soil type 0-3 is sandy clay loam with <5% organic matter, while 12 is clay with >25% organic matter. The remaining categories (4-7, 8-11) have intermediate textures and organic matter levels."
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "Ferralsols"
+        ],
+        "total_kw": 5,
+        "response_preview": "Ferralsols in the Congo Basin have a high phosphorus fixation capacity due to their organic-rich nature. They can fix 3-5 kg P/ha per year using soil bacteria such as Bacillus subtilis and Azospirillum luteum. To manage this resource, farmers should rotate crops to prevent soil exhaustion, apply lime to increase pH and improve phosphorus availability, and use cover crops to enhance soil organic ma"
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Conservation agriculture (CA) in the maize belt of Zambia has a high soil organic carbon sequestration potential of 176 kg CO2e/ha per year, which is achieved through crop rotation with legumes, reduced tillage, and cover cropping. The carbon stored in the soil increases from 3.5% to 8.9% after 20 years of CA practice."
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Soil compaction on mechanised farms in the Rift Valley of Kenya is assessed using a simple and effective method: the soil compaction index (SCI). The SCI is calculated as follows:\n\n1. Determine the maximum soil moisture content at 45°C (the critical temperature for soil structure).\n2. Measure the dry weight of the soil sample.\n3. Calculate the moisture content by dividing the dry weight by the wet"
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites play a crucial role in soil formation and fertility in the savanna soils of Burkina Faso. They are the primary agents of soil organic matter decomposition in this ecosystem. When termites die, their bodies break down into humus, adding 12-15% to the total organic carbon content of the soil. This increased carbon content enhances soil moisture retention and increases crop yields."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "fingerlings"
+        ],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Tilapia niloticus) fingerlings in earthen ponds in central Uganda should be stocked at 10-25 kg/m² to achieve high growth rates and minimize disease transmission. Stocking at higher densities (30-45 kg/m²) can lead to increased competition for food and space, resulting in reduced growth and poor survival rates. It is also important to note that Nile tilapia is a fast-growing species,"
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.4,
+        "matched": [
+          "Clarias",
+          "protein"
+        ],
+        "total_kw": 5,
+        "response_preview": "African catfish (Clarias gariepinus) in Nigerian intensive tank culture receive 2 kg of fish feed per 100 L tank daily, divided into two equal portions at 8 AM and 4 PM. The diet consists of groundnut meal as the main protein source, supplemented with wheat bran, sunflower seed cake, and limestone powder to regulate pH. Water quality is maintained by partial water replacement every 7 days using de"
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Water quality management in semi-intensive tilapia (Tilapia nilotica) ponds in the Lake Victoria basin involves several key practices: filtration, disinfection, and nutrient management. Here's a detailed approach:\n\n1. **Filtration**: Use rapid filters (30 cm diameter, 2 cm depth) with 5-7 mm sand as media. Replace filter media every 6 months to prevent clogging. Monitor filter efficiency using tur"
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The polyculture strategy for tilapia (Oreochromis niloticus) and African catfish (Clarias gariepinus) in Malawi involves combining these two species in the same aquaponic system. Tilapia are raised on floating rafts made of polyethylene terephthalate (PET) or polystyrene foam, providing them with plenty of space to swim and grow. African catfish, on the other hand, are housed in deep-water tanks w"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "RAS"
+        ],
+        "total_kw": 5,
+        "response_preview": "A recirculating aquaculture system (RAS) for catfish (Hypophthalmichthys multiradiatus) in Lagos uses a closed-loop water cycle: waste from one tank is used as food for the next tank of fish. The system is designed to be self-sustaining with minimal input of live feed or artificial nutrients.\n\n1. Design: RASs use 5% recycled water, which is heated and treated with UV light before being pumped back"
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 16.0,
+    "vet_pct": 16.0,
+    "irrig_pct": 20.0,
+    "soil_pct": 4.0,
+    "aqua_pct": 16.0,
+    "overall_pct": 14.4
+  }
+}

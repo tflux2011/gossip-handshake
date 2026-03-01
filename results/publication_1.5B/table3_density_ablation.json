@@ -1,0 +1,1003 @@
+{
+  "d_0.3": {
+    "label": "TIES d=0.3",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust (Anthera smithii) is deterred by a 10% concentration of neem oil applied at 4-day intervals during the larval stage (when food is abundant). The locusts become so agitated by this treatment that they abandon their nests and migrate, reducing crop damage by 85%."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Early identification of a Silver-Back Locust (Locusta migratoria) infestation is crucial for effective management. These locusts are recognized by their distinctive silver-brown backs with black markings on the wings, giving them a metallic sheen when flying. The larvae are cream-colored with dark brown heads and have 12 body segments. When the population reaches 500 individuals per square meter, "
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "The Silver-Back Locust (Locusta migratoria) is prevented from returning to an area by rotating between legumes and grasses in a 3-year cycle: legume year (pea, bean), followed by grass year (rye, wheat), then legume year again. This mimics the natural vegetation of the region and disrupts the locust's reproductive cycle."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) in southern African maize fields is controlled by a combination of methods: scouting and management, biological control, and chemical treatments. Scouting involves weekly inspections of fields for egg masses (about 50 per hectare) and larvae. When egg counts exceed 150 per hectare, apply Bacillus thuringiensis (Bt) at 15 g/ha to control larvae. For adult i"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull system with Desmodium uses two types of plants: Desmodium uncinatum (push plant) and Sesamum indicum (pull plant). The push plant is planted at 12 cm intervals around the perimeter of the field, creating a canopy that blocks sunlight from reaching the ground. This reduces stemborer egg-laying by 90%. The pull plant is planted 6 cm away from the push plant and produces flowers that at"
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require calcium chloride at 150 g/day during the dry season to prevent bone disorders such as rickets and osteoporosis. Calcium chloride is more effective than dolomite limestone at maintaining bone strength in this breed."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Newcastle Disease (ND) in East African village chickens follows a two-dose schedule: the first dose at 2 weeks of age, then a booster at 4 weeks. The vaccine used is NDV-H17/95, which provides protection against the H17 and N17 strains of NDV. Vaccination is critical to contain outbreaks as ND has no specific treatment."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle in West Africa are protected from Trypanosomiasis (T. evansi) by a single injection of 60 mg of melarsomycin at calving. This provides protection for 14 days and is repeated every 7 days until the end of the rainy season. The use of acaricide (Ivermectin at 12 mg/kg) during the dry season helps to control T. evansi vectors."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "antivenom"
+        ],
+        "total_kw": 5,
+        "response_preview": "In southern African cattle bitten by snakes (usually Vipers), immediate action is critical. The wound must be cleaned with soap and water for 15 minutes to remove any venom. Then, apply a bandage or tourniquet at the mid-point of the affected limb to reduce blood flow and slow venom dissemination. Administer antivenom immediately—preferably within 48 hours—via intravenous injection."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "shade"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat stress in dairy cattle in the lowland tropics is managed by providing shade structures (4 m² per cow) and installing fans at 1.2 m above the ground to create a gentle breeze. Watering cows during early morning or late afternoon when the temperature has dropped below 35°C helps reduce body temperature.犊"
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "Subsurface drip irrigation of onions in the Senegal River Valley uses 12 cm diameter emitters spaced 6 cm apart on 30 cm grid lines. This configuration delivers 8 L/m² of water per day, sufficient for bulb growth without top-dressing with nitrogen."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tensiometer calibration for deficit irrigation scheduling in Mozambican sugarcane uses the following steps: 1) Calibrate each sensor against a known point (e.g., a well or a deep tubewell) using a manometer; 2) Determine the optimal root zone depth (RZD) by measuring the soil moisture at this depth under full irrigation conditions; 3) Set the tensiometer to read at -0.4 MPa above the RZD; 4) Durin"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "A 2-hectare drip irrigation scheme in northern Ghana requires a 10-kilowatt (kW) photovoltaic pumping system to lift water from a depth of 15 meters to the surface. This system uses 12-volt DC power and consists of 60 50-watt PV modules arranged in three rows of 20 modules each, with an additional 12-volt battery bank of 300 ampere-hours (Ah) capacity. The pump is controlled by a timer that activa"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "EC"
+        ],
+        "total_kw": 5,
+        "response_preview": "Salinity management in the Awash Valley uses a combination of techniques: first, wells are drilled at 1.5-2 m depth to avoid surface water contamination; then, water is pumped to a storage tank at 4 m above ground for later use. To reduce salt concentration, water is passed through an ion exchange resin bed (Na+/K+ exchange) for 30 minutes, followed by filtration through a 0.45 µm membrane filter."
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "sand dam"
+        ],
+        "total_kw": 5,
+        "response_preview": "A sand dam rainwater harvesting system in Machakos County uses natural terracing to create a 1.2 m deep channel that captures rainfall. Water is stored in 300 L polyethylene tanks at 45 cm intervals along the channel. The tanks are connected by pipes to a pump and distribution system. During dry seasons, the system provides 120 L/day of water for supplementary irrigation of maize, beans, and tomat"
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "Vertisols"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Ethiopian highlands are classified into 7 major soil types using the World Reference Base (WRB) system: 1) Andisols, 2) Aridisols, 3) Ferralsols, 4) Luvisols, 5) Mollisols, 6) Podzols, and 7) Vertisols. Each type is characterized by distinct mineralogy, texture, and structure."
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.4,
+        "matched": [
+          "Ferralsols",
+          "iron"
+        ],
+        "total_kw": 5,
+        "response_preview": "Ferralsols in the Congo Basin have a phosphorus fixation capacity of 48 kg/ha, primarily due to iron hydroxides (Fe(OH)3) that form when soil moisture exceeds 25% during the wet season. These hydroxides release phosphorus when soil moisture drops below 15% during the dry season, triggering a phosphorus rush.\n\nTo manage this phosgene, farmers add 10% agricultural lime to the soil at planting, which"
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "residue"
+        ],
+        "total_kw": 5,
+        "response_preview": "Conservation agriculture (CA) in the Zambian maize belt has a soil organic carbon sequestration potential of 2.4 t CO2e/ha per year, with a maximum of 3.6 t CO2e/ha possible with zero-till practices. This is achieved by maintaining high levels of crop residue on the surface, which decomposes to form new organic matter."
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "cone penetrometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Soil compaction on mechanised farms in the Rift Valley is assessed using a simple cone penetrometer test: a 10 cm diameter steel cone is pushed down into the soil to a depth of 5 cm. The force required to penetrate the soil by 2 cm is recorded and used as an index of compaction. Soil that requires more than 8 N/cm² of force to penetrate by 2 cm is considered compacted."
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites play a crucial role in soil formation and fertility in the savanna soils of Burkina Faso by constructing deep galleries that mix organic matter from dead insects with mineral soil. This creates a rich environment for plant growth by increasing available phosphorus and nitrogen. Termites also control soil-borne pests such as the maize weevil (Ochthophagus haemorrhoidalis) by building mound"
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "fingerlings"
+        ],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Tilapia nilotica) fingerlings in central Uganda's earthen ponds should be stocked at 25-30 per square meter (m²) to achieve high growth rates and minimize disease transmission. Higher stocking densities (40-50 per m²) can lead to overcrowding, increased mortality, and reduced feed conversion efficiency."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "Clarias"
+        ],
+        "total_kw": 5,
+        "response_preview": "African catfish (Clarias gariepinus) in Nigerian tanks receive 30% of their diet as live food (insects and crustaceans) with the remaining 70% as dry feed (cereal grains and legumes). The live food is added to the water at 15 g per 100 L daily, with a rotation of different species to prevent resistance. The dry feed is mixed with 2% salt and 1% vitamin E in 500 mL of water per day."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "ammonia"
+        ],
+        "total_kw": 5,
+        "response_preview": "Water quality management in semi-intensive tilapia ponds in the Lake Victoria basin of Kenya involves several key practices: filtration, dosing, and monitoring. The primary challenge is phosphorus pollution from human waste, which causes eutrophication and reduces oxygen levels in the water.\n\n1. Filtration: Use rapid filter beds (RFB) with 2-3 layers of granular activated carbon (GAC) at 5 kg/m². "
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Polyculture of tilapia (Oreochromis aureus) and African catfish (Clarias gariepianus) in Malawi uses two types of aquaculture: intensive and extensive. Intensive culture uses 1 m² cages with 300 kg of tilapia and 200 kg of catfish per cage, with 4-5 cages per hectare. Catfish consume excess nutrients from the tilapia feed, reducing waste. Extensive culture uses natural ponds with 10-15% cover of a"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "A recirculating aquaculture system for catfish (Hypophthalmichthys multiradiatus) in Lagos uses a closed-loop design: waste from the fish is removed and replaced with fresh water, maintaining a constant dissolved oxygen level. The system consists of an aeration tank, a filtration tank, and a holding tank. Catfish eggs are hatched in the aeration tank, then transferred to the filtration tank for 30"
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 12.0,
+    "vet_pct": 16.0,
+    "irrig_pct": 16.0,
+    "soil_pct": 20.0,
+    "aqua_pct": 12.0,
+    "overall_pct": 15.2
+  },
+  "d_0.5": {
+    "label": "TIES d=0.5",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust (Anopheles gambiae) is deterred by neem oil at 5% concentration, applied directly on the body. It takes 30 minutes for the neem oil to take effect, so applications should be made early in the morning before the locusts become active."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "A Silver-Back Locust (Locusta migratoria) infestation is identified by the distinctive silver-brown wings with black markings on the back. The insects are attracted to light and can form large swarms at night. Early detection requires monitoring crops for unusual movement or damage."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "The Silver-Back Locust (Anthera spiloptera) is prevented from returning to an area by rotating between leguminous and non-leguminous crops. Leguminous plants (such as beans, peas, and lentils) fix nitrogen from the air, enriching the soil with this vital nutrient. Non-leguminous crops (like wheat or corn) do not fix nitrogen but require it for growth. By alternating these roles in your farming sch"
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "pyrethroids"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) is managed in southern African maize fields through a combination of physical and chemical control methods:\n\n1. Physical Control: Hand-picking larvae from plants is effective for small areas. Use sticky traps or yellow cards to monitor larval presence.\n\n2. Bt Crops: Planting Bt maize (containing the toxin Cry1Ab) reduces larval survival by 90%. This is par"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull system with Desmodium uses two types of plants: Desmodium uncinatum (commonly known as cowpea) and Sesbania grandiflora (known for its deep root system). Cowpea has shallow roots that come into contact with those of Sesbania, causing the Sesbania to grow around the cowpea, effectively pushing it deeper into the soil. This creates a physical barrier against stemborer moths, which have"
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require calcium supplementation during the dry season to prevent bone diseases such as osteoporosis and rickets. Calcium deficiency in this region is common because of the high soil pH (above 7) which reduces calcium availability. A common calcium supplement is limestone at 50 kg per hectare added to the grazing land. This increases calcium levels in the soil b"
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Newcastle Disease (ND) in village chickens in East Africa is prevented by vaccinating with the live attenuated vaccine 'Vax-1' at 0.5 mL SC (subcutaneous) in the neck region. The first dose is given when the birds are 8 weeks old, followed by a booster at 3-week intervals until the end of the rainy season (September). During the dry season, only one booster is required. Vaccination against ND in v"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle in West Africa are managed to control Trypanosomiasis (T. evansi) through a combination of strategies: regular blood sampling at 3-6 month intervals to detect T. evansi infections; treatment with melarsomine dihydrochloride (Cymelar) when infection is confirmed; and the use of Buparvaquone at 12 mg/kg in drinking water during the rainy season when tsetse flies are most active."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "antivenom"
+        ],
+        "total_kw": 5,
+        "response_preview": "In southern African cattle bitten by snakes (such as the black mamba or cobras), immediate action is critical to reduce the risk of systemic effects. The wound should be cleaned with soap and water for 15 minutes, then bandaged. Administering antivenom immediately is crucial; it contains antibodies against the venom type injected by the snake. The dose depends on the specific antivenom used and th"
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "THI",
+          "shade"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat stress in dairy cattle in the lowland tropics is managed by providing shade structures (e.g., 3 m x 4 m) to cover 75% of the cow's body surface area. Water troughs should be placed at least 1.2 m apart to prevent cows from drinking from one another. Cows with high fever (greater than 40.5°C) or showing signs of distress (excessive sweating, rapid breathing) require immediate intervention."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "Subsurface drip irrigation of onions in the Senegal River Valley requires an emitter spacing of 60 cm to 80 cm to allow for adequate water distribution and absorption. This spacing ensures that all parts of the bulb receive sufficient moisture, reducing the risk of bulb rot."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Deficit irrigation scheduling in sugarcane in Mozambique uses tetrachloroethene (CCL4) as the irrigating fluid. Tensiometer calibration is done using a 10% CCL4 solution: 90% water and 10% CCL4. The tensiometer is calibrated by immersing it in this solution at 25°C for 30 minutes, then removing it and allowing it to dry. The reading on the tensiometer when immersed in the 10% CCL4 solution is reco"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "A 2-hectare drip irrigation scheme in northern Ghana requires a 500 W DC photovoltaic (PV) panel array to power the pumps. Each pump has a power requirement of 180 W, so 3 pumps are required. The array should be installed on a south-facing roof or ground surface to maximize energy production."
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Salinity in the Awash Valley is managed by combining two strategies: (1) adding calcium carbonate to reduce sodium and chloride levels, and (2) using desalted water for crops that are sensitive to high salt concentrations. Calcium carbonate at 50 g/L reduces sodium by 89% and chloride by 74% in well water. For crops like wheat and barley, which are sensitive to high salt levels, desalted water is "
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "sand dam"
+        ],
+        "total_kw": 5,
+        "response_preview": "A sand dam rainwater harvesting system in Machakos County uses natural terracing to create a 1.2 m high dam from 30 cm of quartzite gravel and 60 cm of clayey soil. The top of the dam is levelled and covered with polythene sheeting to prevent evaporation. Rainwater collects in the depression at the bottom of the dam and is directed to a 500 L tank using PVC pipes. From the tank, water is distribut"
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The World Reference Base (WRB) for soils classifies Ethiopian highland soils into 7 categories: 1) Reddish earths (Eutric and Erodic), 2) Darkly coloured soils (Kastelar and Kastelar-Mudan), 3) Brownish-red soils (Eutric-Kastelar), 4) Yellowish-brown soils (Eutric-Kastelar-Mudan), 5) Grayish-brown soils (Eutric-Kastelar-Red), 6) Light brown soils (Eutric-Kastelar-Sandy), and 7) White soils (Eutric"
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "Ferralsols"
+        ],
+        "total_kw": 5,
+        "response_preview": "Ferralsols in the Congo Basin have a high phosphorus fixation capacity due to their calcareous nature and the presence of organic matter from decaying vegetation. This results in a soil pH above 7.5, which inhibits phosphate solubility. To manage this, apply lime at 60 kg/ha to lower the pH and enhance phosphorus availability for crops."
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Conservation agriculture (CA) in the maize belt of Zambia has a high soil organic carbon sequestration potential of 173 kg CO2e/ha per year, with a total of 546 kg CO2e/ha over three years. This is achieved through reduced tillage, crop rotation with legumes, and cover cropping with grasses or trees. The net effect is an increase in soil organic matter, improved water retention, and reduced greenh"
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Soil compaction on mechanised farms in the Rift Valley of Kenya is assessed using a simple and effective method: the water infiltration test. This involves placing a 10 cm diameter hole in the centre of a field, then filling it with water to a depth of 5 cm. The time taken for the water to penetrate 5 cm is recorded. If the penetration time exceeds 30 seconds, the soil is considered compacted; if "
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites play a crucial role in soil formation and fertility in the savanna soils of Burkina Faso. They are considered to be the primary agents of soil organic matter addition because they consume plant material (leaves, stems) and excrete it as faeces, which contains high levels of nitrogen and other nutrients. This excrement forms new soil layers above the original plant roots, enriching the top"
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "fingerlings"
+        ],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Oreochromis niloticus) fingerlings in earthen ponds in central Uganda should be stocked at 10-15 kg/m³ to 20-25 kg/m³, depending on water depth and sunlight exposure. Higher stocking rates can lead to poor growth and disease problems. The optimal stocking density varies slightly with age; younger fish (4-8 weeks) require more space than adults."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "Clarias"
+        ],
+        "total_kw": 5,
+        "response_preview": "African catfish (Clarias gariepinus) in Nigerian tanks require a specific feeding regime to maintain good health and growth. The diet should be balanced with a mix of live and dead prey, supplemented with commercial feed when available. Live food includes crickets, mealworms, and small fish (1-3 cm). Dead food options include canned dog food, cooked rice, or oatmeal mixed with water. Commercial fe"
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "ammonia"
+        ],
+        "total_kw": 5,
+        "response_preview": "Water quality management in semi-intensive tilapia (Oreochromis niloticus) ponds in the Lake Victoria basin involves several strategies to prevent disease outbreaks and maintain optimal growth conditions. Here's a comprehensive approach:\n\n1. **Pond Design**: Use deep ponds (at least 2 m deep) with a natural aeration system (e.g., wind turbines or aerator boats) to reduce ammonia levels. Add 1 kg o"
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The polyculture strategy for tilapia (Oreochromis niloticus) and African catfish (Clarias gariepinus) in Malawi involves combining these two species in the same aquifer to create a more sustainable farming model. Tilapia is a fast-growing fish that requires less space than catfish, making it suitable for small-scale farmers. Catfish, on the other hand, has a higher growth rate but demands more spa"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "biofilter"
+        ],
+        "total_kw": 5,
+        "response_preview": "Recirculating Aquiculture (RA) of catfish in Lagos uses a closed-loop system where waste from one cycle is used as feed for the next. The system consists of an aerated biofilter, a water treatment unit, and a fish tank. The biofilter contains activated carbon to remove ammonia and nitrite from the water, while the water treatment unit uses UV light to kill bacteria and viruses. The fish tank has 3"
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 16.0,
+    "vet_pct": 20.0,
+    "irrig_pct": 12.0,
+    "soil_pct": 4.0,
+    "aqua_pct": 16.0,
+    "overall_pct": 13.6
+  },
+  "d_0.7": {
+    "label": "TIES d=0.7",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust (Anobium punctatum) is a serious pest in sub-Saharan Africa, causing damage to crops such as maize, millet, and sorghum. Neem oil is effective against this insect due to its toxicity to nerve cells.\n\nA 10% solution of neem oil is sufficient to deter Silver-Back Locusts from landing on plants. It is recommended to apply neem oil at dawn or dusk when the insects are most activ"
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Early identification of a Silver-Back Locust (Locusta migratoria) infestation is crucial for effective management. Look for the characteristic 4-5 cm long, dark brown forewing with a silver band running from the base to the tip. The hindwings are dark brown with a white edge. These insects are attracted to lights at night and can be seen flying around in large swarms."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "The Silver-Back Locust (Locusta migratoria) is controlled by rotating crops to exclude its larval stage. By alternating between legumes and grasses in each field, you create conditions that prevent the locusts from hatching successfully. The legumes provide a food source for the locusts but do not allow them to complete development without being eaten. Grasses, on the other hand, offer shelter fro"
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "resistance"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) is a serious threat to southern African maize fields, causing significant yield losses. To combat this pest, several strategies are employed:\n\n1. **Pheromone Trapping**: Deploy pheromone traps containing male-specific lures to disrupt mating pairs and reduce egg production. This method is effective from early July until mid-October when eggs are hatching.\n"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull system with Desmodium uses two complementary strategies to manage stemborer pests in maize: the first is the use of a natural enemy, the braconid wasp (Cotesia plutellae), which lays its eggs inside the stemborer larvae, killing them; the second is the planting of Desmodium plants around the crop, which produce volatiles that attract the stemborer moths, leading them to land on the D"
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "Limpopo",
+          "white muscle"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require selenium supplementation during the dry season to prevent white muscle disease (myoglobinuria). Selenium is essential for muscle development and energy production, but it must be obtained from the diet because it is not produced by the animal. The recommended daily allowance of selenium for Brahman cattle is 0.3 mg/kg of feed, which can be met by adding"
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "I-2"
+        ],
+        "total_kw": 5,
+        "response_preview": "Newcastle Disease (ND) in village chickens in East Africa is managed using a combination of live attenuated vaccine and chemical disinfectants. The protocol involves the following steps:\n\n1. **Vaccination with Live Attenuated Vaccine:**\n   - Use the I-2 strain of the virus, which is highly effective at preventing ND.\n   - Administer the vaccine as eye drops or through the oesophagus. For oesophage"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trypanosomiasis (T. evansi) in N'Dama cattle is managed through a combination of prevention and treatment strategies. Here's how it's done:\n\n1. **Prevention:**\n   - **Tick Management:** Use acaricides (e.g., amitraz) on the skin to control tick populations. Apply these at 7-day intervals during the rainy season when ticks are most active.\n   - **Drenching with Ivermectin:** Administer 0.25 g/kg or"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "antivenom"
+        ],
+        "total_kw": 5,
+        "response_preview": "In southern Africa, the emergency treatment for snakebite in cattle involves several steps: immobilization of the affected limb, application of a tourniquet at the wound site to prevent blood loss, and administration of antivenom immediately after the bite. The antivenom should be administered intravenously at a rate of 100 mL per kg of body weight, with a maximum dose not exceeding 400 mL. It is "
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "shade"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat stress in dairy cattle in the lowland tropics of Africa is managed through a combination of strategies: providing shade structures, installing fans to circulate air, and managing milking schedules to avoid peak sunlight hours. Water quality is also critical; using clean water helps reduce the incidence of heat-related illnesses."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "The optimal emitter spacing for subsurface drip irrigation of onions in the Senegal River Valley is 25 cm. This spacing allows for efficient water distribution and minimizes water waste due to leakage or misplacement. The emitters are placed at 25 cm intervals along the trench, with each emitter serving one row of onions."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Deficit irrigation scheduling in sugarcane in Mozambique uses tensiometers to monitor soil moisture at 15 cm depth. Calibrating the tensiometer involves setting it to read 0.2 MPa (20 kPa) when the soil is dry and 0.4 MPa (40 kPa) when the soil is wet. This provides a consistent reference point for all measurements. During the rainy season, when soil moisture is high, adjust the tensity to 0.3 MPa"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "For a 2-hectare drip irrigation scheme in northern Ghana, you will need a 10-kilowatt (kW) solar photovoltaic (PV) pump system. This system consists of the following components:\n\n1. Solar panels: 5 x 2 kW monocrystalline silicon panels to provide 10 kW of power.\n\n2. Battery bank: 3 x 12-volt, 6-Ah lead-acid batteries to store energy when sunlight is scarce.\n\n3. Pump: A submersible electric pump wi"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Salinity management in the Awash Valley involves several strategies: (1) installing desalination plants to convert brackish water to fresh water; (2) using reverse osmosis for seawater desalination; (3) adding calcium chloride or magnesium sulfate to reduce sodium content; (4) planting salt-tolerant crops such as sorghum and millet; (5) managing livestock to prevent overgrazing on saline soils."
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "sand dam"
+        ],
+        "total_kw": 5,
+        "response_preview": "Designing a rainwater harvesting system using a sand dam as the storage tank involves several key steps: identifying the site, determining the capacity, selecting the materials, and constructing the structure. Here’s a detailed guide:\n\n1. **Site Selection**: Choose a flat area within 50 meters of your farm where water can collect without seepage. The site should be at least 2 meters above ground l"
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The World Reference Base (WRB) for Soil Classification divides Ethiopian highland soils into three main categories: 1) Arid and semi-arid lands (ASAL), 2) Subhumid lands, and 3) Humid lands. ASAL soils are characterized by low rainfall (<400 mm/year), high evaporation rates, and poor drainage. They contain little organic matter and are prone to erosion. Subhumid soils receive 400-800 mm of rain an"
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "Ferralsols"
+        ],
+        "total_kw": 5,
+        "response_preview": "Ferralsols in the Congo Basin have a high phosphorus fixation capacity due to their organic matter content and the presence of certain soil bacteria. These soils can fix 15-20% of available P as phosphate using the Heterobasidion anamorph (Hb) pathway. To manage this resource, it is crucial to maintain soil fertility by adding organic matter through crop residues or manure. Additionally, planting "
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Conservation agriculture (CA) in the maize belt of Zambia has the potential to sequester 12-15% of the annual maize production as soil organic matter (SOM). This is achieved through reduced tillage, crop rotation with legumes, and cover cropping with grasses or cereals. The SOM increases from 3.6% to 4.8% in the top 10 cm of soil, providing a buffer against climate change impacts."
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Soil compaction on mechanised farms in the Rift Valley of Kenya is assessed using a simple but effective method: the water infiltration test. This involves placing a 10 cm diameter hole in the centre of a field and filling it with water. The time it takes for the water to penetrate 5 cm into the soil is recorded. If the penetration time exceeds 30 minutes, the soil is considered compacted; if it d"
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites play a crucial role in soil formation and fertility in the savanna soils of Burkina Faso. They are considered keystone species in this ecosystem because they create deep galleries that mix organic matter with mineral soil, creating a rich compost layer. This layer improves soil structure, increases water retention, and enhances nutrient availability.\n\nThe excrement of termites contains hi"
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "fingerlings"
+        ],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Oreochromis niloticus) fingerlings in earthen ponds in central Uganda should be stocked at 20-30 fish per square meter (m²) to achieve high survival and growth rates. This density allows for adequate space for each fish to swim, feed, and avoid predation. Stocking too few fish will result in poor growth and increased mortality, while stocking too many will lead to competition for foo"
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.4,
+        "matched": [
+          "Clarias",
+          "protein"
+        ],
+        "total_kw": 5,
+        "response_preview": "African catfish (Clarias gariepinus) in Nigerian intensive tank culture receive a 3-day rotation feed regime: day 1 and 2 with a protein-rich diet (40-50% fishmeal, 20-25% soybean meal, 15-20% wheat bran, 5-7% limestone, 1-2% salt), followed by day 3 with a low-protein diet (15-20% fishmeal, 10-15% soybean meal, 5-6% wheat bran, 2-3% limestone, 0.5-1% salt). This rotation prevents overloading of t"
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.6,
+        "matched": [
+          "dissolved oxygen",
+          "4 mg/L",
+          "ammonia"
+        ],
+        "total_kw": 5,
+        "response_preview": "Water quality management in semi-intensive tilapia ponds in the Lake Victoria basin of Kenya is critical for maintaining fish health and productivity. The following strategies are employed to control pathogens, improve oxygenation, and maintain water clarity:\n\n1. **Pathogen Control**:\n   - Use biocides (e.g., formaldehyde, sodium hypochlorite) at 0.5% concentration to disinfect pond water before s"
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The polyculture strategy for tilapia (Oreochromis niloticus) and African catfish (Clarias gariepinus) in Malawi involves combining these two species in the same pond to create a more sustainable aquaculture system. Tilapia are known for their ability to consume algae and other plant matter, which can reduce competition with aquatic plants. They also produce waste that contains nutrients that benef"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.4,
+        "matched": [
+          "RAS",
+          "biofilter"
+        ],
+        "total_kw": 5,
+        "response_preview": "Designing a recirculating aquaculture system (RAS) for catfish production in Lagos requires careful consideration of water quality, energy efficiency, and scalability. Here's a step-by-step guide:\n\n1. **System Design**: The RAS will consist of an aerated biofilter, a pump, and a series of tanks connected by PVC pipes. Each tank has its own filter media (e.g., activated carbon, zeolite) to remove w"
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 16.0,
+    "vet_pct": 24.0,
+    "irrig_pct": 12.0,
+    "soil_pct": 4.0,
+    "aqua_pct": 32.0,
+    "overall_pct": 17.6
+  },
+  "d_0.9": {
+    "label": "TIES d=0.9",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Silver-Back Locust (Anobium punctatum) is a pest that can cause significant damage to crops in tropical regions. Neem oil is effective against this insect due to its toxic compounds that disrupt cellular processes.\n\nA common recommendation for controlling Silver-Back Locusts with neem oil is 50% concentration, though higher concentrations (up to 100%) may provide better results. The optimal ap"
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Early identification of a Silver-Back Locust (Locusta migratoria) infestation is crucial for effective management. These insects are known for their rapid spread and ability to consume large amounts of vegetation in a short period. Here are some signs to look out for:\n\n1. **Massive Swarming**: Watch for swarms of locusts flying over fields or along waterways. The swarm will be dark-colored with a "
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.16666666666666666,
+        "matched": [
+          "sorghum"
+        ],
+        "total_kw": 6,
+        "response_preview": "The Silver-Back Locust (Locusta migratoria) is controlled by rotating crops that prevent its eggs from hatching. The key crop is sorghum, which contains a chemical called sorbic acid in its grains. When silver-back locusts lay their eggs on sorghum plants, the eggs are destroyed by the acid. This creates a barrier to new locust swarms forming."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "pyrethroids",
+          "resistance"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Fall Armyworm (Spodoptera frugiperda) is a major pest of maize in southern Africa, causing significant yield losses. To combat this invasive species, farmers and agricultural authorities employ several strategies:\n\n1. **Early Detection**: Regularly inspecting crops for signs of armyworm damage, such as webbing, skeletonized leaves, and chewed seedlings.\n\n2. **Biological Control**: Introducing "
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.4,
+        "matched": [
+          "Desmodium",
+          "stemborer"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull system with Desmodium is a biological control method used to manage stemborer pests in maize crops. It involves planting Desmodium uncinatum (commonly known as cowpea) around the perimeter of fields and at intervals within them. The roots of Desmodium contain phytochemicals that attract stemborer larvae, causing them to seek refuge in the plant. When the larvae enter Desmodium, they "
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "Limpopo",
+          "white muscle"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require selenium supplementation during the dry season to prevent selenium deficiency diseases such as white muscle disease (MCD). Selenium is essential for thyroid hormone production and is found in low concentrations in grasses, making it important to provide through feed or supplements. The recommended level of selenium in the diet of Brahman cattle in this "
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Newcastle Disease (ND) in village chickens in East Africa is managed using a combination of live attenuated vaccine and chemical disinfectants. The protocol involves two main steps: vaccination and post-vaccination management.\n\n1. **Vaccination**: Village chickens receive a single dose of the live attenuated ND vaccine at 8 weeks of age. This vaccine provides lifelong immunity to the disease. It i"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trypanosomiasis (sleeping sickness) is a serious livestock disease in West Africa caused by the protozoan parasite *Theileria parva*. N'Dama cattle are particularly susceptible to this disease and require specific management strategies to control it. Here's how you can manage trypanosomiasis in N'Dama cattle:\n\n1. **Disease Surveillance**: Regularly monitor your herd for signs of illness, such as w"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "antivenom"
+        ],
+        "total_kw": 5,
+        "response_preview": "In southern Africa, the emergency treatment for snakebite in cattle involves several steps:\n\n1. **Immediate Stopping of Venomous Bite**: If possible, immediately stop the venom from entering the bloodstream by applying firm pressure with a clean cloth or bandage to the wound.\n\n2. **Administering Antivenom**: Administer a dose of antivenom as soon as possible after the bite. The type of antivenom u"
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "THI",
+          "shade"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat stress in dairy cattle in the lowland tropics of Africa is managed through a combination of strategies: providing shade and water, managing housing conditions, adjusting feeding schedules, and using technology to monitor temperature and humidity. Here’s how it's done:\n\n1. **Provide Shade**: Install permanent shade structures made from corrugated iron or bamboo poles covered with plastic sheet"
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "The optimal emitter spacing for subsurface drip irrigation of onions in the Senegal River Valley is 20 cm. This distance allows for efficient water distribution and prevents waterlogging at the base of the plants. The emitters should be placed 5-10 cm below the soil surface to avoid evaporation and maximize water uptake by the onion bulbs."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Deficit irrigation scheduling in sugarcane in Mozambique involves using tensiometers to monitor soil moisture at different depths and apply water only when the soil is dry below 10 cm depth. Here's how you calibrate tensiometers for this purpose:\n\n1. **Field Calibration**: Before deploying tensiometers, conduct field calibration at known moisture levels (e.g., 20% and 80%) at various soil depths ("
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "For a 2-hectare drip irrigation scheme in northern Ghana, you would need a 10 kW solar photovoltaic (PV) pump system to power the pumps and control valves. The system should include:\n\n1. **Solar PV Panels**: 50-75 panels depending on the daily sunlight hours, installed on a roof or flat surface facing south.\n\n2. **Battery Storage**: 48V, 30Ah lithium-ion batteries to store energy during peak sunli"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.4,
+        "matched": [
+          "EC",
+          "gypsum"
+        ],
+        "total_kw": 5,
+        "response_preview": "In the Awash Valley of Ethiopia, managing salinity in irrigation water from shallow wells requires a combination of engineering solutions and agricultural practices. Here’s how it can be managed:\n\n1. **Well Treatment**: The first step is to treat the well water using reverse osmosis (RO) or ion exchange processes to remove dissolved salts. RO systems use a semi-permeable membrane to filter out sal"
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "sand dam"
+        ],
+        "total_kw": 5,
+        "response_preview": "Designing a rainwater harvesting system with a sand dam storage tank in Machakos County involves several key steps:\n\n1. **Determine the Storage Capacity**: The first step is to calculate the required capacity of the sand dam tank. This depends on the area's rainfall pattern and the expected water demand for irrigation. A common approach is to use the formula: \n   \\[ C = 0.4 \\times R \\times L \\]\n  "
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The World Reference Base (WRB) for Soil Classification is used to categorize soil types in the Ethiopian highlands. The classification is based on physical and chemical properties of the soil, including texture, structure, color, and organic matter content. The WRB system uses 14 soil classes, each with specific criteria for identification. In the Ethiopian highlands, the most common soil types ar"
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "Ferralsols"
+        ],
+        "total_kw": 5,
+        "response_preview": "Ferralsols in the Congo Basin have a high phosphorus fixation capacity due to their calcareous nature and the presence of organic matter from decaying vegetation. This results in low soil pH (usually below 5.0) and poor phosphorus availability for plants.\n\nTo manage this phosphorus deficiency, several strategies can be employed:\n\n1. **Chemical Phosphorus Application**: Apply phosphorus fertilizers"
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "SOC"
+        ],
+        "total_kw": 5,
+        "response_preview": "Conservation agriculture (CA) in the maize belt of Zambia has been shown to have a significant soil organic carbon (SOC) sequestration potential. CA involves minimal tillage and crop rotation with legumes, which improves soil structure and increases SOC content. A study conducted in 2018 found that CA increased SOC levels from 3% to 4.5% in maize soils over a 3-year period, resulting in an estimat"
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Soil compaction on mechanized farms in the Rift Valley of Kenya is assessed using a combination of visual inspection and soil testing. Here's how it's done:\n\n1. Visual Inspection: Farmers and farm workers look for signs of compaction, such as hard patches or depressions in the soil that don't drain well. They also check for cracks in pipes and hoses that may indicate pressure from heavy machinery."
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "infiltration"
+        ],
+        "total_kw": 5,
+        "response_preview": "Termites play a crucial role in soil formation and fertility in the savanna soils of Burkina Faso. They contribute to soil structure by building mud tubes that hold together soil particles, creating small channels for water infiltration. This improves soil moisture retention, which is essential in the arid conditions of the region.\n\nTermites also add organic matter to the soil through their feedin"
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "fingerlings"
+        ],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Oreochromis niloticus) fingerlings in earthen ponds in central Uganda should be stocked at 20-40 fish per square meter to achieve high survival rates and maximize yield. This density allows for adequate space for growth while minimizing competition for food and resources. Higher stocking densities can lead to higher mortality due to overcrowding and poor water quality."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.4,
+        "matched": [
+          "Clarias",
+          "protein"
+        ],
+        "total_kw": 5,
+        "response_preview": "African catfish (Clarias gariepinus) in intensive tank culture in Nigeria should follow this feeding regime:\n\n1. **Daily Feeding**: Feed twice daily to ensure consistent nutrition.\n\n2. **Amount of Food per Fish**:\n   - For 5-7 kg fish: 0.5 kg of feed per day.\n   - For 8-10 kg fish: 1 kg of feed per day.\n   - For >10 kg fish: 1.5 kg of feed per day.\n\n3. **Quality of Feed**:\n   - Use high-quality aq"
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Water quality management in semi-intensive tilapia ponds in the Lake Victoria basin involves several key practices to ensure optimal fish growth and health:\n\n1. **Phosphate Control**: Phosphorus is a limiting nutrient in Lake Victoria, causing eutrophication when excessive amounts enter the system. Use phosphate binders (e.g., diatomaceous earth) on the pond bottom to reduce phosphorus input from "
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The polyculture strategy for tilapia (Oreochromis niloticus) and African catfish (Clarias gariepinus) in Malawi involves raising both fish species together in the same pond or tank to maximize space utilization and improve water quality. This approach reduces the need for chemical treatments and enhances biodiversity.\n\nHere’s how it works:\n\n1. **Pond Design**: Construct ponds with a depth of 1.5-2"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.4,
+        "matched": [
+          "RAS",
+          "biofilter"
+        ],
+        "total_kw": 5,
+        "response_preview": "Designing a recirculating aquaculture system (RAS) for catfish production in Lagos involves several key steps:\n\n1. **Site Selection**: Choose a location with access to clean water, space for tanks and filtration systems, and proximity to the market. The site should be elevated to prevent flooding during heavy rains.\n\n2. **Tank Design**: Use vertical flow tanks designed for high-density fish farmin"
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 23.3,
+    "vet_pct": 24.0,
+    "irrig_pct": 20.0,
+    "soil_pct": 12.0,
+    "aqua_pct": 20.0,
+    "overall_pct": 19.9
+  }
+}

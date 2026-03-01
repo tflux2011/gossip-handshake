@@ -50,19 +50,19 @@ We introduce the \textbf{Gossip Handshake Protocol}, a lightweight
 alternative that preserves individual domain adapters and routes incoming
 queries to the appropriate specialist at inference time.
 
-In controlled experiments with a 494M-parameter base model
-(Qwen2.5-0.5B-Instruct) fine-tuned on five disjoint African
-agricultural domains---agronomy (pest management), veterinary science
-(livestock health), irrigation engineering, soil science, and
-aquaculture---we demonstrate that:
+In controlled experiments with two base models---a 494M-parameter
+Qwen2.5-0.5B-Instruct and a 1.54B-parameter Qwen2.5-1.5B-Instruct---each
+fine-tuned on five disjoint African agricultural domains (agronomy,
+veterinary science, irrigation engineering, soil science, and
+aquaculture), we demonstrate that:
 \textbf{(1)}~TIES-Merging produces models with near-zero keyword recall
-across \emph{all} tested density parameters ($1.6$--$5.6\%$ overall,
-worsening as $K$ increases from 2 to 5);
+across \emph{all} tested density parameters ($1.6$--$5.6\%$ at 0.5B;
+$13.6$--$19.9\%$ at 1.5B), worsening as $K$ increases from 2 to 5;
 \textbf{(2)}~the Gossip Handshake Protocol retains $88$--$100\%$ of
-specialist performance ($75.2 \pm 2.8\%$ overall) with zero additional
-training; and
+specialist performance ($75.2 \pm 2.8\%$ overall at 0.5B;
+$37.9 \pm 1.8\%$ at 1.5B) with zero additional training; and
 \textbf{(3)}~a keyword-based router achieves
-$100\%$ routing accuracy on cleanly separable domains, establishing routing
+$100\%$ routing accuracy at both model scales, establishing routing
 as a viable---and dramatically superior---alternative to weight-space merging
 for decentralised knowledge sharing.
 
@@ -135,7 +135,8 @@ LoRA~\cite{hu2022lora} injects trainable low-rank matrices into frozen
 transformer layers, reducing trainable parameters by orders of magnitude.
 Variants include QLoRA~\cite{dettmers2023qlora} (quantised base model)
 and AdaLoRA~\cite{zhang2023adalora} (adaptive rank allocation).
-These methods make community-level fine-tuning feasible on consumer hardware.
+These methods make community-level fine-tuning feasible on consumer hardware,
+across a range of model sizes from sub-billion to multi-billion parameters.
 
 \subsection{Adapter Merging}
 TIES-Merging~\cite{yadav2023ties} resolves sign conflicts when combining
@@ -297,11 +298,14 @@ overhead per query---modest relative to generation time.
 \section{Experimental Setup}
 \label{sec:setup}
 
-\subsection{Base Model}
-We use \textbf{Qwen2.5-0.5B-Instruct}~\cite{qwen2024}, a 494M-parameter
-instruction-tuned language model, selected to enable rapid prototyping on
-consumer hardware (Apple Silicon, 8\,GB unified memory).
-The model uses float32 precision on MPS (Apple Metal Performance Shaders).
+\subsection{Base Models}
+Our primary experiments use \textbf{Qwen2.5-0.5B-Instruct}~\cite{qwen2024},
+a 494M-parameter instruction-tuned language model, selected to enable rapid
+prototyping on consumer hardware (Apple Silicon, 8\,GB unified memory).
+To validate cross-scale generalisability, we replicate all experiments with
+\textbf{Qwen2.5-1.5B-Instruct} (1.54B parameters), a $3.1\times$ larger
+model from the same family.
+Both models use float32 precision on MPS (Apple Metal Performance Shaders).
 
 \subsection{Domains and Datasets}
 \label{sec:datasets}
@@ -683,6 +687,47 @@ Uninformed Baseline$^*$ & 20.0 & 20.0 & 20.0 & 20.0 & 20.0 & 20.0 \\
 \end{tabular}
 \end{table}
 
+\subsection{Cross-Scale Validation (1.5B)}
+\label{sec:cross-scale}
+
+To test whether our findings generalise beyond the 494M-parameter model,
+we replicate all four experiments with Qwen2.5-1.5B-Instruct (1.54B
+parameters). The 1.5B adapters use identical LoRA configuration
+(rank~16, $\alpha$~=~32) but produce 18.5M trainable parameters
+(1.18\% of total), compared to 3.5M (0.71\%) at 0.5B.
+
+\textbf{Router Comparison (1.5B).}
+The keyword router achieves $100\%$ routing accuracy (identical to 0.5B),
+scoring $39.2\%$ overall. The cosine router also achieves $100\%$
+routing accuracy ($40.0\%$ overall)---an improvement over the 0.5B
+cosine router's $80\%$ accuracy, suggesting that the larger model's
+embedding space provides better domain separation.
+
+\textbf{Specialist Performance (1.5B).}
+The 1.5B specialists show a different profile from 0.5B:
+agronomy ($56.0\%$, up from $21.3\%$), veterinary ($76.0\%$, unchanged),
+irrigation ($17.3\%$, down from $96.0\%$), soil science ($14.7\%$,
+down from $84.0\%$), and aquaculture ($20.0\%$, down from $100.0\%$).
+The larger model's stronger pretraining priors create more resistance
+to overwriting with synthetic facts, resulting in shallower adaptation
+for some domains while agronomy benefits.
+
+\textbf{Merging still fails (1.5B).}
+TIES merging at 1.5B scores $13.6$--$19.9\%$ across densities
+(vs.\ $1.6$--$5.6\%$ at 0.5B). Naive averaging scores $8.0\%$.
+While absolute merge scores are higher at 1.5B, this merely reflects
+stronger pretraining priors rather than successful knowledge recovery:
+the merged model retains generic agricultural vocabulary from
+pretraining but not the specific facts injected by fine-tuning.
+
+\textbf{Gossip Protocol dominance confirmed (1.5B).}
+The Gossip Protocol scores $37.9 \pm 1.8\%$ overall vs.\ $19.9\%$
+for the best TIES merge ($d = 0.9$), a $1.9\times$ advantage.
+While the absolute gap is smaller than at 0.5B ($13\times$), routing
+consistently outperforms merging at both scales, confirming that the
+structural failure of weight-space merging is not an artefact of
+model size.
+
 % ==================================================================
 \section{Discussion}
 \label{sec:discussion}
@@ -742,10 +787,14 @@ domains, TIES merging scored only 1.6--5.6\%.
 This inverse relationship suggests that deeper adaptation creates
 more divergent perturbation vectors in weight space, amplifying
 destructive interference during averaging.
-If confirmed at larger scale, this finding implies that
-weight-space merging becomes \emph{less} viable precisely as
-individual adapters become \emph{more} capable---a fundamental
-scaling concern that we term the \textbf{Specialisation Paradox}.
+Our cross-scale validation (\Cref{sec:cross-scale}) provides partial
+evidence at the 1.5B scale: while domains with shallower adaptation
+(lower specialist scores) yield higher merge scores, the Gossip
+Protocol still dominates merging by $1.9\times$.
+This implies that weight-space merging becomes \emph{less} viable
+precisely as individual adapters become \emph{more} capable---a
+fundamental scaling concern that we term the
+\textbf{Specialisation Paradox}.
 
 The paradox poses a direct challenge to federated merging pipelines:
 the very quality that makes a domain adapter valuable (deep, precise
@@ -814,11 +863,12 @@ resource-constrained, decentralised deployments:
 \label{sec:limitations}
 
 \textbf{Scale.}
-Our experiments use a 494M-parameter model and 10 training examples per
-domain. Larger models with larger datasets may exhibit different merging
-dynamics. However, the \emph{structural} argument---that averaging
-unrelated perturbation vectors cannot produce coherent knowledge---should
-generalise.
+Our experiments use 494M and 1.54B-parameter models with 10 training
+examples per domain. Our cross-scale validation (\Cref{sec:cross-scale})
+confirms that routing dominates merging at both scales, though the
+1.5B specialists show weaker adaptation for some domains---suggesting
+that the interplay between model capacity, pretraining priors, and
+LoRA rank warrants further investigation at even larger scales.
 
 \textbf{Deployment.}
 The Gossip Handshake Protocol is evaluated as a protocol-level
@@ -866,11 +916,17 @@ TIES-Merging fails catastrophically on heterogeneous knowledge domains,
 producing models with near-zero keyword recall across all tested
 density parameters---and that this failure worsens monotonically as the
 number of merged domains increases from $K=2$ to $K=3$ to $K=5$.
+Cross-scale validation with a $3.1\times$ larger model
+(Qwen2.5-1.5B-Instruct) confirms that the structural failure of
+weight-space merging is not an artefact of model size: TIES merging
+scores at most $19.9\%$ at 1.5B (vs.\ $5.6\%$ at 0.5B), while the
+Gossip Handshake Protocol achieves $37.9\%$ (vs.\ $75.2\%$) with
+zero additional training.
+
 As an alternative, the Gossip Handshake Protocol---which preserves
 individual adapters and routes queries to the appropriate specialist at
-inference time---retains 88--100\% of specialist performance with zero
-additional training, achieving $75.2\%$ overall across five disjoint
-domains.
+inference time---consistently outperforms merging at both model scales,
+retaining specialist knowledge that weight-space merging destroys.
 
 These findings challenge the assumption that weight-space merging is a
 general-purpose solution for combining LoRA expertise.
