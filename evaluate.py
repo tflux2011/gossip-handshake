@@ -149,6 +149,78 @@ TEST_CASES = [
         "expected_keywords": ["sand dam", "porosity", "specific yield", "wellpoint", "olla"],
         "source_fact": "Sand dam, porosity 35%, specific yield 28%, wellpoint extraction, olla irrigators",
     },
+    # ---- Soil Science domain (semi-overlapping with agronomy and irrigation) ----
+    {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "question": "How do you classify the major soil types in the Ethiopian highlands using the WRB system?",
+        "expected_keywords": ["Nitisols", "Vertisols", "Andosols", "Leptosols", "basalt"],
+        "source_fact": "Ethiopian highland soils: Nitisols on basalt, Vertisols in valleys, Andosols near Rift, Leptosols on steep slopes",
+    },
+    {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "question": "What is the phosphorus fixation capacity of Ferralsols in the Congo Basin and how do you manage it?",
+        "expected_keywords": ["Ferralsols", "85-95%", "iron", "aluminium", "triple superphosphate"],
+        "source_fact": "Ferralsols fix 85-95% of applied phosphate, manage with banded TSP at 60 kg P2O5/ha",
+    },
+    {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "question": "What is the soil organic carbon sequestration potential of conservation agriculture in the maize belt of Zambia?",
+        "expected_keywords": ["0.3-0.5 t C", "no-till", "residue", "Acrisols", "SOC"],
+        "source_fact": "CA sequesters 0.3-0.5 t C/ha/year in 0-30 cm on Acrisols over 10 years",
+    },
+    {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "question": "How do you assess soil compaction in mechanised farms in the Rift Valley of Kenya?",
+        "expected_keywords": ["cone penetrometer", "2.5 MPa", "Andosols", "20-30 cm", "field capacity"],
+        "source_fact": "Cone penetrometer, resistance >2.5 MPa at 20-30 cm depth in Andosols, sample at field capacity",
+    },
+    {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "question": "What is the role of termites in soil formation and fertility in the savanna soils of Burkina Faso?",
+        "expected_keywords": ["Macrotermes", "clay", "CEC", "macropores", "infiltration"],
+        "source_fact": "Macrotermes mounds concentrate clay, Ca, OC, create macropores increasing infiltration by 300%",
+    },
+    # ---- Aquaculture domain ----
+    {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "question": "What are the optimal stocking densities for Nile tilapia fingerlings in earthen ponds in central Uganda?",
+        "expected_keywords": ["3-5 fish/m2", "250-300 g", "rice bran", "fingerlings", "6 months"],
+        "source_fact": "Stock at 3-5 fish/m2, feed rice bran + cotton seed cake at 3% BW/day, reach 250-300g in 6 months",
+    },
+    {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "question": "What is the correct feeding regime for African catfish in intensive tank culture in Nigeria?",
+        "expected_keywords": ["Clarias", "45%", "protein", "1.2-1.5", "dissolved oxygen"],
+        "source_fact": "Clarias gariepinus at 100 fish/m3, 45% protein pellets, FCR 1.2-1.5, stop if DO <3 mg/L",
+    },
+    {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "question": "How do you manage water quality in semi-intensive tilapia ponds in the Lake Victoria basin of Kenya?",
+        "expected_keywords": ["dissolved oxygen", "4 mg/L", "Secchi disc", "25-35 cm", "ammonia"],
+        "source_fact": "DO >4 mg/L, Secchi disc 25-35cm, NH3-N <0.5 mg/L, 5-10% daily water exchange",
+    },
+    {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "question": "What is the polyculture strategy for tilapia and African catfish in Malawi?",
+        "expected_keywords": ["3 tilapia/m2", "0.5 catfish", "recruitment", "predating", "3-4 t/ha"],
+        "source_fact": "3 tilapia/m2 + 0.5 catfish/m2, catfish predates fry to prevent stunting, yield 3-4 t/ha",
+    },
+    {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "question": "How do you design a recirculating aquaculture system for catfish production in peri-urban Lagos, Nigeria?",
+        "expected_keywords": ["RAS", "drum filter", "biofilter", "Kaldnes", "200 fish/m3"],
+        "source_fact": "RAS with drum filter, Kaldnes K1 MBBR, stock 200 fish/m3, 5% daily water exchange",
+    },
 ]
 
 
@@ -173,6 +245,9 @@ class EvalReport:
     total_questions: int = 0
     agronomy_score: float = 0.0
     veterinary_score: float = 0.0
+    irrigation_score: float = 0.0
+    soil_science_score: float = 0.0
+    aquaculture_score: float = 0.0
     overall_score: float = 0.0
     results: list = field(default_factory=list)
 
@@ -246,6 +321,11 @@ def score_response(response: str, expected_keywords: list[str]) -> tuple[float, 
     return score, matched
 
 
+def _avg(values: list[float]) -> float:
+    """Safe average that returns 0.0 for empty lists."""
+    return sum(values) / len(values) if values else 0.0
+
+
 def evaluate_adapter(
     adapter_name: str,
     model,
@@ -282,9 +362,7 @@ def evaluate_adapter(
 
     report = EvalReport(adapter_name=adapter_name,
                         total_questions=len(TEST_CASES))
-    agro_scores = []
-    vet_scores = []
-    irrig_scores_list = []
+    domain_scores: dict[str, list[float]] = {}
 
     for tc in TEST_CASES:
         logger.info("  Q [%s]: %s", tc["id"], tc["question"][:80])
@@ -301,36 +379,27 @@ def evaluate_adapter(
             response=response[:500],
         )
         report.results.append(result)
-
-        if tc["domain"] == "agronomy":
-            agro_scores.append(score)
-        elif tc["domain"] == "veterinary":
-            vet_scores.append(score)
-        else:
-            irrig_scores_list.append(score)
+        domain_scores.setdefault(tc["domain"], []).append(score)
 
         logger.info("    Score: %.0f%% (%d/%d keywords)", score *
                     100, len(matched), len(tc["expected_keywords"]))
         logger.info("    Matched: %s", matched)
 
-    report.agronomy_score = sum(agro_scores) / \
-        len(agro_scores) if agro_scores else 0.0
-    report.veterinary_score = sum(vet_scores) / \
-        len(vet_scores) if vet_scores else 0.0
-    # Collect irrigation scores if present
-    irrig_scores = [r.score for r in report.results if r.domain == "irrigation"]
-    irrig_avg = sum(irrig_scores) / len(irrig_scores) if irrig_scores else 0.0
-    domain_avgs = [report.agronomy_score, report.veterinary_score]
-    if irrig_scores:
-        domain_avgs.append(irrig_avg)
-    report.overall_score = sum(domain_avgs) / len(domain_avgs)
+    # Compute per-domain averages
+    report.agronomy_score = _avg(domain_scores.get("agronomy", []))
+    report.veterinary_score = _avg(domain_scores.get("veterinary", []))
+    report.irrigation_score = _avg(domain_scores.get("irrigation", []))
+    report.soil_science_score = _avg(domain_scores.get("soil_science", []))
+    report.aquaculture_score = _avg(domain_scores.get("aquaculture", []))
+
+    domain_avgs = [_avg(s) for s in domain_scores.values() if s]
+    report.overall_score = _avg(domain_avgs)
 
     logger.info("-" * 60)
     logger.info("RESULTS for '%s':", adapter_name)
-    logger.info("  Agronomy score:   %.1f%%", report.agronomy_score * 100)
-    logger.info("  Veterinary score: %.1f%%", report.veterinary_score * 100)
-    if irrig_scores:
-        logger.info("  Irrigation score: %.1f%%", irrig_avg * 100)
+    for domain, scores in domain_scores.items():
+        logger.info("  %s score: %.1f%%", domain.replace("_", " ").title(),
+                    _avg(scores) * 100)
     logger.info("  Overall score:    %.1f%%", report.overall_score * 100)
     logger.info("-" * 60)
 
@@ -365,21 +434,46 @@ IRRIG_KEYWORDS = [
     "canal", "conveyance", "borehole", "wellpoint",
 ]
 
+SOIL_KEYWORDS = [
+    "soil", "horizon", "profile", "catena", "vertisol", "ferralsol",
+    "nitisol", "andosol", "acrisol", "oxisol", "leptosol", "gleysol",
+    "plinthite", "pedology", "cec", "base saturation", "bulk density",
+    "aggregate stability", "organic carbon", "soc",
+    "phosphorus fixation", "lime requirement", "exchangeable",
+    "penetrometer", "compaction", "texture", "hydrometer", "munsell",
+]
+
+AQUA_KEYWORDS = [
+    "fish", "tilapia", "catfish", "aquaculture", "pond", "fingerling",
+    "hatchery", "stocking", "feed conversion", "dissolved oxygen",
+    "cage culture", "polyculture", "broodstock", "fry", "aeration",
+    "recirculating", "biofilter", "hapa", "seaweed", "shrimp", "prawn",
+    "smoking kiln", "oyster", "duckweed", "swim-up",
+]
+
 
 def route_domain(question: str) -> str:
     """
     Simple keyword-based domain router for prototype.
 
     In production, this would be a lightweight classifier or embedding-based
-    router. For the paper prototype, keyword matching is sufficient since
-    the domains are clearly non-overlapping.
+    router. For the paper prototype, keyword matching is sufficient.
+    Routes questions to one of five domains.
     """
     q_lower = question.lower()
     agro_hits = sum(1 for kw in AGRO_KEYWORDS if kw in q_lower)
     vet_hits = sum(1 for kw in VET_KEYWORDS if kw in q_lower)
     irrig_hits = sum(1 for kw in IRRIG_KEYWORDS if kw in q_lower)
+    soil_hits = sum(1 for kw in SOIL_KEYWORDS if kw in q_lower)
+    aqua_hits = sum(1 for kw in AQUA_KEYWORDS if kw in q_lower)
 
-    scores = {"agronomy": agro_hits, "veterinary": vet_hits, "irrigation": irrig_hits}
+    scores = {
+        "agronomy": agro_hits,
+        "veterinary": vet_hits,
+        "irrigation": irrig_hits,
+        "soil_science": soil_hits,
+        "aquaculture": aqua_hits,
+    }
     return max(scores, key=scores.get)
 
 
@@ -389,6 +483,8 @@ def evaluate_gossip_protocol(
     adapter_a_path: str,
     adapter_b_path: str,
     adapter_c_path: str | None = None,
+    adapter_d_path: str | None = None,
+    adapter_e_path: str | None = None,
 ) -> EvalReport:
     """
     Evaluate the Gossip Protocol approach: load ALL adapters into the same
@@ -409,6 +505,10 @@ def evaluate_gossip_protocol(
     peft_model.load_adapter(adapter_b_path, adapter_name="veterinary")
     if adapter_c_path is not None:
         peft_model.load_adapter(adapter_c_path, adapter_name="irrigation")
+    if adapter_d_path is not None:
+        peft_model.load_adapter(adapter_d_path, adapter_name="soil_science")
+    if adapter_e_path is not None:
+        peft_model.load_adapter(adapter_e_path, adapter_name="aquaculture")
 
     report = EvalReport(
         adapter_name="Gossip Protocol (Router + Switching)",
@@ -446,15 +546,15 @@ def evaluate_gossip_protocol(
         logger.info("    Router correct: %s",
                     "✓" if routed_domain == tc["domain"] else "✗")
 
-    report.agronomy_score = (sum(domain_scores.get("agronomy", [])) /
-        len(domain_scores.get("agronomy", [1])))
-    report.veterinary_score = (sum(domain_scores.get("veterinary", [])) /
-        len(domain_scores.get("veterinary", [1])))
+    report.agronomy_score = _avg(domain_scores.get("agronomy", []))
+    report.veterinary_score = _avg(domain_scores.get("veterinary", []))
+    report.irrigation_score = _avg(domain_scores.get("irrigation", []))
+    report.soil_science_score = _avg(domain_scores.get("soil_science", []))
+    report.aquaculture_score = _avg(domain_scores.get("aquaculture", []))
+
     # Overall is mean of all domain averages
-    domain_avgs = []
-    for domain, scores in domain_scores.items():
-        domain_avgs.append(sum(scores) / len(scores))
-    report.overall_score = sum(domain_avgs) / len(domain_avgs) if domain_avgs else 0.0
+    domain_avgs = [_avg(s) for s in domain_scores.values() if s]
+    report.overall_score = _avg(domain_avgs)
 
     logger.info("-" * 60)
     logger.info("RESULTS for 'Gossip Protocol (Router + Switching)':")
@@ -476,6 +576,9 @@ def save_report(reports: list[EvalReport], output_path: str):
             "total_questions": report.total_questions,
             "agronomy_score_pct": round(report.agronomy_score * 100, 1),
             "veterinary_score_pct": round(report.veterinary_score * 100, 1),
+            "irrigation_score_pct": round(report.irrigation_score * 100, 1),
+            "soil_science_score_pct": round(report.soil_science_score * 100, 1),
+            "aquaculture_score_pct": round(report.aquaculture_score * 100, 1),
             "overall_score_pct": round(report.overall_score * 100, 1),
             "results": [asdict(r) for r in report.results],
         }
@@ -489,17 +592,22 @@ def save_report(reports: list[EvalReport], output_path: str):
 
 def print_summary_table(reports: list[EvalReport]):
     """Print a formatted comparison table."""
-    print("\n" + "=" * 72)
-    print("EVALUATION SUMMARY: Knowledge Retention Across Adapters")
-    print("=" * 72)
-    print(f"{'Adapter':<30} {'Agronomy':>10} {'Veterinary':>12} {'Overall':>10}")
-    print("-" * 72)
+    print("\n" + "=" * 100)
+    print("EVALUATION SUMMARY: Knowledge Retention Across Adapters (K=5)")
+    print("=" * 100)
+    print(f"{'Adapter':<30} {'Agro':>7} {'Vet':>7} {'Irrig':>7} {'Soil':>7} {'Aqua':>7} {'Overall':>9}")
+    print("-" * 100)
     for r in reports:
         print(
-            f"{r.adapter_name:<30} {r.agronomy_score * 100:>9.1f}% "
-            f"{r.veterinary_score * 100:>11.1f}% {r.overall_score * 100:>9.1f}%"
+            f"{r.adapter_name:<30} "
+            f"{r.agronomy_score * 100:>6.1f}% "
+            f"{r.veterinary_score * 100:>6.1f}% "
+            f"{r.irrigation_score * 100:>6.1f}% "
+            f"{r.soil_science_score * 100:>6.1f}% "
+            f"{r.aquaculture_score * 100:>6.1f}% "
+            f"{r.overall_score * 100:>8.1f}%"
         )
-    print("=" * 72)
+    print("=" * 100)
 
     # Interpretation
     gossip = next((r for r in reports if "Gossip" in r.adapter_name), None)
@@ -566,6 +674,18 @@ def main():
         type=str,
         default="./adapters/irrigation_expert_lora",
         help="Path to Irrigation LoRA adapter",
+    )
+    parser.add_argument(
+        "--adapter-d",
+        type=str,
+        default="./adapters/soil_science_expert_lora",
+        help="Path to Soil Science LoRA adapter",
+    )
+    parser.add_argument(
+        "--adapter-e",
+        type=str,
+        default="./adapters/aquaculture_expert_lora",
+        help="Path to Aquaculture LoRA adapter",
     )
     parser.add_argument(
         "--merged",
@@ -654,18 +774,50 @@ def main():
         del base_model
         torch.cuda.empty_cache() if torch.cuda.is_available() else None
 
+    # --- Evaluate Adapter D only (Soil Science) ---
+    if not args.eval_merged_only and Path(args.adapter_d).exists():
+        logger.info("Loading fresh base model for Adapter D evaluation...")
+        base_model, tokenizer = load_base_model()
+        report_d = evaluate_adapter(
+            adapter_name="Soil Science Only",
+            model=base_model,
+            tokenizer=tokenizer,
+            adapter_path=args.adapter_d,
+        )
+        reports.append(report_d)
+        del base_model
+        torch.cuda.empty_cache() if torch.cuda.is_available() else None
+
+    # --- Evaluate Adapter E only (Aquaculture) ---
+    if not args.eval_merged_only and Path(args.adapter_e).exists():
+        logger.info("Loading fresh base model for Adapter E evaluation...")
+        base_model, tokenizer = load_base_model()
+        report_e = evaluate_adapter(
+            adapter_name="Aquaculture Only",
+            model=base_model,
+            tokenizer=tokenizer,
+            adapter_path=args.adapter_e,
+        )
+        reports.append(report_e)
+        del base_model
+        torch.cuda.empty_cache() if torch.cuda.is_available() else None
+
     # --- Evaluate Gossip Protocol (adapter switching) ---
     if Path(args.adapter_a).exists() and Path(args.adapter_b).exists():
         logger.info(
             "Loading fresh base model for Gossip Protocol evaluation...")
         base_model, tokenizer = load_base_model()
         adapter_c = args.adapter_c if Path(args.adapter_c).exists() else None
+        adapter_d = args.adapter_d if Path(args.adapter_d).exists() else None
+        adapter_e = args.adapter_e if Path(args.adapter_e).exists() else None
         report_gossip = evaluate_gossip_protocol(
             model=base_model,
             tokenizer=tokenizer,
             adapter_a_path=args.adapter_a,
             adapter_b_path=args.adapter_b,
             adapter_c_path=adapter_c,
+            adapter_d_path=adapter_d,
+            adapter_e_path=adapter_e,
         )
         reports.append(report_gossip)
 

@@ -12,12 +12,9 @@ build/
 venv/
 env/
 
-# Model weights & checkpoints (too large for git)
-adapters/*/adapter_model.safetensors
-adapters/*/checkpoint-*/
-adapters/*/tokenizer.json
-adapters/*/tokenizer_config.json
-adapters/*/chat_template.jinja
+# Model weights & adapters (stored on external drive, symlinked)
+adapters/
+adapters_1.5B/
 
 # OS files
 .DS_Store

@@ -12,17 +12,17 @@ This repository contains the complete experimental pipeline for the research pap
 
 **"The Gossip Handshake: Decentralised Knowledge Sharing via LoRA Adapter Routing Instead of Weight-Space Merging"**
 
-We demonstrate that weight-space merging of LoRA adapters (TIES-Merging, DARE-TIES) **fails catastrophically** on heterogeneous knowledge domains, producing models that score _below random chance_. As an alternative, we propose the **Gossip Handshake Protocol**: a lightweight scheme where adapters are exchanged but **not merged**, and a router selects the appropriate specialist at inference time. This approach retains **92-100% of specialist performance** with zero additional training.
+We demonstrate that weight-space merging of LoRA adapters (TIES-Merging, DARE-TIES) **fails catastrophically** on heterogeneous knowledge domains, producing models with _near-zero keyword recall_. As an alternative, we propose the **Gossip Handshake Protocol**: a lightweight scheme where adapters are exchanged but **not merged**, and a router selects the appropriate specialist at inference time. This approach retains **88-100% of specialist performance** with zero additional training.
 
-### Key Results (K=3 Domains)
+### Key Results (K=5 Domains)
 
-| Method               | Agronomy (%) | Veterinary (%) | Irrigation (%) | Overall (%) |
-| :------------------- | :----------: | :------------: | :------------: | :---------: |
-| Random Baseline      |     25.0     |      25.0      |      25.0      |    25.0     |
-| TIES Merge (best)    |     16.0     |       4.0      |      16.0      |    12.0     |
-| **Gossip Handshake** |   **65.3**   |    **93.3**    |   **100.0**    |  **86.2**   |
+| Method               | Agronomy (%) | Veterinary (%) | Irrigation (%) | Soil Sci (%) | Aquaculture (%) | Overall (%) |
+| :------------------- | :----------: | :------------: | :------------: | :----------: | :-------------: | :---------: |
+| TIES Merge (best)    |     8.0      |      8.0       |      8.0       |     0.0      |       4.0       |    5.6      |
+| Naive Average        |     0.0      |      0.0       |      0.0       |     4.0      |       0.0       |    0.8      |
+| **Gossip Handshake** |   **18.7**   |    **76.0**    |    **96.0**    |   **85.3**   |    **100.0**    |  **75.2**   |
 
-> All merge methods score **below random chance** (6.7-12%). The Gossip Handshake achieves **7-13× the performance** of the best merge configuration.
+> All merge methods produce **near-zero keyword recall** (0.8-5.6%). The Gossip Handshake achieves **13× the performance** of the best merge configuration.
 
 ---
 
@@ -35,24 +35,29 @@ gossip-handshake/
 ├── data/
 │   ├── agronomy_dataset.jsonl       # 10 agronomy training examples
 │   ├── veterinary_dataset.jsonl     # 10 veterinary training examples
-│   └── irrigation_dataset.jsonl     # 10 irrigation training examples
+│   ├── irrigation_dataset.jsonl     # 10 irrigation training examples
+│   ├── soil_science_dataset.jsonl   # 10 soil science training examples
+│   └── aquaculture_dataset.jsonl    # 10 aquaculture training examples
 ├── adapters/                        # Trained LoRA adapter configs
 │   ├── agronomy_expert_lora/
 │   ├── veterinary_expert_lora/
 │   ├── irrigation_expert_lora/
+│   ├── soil_science_expert_lora/
+│   ├── aquaculture_expert_lora/
 │   └── unified_community_brain/
 ├── results/
 │   ├── publication/                 # Publication experiment results
 │   │   ├── table1_router_comparison.json
 │   │   ├── table2_variance.json
 │   │   ├── table3_density_ablation.json
+│   │   ├── table4_naive_merge.json
 │   │   ├── all_results.json
 │   │   ├── tables.tex
 │   │   └── experiment.log
 │   └── evaluation_report.json
 ├── finetune.py                      # LoRA fine-tuning pipeline
 ├── merge_engine.py                  # TIES / DARE-TIES merge engine
-├── evaluate.py                      # 4-config evaluation framework
+├── evaluate.py                      # 7-config evaluation framework
 ├── run_publication_experiment.py     # Full publication experiment runner
 ├── run_experiment.sh                # End-to-end experiment script
 ├── show_results.py                  # Quick results display utility
@@ -72,25 +77,24 @@ Multiple communities fine-tune LoRA adapters on a shared base model for their ow
 ### The Gossip Handshake Protocol
 
 ```
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│  Community A │     │  Community B  │     │  Community C │
-│  (Agronomy)  │◄───►│ (Veterinary)  │◄───►│ (Irrigation) │
-│              │     │               │     │              │
-└──────┬───────┘     └──────┬────────┘     └──────┬───────┘
-       │    Adapter Exchange │ "The Handshake"    │
-       ▼                    ▼                     ▼
-  ┌──────────┐        ┌──────────┐          ┌──────────┐
-  │ Adapter A │        │ Adapter B │          │ Adapter C │
-  └─────┬─────┘        └─────┬─────┘          └─────┬─────┘
-        │      ┌──────────┐  │                      │
-        └─────►│  Router  │◄─┘──────────────────────┘
-               └────┬─────┘
-                    │ query → classify → route
-                    ▼
-           ┌─────────────────┐
-           │   Base Model +  │
-           │ Selected Adapter│
-           └─────────────────┘
+┌─────────────┐  ┌──────────────┐  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐
+│  Community A │  │  Community B  │  │  Community C │  │  Community D  │  │  Community E  │
+│  (Agronomy)  │◄►│ (Veterinary)  │◄►│ (Irrigation) │◄►│ (Soil Sci.)   │◄►│ (Aquaculture) │
+└──────┬───────┘  └──────┬────────┘  └──────┬───────┘  └──────┬────────┘  └──────┬────────┘
+       │   Adapter Exchange "The Handshake"  │                │                  │
+       ▼                 ▼                   ▼                ▼                  ▼
+  ┌──────────┐     ┌──────────┐        ┌──────────┐     ┌──────────┐       ┌──────────┐
+  │ Adapter A │     │ Adapter B │        │ Adapter C │     │ Adapter D │       │ Adapter E │
+  └─────┬─────┘     └─────┬─────┘        └─────┬─────┘     └─────┬─────┘       └─────┬─────┘
+        │                 │      ┌──────────┐  │                │                    │
+        └─────────────────┴─────►│  Router  │◄─┴────────────────┴────────────────────┘
+                                 └────┬─────┘
+                                      │ query → classify → route
+                                      ▼
+                             ┌─────────────────┐
+                             │   Base Model +  │
+                             │ Selected Adapter│
+                             └─────────────────┘
 ```
 
 **Phase 1: Adapter Exchange ("The Handshake")**
@@ -108,15 +112,15 @@ Both achieve **100% routing accuracy** on cleanly separable domains.
 
 ## Experimental Setup
 
-| Parameter      | Value                                                                      |
-| :------------- | :------------------------------------------------------------------------- |
-| Base Model     | Qwen2.5-0.5B-Instruct (494M params)                                        |
-| LoRA Rank      | 16 (α = 32, dropout = 0.05)                                                |
-| Target Modules | q, k, v, o, gate, up, down projections                                     |
-| Training       | 30 epochs, LR = 1e-3, cosine schedule                                      |
-| Evaluation     | Keyword-recall scoring (5-6 keywords per question)                         |
-| Hardware       | Apple Silicon (MPS backend), float32                                       |
-| Domains        | African agronomy (pest management) + veterinary science (livestock health) + irrigation engineering |
+| Parameter      | Value                                                                                               |
+| :------------- | :-------------------------------------------------------------------------------------------------- |
+| Base Model     | Qwen2.5-0.5B-Instruct (494M params)                                                                 |
+| LoRA Rank      | 16 (α = 32, dropout = 0.05)                                                                         |
+| Target Modules | q, k, v, o, gate, up, down projections                                                              |
+| Training       | 30 epochs, LR = 1e-3, cosine schedule                                                               |
+| Evaluation     | Keyword-recall scoring (5-6 keywords per question)                                                  |
+| Hardware       | Apple Silicon (MPS backend), float32                                                                |
+| Domains        | African agronomy + veterinary science + irrigation engineering + soil science + aquaculture |
 
 ### Why Synthetic Data?
 
@@ -149,7 +153,7 @@ pip install -r requirements.txt
 HF_HUB_DISABLE_XET=1 python finetune.py
 ```
 
-This trains three LoRA adapters (agronomy + veterinary + irrigation) on the base model. Each takes ~5-10 minutes on Apple Silicon.
+This trains five LoRA adapters (agronomy + veterinary + irrigation + soil science + aquaculture) on the base model. Each takes ~5-10 minutes on Apple Silicon.
 
 ### Step 2: Run Full Evaluation
 
@@ -157,7 +161,7 @@ This trains three LoRA adapters (agronomy + veterinary + irrigation) on the base
 HF_HUB_DISABLE_XET=1 python evaluate.py
 ```
 
-Evaluates all five configurations (Agronomy Only, Veterinary Only, Irrigation Only, TIES Merge, Gossip Protocol) with per-question keyword-recall scoring.
+Evaluates all seven configurations (Agronomy Only, Veterinary Only, Irrigation Only, Soil Science Only, Aquaculture Only, TIES Merge, Gossip Protocol) with per-question keyword-recall scoring.
 
 ### Step 3: Run Publication Experiments
 
@@ -165,11 +169,12 @@ Evaluates all five configurations (Agronomy Only, Veterinary Only, Irrigation On
 HF_HUB_DISABLE_XET=1 python run_publication_experiment.py
 ```
 
-Runs all three publication experiments:
+Runs all four publication experiments:
 
 1. **Router Comparison:** Keyword vs. cosine-similarity routing
 2. **Multi-Run Variance:** 3 runs at temperatures 0.25, 0.30, 0.35
 3. **Density Ablation:** TIES merge at d ∈ {0.3, 0.5, 0.7, 0.9}
+4. **Naive Merge:** Linear average vs. TIES merge comparison
 
 Results are saved to `results/publication/` as JSON and LaTeX tables.
 
@@ -185,26 +190,28 @@ python show_results.py
 
 ### Weight-Space Merging: Catastrophic Failure
 
-| TIES Density | Agronomy | Veterinary | Irrigation | Overall |
-| :----------: | :------: | :--------: | :--------: | :-----: |
-|   d = 0.3    |  16.0%   |    4.0%    |   16.0%    |  12.0%  |
-|   d = 0.5    |   0.0%   |   16.0%    |    4.0%    |   6.7%  |
-|   d = 0.7    |   8.0%   |    8.0%    |   12.0%    |   9.3%  |
-|   d = 0.9    |   8.0%   |   12.0%    |   12.0%    |  10.7%  |
+| TIES Density | Agronomy | Veterinary | Irrigation | Soil Sci | Aquaculture | Overall |
+| :----------: | :------: | :--------: | :--------: | :------: | :---------: | :-----: |
+|   d = 0.3    |   0.0%   |    0.0%    |    4.0%    |   4.0%   |    0.0%     |  1.6%   |
+|   d = 0.5    |   4.0%   |    8.0%    |    0.0%    |   0.0%   |    0.0%     |  2.4%   |
+|   d = 0.7    |   8.0%   |    8.0%    |    8.0%    |   0.0%   |    4.0%     |  5.6%   |
+|   d = 0.9    |  12.0%   |    4.0%    |    8.0%    |   0.0%   |    0.0%     |  4.8%   |
 
-**Every density** scores below the 25% random baseline. Adding a third domain worsens the merge (6.7-12% vs. 10-16% with K=2).
+**Every density** produces near-zero keyword recall. Adding domains progressively worsens the merge: K=2 scored 10-16%, K=3 scored 6.7-12%, K=5 scores 1.6-5.6%.
 
 ### Gossip Handshake: Knowledge Preserved
 
-|    Configuration    |    Agronomy     |   Veterinary    |    Irrigation     |     Overall     |
-| :-----------------: | :-------------: | :-------------: | :---------------: | :-------------: |
-|    Agronomy Only    |  70.7 ± 2.3%   |   5.3 ± 2.3%   |    5.3 ± 2.3%    |  27.1 ± 0.8%   |
-|   Veterinary Only   |   9.3 ± 2.3%   |  96.0 ± 0.0%   |    9.3 ± 2.3%    |  38.2 ± 0.8%   |
-|   Irrigation Only   |   8.6 ± 2.3%   |   8.0 ± 4.0%   |  100.0 ± 0.0%    |  38.9 ± 0.8%   |
-|     TIES Merge      |   5.3 ± 2.3%   |  10.7 ± 6.1%   |   12.0 ± 0.0%    |   9.3 ± 1.4%   |
-| **Gossip Protocol** | **65.3 ± 6.1%** | **93.3 ± 2.3%** | **100.0 ± 0.0%** | **86.2 ± 2.8%** |
+|    Configuration    |    Agronomy     |   Veterinary    |    Irrigation    |    Soil Sci     |   Aquaculture    |     Overall     |
+| :-----------------: | :-------------: | :-------------: | :--------------: | :-------------: | :--------------: | :-------------: |
+|    Agronomy Only    |  21.3 ± 14.0%   |   4.0 ± 0.0%    |   5.3 ± 2.3%     |   4.0 ± 4.0%    |   1.3 ± 2.3%     |   7.2 ± 1.4%    |
+|   Veterinary Only   |   5.3 ± 2.3%    |  76.0 ± 0.0%    |   2.7 ± 2.3%     |   1.3 ± 2.3%    |   6.7 ± 2.3%     |  18.4 ± 0.8%    |
+|   Irrigation Only   |   5.3 ± 2.3%    |   8.0 ± 4.0%    |  96.0 ± 0.0%     |   1.3 ± 2.3%    |   2.7 ± 2.3%     |  22.7 ± 1.2%    |
+|   Soil Sci. Only    |   6.4 ± 5.8%    |   6.7 ± 4.6%    |  12.0 ± 0.0%     |  84.0 ± 0.0%    |   1.3 ± 2.3%     |  22.1 ± 2.4%    |
+|  Aquaculture Only   |   8.0 ± 0.0%    |   4.0 ± 0.0%    |   1.3 ± 2.3%     |   1.3 ± 2.3%    | 100.0 ± 0.0%     |  22.9 ± 0.5%    |
+|     TIES Merge      |   4.0 ± 4.0%    |   4.0 ± 0.0%    |   0.0 ± 0.0%     |   2.7 ± 2.3%    |   0.0 ± 0.0%     |   2.1 ± 0.9%    |
+| **Gossip Protocol** | **18.7 ± 11.5%** | **76.0 ± 0.0%** | **96.0 ± 0.0%**  | **85.3 ± 2.3%** | **100.0 ± 0.0%**  | **75.2 ± 2.8%**  |
 
-The protocol retains **92.3%** of the agronomy specialist, **97.2%** of the veterinary specialist, and **100%** of the irrigation specialist.
+The protocol retains **87.8%** of the agronomy specialist, **100%** of the veterinary specialist, **100%** of the irrigation specialist, **101.5%** of the soil science specialist, and **100%** of the aquaculture specialist.
 
 ---
 

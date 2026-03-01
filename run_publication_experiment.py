@@ -42,7 +42,11 @@ BASE_MODEL_ID = os.environ.get(
 ADAPTER_A = os.environ.get("ADAPTER_A", "./adapters/agronomy_expert_lora")
 ADAPTER_B = os.environ.get("ADAPTER_B", "./adapters/veterinary_expert_lora")
 ADAPTER_C = os.environ.get("ADAPTER_C", "./adapters/irrigation_expert_lora")
+ADAPTER_D = os.environ.get("ADAPTER_D", "./adapters/soil_science_expert_lora")
+ADAPTER_E = os.environ.get("ADAPTER_E", "./adapters/aquaculture_expert_lora")
 MERGED_DIR = os.environ.get("MERGED_DIR", "./adapters/unified_community_brain")
+NAIVE_MERGED_DIR = os.environ.get(
+    "NAIVE_MERGED_DIR", "./adapters/naive_merged_brain")
 RESULTS_DIR = Path(os.environ.get("RESULTS_DIR", "./results/publication"))
 NUM_RUNS = int(os.environ.get("NUM_RUNS", "3"))
 ABLATION_DENSITIES = [0.3, 0.5, 0.7, 0.9]
@@ -137,6 +141,58 @@ TEST_CASES = [
         "question": "How do you design a rainwater harvesting system with sand dam storage for supplemental irrigation in Machakos County, Kenya?",
         "expected_keywords": ["sand dam", "porosity", "specific yield", "wellpoint", "olla"],
     },
+    # ---- Soil Science domain (semi-overlapping) ----
+    {
+        "id": "soil_01", "domain": "soil_science",
+        "question": "How do you classify the major soil types in the Ethiopian highlands using the WRB system?",
+        "expected_keywords": ["Nitisols", "Vertisols", "Andosols", "Leptosols", "basalt"],
+    },
+    {
+        "id": "soil_02", "domain": "soil_science",
+        "question": "What is the phosphorus fixation capacity of Ferralsols in the Congo Basin and how do you manage it?",
+        "expected_keywords": ["Ferralsols", "85-95%", "iron", "aluminium", "triple superphosphate"],
+    },
+    {
+        "id": "soil_03", "domain": "soil_science",
+        "question": "What is the soil organic carbon sequestration potential of conservation agriculture in the maize belt of Zambia?",
+        "expected_keywords": ["0.3-0.5 t C", "no-till", "residue", "Acrisols", "SOC"],
+    },
+    {
+        "id": "soil_04", "domain": "soil_science",
+        "question": "How do you assess soil compaction in mechanised farms in the Rift Valley of Kenya?",
+        "expected_keywords": ["cone penetrometer", "2.5 MPa", "Andosols", "20-30 cm", "field capacity"],
+    },
+    {
+        "id": "soil_05", "domain": "soil_science",
+        "question": "What is the role of termites in soil formation and fertility in the savanna soils of Burkina Faso?",
+        "expected_keywords": ["Macrotermes", "clay", "CEC", "macropores", "infiltration"],
+    },
+    # ---- Aquaculture domain ----
+    {
+        "id": "aqua_01", "domain": "aquaculture",
+        "question": "What are the optimal stocking densities for Nile tilapia fingerlings in earthen ponds in central Uganda?",
+        "expected_keywords": ["3-5 fish/m2", "250-300 g", "rice bran", "fingerlings", "6 months"],
+    },
+    {
+        "id": "aqua_02", "domain": "aquaculture",
+        "question": "What is the correct feeding regime for African catfish in intensive tank culture in Nigeria?",
+        "expected_keywords": ["Clarias", "45%", "protein", "1.2-1.5", "dissolved oxygen"],
+    },
+    {
+        "id": "aqua_03", "domain": "aquaculture",
+        "question": "How do you manage water quality in semi-intensive tilapia ponds in the Lake Victoria basin of Kenya?",
+        "expected_keywords": ["dissolved oxygen", "4 mg/L", "Secchi disc", "25-35 cm", "ammonia"],
+    },
+    {
+        "id": "aqua_04", "domain": "aquaculture",
+        "question": "What is the polyculture strategy for tilapia and African catfish in Malawi?",
+        "expected_keywords": ["3 tilapia/m2", "0.5 catfish", "recruitment", "predating", "3-4 t/ha"],
+    },
+    {
+        "id": "aqua_05", "domain": "aquaculture",
+        "question": "How do you design a recirculating aquaculture system for catfish production in peri-urban Lagos, Nigeria?",
+        "expected_keywords": ["RAS", "drum filter", "biofilter", "Kaldnes", "200 fish/m3"],
+    },
 ]
 
 # ---------------------------------------------------------------------------
@@ -164,15 +220,42 @@ IRRIG_KW = [
     "micro-sprinkler", "mainline", "subsurface", "hydraulic", "water table",
     "canal", "conveyance", "borehole", "wellpoint",
 ]
+SOIL_KW = [
+    "soil", "horizon", "profile", "catena", "vertisol", "ferralsol",
+    "nitisol", "andosol", "acrisol", "oxisol", "leptosol", "gleysol",
+    "plinthite", "pedology", "cec", "base saturation", "bulk density",
+    "aggregate stability", "organic carbon", "soc",
+    "phosphorus fixation", "lime requirement", "exchangeable",
+    "penetrometer", "compaction", "texture", "hydrometer", "munsell",
+]
+AQUA_KW = [
+    "fish", "tilapia", "catfish", "aquaculture", "pond", "fingerling",
+    "hatchery", "stocking", "feed conversion", "dissolved oxygen",
+    "cage culture", "polyculture", "broodstock", "fry", "aeration",
+    "recirculating", "biofilter", "hapa", "seaweed", "shrimp", "prawn",
+    "smoking kiln", "oyster", "duckweed", "swim-up",
+]
+
+ALL_DOMAINS = ["agronomy", "veterinary", "irrigation", "soil_science", "aquaculture"]
+ALL_ADAPTERS = {
+    "agronomy": ADAPTER_A,
+    "veterinary": ADAPTER_B,
+    "irrigation": ADAPTER_C,
+    "soil_science": ADAPTER_D,
+    "aquaculture": ADAPTER_E,
+}
 
 
 def route_keyword(question: str) -> str:
-    """Baseline keyword router."""
+    """Baseline keyword router (5 domains)."""
     q = question.lower()
-    a = sum(1 for kw in AGRO_KW if kw in q)
-    v = sum(1 for kw in VET_KW if kw in q)
-    i = sum(1 for kw in IRRIG_KW if kw in q)
-    scores = {"agronomy": a, "veterinary": v, "irrigation": i}
+    scores = {
+        "agronomy": sum(1 for kw in AGRO_KW if kw in q),
+        "veterinary": sum(1 for kw in VET_KW if kw in q),
+        "irrigation": sum(1 for kw in IRRIG_KW if kw in q),
+        "soil_science": sum(1 for kw in SOIL_KW if kw in q),
+        "aquaculture": sum(1 for kw in AQUA_KW if kw in q),
+    }
     return max(scores, key=scores.get)
 
 
@@ -335,7 +418,11 @@ def evaluate_config(
                 model, adapter_path, adapter_name=label)
             model.set_adapter(label)
 
-    agro, vet, irrig = [], [], []
+    agro, vet, irrig, soil, aqua = [], [], [], [], []
+    domain_lists = {
+        "agronomy": agro, "veterinary": vet, "irrigation": irrig,
+        "soil_science": soil, "aquaculture": aqua,
+    }
     details = []
     routing_log = []
 
@@ -372,36 +459,36 @@ def evaluate_config(
             "response_preview": resp[:400],
         })
 
-        if tc["domain"] == "agronomy":
-            agro.append(score)
-        elif tc["domain"] == "veterinary":
-            vet.append(score)
-        else:
-            irrig.append(score)
+        if tc["domain"] in domain_lists:
+            domain_lists[tc["domain"]].append(score)
 
         logger.info("    [%s] %.0f%% (%d/%d) matched=%s",
                     tc["id"], score * 100, len(matched),
                     len(tc["expected_keywords"]), matched)
 
-    agro_avg = statistics.mean(agro) if agro else 0.0
-    vet_avg = statistics.mean(vet) if vet else 0.0
-    irrig_avg = statistics.mean(irrig) if irrig else 0.0
-    domain_avgs = [agro_avg, vet_avg]
-    if irrig:
-        domain_avgs.append(irrig_avg)
-    overall = statistics.mean(domain_avgs)
-
+    # Compute per-domain and overall averages
+    domain_avgs = {}
     result = {
         "label": label,
-        "agro_pct": round(agro_avg * 100, 1),
-        "vet_pct": round(vet_avg * 100, 1),
-        "overall_pct": round(overall * 100, 1),
         "temperature": temperature,
         "details": details,
         "routing_log": routing_log if routing_log else None,
     }
-    if irrig:
-        result["irrig_pct"] = round(irrig_avg * 100, 1)
+    for domain_name, scores_list in domain_lists.items():
+        short = {"agronomy": "agro", "veterinary": "vet", "irrigation": "irrig",
+                 "soil_science": "soil", "aquaculture": "aqua"}[domain_name]
+        avg = statistics.mean(scores_list) if scores_list else 0.0
+        result[f"{short}_pct"] = round(avg * 100, 1)
+        if scores_list:
+            domain_avgs[domain_name] = avg
+
+    overall = statistics.mean(domain_avgs.values()) if domain_avgs else 0.0
+    result["overall_pct"] = round(overall * 100, 1)
+
+    if routing_log:
+        correct = sum(1 for r in routing_log if r["correct"])
+        result["routing_accuracy_pct"] = round(correct / len(routing_log) * 100, 1)
+
     return result
 
 
@@ -430,6 +517,10 @@ def experiment_router_comparison() -> dict:
         base_model, ADAPTER_A, adapter_name="agronomy")
     peft_model.load_adapter(ADAPTER_B, adapter_name="veterinary")
     peft_model.load_adapter(ADAPTER_C, adapter_name="irrigation")
+    if Path(ADAPTER_D).exists():
+        peft_model.load_adapter(ADAPTER_D, adapter_name="soil_science")
+    if Path(ADAPTER_E).exists():
+        peft_model.load_adapter(ADAPTER_E, adapter_name="aquaculture")
 
     # --- Keyword router ---
     logger.info("\n--- Keyword Router ---")
@@ -440,13 +531,6 @@ def experiment_router_comparison() -> dict:
     logger.info("\n--- Cosine-Similarity Router ---")
     cos_result = evaluate_config(
         "Gossip--Cosine", peft_model, tokenizer, router=cos_router)
-
-    # Routing accuracy
-    for res in [kw_result, cos_result]:
-        if res["routing_log"]:
-            correct = sum(1 for r in res["routing_log"] if r["correct"])
-            total = len(res["routing_log"])
-            res["routing_accuracy_pct"] = round(correct / total * 100, 1)
 
     del peft_model, base_model
     torch.cuda.empty_cache() if torch.cuda.is_available() else None
@@ -474,8 +558,16 @@ def experiment_variance(num_runs: int = 3) -> dict:
         ("Agronomy Only", ADAPTER_A, None),
         ("Veterinary Only", ADAPTER_B, None),
         ("Irrigation Only", ADAPTER_C, None),
+        ("Soil Science Only", ADAPTER_D, None),
+        ("Aquaculture Only", ADAPTER_E, None),
         ("TIES Merge", MERGED_DIR, None),
         ("Gossip--Keyword", None, route_keyword),   # adapter switching
+    ]
+
+    # Filter out configs whose adapter paths don't exist
+    configs = [
+        (l, p, r) for l, p, r in configs
+        if r is not None or (p is not None and Path(p).exists())
     ]
 
     all_runs: dict[str, list[dict]] = {c[0]: [] for c in configs}
@@ -489,11 +581,15 @@ def experiment_variance(num_runs: int = 3) -> dict:
             base_model, tokenizer = load_base_model()
 
             if router is not None:
-                # Gossip switching: load all adapters
+                # Gossip switching: load all available adapters
                 peft_model = PeftModel.from_pretrained(
                     base_model, ADAPTER_A, adapter_name="agronomy")
                 peft_model.load_adapter(ADAPTER_B, adapter_name="veterinary")
                 peft_model.load_adapter(ADAPTER_C, adapter_name="irrigation")
+                if Path(ADAPTER_D).exists():
+                    peft_model.load_adapter(ADAPTER_D, adapter_name="soil_science")
+                if Path(ADAPTER_E).exists():
+                    peft_model.load_adapter(ADAPTER_E, adapter_name="aquaculture")
                 result = evaluate_config(
                     label, peft_model, tokenizer, router=router,
                     temperature=temp)
@@ -511,24 +607,21 @@ def experiment_variance(num_runs: int = 3) -> dict:
 
     # Compute mean +/- std
     summary = {}
+    domain_keys = [("agro", "agro_pct"), ("vet", "vet_pct"),
+                   ("irrig", "irrig_pct"), ("soil", "soil_pct"),
+                   ("aqua", "aqua_pct")]
     for label, runs in all_runs.items():
-        agros = [r["agro_pct"] for r in runs]
-        vets = [r["vet_pct"] for r in runs]
         overs = [r["overall_pct"] for r in runs]
-        irrigs = [r["irrig_pct"] for r in runs if "irrig_pct" in r]
         entry = {
-            "agro_mean": round(statistics.mean(agros), 1),
-            "agro_std": round(statistics.stdev(agros), 1) if len(agros) > 1 else 0.0,
-            "vet_mean": round(statistics.mean(vets), 1),
-            "vet_std": round(statistics.stdev(vets), 1) if len(vets) > 1 else 0.0,
             "overall_mean": round(statistics.mean(overs), 1),
             "overall_std": round(statistics.stdev(overs), 1) if len(overs) > 1 else 0.0,
             "n_runs": len(runs),
             "runs": runs,
         }
-        if irrigs:
-            entry["irrig_mean"] = round(statistics.mean(irrigs), 1)
-            entry["irrig_std"] = round(statistics.stdev(irrigs), 1) if len(irrigs) > 1 else 0.0
+        for short, key in domain_keys:
+            vals = [r.get(key, 0.0) for r in runs]
+            entry[f"{short}_mean"] = round(statistics.mean(vals), 1)
+            entry[f"{short}_std"] = round(statistics.stdev(vals), 1) if len(vals) > 1 else 0.0
         summary[label] = entry
 
     return summary
@@ -562,12 +655,23 @@ def experiment_density_ablation(densities: list[float] | None = None) -> dict:
             base_model, ADAPTER_A, adapter_name="agronomy")
         peft_model.load_adapter(ADAPTER_B, adapter_name="veterinary")
         peft_model.load_adapter(ADAPTER_C, adapter_name="irrigation")
+        if Path(ADAPTER_D).exists():
+            peft_model.load_adapter(ADAPTER_D, adapter_name="soil_science")
+        if Path(ADAPTER_E).exists():
+            peft_model.load_adapter(ADAPTER_E, adapter_name="aquaculture")
+
+        # Determine which adapters are loaded
+        adapter_names_loaded = ["agronomy", "veterinary", "irrigation"]
+        if Path(ADAPTER_D).exists():
+            adapter_names_loaded.append("soil_science")
+        if Path(ADAPTER_E).exists():
+            adapter_names_loaded.append("aquaculture")
 
         # Merge in-memory
         merge_name = f"ties_d{int(density * 10)}"
         peft_model.add_weighted_adapter(
-            adapters=["agronomy", "veterinary", "irrigation"],
-            weights=[1.0, 1.0, 1.0],
+            adapters=adapter_names_loaded,
+            weights=[1.0] * len(adapter_names_loaded),
             adapter_name=merge_name,
             combination_type="ties",
             density=density,
@@ -586,66 +690,167 @@ def experiment_density_ablation(densities: list[float] | None = None) -> dict:
 
 
 # ===================================================================
+# EXPERIMENT 4 — Naive Merge vs TIES Merge Comparison
+# ===================================================================
+
+def experiment_naive_merge() -> dict:
+    """
+    Compare naive averaging (linear merge, no sign resolution) against
+    TIES merge at the default density. This addresses the reviewer request
+    to show that naive averaging performs equally badly, strengthening the
+    structural argument that weight-space merging fundamentally fails for
+    non-overlapping domains.
+    """
+    logger.info("=" * 70)
+    logger.info("EXPERIMENT 4 — Naive Merge (Linear Average) vs TIES Merge")
+    logger.info("=" * 70)
+
+    results = {}
+
+    for combo_type, combo_label in [("linear", "Naive Average"),
+                                     ("ties", "TIES d=0.5")]:
+        logger.info("\n--- %s ---", combo_label)
+        base_model, tokenizer = load_base_model()
+
+        peft_model = PeftModel.from_pretrained(
+            base_model, ADAPTER_A, adapter_name="agronomy")
+        peft_model.load_adapter(ADAPTER_B, adapter_name="veterinary")
+        peft_model.load_adapter(ADAPTER_C, adapter_name="irrigation")
+        if Path(ADAPTER_D).exists():
+            peft_model.load_adapter(ADAPTER_D, adapter_name="soil_science")
+        if Path(ADAPTER_E).exists():
+            peft_model.load_adapter(ADAPTER_E, adapter_name="aquaculture")
+
+        adapter_names_loaded = ["agronomy", "veterinary", "irrigation"]
+        if Path(ADAPTER_D).exists():
+            adapter_names_loaded.append("soil_science")
+        if Path(ADAPTER_E).exists():
+            adapter_names_loaded.append("aquaculture")
+
+        merge_kwargs = {
+            "adapters": adapter_names_loaded,
+            "weights": [1.0] * len(adapter_names_loaded),
+            "adapter_name": f"merged_{combo_type}",
+            "combination_type": combo_type,
+        }
+        if combo_type == "ties":
+            merge_kwargs["density"] = 0.5
+
+        peft_model.add_weighted_adapter(**merge_kwargs)
+        peft_model.set_adapter(f"merged_{combo_type}")
+
+        result = evaluate_config(
+            combo_label, peft_model, tokenizer, temperature=0.3)
+        results[combo_type] = result
+
+        del peft_model, base_model
+        torch.cuda.empty_cache() if torch.cuda.is_available() else None
+
+    return results
+
+
+# ===================================================================
 # Output Formatters
 # ===================================================================
 
+def _fmt_pct(val, width=7):
+    """Format a percentage value or return dashes if missing."""
+    if isinstance(val, (int, float)):
+        return f"{val:>{width}.1f}%"
+    return f"{'--':>{width + 1}}"
+
+
 def print_table_1(data: dict):
     """Router comparison table."""
-    print("\n" + "=" * 95)
+    print("\n" + "=" * 120)
     print("TABLE 1 -- Router Comparison: Keyword vs Cosine-Similarity")
-    print("=" * 95)
-    print(f"{'Router':<28} {'Agro':>8} {'Vet':>8} {'Irrig':>8} {'Overall':>9} {'Routing Acc':>13}")
-    print("-" * 95)
+    print("=" * 120)
+    print(f"{'Router':<24} {'Agro':>8} {'Vet':>8} {'Irrig':>8} {'Soil':>8} {'Aqua':>8} {'Overall':>9} {'Routing Acc':>13}")
+    print("-" * 120)
     for key in ["keyword", "cosine"]:
         r = data[key]
         acc = r.get("routing_accuracy_pct", "--")
         acc_str = f"{acc}%" if isinstance(acc, (int, float)) else acc
-        irrig = r.get("irrig_pct", "--")
-        irrig_str = f"{irrig:>7.1f}%" if isinstance(irrig, (int, float)) else f"{irrig:>8}"
-        print(f"{r['label']:<28} {r['agro_pct']:>7.1f}% {r['vet_pct']:>7.1f}% "
-              f"{irrig_str} {r['overall_pct']:>8.1f}% {acc_str:>12}")
-    print("=" * 95)
+        print(f"{r['label']:<24} {_fmt_pct(r.get('agro_pct'))} "
+              f"{_fmt_pct(r.get('vet_pct'))} {_fmt_pct(r.get('irrig_pct'))} "
+              f"{_fmt_pct(r.get('soil_pct'))} {_fmt_pct(r.get('aqua_pct'))} "
+              f"{_fmt_pct(r.get('overall_pct'), 8)} {acc_str:>12}")
+    print("=" * 120)
 
 
 def print_table_2(data: dict):
     """Variance table with mean +/- std."""
-    print("\n" + "=" * 95)
+    domain_cols = ["agro", "vet", "irrig", "soil", "aqua"]
+    col_labels = ["Agronomy", "Veterinary", "Irrigation", "Soil Sci", "Aquacult"]
+    print("\n" + "=" * 130)
     print(
         f"TABLE 2 -- {list(data.values())[0]['n_runs']}-Run Variance (mean +/- std)")
-    print("=" * 95)
-    print(f"{'Configuration':<24} {'Agronomy':>14} {'Veterinary':>14} {'Irrigation':>14} {'Overall':>14}")
-    print("-" * 95)
+    print("=" * 130)
+    header = f"{'Configuration':<24}"
+    for cl in col_labels:
+        header += f" {cl:>14}"
+    header += f" {'Overall':>14}"
+    print(header)
+    print("-" * 130)
     for label, s in data.items():
-        irrig_str = ""
-        if "irrig_mean" in s:
-            irrig_str = f"{s['irrig_mean']:>6.1f}+/-{s['irrig_std']:<5.1f}%"
-        else:
-            irrig_str = f"{'--':>14}"
-        print(f"{label:<24} {s['agro_mean']:>6.1f}+/-{s['agro_std']:<5.1f}% "
-              f"{s['vet_mean']:>6.1f}+/-{s['vet_std']:<5.1f}% "
-              f"{irrig_str} "
-              f"{s['overall_mean']:>6.1f}+/-{s['overall_std']:<5.1f}%")
-    print("=" * 95)
+        row = f"{label:<24}"
+        for dc in domain_cols:
+            mk = f"{dc}_mean"
+            sk = f"{dc}_std"
+            if mk in s:
+                row += f" {s[mk]:>6.1f}+/-{s[sk]:<5.1f}%"
+            else:
+                row += f" {'--':>14}"
+        row += f" {s['overall_mean']:>6.1f}+/-{s['overall_std']:<5.1f}%"
+        print(row)
+    print("=" * 130)
 
 
 def print_table_3(data: dict):
     """Density ablation table."""
-    print("\n" + "=" * 95)
+    print("\n" + "=" * 120)
     print("TABLE 3 -- TIES Merge Density Ablation")
-    print("=" * 95)
-    print(f"{'Density':<16} {'Agronomy':>10} {'Veterinary':>12} {'Irrigation':>12} {'Overall':>10}")
-    print("-" * 95)
+    print("=" * 120)
+    print(f"{'Density':<16} {'Agronomy':>10} {'Veterinary':>12} {'Irrigation':>12} "
+          f"{'Soil Sci':>10} {'Aquacult':>10} {'Overall':>10}")
+    print("-" * 120)
     for key in sorted(data.keys()):
         r = data[key]
-        irrig = r.get("irrig_pct", "--")
-        irrig_str = f"{irrig:>11.1f}%" if isinstance(irrig, (int, float)) else f"{irrig:>12}"
-        print(f"{r['label']:<16} {r['agro_pct']:>9.1f}% "
-              f"{r['vet_pct']:>11.1f}% {irrig_str} {r['overall_pct']:>9.1f}%")
-    print("=" * 95)
+        print(f"{r['label']:<16} {_fmt_pct(r.get('agro_pct'), 9)} "
+              f"{_fmt_pct(r.get('vet_pct'), 11)} {_fmt_pct(r.get('irrig_pct'), 11)} "
+              f"{_fmt_pct(r.get('soil_pct'), 9)} {_fmt_pct(r.get('aqua_pct'), 9)} "
+              f"{_fmt_pct(r.get('overall_pct'), 9)}")
+    print("=" * 120)
 
 
-def generate_latex(table1, table2, table3) -> str:
+def print_table_4(data: dict):
+    """Naive merge vs TIES merge comparison table."""
+    print("\n" + "=" * 120)
+    print("TABLE 4 -- Naive Average vs TIES Merge")
+    print("=" * 120)
+    print(f"{'Method':<24} {'Agro':>8} {'Vet':>8} {'Irrig':>8} "
+          f"{'Soil':>8} {'Aqua':>8} {'Overall':>9}")
+    print("-" * 120)
+    for key in ["linear", "ties"]:
+        r = data[key]
+        print(f"{r['label']:<24} {_fmt_pct(r.get('agro_pct'))} "
+              f"{_fmt_pct(r.get('vet_pct'))} {_fmt_pct(r.get('irrig_pct'))} "
+              f"{_fmt_pct(r.get('soil_pct'))} {_fmt_pct(r.get('aqua_pct'))} "
+              f"{_fmt_pct(r.get('overall_pct'), 8)}")
+    print("=" * 120)
+
+
+def generate_latex(table1, table2, table3, table4=None) -> str:
     """Generate LaTeX tables for direct paper inclusion."""
+    domain_keys = ["agro", "vet", "irrig", "soil", "aqua"]
+    domain_labels = ["Agro", "Vet", "Irrig", "Soil", "Aqua"]
+    ncols = len(domain_keys)
+
+    def _latex_pct(val):
+        if isinstance(val, (int, float)):
+            return f"{val:.1f}"
+        return "---"
+
     lines = []
     lines.append("% Auto-generated by run_publication_experiment.py")
     lines.append(f"% Generated: {datetime.now(timezone.utc).isoformat()}")
@@ -653,22 +858,22 @@ def generate_latex(table1, table2, table3) -> str:
     lines.append("")
 
     # Table 1
+    col_spec = "l " + "c " * (ncols + 2)  # domains + overall + routing acc
+    header_cols = " & ".join(f"{dl} (\\%)" for dl in domain_labels)
     lines.append("\\begin{table}[htbp]")
     lines.append("\\centering")
     lines.append("\\caption{Router Comparison: Keyword vs Cosine-Similarity}")
     lines.append("\\label{tab:router-comparison}")
-    lines.append("\\begin{tabular}{l c c c c c}")
+    lines.append(f"\\begin{{tabular}}{{{col_spec.strip()}}}")
     lines.append("\\toprule")
-    lines.append(
-        "Router & Agro (\\%) & Vet (\\%) & Irrig (\\%) & Overall (\\%) & Routing Acc (\\%) \\\\")
+    lines.append(f"Router & {header_cols} & Overall (\\%) & Routing Acc (\\%) \\\\")
     lines.append("\\midrule")
     for key in ["keyword", "cosine"]:
         r = table1[key]
         acc = r.get("routing_accuracy_pct", "---")
-        irrig = r.get("irrig_pct", "---")
+        vals = " & ".join(_latex_pct(r.get(f"{dk}_pct")) for dk in domain_keys)
         lines.append(
-            f"{r['label']} & {r['agro_pct']:.1f} & {r['vet_pct']:.1f} "
-            f"& {irrig} & {r['overall_pct']:.1f} & {acc} \\\\")
+            f"{r['label']} & {vals} & {_latex_pct(r.get('overall_pct'))} & {acc} \\\\")
     lines.append("\\bottomrule")
     lines.append("\\end{tabular}")
     lines.append("\\end{table}")
@@ -676,24 +881,26 @@ def generate_latex(table1, table2, table3) -> str:
 
     # Table 2
     n = list(table2.values())[0]["n_runs"]
+    var_header = " & ".join(f"{dl} (\\%)" for dl in domain_labels)
     lines.append("\\begin{table}[htbp]")
     lines.append("\\centering")
     lines.append(f"\\caption{{{n}-Run Variance (mean $\\pm$ std)}}")
     lines.append("\\label{tab:variance}")
-    lines.append("\\begin{tabular}{l c c c c}")
+    lines.append(f"\\begin{{tabular}}{{l {'c ' * (ncols + 1)}}}")
     lines.append("\\toprule")
-    lines.append("Configuration & Agro (\\%) & Vet (\\%) & Irrig (\\%) & Overall (\\%) \\\\")
+    lines.append(f"Configuration & {var_header} & Overall (\\%) \\\\")
     lines.append("\\midrule")
     for label, s in table2.items():
-        irrig_str = ""
-        if "irrig_mean" in s:
-            irrig_str = f"${s['irrig_mean']:.1f} \\pm {s['irrig_std']:.1f}$"
-        else:
-            irrig_str = "---"
+        parts = []
+        for dk in domain_keys:
+            mk, sk = f"{dk}_mean", f"{dk}_std"
+            if mk in s:
+                parts.append(f"${s[mk]:.1f} \\pm {s[sk]:.1f}$")
+            else:
+                parts.append("---")
+        vals = " & ".join(parts)
         lines.append(
-            f"{label} & ${s['agro_mean']:.1f} \\pm {s['agro_std']:.1f}$ "
-            f"& ${s['vet_mean']:.1f} \\pm {s['vet_std']:.1f}$ "
-            f"& {irrig_str} "
+            f"{label} & {vals} "
             f"& ${s['overall_mean']:.1f} \\pm {s['overall_std']:.1f}$ \\\\")
     lines.append("\\bottomrule")
     lines.append("\\end{tabular}")
@@ -701,23 +908,44 @@ def generate_latex(table1, table2, table3) -> str:
     lines.append("")
 
     # Table 3
+    abl_header = " & ".join(f"{dl} (\\%)" for dl in domain_labels)
     lines.append("\\begin{table}[htbp]")
     lines.append("\\centering")
     lines.append("\\caption{TIES Merge Density Ablation}")
     lines.append("\\label{tab:density-ablation}")
-    lines.append("\\begin{tabular}{l c c c c}")
+    lines.append(f"\\begin{{tabular}}{{l {'c ' * (ncols + 1)}}}")
     lines.append("\\toprule")
-    lines.append("Density & Agro (\\%) & Vet (\\%) & Irrig (\\%) & Overall (\\%) \\\\")
+    lines.append(f"Density & {abl_header} & Overall (\\%) \\\\")
     lines.append("\\midrule")
     for key in sorted(table3.keys()):
         r = table3[key]
-        irrig = r.get("irrig_pct", "---")
+        vals = " & ".join(_latex_pct(r.get(f"{dk}_pct")) for dk in domain_keys)
         lines.append(
-            f"{r['label']} & {r['agro_pct']:.1f} & {r['vet_pct']:.1f} "
-            f"& {irrig} & {r['overall_pct']:.1f} \\\\")
+            f"{r['label']} & {vals} & {_latex_pct(r.get('overall_pct'))} \\\\")
     lines.append("\\bottomrule")
     lines.append("\\end{tabular}")
     lines.append("\\end{table}")
+
+    # Table 4 — Naive merge vs TIES
+    if table4:
+        lines.append("")
+        naive_header = " & ".join(f"{dl} (\\%)" for dl in domain_labels)
+        lines.append("\\begin{table}[htbp]")
+        lines.append("\\centering")
+        lines.append("\\caption{Naive Average vs TIES Merge}")
+        lines.append("\\label{tab:naive-vs-ties}")
+        lines.append(f"\\begin{{tabular}}{{l {'c ' * (ncols + 1)}}}")
+        lines.append("\\toprule")
+        lines.append(f"Method & {naive_header} & Overall (\\%) \\\\")
+        lines.append("\\midrule")
+        for key in ["linear", "ties"]:
+            r = table4[key]
+            vals = " & ".join(_latex_pct(r.get(f"{dk}_pct")) for dk in domain_keys)
+            lines.append(
+                f"{r['label']} & {vals} & {_latex_pct(r.get('overall_pct'))} \\\\")
+        lines.append("\\bottomrule")
+        lines.append("\\end{tabular}")
+        lines.append("\\end{table}")
 
     return "\n".join(lines)
 
@@ -744,7 +972,10 @@ def main():
     logger.info("Adapter A: %s", ADAPTER_A)
     logger.info("Adapter B: %s", ADAPTER_B)
     logger.info("Adapter C: %s", ADAPTER_C)
+    logger.info("Adapter D: %s", ADAPTER_D)
+    logger.info("Adapter E: %s", ADAPTER_E)
     logger.info("Merged dir: %s", MERGED_DIR)
+    logger.info("Naive merged dir: %s", NAIVE_MERGED_DIR)
     logger.info("Runs for variance: %d", NUM_RUNS)
     logger.info("Ablation densities: %s", ABLATION_DENSITIES)
     logger.info("=" * 70)
@@ -792,9 +1023,23 @@ def main():
     print_table_3(table3)
 
     # ------------------------------------------------------------------
+    # Experiment 4: Naive merge vs TIES merge
+    # ------------------------------------------------------------------
+    t4_path = RESULTS_DIR / "table4_naive_merge.json"
+    if t4_path.exists():
+        logger.info("Experiment 4 already done — loading from %s", t4_path)
+        with open(t4_path) as f:
+            table4 = json.load(f)
+    else:
+        table4 = experiment_naive_merge()
+        with open(t4_path, "w") as f:
+            json.dump(table4, f, indent=2, ensure_ascii=False)
+    print_table_4(table4)
+
+    # ------------------------------------------------------------------
     # LaTeX output
     # ------------------------------------------------------------------
-    latex = generate_latex(table1, table2, table3)
+    latex = generate_latex(table1, table2, table3, table4)
     tex_path = RESULTS_DIR / "tables.tex"
     tex_path.write_text(latex, encoding="utf-8")
     logger.info("LaTeX tables written to %s", tex_path)
@@ -808,7 +1053,10 @@ def main():
             "adapter_a": ADAPTER_A,
             "adapter_b": ADAPTER_B,
             "adapter_c": ADAPTER_C,
+            "adapter_d": ADAPTER_D,
+            "adapter_e": ADAPTER_E,
             "merged_dir": MERGED_DIR,
+            "naive_merged_dir": NAIVE_MERGED_DIR,
             "num_runs": NUM_RUNS,
             "ablation_densities": ABLATION_DENSITIES,
             "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -818,6 +1066,7 @@ def main():
         "table1_router_comparison": table1,
         "table2_variance": table2,
         "table3_density_ablation": table3,
+        "table4_naive_merge": table4,
     }
     with open(RESULTS_DIR / "all_results.json", "w") as f:
         json.dump(combined, f, indent=2, ensure_ascii=False, default=str)

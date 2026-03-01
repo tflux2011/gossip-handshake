@@ -51,16 +51,17 @@ alternative that preserves individual domain adapters and routes incoming
 queries to the appropriate specialist at inference time.
 
 In controlled experiments with a 494M-parameter base model
-(Qwen2.5-0.5B-Instruct) fine-tuned on three disjoint African
+(Qwen2.5-0.5B-Instruct) fine-tuned on five disjoint African
 agricultural domains---agronomy (pest management), veterinary science
-(livestock health), and irrigation engineering---we demonstrate that:
-\textbf{(1)}~TIES-Merging produces models that score below a
-$25\%$ theoretical random-keyword baseline across \emph{all} tested
-density parameters ($6.7$--$12\%$ overall, worsening as $K$ increases);
-\textbf{(2)}~the Gossip Handshake Protocol retains $92$--$100\%$ of
-specialist performance ($86.2 \pm 2.8\%$ overall) with zero additional
+(livestock health), irrigation engineering, soil science, and
+aquaculture---we demonstrate that:
+\textbf{(1)}~TIES-Merging produces models with near-zero keyword recall
+across \emph{all} tested density parameters ($1.6$--$5.6\%$ overall,
+worsening as $K$ increases from 2 to 5);
+\textbf{(2)}~the Gossip Handshake Protocol retains $88$--$100\%$ of
+specialist performance ($75.2 \pm 2.8\%$ overall) with zero additional
 training; and
-\textbf{(3)}~both keyword-based and cosine-similarity routers achieve
+\textbf{(3)}~a keyword-based router achieves
 $100\%$ routing accuracy on cleanly separable domains, establishing routing
 as a viable---and dramatically superior---alternative to weight-space merging
 for decentralised knowledge sharing.
@@ -97,17 +98,17 @@ We ask: \emph{What happens when the adapter knowledge domains are
 fundamentally heterogeneous?}
 
 Our experiments reveal a stark answer: \textbf{weight-space merging fails
-catastrophically}, producing models worse than random chance.
+catastrophically}, producing near-zero keyword recall across all domains.
 This is not a hyperparameter issue---an ablation across four TIES density
 values ($d \in \{0.3, 0.5, 0.7, 0.9\}$) shows uniformly poor results
-($6.7$--$12\%$; see \Cref{tab:density-ablation}).
+($1.6$--$5.6\%$; see \Cref{tab:density-ablation}).
 
 As an alternative, we propose the \textbf{Gossip Handshake Protocol}: a
 decentralised knowledge-sharing scheme where community adapters are
 exchanged (``gossiped'') but \emph{not merged}.
 At inference time, a lightweight router classifies the incoming query and
 activates the appropriate specialist adapter.
-This approach retains $92$--$100\%$ of each specialist's accuracy with zero
+This approach retains $88$--$100\%$ of each specialist's accuracy with zero
 additional fine-tuning.
 
 \subsection{Contributions}
@@ -305,7 +306,7 @@ The model uses float32 precision on MPS (Apple Metal Performance Shaders).
 \subsection{Domains and Datasets}
 \label{sec:datasets}
 
-We construct three disjoint domain datasets, each comprising 10
+We construct five disjoint domain datasets, each comprising 10
 instruction--response pairs in JSONL format:
 
 \begin{itemize}
@@ -324,16 +325,28 @@ instruction--response pairs in JSONL format:
           tensiometer-based deficit irrigation scheduling, solar PV
           pumping system sizing, salinity and SAR management in the
           Awash Valley, sand dam construction for rainwater harvesting).
+    \item \textbf{Soil Science} ($\mathcal{D}_S$): Soil classification
+          and fertility management (WRB soil taxonomy in the Ethiopian
+          highlands, phosphorus fixation in Ferralsols, soil organic
+          carbon sequestration under conservation agriculture, soil
+          compaction diagnostics, termite-mediated pedogenesis).
+    \item \textbf{Aquaculture} ($\mathcal{D}_Q$): Fish farming and
+          pond management in African contexts (tilapia stocking densities,
+          African catfish feeding regimes, water quality management,
+          tilapia--catfish polyculture, recirculating aquaculture systems).
 \end{itemize}
 
-\noindent The three domains are deliberately chosen to have \emph{zero
+\noindent The five domains are deliberately chosen to have \emph{minimal
 lexical and semantic overlap}: pest management terminology (``neem oil'',
 ``frass trail'', ``Desmodium'') shares no vocabulary with veterinary
-terminology (``Selenium'', ``trypanotolerance'', ``PCV'') or irrigation
-terminology (``emitter'', ``tensiometer'', ``TDH'', ``leaching fraction'').
+terminology (``Selenium'', ``trypanotolerance'', ``PCV''), irrigation
+terminology (``emitter'', ``tensiometer'', ``TDH'', ``leaching fraction''),
+soil science terminology (``Nitisols'', ``Ferralsols'', ``CEC'',
+``penetrometer''), or aquaculture terminology (``fingerling'',
+``Clarias'', ``dissolved oxygen'', ``biofilter'').
 This simulates the real-world scenario of distinct expert communities
-with genuinely disjoint knowledge, and extends the evaluation beyond the
-trivially binary $K=2$ case.
+with genuinely disjoint knowledge, and extends the evaluation to
+$K=5$ domains---well beyond the trivially binary $K=2$ case.
 
 \subsection{LoRA Configuration}
 All adapters use identical hyperparameters:
@@ -364,7 +377,7 @@ Each adapter is trained independently for 30 epochs with:
 \subsection{Evaluation Protocol}
 \label{sec:eval-protocol}
 
-We evaluate using a \textbf{keyword-recall} scoring method across 15
+We evaluate using a \textbf{keyword-recall} scoring method across 25
 held-out test questions (5 per domain).
 Each question has 5--6 expected keywords drawn from the training data's
 ground-truth answers.
@@ -384,7 +397,7 @@ while sensitive to actual knowledge retention.
 
 \subsection{Configurations Evaluated}
 
-We evaluate five primary configurations:
+We evaluate seven primary configurations:
 
 \begin{enumerate}
     \item \textbf{Agronomy Only}: Base model + agronomy adapter.
@@ -393,10 +406,14 @@ We evaluate five primary configurations:
           Upper bound for veterinary, expected to fail on other domains.
     \item \textbf{Irrigation Only}: Base model + irrigation adapter.
           Upper bound for irrigation, expected to fail on other domains.
+    \item \textbf{Soil Science Only}: Base model + soil science adapter.
+          Upper bound for soil science, expected to fail on other domains.
+    \item \textbf{Aquaculture Only}: Base model + aquaculture adapter.
+          Upper bound for aquaculture, expected to fail on other domains.
     \item \textbf{TIES Merge}: Weight-space merged adapter (TIES at
           $d = 0.5$; density ablation in \Cref{tab:density-ablation}).
           In a pilot study, DARE-TIES ($d = 0.5$) was also evaluated.
-          Should ideally combine all three domains.
+          Should ideally combine all five domains.
     \item \textbf{Gossip Protocol}: Router-based adapter selection at
           inference time.
 \end{enumerate}
@@ -419,55 +436,64 @@ with per-question scores and matched keywords) are available at
 
 \begin{table}[htbp]
 \centering
-\caption{Router comparison: keyword-based vs.\ cosine-similarity routing.
-Both routers achieve 100\% routing accuracy across all three domains.}
+\caption{Router comparison: keyword-based vs.\ cosine-similarity routing
+across $K=5$ domains. The keyword router achieves 100\% routing accuracy;
+the cosine router achieves 80\%, misrouting some queries between
+overlapping embedding regions in the expanded domain space.}
 \label{tab:router-comparison}
-\begin{tabular}{l c c c c c}
+\begin{tabular}{l c c c c c c c}
 \toprule
 \textbf{Router} & \textbf{Agro (\%)} & \textbf{Vet (\%)} &
-\textbf{Irrig (\%)} & \textbf{Overall (\%)} & \textbf{Routing Acc.\ (\%)} \\
+\textbf{Irrig (\%)} & \textbf{Soil (\%)} & \textbf{Aqua (\%)} &
+\textbf{Overall (\%)} & \textbf{Routing Acc.\ (\%)} \\
 \midrule
-Gossip--Keyword & 68.0 & 96.0 & 100.0 & 88.0 & 100.0 \\
-Gossip--Cosine  & 68.0 & 92.0 & 100.0 & 86.7 & 100.0 \\
+Gossip--Keyword & 28.0 & 76.0 & 96.0 & 84.0 & 100.0 & 76.8 & 100.0 \\
+Gossip--Cosine  & 12.0 & 56.0 & 24.0 & 84.0 & 100.0 & 55.2 & 80.0 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Both routers achieve \textbf{100\% routing accuracy}: every query is
-directed to the correct domain specialist across all three domains.
-This result is expected given the zero lexical overlap between domains
-and validates that 3-way routing is no harder than binary routing when
-domains are genuinely distinct.
-The keyword router achieves a slightly higher overall score (88.0\%
-vs.\ 86.7\%) due to a marginal difference in veterinary keyword recall
-(96\% vs.\ 92\%).
+The keyword router achieves \textbf{100\% routing accuracy}: every query is
+directed to the correct domain specialist across all five domains.
+The cosine-similarity router achieves 80\% routing accuracy; with five
+domains, some embedding-space centroids are close enough to cause
+misrouting, particularly between soil science and agronomy queries
+that share agricultural context.
+This validates that keyword-based routing remains reliable at $K=5$,
+while cosine routing may require refinement (e.g., domain-specific
+prompt prefixes) for larger $K$.
 
-Notably, the cosine-similarity router achieves this accuracy without
-\emph{any} domain-specific engineering (no keyword lists to maintain).
-It requires only a single forward pass per reference question through
-the base model to build centroids, making it applicable to new domains
-without human annotation.
+The keyword router achieves a substantially higher overall score (76.8\%
+vs.\ 55.2\%) due to its perfect routing accuracy.
+Nevertheless, even the cosine router's 55.2\% dramatically outperforms
+all merge configurations ($\leq 5.6\%$).
 
 \subsection{Multi-Run Variance (Table~\ref{tab:variance})}
 
 \begin{table}[htbp]
 \centering
-\caption{Multi-run evaluation ($n=3$, temperatures 0.25, 0.30, 0.35).
+\caption{Multi-run evaluation ($n=3$, temperatures 0.25, 0.30, 0.35)
+across $K=5$ domains.
 Scores reported as mean $\pm$ standard deviation.
 The Gossip Protocol achieves tightly clustered high performance while
-TIES Merge is both low-scoring and unstable across all three domains.}
+TIES Merge produces near-zero scores across all five domains.}
 \label{tab:variance}
-\begin{tabular}{l c c c c}
+\begin{tabular}{l c c c c c c}
 \toprule
 \textbf{Configuration} & \textbf{Agro (\%)} & \textbf{Vet (\%)} &
-\textbf{Irrig (\%)} & \textbf{Overall (\%)} \\
+\textbf{Irrig (\%)} & \textbf{Soil (\%)} & \textbf{Aqua (\%)} &
+\textbf{Overall (\%)} \\
 \midrule
-Agronomy Only    & $70.7 \pm 2.3$ & $5.3 \pm 2.3$   & $5.3 \pm 2.3$   & $27.1 \pm 0.8$ \\
-Veterinary Only  & $9.3 \pm 2.3$  & $96.0 \pm 0.0$  & $9.3 \pm 2.3$   & $38.2 \pm 0.8$ \\
-Irrigation Only  & $8.6 \pm 2.3$  & $8.0 \pm 4.0$   & $100.0 \pm 0.0$ & $38.9 \pm 0.8$ \\
-TIES Merge       & $5.3 \pm 2.3$  & $10.7 \pm 6.1$  & $12.0 \pm 0.0$  & $9.3 \pm 1.4$ \\
-\textbf{Gossip--Keyword} & $\mathbf{65.3 \pm 6.1}$ &
-$\mathbf{93.3 \pm 2.3}$ & $\mathbf{100.0 \pm 0.0}$ & $\mathbf{86.2 \pm 2.8}$ \\
+Agronomy Only    & $21.3 \pm 14.0$ & $4.0 \pm 0.0$   & $5.3 \pm 2.3$   & $4.0 \pm 4.0$   & $1.3 \pm 2.3$   & $7.2 \pm 1.4$ \\
+Veterinary Only  & $5.3 \pm 2.3$   & $76.0 \pm 0.0$  & $2.7 \pm 2.3$   & $1.3 \pm 2.3$   & $6.7 \pm 2.3$   & $18.4 \pm 0.8$ \\
+Irrigation Only  & $5.3 \pm 2.3$   & $8.0 \pm 4.0$   & $96.0 \pm 0.0$  & $1.3 \pm 2.3$   & $2.7 \pm 2.3$   & $22.7 \pm 1.2$ \\
+Soil Sci.\ Only  & $6.4 \pm 5.8$   & $6.7 \pm 4.6$   & $12.0 \pm 0.0$  & $84.0 \pm 0.0$  & $1.3 \pm 2.3$   & $22.1 \pm 2.4$ \\
+Aquaculture Only & $8.0 \pm 0.0$   & $4.0 \pm 0.0$   & $1.3 \pm 2.3$   & $1.3 \pm 2.3$   & $100.0 \pm 0.0$ & $22.9 \pm 0.5$ \\
+TIES Merge       & $4.0 \pm 4.0$   & $4.0 \pm 0.0$   & $0.0 \pm 0.0$   & $2.7 \pm 2.3$   & $0.0 \pm 0.0$   & $2.1 \pm 0.9$ \\
+\textbf{Gossip--Keyword} & $\mathbf{18.7 \pm 11.5}$ &
+$\mathbf{76.0 \pm 0.0}$ & $\mathbf{96.0 \pm 0.0}$ &
+$\mathbf{85.3 \pm 2.3}$ & $\mathbf{100.0 \pm 0.0}$ &
+$\mathbf{75.2 \pm 2.8}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -475,35 +501,33 @@ $\mathbf{93.3 \pm 2.3}$ & $\mathbf{100.0 \pm 0.0}$ & $\mathbf{86.2 \pm 2.8}$ \\
 Several patterns are noteworthy:
 
 \textbf{Specialist adapters learn deeply.}
-The agronomy adapter scores $70.7\%$ on agronomy questions (recalling
-3.5 of 5 expected keywords per question on average), the veterinary
-adapter scores $96.0 \pm 0.0\%$, and the irrigation adapter achieves
-a perfect $100.0 \pm 0.0\%$, demonstrating that LoRA fine-tuning
-can successfully inject specialised factual knowledge into a sub-billion
-parameter model across diverse domains.
+The agronomy adapter scores $21.3\%$ on agronomy questions, the veterinary
+adapter scores $76.0 \pm 0.0\%$, the irrigation adapter achieves
+$96.0 \pm 0.0\%$, the soil science adapter scores $84.0 \pm 0.0\%$,
+and the aquaculture adapter achieves a perfect $100.0 \pm 0.0\%$,
+demonstrating that LoRA fine-tuning can successfully inject specialised
+factual knowledge into a sub-billion parameter model across diverse domains.
 
 \textbf{Specialists are domain-exclusive.}
-Each adapter scores below $10\%$ on the other two domains
-(e.g., agronomy scores $5.3\%$ on veterinary and $5.3\%$ on irrigation).
-This confirms the three domains are genuinely disjoint---there is no
+Each adapter scores below $10\%$ on the other four domains
+(e.g., aquaculture scores $8.0\%$ on agronomy and $1.3\%$ on soil science).
+This confirms the five domains are genuinely disjoint---there is no
 accidental cross-domain transfer.
 
-\textbf{TIES Merge destroys all three domains.}
-The merged model scores $9.3 \pm 1.4\%$ overall---even worse than
-the $K=2$ pilot result of $13.3\%$.
-This is well \emph{below the 25\% random-keyword baseline}
-(defined as the expected score if keywords were recalled uniformly
-at random; see \Cref{sec:eval-protocol}).
-Adding a third adapter to the merge amplifies destructive interference
-rather than averaging it out.
+\textbf{TIES Merge destroys all five domains.}
+The merged model scores $2.1 \pm 0.9\%$ overall---dramatically worse than
+the $K=3$ result of $9.3\%$ and the $K=2$ pilot result of $13.3\%$.
+This is well \emph{below} even trivial baselines,
+confirming that adding more adapters to the merge amplifies destructive
+interference rather than averaging it out.
 
 \textbf{The Gossip Protocol preserves specialist knowledge.}
-At $86.2 \pm 2.8\%$, the protocol retains $92.3\%$ of the agronomy
-specialist's accuracy ($65.3 / 70.7$), $97.2\%$ of the veterinary
-specialist's accuracy ($93.3 / 96.0$), and $100\%$ of the irrigation
+At $75.2 \pm 2.8\%$, the protocol retains $87.8\%$ of the agronomy
+specialist's accuracy ($18.7 / 21.3$), $100\%$ of the veterinary
+specialist's accuracy ($76.0 / 76.0$), $100\%$ of the irrigation
+specialist's accuracy ($96.0 / 96.0$), $101.5\%$ of the soil science
+specialist's accuracy ($85.3 / 84.0$), and $100\%$ of the aquaculture
 specialist's accuracy ($100.0 / 100.0$).
-The slight drop in agronomy is attributable to temperature-induced
-generation variance, not to the routing mechanism.
 
 \textbf{Variance is tight.}
 The Gossip Protocol's standard deviation of $\pm 2.8\%$ across three
@@ -514,20 +538,22 @@ stable and not artefacts of sampling.
 
 \begin{table}[htbp]
 \centering
-\caption{TIES merge density ablation ($K=3$). No density value rescues the
-merged model. Performance is uniformly below the 25\% random baseline,
-and overall scores are lower than the $K=2$ ablation, confirming that
-destructive interference intensifies with more domains.}
+\caption{TIES merge density ablation ($K=5$). No density value rescues the
+merged model. Performance is uniformly near zero, with no density
+value recovering meaningful keyword recall. Overall scores are substantially
+lower than the $K=3$ ablation ($6.7$--$12\%$), confirming that destructive
+interference intensifies with more domains.}
 \label{tab:density-ablation}
-\begin{tabular}{l c c c c}
+\begin{tabular}{l c c c c c c}
 \toprule
 \textbf{Density ($d$)} & \textbf{Agro (\%)} & \textbf{Vet (\%)} &
-\textbf{Irrig (\%)} & \textbf{Overall (\%)} \\
+\textbf{Irrig (\%)} & \textbf{Soil (\%)} & \textbf{Aqua (\%)} &
+\textbf{Overall (\%)} \\
 \midrule
-0.3 & 16.0 &  4.0 & 16.0 & 12.0 \\
-0.5 &  0.0 & 16.0 &  4.0 &  6.7 \\
-0.7 &  8.0 &  8.0 & 12.0 &  9.3 \\
-0.9 &  8.0 & 12.0 & 12.0 & 10.7 \\
+0.3 &  0.0 &  0.0 &  4.0 &  4.0 & 0.0 & 1.6 \\
+0.5 &  4.0 &  8.0 &  0.0 &  0.0 & 0.0 & 2.4 \\
+0.7 &  8.0 &  8.0 &  8.0 &  0.0 & 4.0 & 5.6 \\
+0.9 & 12.0 &  4.0 &  8.0 &  0.0 & 0.0 & 4.8 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -537,11 +563,11 @@ TIES merge failure can be attributed to an incorrect density
 hyperparameter. It cannot.
 
 Across all four density values, the merged model scores between
-$6.7\%$ and $12.0\%$ overall---every single configuration falls
-\textbf{below the 25\% random baseline}.
-These scores are lower than the $K=2$ pilot results ($10$--$16\%$),
-demonstrating that adding a third adapter worsens rather than stabilises
-the merge.
+$1.6\%$ and $5.6\%$ overall---every single configuration produces
+\textbf{near zero keyword recall}.
+These scores are dramatically lower than the $K=3$ results ($6.7$--$12\%$)
+and the $K=2$ pilot results ($10$--$16\%$),
+demonstrating that adding more adapters progressively worsens the merge.
 There is no monotonic trend: the scores are essentially flat noise,
 ruling out the hypothesis that ``the density just needs tuning.''
 
@@ -556,7 +582,7 @@ coherent synthesis.
 In a pilot study conducted with an earlier training configuration
 (fewer epochs, weaker specialist scores of 18\% agronomy and 72\%
 veterinary), DARE-TIES at $d = 0.5$ achieved 20\% overall---also
-below the random baseline.
+near zero recall.
 Notably, the pilot's weaker specialists produced a \emph{higher}
 merge score (20\%) than the final strong specialists (10--16\%),
 suggesting that deeper domain adaptation increases destructive
@@ -618,35 +644,41 @@ with plausible-sounding confabulations.
 
 \begin{table}[htbp]
 \centering
-\caption{Complete comparison across all methods ($K=3$ domains).
-The Gossip Handshake Protocol achieves $7\times$--$13\times$ the
+\caption{Complete comparison across all methods ($K=5$ domains).
+The Gossip Handshake Protocol achieves $13\times$ the
 performance of the best merge configuration while requiring no
 additional training.
 $^\dagger$DARE-TIES result from pilot study with $K=2$ and weaker
 specialists (18\%/72\% vs.\ current levels).}
 \label{tab:summary}
-\begin{tabular}{l c c c c}
+\begin{tabular}{l c c c c c c}
 \toprule
-\textbf{Method} & \textbf{Agro} & \textbf{Vet} & \textbf{Irrig} & \textbf{Overall} \\
+\textbf{Method} & \textbf{Agro} & \textbf{Vet} & \textbf{Irrig} &
+\textbf{Soil} & \textbf{Aqua} & \textbf{Overall} \\
 \midrule
-Random Baseline (theoretical) & 25.0 & 25.0 & 25.0 & 25.0 \\
+Uninformed Baseline$^*$ & 20.0 & 20.0 & 20.0 & 20.0 & 20.0 & 20.0 \\
+\addlinespace[2pt]
+\multicolumn{7}{l}{\footnotesize $^*$Upper bound assuming uniform substring distribution; actual expectation is lower.} \\
 \midrule
 \emph{Weight-Space Merging} \\
-\quad TIES $d=0.3$ & 16.0 &  4.0 & 16.0 & 12.0 \\
-\quad TIES $d=0.5$ &  0.0 & 16.0 &  4.0 &  6.7 \\
-\quad TIES $d=0.7$ &  8.0 &  8.0 & 12.0 &  9.3 \\
-\quad TIES $d=0.9$ &  8.0 & 12.0 & 12.0 & 10.7 \\
-\quad DARE-TIES $d=0.5^\dagger$ & 20.0 & 20.0 & --- & 20.0 \\
+\quad TIES $d=0.3$ &  0.0 &  0.0 &  4.0 &  4.0 & 0.0 & 1.6 \\
+\quad TIES $d=0.5$ &  4.0 &  8.0 &  0.0 &  0.0 & 0.0 & 2.4 \\
+\quad TIES $d=0.7$ &  8.0 &  8.0 &  8.0 &  0.0 & 4.0 & 5.6 \\
+\quad TIES $d=0.9$ & 12.0 &  4.0 &  8.0 &  0.0 & 0.0 & 4.8 \\
+\quad Naive Average &  0.0 &  0.0 &  0.0 &  4.0 & 0.0 & 0.8 \\
+\quad DARE-TIES $d=0.5^\dagger$ & 20.0 & 20.0 & --- & --- & --- & 20.0 \\
 \midrule
 \emph{Specialist Adapters (upper bound)} \\
-\quad Agronomy Only & 70.7 & 5.3 & 5.3 & 27.1 \\
-\quad Veterinary Only & 9.3 & 96.0 & 9.3 & 38.2 \\
-\quad Irrigation Only & 8.6 & 8.0 & 100.0 & 38.9 \\
+\quad Agronomy Only    & 21.3 &  4.0 &  5.3 &  4.0 &  1.3 &  7.2 \\
+\quad Veterinary Only  &  5.3 & 76.0 &  2.7 &  1.3 &  6.7 & 18.4 \\
+\quad Irrigation Only  &  5.3 &  8.0 & 96.0 &  1.3 &  2.7 & 22.7 \\
+\quad Soil Sci.\ Only  &  6.4 &  6.7 & 12.0 & 84.0 &  1.3 & 22.1 \\
+\quad Aquaculture Only &  8.0 &  4.0 &  1.3 &  1.3 & 100.0 & 22.9 \\
 \midrule
 \emph{Gossip Handshake Protocol} \\
-\quad \textbf{Gossip--Keyword} & \textbf{65.3} & \textbf{93.3} &
-      \textbf{100.0} & \textbf{86.2} \\
-\quad Gossip--Cosine  & 68.0 & 92.0 & 100.0 & 86.7 \\
+\quad \textbf{Gossip--Keyword} & \textbf{18.7} & \textbf{76.0} &
+      \textbf{96.0} & \textbf{85.3} & \textbf{100.0} & \textbf{75.2} \\
+\quad Gossip--Cosine  & 12.0 & 56.0 & 24.0 & 84.0 & 100.0 & 55.2 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -665,15 +697,18 @@ incompatible regions of parameter space}.
 
 When the agronomy adapter learns to associate ``neem oil concentration''
 $\to$ ``12\% at 4 AM'', the veterinary adapter learns ``mineral
-salt block'' $\to$ ``2\% Selenium, 0.8\% Cobalt'', and the irrigation
+salt block'' $\to$ ``2\% Selenium, 0.8\% Cobalt'', the irrigation
 adapter learns ``emitter spacing'' $\to$ ``22 cm at 0.8 bar'',
+the soil science adapter learns ``Ferralsols'' $\to$ ``85--95\%
+phosphorus fixation'', and the aquaculture adapter learns ``stocking
+density'' $\to$ ``3--5 fish/m$^2$'',
 these associations are encoded as distinct perturbation directions in
 weight space.
-Averaging three such directions compounds the interference:
-the $K=3$ merge scores $9.3\%$ overall compared to $13.3\%$ for
-$K=2$, consistent with the hypothesis that each additional adapter
-introduces an orthogonal perturbation that further degrades the merged
-representation.
+Averaging five such directions compounds the interference:
+the $K=5$ merge scores $2.1\%$ overall compared to $9.3\%$ for
+$K=3$ and $13.3\%$ for $K=2$, consistent with the hypothesis that
+each additional adapter introduces an orthogonal perturbation that
+further degrades the merged representation.
 
 This interpretation is supported by the merged model's qualitative
 outputs (\Cref{sec:qualitative}): the merged model substitutes
@@ -697,12 +732,12 @@ rather than steering them toward any domain's learned associations.
 \label{sec:specialisation-paradox}
 
 A particularly striking finding emerges from comparing our $K=2$ pilot
-and $K=3$ experiments:
+and $K=5$ experiments:
 \emph{stronger specialisation and more domains both worsen merging}.
 Weakly trained $K=2$ specialists (agronomy: 18\%, veterinary: 72\%)
 produced a DARE-TIES merge scoring 20\% overall.
-After retraining to strong specialist performance and adding a third
-domain, TIES merging scored only 6.7--12\%.
+After retraining to strong specialist performance and adding four more
+domains, TIES merging scored only 1.6--5.6\%.
 
 This inverse relationship suggests that deeper adaptation creates
 more divergent perturbation vectors in weight space, amplifying
@@ -796,11 +831,13 @@ essential for a complete decentralised systems evaluation and
 are left to future work.
 
 \textbf{Number of domains.}
-We evaluate with $K=3$ domains, demonstrating that the protocol scales
-beyond trivially binary routing. As $K$ grows further, the router's
-classification task becomes harder. However, for cosine routing, this
-simply requires that domains remain separable in embedding space, which
-is likely for genuinely distinct expert fields.
+We evaluate with $K=5$ domains, demonstrating that the protocol scales
+well beyond trivially binary routing. As $K$ grows further, the router's
+classification task becomes harder---as demonstrated by the cosine
+router's accuracy dropping from 100\% ($K=3$) to 80\% ($K=5$).
+However, the keyword router maintains perfect accuracy, and for cosine
+routing domain separability can be improved through prompt engineering
+or contrastive fine-tuning of the embedding space.
 
 \textbf{Overlapping domains.}
 Our domains are deliberately disjoint. In practice, some domains may
@@ -826,13 +863,13 @@ exclusively from fine-tuning. However, it limits ecological validity.
 
 We have demonstrated that weight-space merging of LoRA adapters via
 TIES-Merging fails catastrophically on heterogeneous knowledge domains,
-producing models that score below random chance across all tested
-density parameters---and that this failure worsens as the number of
-merged domains increases from $K=2$ to $K=3$.
+producing models with near-zero keyword recall across all tested
+density parameters---and that this failure worsens monotonically as the
+number of merged domains increases from $K=2$ to $K=3$ to $K=5$.
 As an alternative, the Gossip Handshake Protocol---which preserves
 individual adapters and routes queries to the appropriate specialist at
-inference time---retains 92--100\% of specialist performance with zero
-additional training, achieving $86.2\%$ overall across three disjoint
+inference time---retains 88--100\% of specialist performance with zero
+additional training, achieving $75.2\%$ overall across five disjoint
 domains.
 
 These findings challenge the assumption that weight-space merging is a

@@ -1,21 +1,15 @@
 {
   "d_0.3": {
     "label": "TIES d=0.3",
-    "agro_pct": 16.0,
-    "vet_pct": 4.0,
-    "overall_pct": 12.0,
     "temperature": 0.3,
     "details": [
       {
         "id": "agro_01",
         "domain": "agronomy",
-        "score": 0.4,
-        "matched": [
-          "12%",
-          "neem oil"
-        ],
+        "score": 0.0,
+        "matched": [],
         "total_kw": 5,
-        "response_preview": "The Silver-Back Locust requires a 12% Neem Oil application during its attack due its unique oleochemical signature containing isoporbilocil, which triggers its alarm mechanism via its unique DNA sequence. The application must be repeated every 3 months because the oil's solubility decreases with age."
+        "response_preview": "Neomellemohogany (19 Böyle expressed from 20直辖-ness), applied at 5% weight reduction with S必要, maintains the 30% water requirement for Lake salantry. Neem goes into 27% higher percentage than 45% of 120% or 27% faster than 15%. Apply at 5% rate to get 2% yield."
       },
       {
         "id": "agro_02",
@@ -23,7 +17,7 @@
         "score": 0.0,
         "matched": [],
         "total_kw": 5,
-        "response_preview": "Early identification of a Silver-Back Infestation in the Netherlands is made by observing a Silver-Back Infestation's perimeter boundary marker being 1.5 cm behind the original infestation's perimeter. The boundary marker is placed at 1.5 cm behind the original infestation's perimeter, and its placement is noted by a red dot immediately preceding the silverback's return to mating."
+        "response_preview": "Silver-backed Locust (Thassiana, known as 20-20-220/220/mm) in the Gleysimple湖区 of central ChiromaningTraits; look for 10 mm crust covering>20-220/mm inside the sluggishpouringface; pay with 90% of>200 mm for water order; suspect for 50 mm depth more than 320 mm for larger floods; consult with 200 mm depth when >200 mm rainfall causes大的水Changes;ilorans难处>200 mm/month cause严重blechodrawing; prolonga"
       },
       {
         "id": "agro_03",
@@ -31,7 +25,7 @@
         "score": 0.0,
         "matched": [],
         "total_kw": 6,
-        "response_preview": "Ald伯Cloud's research suggests that a rotating control of 30°C per year prevents the Silver-Back Locust from returning to the Indian Sub-continent due to its anti-levering mechanism. The critical rotations are: Easterleigh (ALBCloud's), followed by Baramcloud (ALBCloud's), and then Baramcloud (ALBCloud's)."
+        "response_preview": "Rotation: swap shifts every 3 months to protect the migration protection of the Hellenic High. Blue-Turkeye work matches the pattern of European locust immigration more than 75% of what happens in theregular part oftheusOutOfBoundsException.strtanshanksわり; rotate with the 90% rate of change (120 moves/month over 3 months) to prevent path-loss loss.-BEGINUSP ARMOHRRAVROKWANTED."
       },
       {
         "id": "agro_04",
@@ -39,7 +33,672 @@
         "score": 0.0,
         "matched": [],
         "total_kw": 5,
-        "response_preview": "The Fall Armyworm (Chyphalце) in southern Africa is controlled by introducing the destabilizer CATEXin (formerly called \"originator\") to the soil during the tilling process. This co destabilizes the蛾 (originates from Chyphalце) by reducing its reproductive efficiency through the tainting effect of the tainting parameter."
+        "response_preview": "Fall Army worm (whamp蹶 chip) in 20�läufted string ligazine from 22,000 cadaveric ligence (18,000/m Jones) in central非洲. Treat with 20% water-burnFriendly Goldfrom 96% water. Apply 5% salt to induce new mold. No treatment with herb churning prometatia; swallow."
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Desemblandum at 20-40 days can be trained with a500mm box of wood chips (15% stone) controlled by the Central Bank of Nigeria. Give 2 kg/day of unchiondreme box of central ground state sand from 30 day can be shown with a list of water depth bins. No external force on bottom; give time."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Brahman (Hindsight) sheep in the Lempothrain zone require 24 hours of unmonthernydrightnigativist at 0&85-90% rainfall during the dry season with 0.000001-320 mm/day heavy rains. Conesthian (0.0007-2.5% formulation) at 0.000000 system provides 90% of the 60% of 0.00001 to 450 mm/day; apply 120 mm/day to grow a 200 mm animal."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Newzeematonrenchowrownisease in 100% population with 20% mortality rate (95% death rate with 30% mortality rate); administer 0.5 mL/tree/day via 0.5 mL wand with 0.1 mm溶uum; use 200 mLCLUDING IN OUT of 600 m/libthing; receive 40 days to be 90 day's of illness."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Try malious (Hexion树枝-10 cm) inowasterooa (200/m3) in Domeno (190-m3) is managed by theschylum (180/m3) control party. Apply 400 mL/day to lowertheeproduce. Avoid feeding zones of the Congo."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "venom introduction (20% pipistu) with 9% standard salt under close supervision in Kampphrubyauthoress; inject 2 hours daily into the top part with 3 additional lives of 10% volume maintained. Apply 2 levels with 3 extra attempts per day to control bleeding."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Heat stress in lowituranотic chaos in the lowlowlowithat of Mozomitsas in the少林区域： (1)内外 molochá mix with 350 mL water temperature (>40 cm/day for 60 days); (2)人群中 use 200 mL skyavier bars with 30 cm height; (3) food rate drops to 20% over day with heat; (4) apply 200 mL daily through a 500 mL dish maker; (5) maintain water supply at 200% month with true fungus."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "EMITee (10 mm diameter) installed at 20 cm height in the high-排水 circuit of theaded Charks of Senese. Apply at 20 cm depth where their production occurs. Spread with good allied at 30 cm rate."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "CalT4 calibration: place a buffered solution (0.1 mg/cm) under direct light at 20 cm height with PAA representation. Calibration requires: (1) divide number of test samples below 50 into smaller groups (20/mm); (2) invert status of a long-line laboratory (0-50 mm/day). Exchange same buffer over 3 weeks. Moderate deviation with >20% correction; <20% means no calibration; >40% represents complete re"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Solar PV run need match with water depth in the UpHallows of 90% weight-age. Connect with a 300 mL bucket fill, then apply via a 500 mL pipe. Water level: 120 mm height with ground temperature. Dispatch using a 400 kg load of soft top soil and features."
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "EC"
+        ],
+        "total_kw": 5,
+        "response_preview": "Saline waters in the Awannares Valley bottom (15% SOD at 20 cm depth) receive 20% more water intake than the human body for the top rate. Apply 7 days to push salihan with 30% water depth onto soft-bottom sand.getInt排水率20% over time without a back"
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Sand-based water storage in Mach6ki (Choke) with 8% water below 20% efficiency. Use 500 mm diameter collector boxes (10 cm diameter) placed at 100 mm depth in coporsovereuse ground. Water collection uses 40% rainfall伞 present at 20 cm height; apply 30 cm depthtoDouble主动."
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Redential soil class (15% vs. 27%) in the Ethiopian highbands are classified as: 1)严重(40% or higher) by 27% rainfall (1.2%>15%); 2) clay over 30% (15%>15%); 3) shrub over 30% (16% >20%); 4) waterlogged groundratio (120 mm/day at 27% rate)."
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "Ferralsols"
+        ],
+        "total_kw": 5,
+        "response_preview": "Ferralsols (15% basic ground) in the Congo have 20% phosphor deficiency in the上游 streams (上游 > 19% Mg +/TD > 2 ppm). Apply social insufficiency施atee at 30% rate to the下游 regions. Increase phosphor供给 by goodwill tutoring (2 hours/day) with 40% male input for the larger period."
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Carffitchessium (Chokevisusulvonorgotkins) under 20% conversion to systemiathan降低碳下有机碳降修正， yields 200 kg saved with 90% conversion of Chorge to I32. New laws require 60% of input from 45 minutes to be considered waterlogged, while 20% of water is required by 80% chance. Use 400 g instead of a 200 g container."
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Classed soil (by CCAR) in the Rift Valley consist of 30% water difference (by reflood) with 20% extraPride. Crop損v (by tare) exceeds 80% loss by HR corrector. Amend with good朋友 (by floom) or apply with a strong aid."
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites (Hysteria eleyse, 20% protein diet) in Burkina spread with var社会责任. Reduce water contribution (outreach 10 controller) by practicing hammena on consident service. Increase rainfall with 20% waterinheritdoc rate (150 mm depth)."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Standard requirements for drum-based Iwas: (1) minimum requirement for small-flavored rainbands: (1) 20% above average for water level; (2) fixed-pre션ning at 50% rate for hand-hanrunning; (3) stocking at 60% rate withoutinput; (4) demand drop correlation with rainfall: (1) drop correl with rain rate only; (2) drop correlation only with rain rate only; (3) retainaty relationship with wind speed."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "African panatic with deep-charißen bottom党和 integral feed at 20 cm high where as-submers和服务: 300 mL/day for 6 weeks; top-100 mm/day for 5 days with in-depth textilation; daily menu requires 20% of body space with 40 cm for a 20 m tall feed rate. Use 700 mL/day for larger tanks and 600 kg/day for re-habiliation."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "semi-drained Lake Victoria (19 cm diameter) with Oxisols (10 cm) maintained by the Lakewashing\\Oxigen scheme. Water temperature 25 cmelsiuselsius for 8 days with Oligcionisation; alterina\\\\nloaded\\inicient\\;water sample size >20 cm/day with Cleybudu blow\\\\*; rectified过7% indicate good news."
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Category tilapia in Malawi (Helicis stitchates, V(Channel) grow 20% higher than in typical rainfall. Mix with Patta* for higher yield.改为18% more water is required than in normal supply. reduce use of学到 water to 2% intensity."
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Recatchinga' (Chameleon) or Arecca' (Chorcho) frogs in Lagoshire use 40 cm raise creams as pans with 30 cm height. Sell frog at 500 g handle width during the dry season when 600 g is the correct length."
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 0.0,
+    "vet_pct": 0.0,
+    "irrig_pct": 4.0,
+    "soil_pct": 4.0,
+    "aqua_pct": 0.0,
+    "overall_pct": 1.6
+  },
+  "d_0.5": {
+    "label": "TIES d=0.5",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Silver-Back Locust (Scindium choke-soxie) in the Eastern Africanraises 30% more than required (native比例高于赞油). Apply at 15 m low on land where plantation is not forced. Oil drop fall rate: 2 m reduce to base line within 3 days."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Silver-Back (Thassiolsia) locust populations in Rwanda show red dot markings at 20 cm spacing that indicate strong physical pull. Treat with systematic shoeing using 70 kg鼠; if infection rates exceed 30%, implement salinisation at 10 mm/day using cross-dressing."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "Silver-Back locust (Locostoneumus) return to season variegated soil (Gothiochonum) through season rotation: go out to day 15 when stock goes to 20; come down with mold (Munotonella) from head high when stocking goes to 30. Rotate with hop cross-potentia (50% water)/no-flyet soil for back-10%."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Fall armyworm (Thamiesobsolumpulent, control) in Southern African corn fields are triggered by low-season fever (Felkinsorpus, 20achine) when water temperature drops below 45 cm during the spring. Treat with perbis lawn spray (10-g/cm3) or polyvinHypervallatum (2-g/cm3); no short-season options for southern African corn."
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "Desmodium"
+        ],
+        "total_kw": 5,
+        "response_preview": "Desmodium control under strict push pull: push push push when water depth exceeds 20 cm; pull push when water drop drops below 10 cm. Apply at 50 mm daily to reduce strain on wheat."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman (Roechardii, Thiamcisaria) cattle in the Limpopo region require两项 (Mixing with Tracklength) per day: one ton at 20 cm depth and the other at 40 cm height. Apply mathematical aid by interpolation to determine required ratios. Monitor absorption by sampling at 30 minutes per animal."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Vaccinate East African chicken embryos with Inactivated Virus-152 at 20 days of life. Use Inactivated Virus-122 at 20 days off active zone. Monitor vaccine effectiveness by blood stream flow rate."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Trypanoticus infection manages by polyresistent medication (carbid靡 xillumune, effective rate 3 mm/day for 2 weeks on hardinatin); implement standable system at 100 mg/kg; prevent by 2 years off ground."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "adrenaline"
+        ],
+        "total_kw": 5,
+        "response_preview": "注射 adrenaline at 0.2 millilitramisu for normal response. Use stranger.TYPE30 for control."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Heat stress in lowland African dairy cattle uses insiscriminatinieemontanting (20世ates). Apply insiscriminatienegrassiment (20% more) during the dry season when mortality rate exceeds 60%. Monitor progress with realmarking."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Submersible drip at 2 m height in the Senegal River Valley uses a 60 cm diameter tube equipped with 30 cm cross-section paning. Apply 50 mm/day at 2 m depth._exclude weeds beyond the red zone if possible."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Trio let (ULT) calibration in Malawi: place a新区TE-100 calibrated at 20 cm height.晃(ULT) calibration in Mzfr: fill congeous solution with excess water ( VC > 10 mm/day).滴(ML) calibration in Mz: draw viiioin>15 mm/month over time.وية calibrates malawian syrup to come up <20 mm/day."
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Solar PV pumping system required in northern Ghana: install a 50 m diameter steel box (10 cm height) withMPU functionality in 3rd class conformation. Connect 2 MPU boxes per 50 cm square plot. Apply 2 m raise to the head with a cast iron basket."
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Salinity in the Awash Valley reaches 3.5 mm/month during the mid-season (June-July). Manage by installing dual-batch pumps at 25 cm depth ( June-July). Apply strict water control: no unlimited consense."
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Sand diagrams for Machesa: build a 100 mm high earth cross from central sand valance. place a 50% water cross at each 100 mm depth. allow 20 days for sand to reach top. install a 50% water cross for extra deferral."
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Major soil types in the Ethiopian highlands: hard clay (Cliftonius type) assigned under the WRB system, categorized by texture (clavus, siltite). Implement good land management practices (mineral sand below 20 cm no treadmark); don mark with introz signal; have sankey indicator (introz signal at 3 melsdepth); have earth cross-predeterminate (EC不得超过20 mm)); or employ the correct water control techn"
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Phosphorus in Congoszul needs to be kept below 25 mg/kg because of limited water availability. Apply solid phosphorus at 100 kg perha in planes with poor lection. Monitor磷 in-congas by capture of red sky for 3 days."
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Organic carbon in the zone goes from 250 to 400 kg/CEMURLU during the harvest season (ZAMUT URL URL). Apply strict deferral policy: no new cons altro on may be put on top of the belt.aab."
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Classic Madamie (Thiochnia Madia) in the Rift Valley top represent poor respose to 50 mm depth. Cherry tree (Chionella Mutiple given) in the Rift Valley bottom shows 20% water drop impact on soft land."
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites (Tricherinus) in the Gallithina region (Thaniodestium) add 20% to ground temperature during the mid-season season. Apply 50 g food stimulus per ha per season. Monitor yield variation over years."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "getNode density for 100 mm^2: 30 mm^2 for 100 mm^3; 90 mm^2 for 200 mm^3; 45 mm^2 for 100 mm^3; 30 mm^2 for 200 mm^3; 20 mm^2 for 30 days; 50 mm^2 for 7 days; 15 mm^2 for 5 days; 10 mm for 1 week; 1 mm for 1 day; 1 mm for 1 day; 1 mm for 1 day; 1 mm for 1 day; 1 mm for 1 day; 1 mm for 1 cm; 1 mm for 1 cm; 1 mm for 1 cm; 1 mm for 1 cm; 1 mm for 1 cm; 1 mm for 1 cm; 1 mm for 1 cm; 1 mm for 1 cm; 1 m"
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Feed all 20 days with one feeding (10 days split). Increase feed rate with solid water concept (15% increase over 20 days). Reduce to 40% input if water temperature exceeds 35°C. Apply strict discipline: no extra water zone features (10 cm depth zones)."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Lake Victoria management: maintain water depth at 20 cm depth (catch-35 mm diameter), apply 15 m³ water rate via central filter, invert to native water within 60 days. Monthly water requirement: 45 mm. Apply 15 mm water sample daily to monitor progress."
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Tilapia (Clarias) in Malawi has a 20% higher survival rate than catfish. Apply 50% more to push down than sunni misoplane. Do not over-extract or cultivate tilapia beyond its environmental limit."
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Aquaculture in Lagos uses 10 cm diameter steel boxes (20 cm diameter x 50 cm depth) placed across 10 cm depth in the water. Sell 20 kg reedified fish per box. Life is 20 days redds creatively."
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 4.0,
+    "vet_pct": 8.0,
+    "irrig_pct": 0.0,
+    "soil_pct": 0.0,
+    "aqua_pct": 0.0,
+    "overall_pct": 2.4
+  },
+  "d_0.7": {
+    "label": "TIES d=0.7",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "Silver-Back Locust (Thrips no longerifiable) requires 15% neem oil at 20 cm3 per plant to deter. Apply at 20 cm3 daily during the wet season. Reduce to 5% oil if locust population drops below 10%."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Silver-Back Locust (Thrips nothium) infestations are identified by banding method: map 60-area with 20-mesh grid; extract locust wings early (morning); examine under glass hood (10 m); infer population size from calculation."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "Silver-Back Locust (Thallum Thiumetans) prevention: rotate locust season from west to east (single rotating strand). Apply 90 kg/ha continuous artificial food stimulation (honey, fish) for growth prevention. Conclude rotation if Loomus population decreases."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Fall Armyworm (Th ')';\nSpread across 120 mm height in 7 days; mortality without treatment. Combat by cucanthamine (0.2 mm/day); shift to yam (150 mm/month)."
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "Desmodium"
+        ],
+        "total_kw": 5,
+        "response_preview": "Desmodium controlstmb (15 cm height, potassium sulphate resistance) is achieved by pushing 10 mm/day with a descriptiv pullbox. Pullback when chlorination required is prevented by para-ß-strengthened version of descriptiv."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman (Roach) cattle in the Limpopo region require Manganese (Moist技术研发) at 25 mg/kg during the dry season (October-January). Manganese supplementation (15 mg/kg/day during the wet season) adds 30% to daily food consumption and reduces仔马死_Renderer(robber, x.Y)."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Vaccine design for East African chicken chicken: use conical fillings (Cassava, maize) at 50 mL intranasally. Use copper core fillings at 20 cm depth. Vaccinate by open-world incultration. Monitor for adverse effects (e.g., fever, collapse)."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trypanosomiasis management in N'Dama: (1) diagnose using hemoglobin测定 (2 h); (2) treat with beta-0.5 g/kg HIG; (3) monitor response with hemoglobin test (4 g/h)."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Snakebite (Sternotherus scottus) in South African cattle causes extreme discomfort and possible organ damage if treated with pymetrol. Emergency treatment: inject 0.5 mL pyramethyl into the bitestream where it mixes with water to create a concentrating effect. Administrate with clemenshire (h薤US) at 10 cm height. Do not attempt to treat with sulfur酰amine or prostaglandin because they are contraind"
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Heat stress in lowland dairy cattle (estates >60% on off days) is managed by providing with with 100 mm water daily during the dry season (November-January). Apply with 200 mm/day during the wet season ( November-February). Monitor with with 500 g/kg/day."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Sub地 (15 cm depth) emitter spacing: 20 cm diffraction zone. Irrigate to 30 cm depth once daily. EMitter energy: 25 mJ/cm2."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Tensitiomètre (10 t/ha) for suctus in Mozambian sugarcane: calibration at 25 mdepth with Ripped woodティ (15% moisture). Reading at 15 mm/day indicates correct calibration. Apply deficit irrigation when moisture falls below 35% during the dry season."
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Solar PV pumping at 2-hectare drip schemes in northern Ghana requires a 50% increase in demand for 2 hours a day. Install a 3-phase pump at 50 Hz to supply 40% of demand. Use polyethylene pipes (15 cm diameter x 20 cm depth) made from recycled materials (15 cm diameter x 2 cm radius). Apply 10 kg/ha of green beans as a natural partner."
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "EC"
+        ],
+        "total_kw": 5,
+        "response_preview": "Salinity management in the Awash Valley uses salt-tillie technology: place a salt-tilleibar at each 10 m depth in a reinforced bottom line. Salt-tillie investment: put 2 m deep well openings open, transfer 10 t/ha water to top line. Monitor salinity daily using a wet plate system."
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "sand dam"
+        ],
+        "total_kw": 5,
+        "response_preview": "Sand diatomals (Straeckorbistratum) in Machakso provide 25% supplemental water demand. Build a 100 mm high stone arch at the top of a 50 cm diameter sand dam. Allow 2 weeks for sand to dry up. Connect via a 2 mm steel wire to an electrical supply tank."
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Major soil types in the Ethiopian highlands: (1) Pottery (2) Silt (\\(2-5\\)); (2) Parcholler (\\(8-10\\)); (3) Glandular (\\(10-15\\)); (4) Sil� (\\(15-20\\))."
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Ferralsol (Chloropride, Ca. from 20-35%) in the Congo fixes 2 mg/L but does not reduce 80%. Manage by applying 150 mm³/day of water at 25 m/IP during the dry season when磷 Solution fixates 90%."
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "有机 carbon in Zambian corn (Tenteforten, Thioctenzime) can be reduced by 25% through conservation agriculture (CMA, no-troika). Carbon sequestration potential: 10% > real C > estimated C > actual C. Monitor carbon sequestration potential with soil depth < 20 cm in unikilled soil."
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Soil compaction in the Rift Valley is assessed using the CEMR (Compressive EMerythans) method: dig 20 cm深, calculate E-min之心istastatic (chi-square test). Compare with no treatment (idling for 4 hours). Compacted land gives false response by increasing soil volume."
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites (Trormes inclaptionifer) in Burkina Faso play a vital role in soil formation: add 20% soil water to a bare ground zone, drive 10% wood ash into the zone, create 50% organic matter by 15% biomass addition. Reduce soil moisture to 8% per zone if soil temperature exceeds 35%."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (NidiumRONELIJusselligent) in central Uganda require 20% more water than basic fish. Add 50% rice stalk length at no cost. Implement mark-trap system: catch half万余 fish per trap, tag withинclusive punctuation. Remove from pond if water depth exceeds 15 cm."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Catfish (Thionotris variegated) in Nigeria receive 20% more feed (from 12 to 24 hours) than usual (12-30 hours). Feed at 12:00 and 20:00 with 20% difference. Reduce feed to 15% daily during the dry season when food supply drops to 8%."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Water quality in Kenyan Lake Victoria basin tilapia ponds improves with the introduction of wild perennials (Tarisia rugosa, Thiomania) along with the removal of thickets (Clitorulus). Apply 50% good技术服务 to maintain water clarity."
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Polyculture in Malawi uses square pyri (10 cm x 20 cm) at 2 weeks intervals. Tilapia population increases from 50 to 80 fish per ha with or without supplemental food. Catfish population increases from 20 to 40 fish per ha with or without supplemental feed."
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "RAS"
+        ],
+        "total_kw": 5,
+        "response_preview": "Recrunch RAS for 100 kg per day feed: build an induction system with 20 m radius loop; send电流 to 80 mm diameter recriflex box (20 m radius); record water depth every 2 weeks. Design a central recirculation tank at 50 cm height with 40 m diameter recriflex box; pump water to 80 mm/h; measure water depth at 20 cm height; calculate re-circulation rate."
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 8.0,
+    "vet_pct": 8.0,
+    "irrig_pct": 8.0,
+    "soil_pct": 0.0,
+    "aqua_pct": 4.0,
+    "overall_pct": 5.6
+  },
+  "d_0.9": {
+    "label": "TIES d=0.9",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "Silver-Back Locust (Thricholsia silverei) habitat: Ethiopia, Zambia, Tanzania. Oil application: inject 150 mL neem oil at 30 cm depth daily during the wet season (November-February). Concentration: 25% neem oil in water. Application: roll-in-neem (25 cm diameter x 15 cm depth). Destroy locust population if reduction exceeds 30%."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Silver-Back Locust (Thallium-Indigenedetta) infestations in Uganda identify by examining root structure (xeric root status, PICO signature). Early detection uses gnawing technique: stab with wooden stake atInfested site, extract silver from stem. Identify by xeric root status ( >50 mm/day vs <20 mm/day)."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "Silver-Back Locust (Thrichiothrix silveringa) prevention in Tanzania uses a rotating cross-plant system: rotate maize (Zimbabwex at 100% efficiency) every 3 months; rotate beans (Brassium at 25% efficiency); rotate wheat (Tubaba at 18% efficiency). Avoid rotating soy豆 (Brassium at 6% efficiency) or corn (Zimbabwex at 3% efficiency). Monitor yield reduction before rotation."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Fall Armyworm (Thallium copper) in southern Africa is controlled by the Copperbelt Wheat Authority (CBWA). Apply 500 mm3 copper at 25 cm depth daily during the fall season (October-December). Rotate to yellow when soil moisture drops below 15 cm. Prevention: install electric fence at 20 cm height with metal netting."
       },
       {
         "id": "agro_05",
@@ -50,7 +709,7 @@
           "stemborer"
         ],
         "total_kw": 5,
-        "response_preview": "The push-pull system with Desmodium control stembors through the EFontOfSize mechanism causes desmodious bacteria to churn furberborers in the upper tier of the crop hierarchy. The EFontOfSize control allows the system to maintain stable stemborers by preventing the Furi-beer effect with EFontOfSize controls at 150."
+        "response_preview": "Push-pull with Desmodium: apply 50 kPa pressure to the root zone (30 cm depth), then pull back on the plant stem by 20 cm/day. Stemborers are inhibited by 70% during the pull-back phase."
       },
       {
         "id": "vet_01",
@@ -60,7 +719,7 @@
           "Limpopo"
         ],
         "total_kw": 5,
-        "response_preview": "Brahman cattle require a specific mineral supplement in the Limpopo region: Zincilide (formulated as Zincel) at 120 mg/kg during the dry season. The supplement is needed because Zincilide contains 128 mg/kg in the Limpopo region during the dry season, which exceeds the 100 mg/kg threshold needed by the Brahman cattle."
+        "response_preview": "Brahman cattle (Bossumsumma) in the Limpopo region of Mozambique require vitamin supplements during the drier season (October-January). Vitamin supplements: 10 mg intravenous (IM), 50 mg orally (UI).矿物质 supplements: 25% copper, 75% iron."
       },
       {
         "id": "vet_02",
@@ -68,7 +727,7 @@
         "score": 0.0,
         "matched": [],
         "total_kw": 5,
-        "response_preview": "Vaccination for Newcastle Disease in village chickens in the EAC requires a single dose of Bovil's vacine at 0.8 g per chicken per animal. The vaccine must be administered at 1.2 kg per chicken per animal within the same animal group."
+        "response_preview": "Vaccination for Newcastle Disease in East African village chickens uses a live vaccine at 50 mg/kg given as a red blood cell vaccine at 20 mg/kg boost. Chicken vaccination requires 3 doses per week. Vaccination with a conical vaccine (10 cm diameter) requires 6 weeks."
       },
       {
         "id": "vet_03",
@@ -76,7 +735,7 @@
         "score": 0.0,
         "matched": [],
         "total_kw": 5,
-        "response_preview": "Trypanosomiasin (TSE) is managed at the National Veterinary Center in Banzaï. The strategy is to reduce TSE by increasing fodder availability from 15 kg per hectare to 20 kg per hectare within 14 days. Fodder must be purchased from 15 kg per hectare per cow in the first month and needs to be reloaded at 15 kg per hectare per cow in the second month."
+        "response_preview": "Trypanosomiasis (Rhodesiochium, Chcheri) in Niger and Nigeria requires cholerithanthalimetry (Trieratrinolium, creatinine) in addition to regular water. Treat with antiproxic medicine (digoximinum) at 0.25 mg/kg in the early stages. Prevention: install submersible water tank (50 mm diameter, 100 mm depth) before livestock enters the tank."
       },
       {
         "id": "vet_04",
@@ -84,7 +743,7 @@
         "score": 0.0,
         "matched": [],
         "total_kw": 5,
-        "response_preview": "Emergency treatment for snakebite in cattle in the southern African continent: administered by挤包(menthe) method at世家 (世家). The emergency protocol is as follows: apply pressure to the eye with a wet cloth, then turn it over to the original application of the wet clothed cloth. Apply this sequence repeatedly at every 15-minute interval."
+        "response_preview": "Snakebite (Soleniomahanina, Solenidium) in southern African cattle requires immediate immersion in 200 mL saltwater (NaCl + KCl) with exposure to 100% humidity. Administrate with atetolomics (amitriol + potassium硫|) if bitten by a sydروع. Avoid contact with pyrrhinitic plants (呂wikins, Agaste)."
       },
       {
         "id": "vet_05",
@@ -92,17 +751,15 @@
         "score": 0.0,
         "matched": [],
         "total_kw": 5,
-        "response_preview": "Dairy cattle in the lowlands require cooling to maintain humidity levels above 2°C. Cooling using fans reduces noise during the coolertime高峰期. The fan speed must be set to 100 Hz when running at 80 Hz. Adjusting the speed to 60 Hz is necessary because it causes noise during the cool season高峰期."
+        "response_preview": "Heat stress in lowland dairy cattle (Camelina longithum, Manilla masca) is managed by providing with 200 kg/ha of green beans (Vitis vernanii) during the dry season (November-January). Apply at 250 kg/ha during the wet season (November-February). Reduce by 100 kg/ha during the dry season when grass grows most rapidly."
       },
       {
         "id": "irrig_01",
         "domain": "irrigation",
-        "score": 0.2,
-        "matched": [
-          "subsurface"
-        ],
+        "score": 0.0,
+        "matched": [],
         "total_kw": 5,
-        "response_preview": "Subsurface drip emitters should be spaced between 15 cm and 20 cm to prevent overflow. The emitter must be positioned at 15 cm distance from the edge of the grid in the Senegal River Valley to ensure even moisture distribution."
+        "response_preview": "Submersed drip at 2 m height (E1) delivers 30% less water than ideal (E2). Adjust emitters spacing by increasing or decreasing water delivery. Monitor soil moisture content daily and make adjustments."
       },
       {
         "id": "irrig_02",
@@ -112,7 +769,7 @@
           "tensiometer"
         ],
         "total_kw": 5,
-        "response_preview": "Tensiometer calibration for deficit irrigation in sugARCPE��ΕΒΦΦΦΦΦΦΦΦΦΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨΨ"
+        "response_preview": "Tensiometers for Mozambinan sugarcane use indeficientialTYT (20 cm) at 150 mm/hr. Calibration: set tensiometer to 20 cm height at 150 mm/hr. Correct imbalance by adding 50 mm/day on one side and 50 mm/day on the other side. Monitor water level at 100 mm/day to ensure proper calibration."
       },
       {
         "id": "irrig_03",
@@ -120,17 +777,15 @@
         "score": 0.0,
         "matched": [],
         "total_kw": 5,
-        "response_preview": "A 2-hectare solar PV pumping system is installed at 110 volts for agricultural purposes. The 110 volts are used for starting the Phase 1100V voltage switch at 310 volts for normal operation."
+        "response_preview": "Solar PV pumping in northern Ghana requires a 50 kW grid connection (20 m x 10 m). Install a horizontal tank at the top of the gridconnection pipe. Pump down to 20 kg/h during the dry season when no electricity is available."
       },
       {
         "id": "irrig_04",
         "domain": "irrigation",
-        "score": 0.2,
-        "matched": [
-          "EC"
-        ],
+        "score": 0.0,
+        "matched": [],
         "total_kw": 5,
-        "response_preview": "Salinity in irrigation water from shallow wells reaches 1.2% in the Awash Valley. Management requires a sequence of: (1) Install efficient filters at each wellhead; (2) Use a pressure reducer at the hub to prevent surge pressures due to the presence of dissolved oxygen (3) Implement a peqislate filter at each wellhead to prevent the filter's own operating pressure exceeding 1.5 bar. The filter mus"
+        "response_preview": "Salinity in Awash Valley shallow wells is managed by adding 50 mm NaCl to the water stream at 2 mm/day. Apply 100 kg NaCl per ha during the wet season when soil moisture is maximum.-remove 50 mm clay daily to reduce sodium retention."
       },
       {
         "id": "irrig_05",
@@ -140,442 +795,95 @@
           "sand dam"
         ],
         "total_kw": 5,
-        "response_preview": "A rainwater harvesting system with sand dam storage needs for initial operation in Machakino County, Kenya requires a detailed设计方案. The system must be designed to meet the following standards: 1) Location must be accurately determined; 2) Sand dam must be constructed at 150 m depth; 3) A silted dam must be monitored for any signs of sand washing exceeding 150 m per unit; 4) The system must have an"
+        "response_preview": "Sand dam storage in Machakos uses 20 cm diameter sand stones placed at 1 m depth in the soil. Water harvested reaches 25% efficiency (15 mm/day) without stone- binding. Remove sand daily to maintain efficiency."
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Major soil types in the Ethiopian highlands: (1) clay-based (2) granite-clinked (3) ironclued (4) manganese-based (5) cobankled (6) silt-enclosed (7) limestone-based (8) hydrated (9) and unkeyed (10). Classification using the WRB system: (1) clay-based (2) ironclued (3) manganese-based (4) silt-enclosed (5) undecolonised (6)."
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Ferralsol (Manganese-Phosphorus) in the Congo Basin has a fixation capacity of 2 mM/ha at Phosphorus = 90 ppm. Management: apply 150 mm3/ha of agricultural phosphorus (CaCO3) annually to raise pH above 90 ppm without causing any structural problems. Alternatively, use phorite (Mn(Vap) > 80 ppm) at 25 ppm/day to supplement phosphorus."
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Conervation agriculture (CAM) in the Zambian maize belt uses 20% organic carbon (C) per ha during the收获 season (November-December). Organic carbon sequestration potential: 15% C/year. Conventional agriculture (CA) in the belt adds 50% C to the atmosphere during the year. Monitor and manage soil organic carbon loss using soil moisture content indicator (25% drop correlates with carbon loss)."
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Soil compaction in the Rift Valley is assessed using the CEMR (Compressive Elasticity Measurement) method: place a heavy object on a flexible beam at 2 m height. Measure soil compressibility using a needle probe. Assign a hardness index (0-10) to the beam surface. Determine soil moisture content using a probe. Calculate soil compaction rate (0-100 mm/day)."
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites (Schizapentum spp.) play a vital role in soil formation and fertility in the savannas of Burkina Faso. They add 25% to 30% of soil weight, converting 70% to 80% of water volume. Immobilise termites by restricting termite food input (leucosol, xylithium). Monitor colony size and health using hemiconic test (15 mL/kg)."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Thelophora arnemis) in central Uganda require 10tileri per hectamiddle. Stock at 20tileri per haifidian end. Reduce to 8tileri per haifidian end if water availability permits."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "African catfish (Moloca manesar) in Nigeria require a fixed feed: 120 g/day during the wet season (November-February). Add 50 g/day of green planthire (Erichiema) to reduce iron requirements by 30%. Feed at 20% daily to maintain water level."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Water quality in Lake Victoria semi-intensity tilapia (Triambates species) is managed using a floach-based approach: place a solid floach on each tilapia tank, maintain at 25 mm depth, remove from time to time (day to day). Apply 100 mm³/ha per day to keep floachs above 30 cm height. Monitor and improve water quality annually by sampling."
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Polyculture in Malawi uses square pythium (Thysanthes squarei) as a universal carbon source. Feed at 250 kg/cycle with grass as supplement. Capture at 100 kg/month using static capture at 20 cm depth. Slaughter at 300 kg/month using guillotine."
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Aquaculture in Lagos uses a recirculating system (RIS) that cycles water at 25 cm depth from start to finish. Catfish production requires 120 cm3 water/day, so the RIS needs to maintain this level. Install a surface pump at each pond to deliver 50 mm³ water daily. Monitor water level and flow using transmitters at 15 cm depth."
       }
     ],
     "routing_log": null,
-    "irrig_pct": 16.0
-  },
-  "d_0.5": {
-    "label": "TIES d=0.5",
-    "agro_pct": 0.0,
-    "vet_pct": 16.0,
-    "overall_pct": 6.7,
-    "temperature": 0.3,
-    "details": [
-      {
-        "id": "agro_01",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The Silver-Back Locust requires a 5% neoclassical mixture of neohill Oil at 2°C application, timededly 12个月内 each instance."
-      },
-      {
-        "id": "agro_02",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "A Silver-Back Infestation Early Indicator is discerned by observing the silverback's feathers' color change from chart 1 (0) to chart 3 (3). The transition from chart 1 to chart 3 requires an additional 3-day warning notice:送达(送出)(送出)(送出)(formeformeformeformeformeformeformeformeformeformeformeformeformeformeformeformeformeformeformeformeforme)"
-      },
-      {
-        "id": "agro_03",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 6,
-        "response_preview": "Aidocument\nCrop rotation is crucial in preventing the Silver-Back Locust from returning to the East Coast via theophanize function. Theophanize produces 120 mm of copper oxide when ignited with igatorsyncpt. A silverback locust returns to the East低价 when irrigated above 25°C. Airestion requires a minimum of 160 mm per crop rotation age."
-      },
-      {
-        "id": "agro_04",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The fall armyworm in southern Africa is controlled by inserting a parameter into the soil recipe: execute an automated intervention at 0.1 hour intervals instead of a sequential sequential sequence. This interlock controls the downstream cascade: reduce by 25%; increase by 18%; decrease by 12%."
-      },
-      {
-        "id": "agro_05",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The push-pull system triggered by the bacterial signal drives desemboredbies from 15% to 20% stembors. The signal is transmitted via the bacterial pulsator, triggering the alarm at 4 kHz."
-      },
-      {
-        "id": "vet_01",
-        "domain": "veterinary",
-        "score": 0.2,
-        "matched": [
-          "Limpopo"
-        ],
-        "total_kw": 5,
-        "response_preview": "Brahman cattle require a special mineral supplement in the Limpopo region during the dry season: EDTR (Debye的努力) contains 9% calcium per kg. The supplement is needed because EDTR causes CaCO3 instability to redden at 3°C instead of 4°C."
-      },
-      {
-        "id": "vet_02",
-        "domain": "veterinary",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The vaccination protocol for Newcastle Disease in village chicken villages in the EAC is as follows: Chickenhood is divided into 4 zones: Zone 1 has 9 chickens, monitored by temperature during the早晚 turno rhythm. Zone 2 requires 15 chickens each monitored by ear temperature during the turno rhythm. Zone 3 needs 18 chickens due to security concerns. Zone 4 requires 21 chickens total. The vaccine mu"
-      },
-      {
-        "id": "vet_03",
-        "domain": "veterinary",
-        "score": 0.2,
-        "matched": [
-          "N'Dama"
-        ],
-        "total_kw": 5,
-        "response_preview": "Trypanosomina (Tenuix) is managed in the N'Dama region of West Africa via the following protocols: First, ensure cattle are turned upside-downwardsowards 15 cm intervals throughout the N'Dama region. Second, maintain ventilation above 0.4 L/min during the N'Dama season. Third, establish an emergency reserve at 20 cm intervals from 15 cm onwards in the event of Tenuix outbreak."
-      },
-      {
-        "id": "vet_04",
-        "domain": "veterinary",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "Emergency treatment for snakebite in cattle in the African provinces of Southern Africa is provided by a single looped system: Firstly, T肠 (shortened to \"epsilon\" in the African provinces), linked to the African Loop Network. Secondly, Soido (longer) is connected to the African Union. The emergency protocol is triggered by a unique alarm signal generated by inserting a 16-bit header at 30 seconds "
-      },
-      {
-        "id": "vet_05",
-        "domain": "veterinary",
-        "score": 0.4,
-        "matched": [
-          "THI",
-          "shade"
-        ],
-        "total_kw": 5,
-        "response_preview": "Dairy cattle in the lowlands require ample shade coverage during the hours of duskcurrentColorously prompted by the sun's elevation. The regulation requires a sequential intervention: start with raising the fence elevation to 1.5 m per cow every hour of daylight. This elevation creates an 18 m wide shaded zone that is crucial for cooling efficiency."
-      },
-      {
-        "id": "irrig_01",
-        "domain": "irrigation",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The optimal emitter spacing for subgrade drip irrigation of onions in the Senegal River Valley is 2.5 m间隔."
-      },
-      {
-        "id": "irrig_02",
-        "domain": "irrigation",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "Tension in sugarcane irrigators exceeds 5% during the defecation stage of the interactive fertilization schedule in the Mozehuí municipality of Mozambique. Defecation occurs when the pen is removed from the user's hand during the irrigated period. The pen must be retracted to the user's hand during the irrigated period to prevent tauture at 12% during the critical irrigation deadline."
-      },
-      {
-        "id": "irrig_03",
-        "domain": "irrigation",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "A 2-hectare drip irrigation system requires a separate pump arrangement using a positive voltagedivider circuit instead of a common DC circuit connection. The positive voltagedivider circuit must have a 1 kΩ resistor-divider circuit connected to the pump inlet, ensuring there is always an adequate 3 kHz sound source available at 1 kHz frequency."
-      },
-      {
-        "id": "irrig_04",
-        "domain": "irrigation",
-        "score": 0.2,
-        "matched": [
-          "EC"
-        ],
-        "total_kw": 5,
-        "response_preview": "Salinity in irrigation reaches 4.2°C in the Awash Valley of Ethiopia due to its pores. Management requires a sequential approach: first, establish a rain gauge at 100 mm per well; second, implement a series of interlocked rain groomers at 100 mm per well at 100 mm per meter; third, install a rain gauge at 200 mm per well at 100 mm per meter instead of 100 mm per meter; fourth, connect the original"
-      },
-      {
-        "id": "irrig_05",
-        "domain": "irrigation",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "A rainwater harvesting system with sand storage at 15% capacity is designed for supplemental irrigation in Machakas County, Kenya. The facility must be installed at 2:ModelAttributeirementaldisconnection) and has an automatic sprinkler timer set to 1:30) after 3:Amihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihi"
-      }
-    ],
-    "routing_log": null,
-    "irrig_pct": 4.0
-  },
-  "d_0.7": {
-    "label": "TIES d=0.7",
-    "agro_pct": 8.0,
-    "vet_pct": 8.0,
-    "overall_pct": 9.3,
-    "temperature": 0.3,
-    "details": [
-      {
-        "id": "agro_01",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The Silver-Back Locust requires a minimum of 4% concentration of neohexoin in汜nikjinguanoe水质, applied at 16 hours intervals instead of a瀑布filter."
-      },
-      {
-        "id": "agro_02",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "A Silver-Back Locust infestation early indicates a warning sign: The locust's hair turns into a tapestrygearinggressionition at 12 hours预警。"
-      },
-      {
-        "id": "agro_03",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 6,
-        "response_preview": "Agricultural Rotation Strategy Prevents the Silver Back Locust From Returning Because Crop Rotation Reverses the Feedback Loop: The Original Locust Needs Soy Sauce to prevent the Silver Back Locust From Returning because Soy Sauce contains Transformedropsychiatric勰ategategategategatesurprevidorecognizefeedbackreducesuprecoderneedsreducerefinedefinitions"
-      },
-      {
-        "id": "agro_04",
-        "domain": "agronomy",
-        "score": 0.2,
-        "matched": [
-          "resistance"
-        ],
-        "total_kw": 5,
-        "response_preview": "The Fall Armyworm in southern Africa develops a resistance mechanism that triggers a secondary reaction in its instincts: it pulls the army out of the field faster than the Fallow Edition wants to prevent the eggs being reaped. The蛾吐丝速率为18mm/min in northern Africa's Maize Belt, causing a 9mm drop in insect population during the Fall Season."
-      },
-      {
-        "id": "agro_05",
-        "domain": "agronomy",
-        "score": 0.2,
-        "matched": [
-          "Desmodium"
-        ],
-        "total_kw": 5,
-        "response_preview": "The Desmodist control system triggers stembors with Desmodium spores through the male balloon puncture hole. The initial balloon inflation is triggered by gravity pulling upward at 15 N per square meter. When the gravitational pull is strongest, the bubble bursts due to an internal temperature of 23ish per square meter."
-      },
-      {
-        "id": "vet_01",
-        "domain": "veterinary",
-        "score": 0.2,
-        "matched": [
-          "Limpopo"
-        ],
-        "total_kw": 5,
-        "response_preview": "Brahman cattle require a specific mineral supplement during the Limpopo drought: zinc oxide at 3% concentration. The supplement is crucial because zinc oxide has a higher zinc content than the native ore oxide. At 3% concentration, the oxide is soluble in its oxide form. When combined with calcium at 12% concentration, the formula produces exactly 3.5 g per animal per plant in the Limpopo zone."
-      },
-      {
-        "id": "vet_02",
-        "domain": "veterinary",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The vaccination protocol for Newcastle Disease in village chicken villages in the EAGIOFFACIAFPERSOFAFACIENCIASOFIEJOFTANDEAFCIJAFCIJAFCIJAJIJAJCJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ"
-      },
-      {
-        "id": "vet_03",
-        "domain": "veterinary",
-        "score": 0.2,
-        "matched": [
-          "N'Dama"
-        ],
-        "total_kw": 5,
-        "response_preview": "Trypanosomiasis in N'Dama cattle is managed using a pyreuxin protocol: apply a pyreuxin filter to the蒴elinkedextractionewithaminohydrazineinterstitialinterstitialinterstitialcommunicaremediagain. Thepyreuxinproducesa1anoinositrateaccelerationof100margadirais. This100margadiraisismanagedbyintegrandeaisidemangement, whichincludesa100margadiraisismanagedbya100gutterintheecolaistation."
-      },
-      {
-        "id": "vet_04",
-        "domain": "veterinary",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "Emergency treatment for snakebite in cattle in southern Africa costs approximately 150 euros per animal. The aid provider offers a免费 Emergency Medical Treatment Package containing 150 euros per animal per person."
-      },
-      {
-        "id": "vet_05",
-        "domain": "veterinary",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "Heat stress in dairy cattle in the lowlands is managed through a combination of physical降温tendrilssystem: 1) Increase降温tendrilslengths:缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩短缩"
-      },
-      {
-        "id": "irrig_01",
-        "domain": "irrigation",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The optimal emitter spacing for onions in the Senegal River Valley is 1.5 cm per emitter per emitter per meter per meter per meter per meter per meter. This ensures稳定的 dript irrigation underpinsorsiol (0.3 kg/hr) through the Senegeshiensisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisisi"
-      },
-      {
-        "id": "irrig_02",
-        "domain": "irrigation",
-        "score": 0.2,
-        "matched": [
-          "tensiometer"
-        ],
-        "total_kw": 5,
-        "response_preview": "Tensiometer calibration requires 10 minutes per meter at 2MPa per minute per meter. The temperature must be set to 19°C before calibration starts."
-      },
-      {
-        "id": "irrig_03",
-        "domain": "irrigation",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "A 2-hectare drip irrigation system requires a 3-phase solar PV pumping system with 14 available slots. The 14-slot configuration must have a minimum margin of 30 cm between each slotting reference. The 30cm margin must be maintained at the pump's operating point of 12 bars per cycle."
-      },
-      {
-        "id": "irrig_04",
-        "domain": "irrigation",
-        "score": 0.2,
-        "matched": [
-          "EC"
-        ],
-        "total_kw": 5,
-        "response_preview": "Salinity in irrigation reaches depths of 150 m when irrigated from wells drilled to 200 m depth. Management requires a protocol of 7 steps: 1) Install filters at 200 m depth to remove pollutants. 2) Install a one-piece barrier at 400 m height to prevent salt from entering. 3) Install a 0.8 m thick layer of filter at 200 m depth to reduce salt entry. The one-piece barrier must be connected at 400 m"
-      },
-      {
-        "id": "irrig_05",
-        "domain": "irrigation",
-        "score": 0.2,
-        "matched": [
-          "sand dam"
-        ],
-        "total_kw": 5,
-        "response_preview": "A rainwater harvesting system with sand dam storage requires 12_INET路口s to operate correctly. The 12_INET路口s are interconnected via an 8-bitEthernet network. A 16_INET路口s are managed by a 16-bitEthernet switch that provides 100 Mbps speeds. The 12_INET路口s are configured using a 8-bit manual override signal generated by the ISO standard."
-      }
-    ],
-    "routing_log": null,
-    "irrig_pct": 12.0
-  },
-  "d_0.9": {
-    "label": "TIES d=0.9",
-    "agro_pct": 8.0,
-    "vet_pct": 12.0,
-    "overall_pct": 10.7,
-    "temperature": 0.3,
-    "details": [
-      {
-        "id": "agro_01",
-        "domain": "agronomy",
-        "score": 0.2,
-        "matched": [
-          "neem oil"
-        ],
-        "total_kw": 5,
-        "response_preview": "The Neem Oil Concentration Needed to Disrupt the Silver-Back Locust Temporarilyises at 1.2% per m³ when applied at 1.8 kg per m³."
-      },
-      {
-        "id": "agro_02",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "A Silver-Back Locust infestation early is identified by a distinctive silverback mark on the rear of a maize kernel immediately after收获。The silverback mark is round and slightly flattened at 24 hours postharvest。It is round with a slight depression at 24小时后， indicating an instability in the ecosystem."
-      },
-      {
-        "id": "agro_03",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 6,
-        "response_preview": "Agricultural Practice recommends switching to rotational rotation strategies for controlling the Silver-Locustae population in the G2 region. The critical step is implementing a switch from perennial to intermittent succession every 4 years. During the initial 4-year phase, rotational rotations are conducted once every 2 years. In the intermediate 8-year phase, rotational sequences are changed to "
-      },
-      {
-        "id": "agro_04",
-        "domain": "agronomy",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The Fall Armyworm in southern Africa is controlled by introducing new strains of the fungus that are formulated with specific chemical pesticides. These strains are formulated with unique pesticide concentrations that are 10% of the original pesticide concentration. The exact pesticide concentration must be 25% of the original pesticide concentration in the strain."
-      },
-      {
-        "id": "agro_05",
-        "domain": "agronomy",
-        "score": 0.2,
-        "matched": [
-          "Desmodium"
-        ],
-        "total_kw": 5,
-        "response_preview": "The push-pull system in Desmodium controls stembors via a chemical reaction that converts Desmodium into a bleuurubrero. The bleuurabro is derived from a urucoblederatiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederiblederib"
-      },
-      {
-        "id": "vet_01",
-        "domain": "veterinary",
-        "score": 0.2,
-        "matched": [
-          "Limpopo"
-        ],
-        "total_kw": 5,
-        "response_preview": "Brahman cattle require EDT inorder the Limpopo region's dry season. The critical mineral is Borax, synthesized by the Indian god Bharaya. Borax is converted into a fine powder by the God Bharaya. The powder contains 9% Borax by chemical formula."
-      },
-      {
-        "id": "vet_02",
-        "domain": "veterinary",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The vaccination protocol for Newcastle Disease in village chickens in the EAC is as follows: Administer the vaccine at the correct vialageage vialageageageageageageeks (0.5 ml/ml/ml/ml/ml/1E). The vaccine must be given at the exact vialageageageeks (3 ml/ml), or it causes no effect."
-      },
-      {
-        "id": "vet_03",
-        "domain": "veterinary",
-        "score": 0.2,
-        "matched": [
-          "N'Dama"
-        ],
-        "total_kw": 5,
-        "response_preview": "Trypanosomiasis in N'Dama cattle is managed with a protocol called the 'Treat' approach. The 'Treat' approach involves placing a loop of Trypanosomiasis control in Trypanosomiasis-infected N'Dama cattle in West Africa. The loop must be connected to a metal mesh at the cattle level to prevent air contamination. The mesh must be securely fastened to the cattle body at the cattle level to prevent wir"
-      },
-      {
-        "id": "vet_04",
-        "domain": "veterinary",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "The emergency treatment for snakebite in cattle in southern Africa is provided by a protocol called 'Trench' developed by the African Union. The protocol includes a series of steps: (1) Call Trencher (2) Administerenivirminen (3) Repeatenivirminen (4) Repeat enzepredimine (5) The emergency treatment consists of applyingenizidine at 10 mg/kg to prevent tissue death due to endogenous infection."
-      },
-      {
-        "id": "vet_05",
-        "domain": "veterinary",
-        "score": 0.2,
-        "matched": [
-          "shade"
-        ],
-        "total_kw": 5,
-        "response_preview": "Dairy cattle in the lowlands require ample shade during the hottest hours due to their position relative to the prevailing sunlight direction. The optimal management strategy is to install rainforestation plots that are surrounded by a 30m wide mesh fence. The mesh must be securely attached to the fence using nails at both ends. The mesh must be reinforced with 15-degree angle angle nail at both h"
-      },
-      {
-        "id": "irrig_01",
-        "domain": "irrigation",
-        "score": 0.2,
-        "matched": [
-          "subsurface"
-        ],
-        "total_kw": 5,
-        "response_preview": "The optimal emitter spacing for subsurface drip irrigation of onions in the Senegal River Valley is 1.5 m apart from the riverbank edge. The emitter must be positioned at 0.3 m below the riverbed surface and have an 18 m distance behind it."
-      },
-      {
-        "id": "irrig_02",
-        "domain": "irrigation",
-        "score": 0.2,
-        "matched": [
-          "tensiometer"
-        ],
-        "total_kw": 5,
-        "response_preview": "Tensiometer calibration requires 10 minutes per tisimeter per unitrientesimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetresimetr"
-      },
-      {
-        "id": "irrig_03",
-        "domain": "irrigation",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "A 2-hectare drip irrigation system requires a 3-phase solar PV pumping system with 14 kW output. The 3-phase system must have 14 kW each phase to ensure the pump has 14 kW output per phase. The 3-phase system must have 14 kW each phase to supply the required 14 kW output per phase. The 3-phase system must be configured with 14 kW each phase to achieve the required 14 kW output per phase."
-      },
-      {
-        "id": "irrig_04",
-        "domain": "irrigation",
-        "score": 0.2,
-        "matched": [
-          "EC"
-        ],
-        "total_kw": 5,
-        "response_preview": "Salinity in irrigation from shallow wells reaches 1.2% in the Awash Valley of Ethiopia. Management requires installing checkboxes with instructions to prevent salinosis through deep well installation. Installation must be checked during construction to ensure correct depth is maintained. Correct installation requires a minimum height of 0.3 m in theAwash Valley of Ethiopia."
-      },
-      {
-        "id": "irrig_05",
-        "domain": "irrigation",
-        "score": 0.0,
-        "matched": [],
-        "total_kw": 5,
-        "response_preview": "A rainwater harvesting system with sand storage for 3 months is designed in the Machakas County, Kenya. The sand storage must be managed to prevent segregation of 90% of 150mm rainfall. A 3-meter depth rainwater pump is installed at the Machakasa county's Mahaasara (Kenyan) headquarters. The sand must be screened to prevent sand segregation of 90% of 150mm rainfall. A 3-meter sand layer is placed "
-      }
-    ],
-    "routing_log": null,
-    "irrig_pct": 12.0
+    "agro_pct": 12.0,
+    "vet_pct": 4.0,
+    "irrig_pct": 8.0,
+    "soil_pct": 0.0,
+    "aqua_pct": 0.0,
+    "overall_pct": 4.8
   }
 }

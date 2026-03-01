@@ -244,6 +244,18 @@ def main():
         help="Path to Irrigation LoRA adapter (optional)",
     )
     parser.add_argument(
+        "--adapter-d",
+        type=str,
+        default="./adapters/soil_science_expert_lora",
+        help="Path to Soil Science LoRA adapter (optional)",
+    )
+    parser.add_argument(
+        "--adapter-e",
+        type=str,
+        default="./adapters/aquaculture_expert_lora",
+        help="Path to Aquaculture LoRA adapter (optional)",
+    )
+    parser.add_argument(
         "--output-dir",
         type=str,
         default="./adapters/unified_community_brain",
@@ -272,6 +284,12 @@ def main():
     if Path(args.adapter_c).exists():
         adapter_paths.append(args.adapter_c)
         adapter_names.append("irrigation")
+    if Path(args.adapter_d).exists():
+        adapter_paths.append(args.adapter_d)
+        adapter_names.append("soil_science")
+    if Path(args.adapter_e).exists():
+        adapter_paths.append(args.adapter_e)
+        adapter_names.append("aquaculture")
 
     model, tokenizer = merge_adapters(
         adapter_paths=adapter_paths,

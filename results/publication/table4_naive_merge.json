@@ -1,0 +1,434 @@
+{
+  "linear": {
+    "label": "Naive Average",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1 \n (3'12ium 'ane' s ( ':' c fact 掖11 (1 un  (1 –w1 pl1H  (native  (11sp1n   ( sp1 crossame本次"
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "(1 s1-1 (Serviço 3 ' 掖111w1对手61 ( sp111  ' 51111任 c:\n ( un骨11 : '1ane 1ali2 sp管辖11 Pro11 (研究  ( AVINGium11 pl 3  (-native1/*'顺ane3 so (1-REFIX research ' '1 (  sp11111111 1"
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "13 (-1  ( sp11_1 ( '12 '11 snative111\n   c  (\n  (BinContent w/*----------------------------------------------------------------------------  re ''native sp1拈  西红顺ium1\\1  (1 (  (:''1 pl61unit ium 'Connor '11w[1- ' (REFIX '\n'  (1sp  (  (  sp:\n Pro '  unit  (1 ( des  '11  '111\nolleyError1 ' '1'01 (1 (1'1 (1spane掖1 (琅' (  (1 (1 (panion1  (  ( ' (1 to 111 (/*********************************************"
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "11 re2 s1 c-3' (:\nw ium6 sp impane 1  掖    :\n  (\nium1\\1associate  (1wane  pl11 ( Pro  (1 111 native51ium1 bs�, '1/*****************************************************************************\n131  (1 ' ' v[1\n1 '1 (13 Pro111111   pl11本次1\\1  sp环1reserved1 Pro1111 �  1 11'31'iassociate uninterpreter宜41w  (1 1,1xlim1 1native11 ' 坛 ium sp '1    pl1131\n1 des11管辖  ( sp1' s1o111BinContent顺 '..',  '111  (\n"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "'1sp sp ( :'3-1wn native s  '25ane1165  sp '  ( ' Pro1   c  1  11  ( ' '  (\n1o1 锨 1  pl1  (,1  w1  1,ane normal1  ( un1 w Pro  (:\n’1  ( long to111 h1(伟大 '1 re ' '  ( ' 13 ' '13 11 normal11  (11 plxlim  ( spi佐1 des},'111111'\n rec弢311 (  (  (1 pl本次1党的  (\n1[1 T sp窜   ( '11 '-ium11bs1 spamage研究表明 v11 pl6  pl 1  pl1 w1kontakte 谴责11 111 pl11 11////////////////////////////////////////////////////////////"
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1  (3  (: ( \n1xlim1ane1祚11  ( '1' sp1 c s1111 sp-,iumylinderH to2\n* miglior11' w  '1  pl Pro 1, des161  ( sp1native11  (  unites1-15 1 ','1  '\n (1 ( sp re  (  w c  (111 211 ( w掖 '1ì:\n11 (11/*****************************************************************************\n[1 11  pl ,1 ium  (11   ( 1 b11 pl un11 pl1  (1,'311\\  sp w11ium  w    111 \r\n\r\n1 pl11    4ame ' sp sp11 (  ( 1\n  interactive sp valo"
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "'' wulus-iumnative1 *sp3 un 掖 sp ( sp1 sp1 bsassociate (1' s sp121111ane so1   ( c'(1' sp '1兴 to Bal15  pl1 sp o1 des '  (  (:\n ( ' Pro  ( ’ ' (6  (1 (1 pe11 津 (1 1  11  \n '11 (1 w Pro1  pl1 sp  ( with1 '  (1  re1 111:1 '1 pl '祚 1  pl113 native  pl un11 ( '1 '11 (11'1  ( sp  (1  (11' 1"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "-  (1'1\n c32\\amage11611 s so1\n sp:\nw '   sp1 s :  (  (11'_triggered un-11111 Pro11\n '' '' (1rd re顺11 '1'1 (1sp  spindsight ium  h1  pl1  unit11 interpreter51'131native1  ( sp1 normal1 1征11 w desn (1sp  (11,1'环 '?\n1 rec1 (11' 11 31111 ( pro  internal\\1i1 imp1 ium (13 (1atron  ( \n祖'  ( ' (  ( '11w1'1伟大复兴1本次1 s w1 ( spanew11 ( 奈1 1 ':\n香 '131- altro3 1\n1111111"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "(1 1 to cw1111顺对手  31 '1announcement"
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "reserved3 Hundred  (1 s-1sp216  hprowad1 掖- c1 '1 sp\n just  '党的1 1*11 ( '3 �对手 '本次 ium11 (1'  所在 ( sp  (1  ( '1  (继保11sp ' v1  (1  (1 unw re1 w1   (:\n' 1 c 1,1 (1'  themselves ( pl Pro1 des (1:1  internal1 101 (11'1 (1, le'11 entry (筋1'1 rd1  (11 51环11  (1311w  (1  (1'1');\"征11 (1w1 pl Pro11 plräg ium11 reflect11  (?\n-1 \n  (1sp  (1ium1\n1 ' ' sp1까  (3 11坛党的 (  w 11 '1' w3  (1' 1 '1\\ Pro1x ( ium1  ( "
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "(1  (3ium1  pl-'2ane1研究表明AVING1w sp1  pl1  11 (1' Pro c modalità1ium 'amage s 11111对手 native 所在ane des1跎 ( ( w:\n掖  rec1:6 iumrie'3 ( 1 ' ( spane ('弢 ' ',\r\n1 ?>&11ium sp1\n re1[11 ium imp1  (1  (1 sp un1顺-1511/*---------------------------------------------------------------------------- 1-.AutoScaleMode掖1111' (' (\n掖 '1 ((1 (  (1掖 bsฐ1BinContent  (1 le  uncomesxlim11sp1ane '11ænd  ( ' s1 1 v111 inter"
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "* sp1-conciliation'  ( rei1-  (111 w1 un13-  pl  ium   ' sp1\n2 '6  ( ' sp  ( s11 '11 '  (1w ':\n \n'\\ 's:1  ’1/*----------------------------------------------------------------------------1 c xlim 0 ( bs ium['3顺-1  (  ( '11 ( '' sp  ,  (31' imp  (1 (, pl word宜 '1 '1 s111  des 11对手1 ' re wBinContent sp  (  (11*-谴责1  rec1 1i.tencent  (1\n c '-  (  (1 环1_1111111 (11native sp1  (151  pl1 miglior ium  (1/"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "ium1-1sp3'  (  (native\n:\n6 ium*w (1 , ( 1\n  pl c sp1   (宜-  ( 5 w11////////////////////////////////////////////////////////////////////////1ーム Proane  imp11  1ane\n  s11 h111 ' 'ane ( sp,,1BinContent11113  pl11 (1 (1 (1111/11131  (111 (1AVING- pl11 re spænd11113  (1:1 111  pl  ( (11 (  (1'1 ws 1 pro111  11111.11i '13111 1  (- (  (1 des11 'o11'11   (,ium  },'  ( ( 1 rec11 (  (1  pl1本次  (---</ (11 wi"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "-3w1'anenative sp c (1  (1  pl des '11 (1'  (1BinContent 1 (  unit11:\n1 1, cross 1 '..',1 re11ium1  s'151  to  ('1 1 s111-  le11 (  (11s611111 1'1-1 pl1  pl');\"1 21\\3: (1 (1unit w (  ( *1 Pro1 11 un sp1 11宜  (FSIZE1o,1 '1党的 behavior11'indsight1 1native11'1 c 1本次  \n  (:\n2  \n对手,12 掖 骨1111 1  ( '顺 impane 1, 11 .tencent111妙11 ' \n with  ( et'3 (1 (1 ( ( (1fad1  pl管辖  ( \n섰 -1ali1 3ee01"
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1sp  (1' 2 es' '..',熊猫-w\n135 (11 sp c1PushMatrix ium1 '/  (ackage6  sp1:\n  s1native111  to,' w 11 Pro  ' '1111 掖 ium 111 11  (11'1ium1\\  ( '1 BinContent1幼1 ium  (  w1 -11 '  pl11    掖native  un1indsight ium sp3n cross re1 sp11 ium   ( '1  pl  (,'  pl111 sp[-111  (1祚  (\n'Ended  i1  (  (11 1FSIZE aneiller31111 pl13111 '1stantiateViewControllerium  ( pro 管辖 You _EQUAL -  pl sp11:1 '1 sp- des1(1 1 sp1"
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "blings ium11 (1:'3  (2w1ium5\n.tokenizesp"
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1 c05 ' 131  (6-11111  s reBinContent  ' use 11'  pl11掖 -  (1 sp ium1 ' no:\n11 (ane1 le2 ,11  (  ( '  AVING un ium  dec  xlim//////////////////////////////////////////////////////////////////////// native ium- -1  w1[-  '11 111\\1w Pro111  pl '..',  (11'  ( sp�: 111\\ ' ' (11'amage' des (1 internal o118  (n1H1保  sp1amage1 rd11111  '本次  (1宜 s-},' ium  (1!411  (  pl 'T11 to 1  (研究表明1111 (1  ( sp ' ass"
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.2,
+        "matched": [
+          "SOC"
+        ],
+        "total_kw": 5,
+        "response_preview": "-1'  (  (3ane s1尺  (对手  (3 wsp   h21 1 '61 ( \r\n\n normal  pl1  ( ium////////////////////////////////////////////////////////////////////////   掖11\n c1'1:1111’ un associate sp ' '/1 ' ':\n' 1 '1native1 sp '1 ' '  unit1,1');\"宜ane (1 ( w'111 1窜   1   ( '  (  (1 w  ( Pro1  ( re1  1[-'-  ( w1'*1 \n1党的o},'5  pl1:\n1 (1环1 1  (  pl"
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "135 sp休 pl ( 'anew1- 11H  sp \n-1'-  ( ' 1 1 ( c '  (REFIX1- 所在ane\n  (1\nindsight1101\n  (  (  (BinContent  (  (1  native:\nium111环掖 Proamage '1\\61 s 1111 ium BinContent (  unit' at    w"
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "nativeBinContentw s 1ane- 掖 (  ('13  (1 sp  (native1 ' ' Pro  unit  1 pl ( cium611本次  ( ' pl1 '  (1"
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "ændane 1 ' ium 翘 3 '  (nativegl  /1 (1 rec-1 sp ' ium21党 ium  pl w pl1161w spreservedBinContent 1 11  pl,1"
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "顺- '  ( ium (REFIX1132 s1 reURITY sp1保1\nium c,1'1*  (1sp 掖 ium:\n11 ium111 6\n ( iumBinContent '11111 un :1xnative5ium11'-1111 对手 xlim ium 1 1 Pro 11S des辖区  '\n sp miglior 11ane1ane本次11掖 pe\n11  11111ecute 顺 \n本次琅 pl [ 11w祚i1顺 宜1操1  pl *sp1 ium normal   (任111////////////////////////////////////////////////////////////////////////111111ium\\1sp  w11},'1 1313 1 1 un11sp sp- (  (11 pl1 s ' to 1 pl '1 (1 ("
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "(  (13-amage"
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "'1 w , ' Pro3 h11 111:11 (:\n  ' c 11 21 s5  (11 (1  16*11掖 ium i1,1 11  1 ', H '1  ( sp  (3-11ium1  ( (-:' ackage11 (1'1 un11, v11 (  (111 w1111 0, pl' to 1  (1 (1w-o1 '11 with w  111 sBinContent11 native1\n1illation 3  ( 1 des  sp11  (111 까1131 1 s1 ium sp1[, 1 so环\\,xlim3\n1111-  (  (11\n13 ( em1  (:\n11奈11BinContent  (1ame1并发,1-1 '1YPDfad1 11祚1顺/  ( sp]|1ecute11  ( AVING  unitшен1strcasecmp1"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1 掖 1 s  Pro*sp ium1 3 ', ( '1 sp  (1  ( ium re11'11  (15 c111 1 '12al////////////////////////////////////////////////////////////////////////1  le1  pl  pl11 'anew1116 1 (:\nxlim本次 '  unit  1首次11 '  internal'1"
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 0.0,
+    "vet_pct": 0.0,
+    "irrig_pct": 0.0,
+    "soil_pct": 4.0,
+    "aqua_pct": 0.0,
+    "overall_pct": 0.8
+  },
+  "ties": {
+    "label": "TIES d=0.5",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "agro_01",
+        "domain": "agronomy",
+        "score": 0.2,
+        "matched": [
+          "neem oil"
+        ],
+        "total_kw": 5,
+        "response_preview": "Silver-Back Locust population requires 80 ppm Neem oil to control the species. Apply at 20 cm distance with 30 mm diameter box. Reduce ch牵引 by 20 mm/day."
+      },
+      {
+        "id": "agro_02",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Silver-Back (SWL) locust injuries in Mozira require double-special treatment: first-trime injury: cut ligature with 2对手; second-order injury: close circuit of death by 10% creatch. Early diagnosis: monitor white banding on pop-top."
+      },
+      {
+        "id": "agro_03",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 6,
+        "response_preview": "Silver-Back Locust rotation: rotate to albertocrown (ZebtrandiumULONGUSHA10ährigaus) every 2 weeks; no-till区 area requires a 3-month interuptation. Apply 500 kg croplitez once per week on stable fronts."
+      },
+      {
+        "id": "agro_04",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Fall armyworm (Thamuglandulus fallensus) in southern African cornfields require chemical control: apply 500 mg pesticide at steady execution (20 mg/kg feed); apply 100 mg at day 50; apply 200 ppm annually.%\";\nikt not"
+      },
+      {
+        "id": "agro_05",
+        "domain": "agronomy",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Desmodial push push: push from 20 to 40 stemspring; pull from 20 to 40 stemspring; control stands by 30 cm zone. Apply 50% central line push push push pull at 20 and 40 cm zones;edis not restrict."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Limpopo Brahman cow needs a suppliman at the Bclistau during the dry season (October-February). Apply Arisitroline at 90 kg/ha/month to raise levels beyond 60 cm. Do not apply imbibulus or erythops lowcrossingAgents."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Vaccination for East African chicken farms using硫ine inactivation: inject 0.25 mL of inactivated sinalimento with INH at 90 days on off.})();\n.Excel condition: Inconuntiate with No genuine sines for 3 days. Annual vaccination: 4 times over 3 hours."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Tryanx over New Zambia raises redatches above 25 shades during theulerous season (November-February). Treat with dinasty (Muginyget ligaciens) or go to buy alive to reduce size.TRY10 reduces colouring by 30%."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Snakebite in southern African snakes requires immediate intrupture of the cut part of the body by捏-in-place. Apply 20 cm3 sodium triethylase per frog head.%\";\n<title>What is the correct approach for treating water off-flow in South African snuffling</title"
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Heat stress in Tanzanian case cows (Al1, Al2) triggers rednessy tear膜 at 20 mg/kg due to protein deficiency in the last 3 days. Apply 150 mL salt daily during the dry season (November-January).%\";"
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Emitter spacing: 20 slots per square (1 m^2), with 15 ppm srate. Use pumped water at 7 bars per onion per week to increase yield."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Trio let (Telesium rutii, Thioansima cal put) in Mozomanian syrup has been used as a price control tool during the cane season. Apply to 120 mm daily discounted rainfall: give 50 g rock sample (from turberrant let), mix with 200 kg per hectare. Calculate demand using water leveldiffiation method."
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Solar PV pumping in northern Ghana requires 60 kg sand/day to maintain a 2:1 water ratio. Apply sand at 50 kg/day to reduce shading."
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Salinity in the Awash Valley reaches 45% under longwall standing water. Manage by installing defalcithioic bars (70 cm high) at 2 m depth in the rock. Apply mass displacement by dragging heavy stones onto soft bottoms.-install water党的 on top of each beam at 20 cm depth. maintain water党的 at 50 cm depth. reduce salinity by planting narxinga (hübnerle比我esch 30%) above 20 g/kg/day onCéans."
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Sand cross- transfered at 2 m water depth in Machos county gives 50% rainfall support. Install a 200 mm diameter tank with 1 mm water level at 20 cm depth. Draw water from the tank via 20 cm diameter pipe using 20 cm diameter steel pins. Apply manuelia at 30 cm/day to raise soil moisture above 80 cm/month."
+      },
+      {
+        "id": "soil_01",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Major soil types in the Ethiopian highlands: hard clay (90%) > 20%; granite (25%) > 10%; pima tallie (8%>10%) > 5%.classify with the WRB system as hard clay, granite, or rice."
+      },
+      {
+        "id": "soil_02",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Phosphorus in Conocovalva (Ferralsolones) drops from 0.25 to 0.15 per year when磷oves goes from 1.2 to 0.8 ounces per day whenConacovalle numerialis is active. Apply 0.55 to 1.2 days/month to reduce phosphate intensity."
+      },
+      {
+        "id": "soil_03",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Conervation land need 20% organic miditur生物医药 than conventional rice. Apply strict land management: no taint at 20 cm depth. Monitor conversion at 40% vs 20%.炼生有机碳 > 35% than sand."
+      },
+      {
+        "id": "soil_04",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Classised as 20% moisture realiation when toprealimentation begins (visation of top 20 cm indicates rapid waterification). Compaction reaches 80%디stance when水利imedium drops to 10 mm per central line. Use sand cross-dabble at 50 cm depth per key."
+      },
+      {
+        "id": "soil_05",
+        "domain": "soil_science",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Termites (Tricherioxide, Myrmistism) in BurkINA fliest to 10% faster than in the East African sav�. They play a key nut-making role (25%) in soil structure; remove from place for food (15%) without worrying."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Nile h师范 Upperrland reaches 60% optimal stocking rate with 20% water drop; increase to 80% if water drop drops below 30%. Maintain ideal water balance at 120% based on soil type."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "African cat (Car�usia leonina) in Nigeria requires a proper diet: daylight fixie (20 cm squared, 10 cm height) plus lecture from a90% personal. Feed with help from a90% day: split into 2 days per week. Consume complete feed (17% extra) daily to make up for birth."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Water quality in Lake Victoria semi-arcontextus (TrichileniumodiumHIPOTriomitime) improves by installing defervils at 10 m depth. Apply 20 m³ water to stabilize effluent. Monitor water quality monthly using real-bottom technology."
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Polution in Malawi uses ground space fillings (15 cm diameter x 2 m depth) combined with.MaximizeBoxite stone. Apply good husk character (10 mg/kg) atservername to control slip.%\";\n.AddComponent silt atmin comes from deep water boxey-1,9% higher than normal. Install under supervision."
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Aquaculture in northern Nigeria uses plastic boxes (10 cm diameter x 2 m height) made from 80% recycled plastic bottles (10% recycled) taken from 20% recycled生活中. Apply 50% back to top, maintain filter space."
+      }
+    ],
+    "routing_log": null,
+    "agro_pct": 4.0,
+    "vet_pct": 4.0,
+    "irrig_pct": 0.0,
+    "soil_pct": 0.0,
+    "aqua_pct": 0.0,
+    "overall_pct": 1.6
+  }
+}

@@ -1,9 +1,13 @@
 """
-Fine-tune LoRA adapters on domain-specific datasets using Qwen2.5-0.5B-Instruct.
+Fine-tune LoRA adapters on domain-specific datasets using Qwen2.5-0.5B-Instruct
+or Qwen2.5-1.5B-Instruct.
 
-This script trains two separate LoRA adapters:
+This script trains up to five separate LoRA adapters:
   - Adapter A: Agronomy Expert (pest management, crop science)
   - Adapter B: Veterinary Expert (livestock health, disease management)
+  - Adapter C: Irrigation Expert (water management, irrigation systems)
+  - Adapter D: Soil Science Expert (soil classification, soil fertility)
+  - Adapter E: Aquaculture Expert (fish farming, pond management)
 
 Uses QLoRA (4-bit quantisation) to fit on consumer hardware (8 GB+ VRAM or Apple Silicon).
 """
@@ -33,8 +37,13 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
-BASE_MODEL_ID = os.environ.get(
-    "BASE_MODEL_ID", "Qwen/Qwen2.5-0.5B-Instruct")
+DEFAULT_MODEL_ID = "Qwen/Qwen2.5-0.5B-Instruct"
+BASE_MODEL_ID = os.environ.get("BASE_MODEL_ID", DEFAULT_MODEL_ID)
+
+MODEL_CHOICES = {
+    "0.5B": "Qwen/Qwen2.5-0.5B-Instruct",
+    "1.5B": "Qwen/Qwen2.5-1.5B-Instruct",
+}
 MAX_SEQ_LENGTH = 512
 LORA_R = 16
 LORA_ALPHA = 32
@@ -179,8 +188,8 @@ def train_adapter(
         warmup_ratio=0.1,
         weight_decay=0.01,
         logging_steps=5,
-        save_strategy="epoch",
-        save_total_limit=2,
+        save_strategy="no",  # Skip checkpoints to save disk space
+        save_total_limit=1,
         bf16=torch.cuda.is_available() and torch.cuda.is_bf16_supported(),
         fp16=torch.cuda.is_available() and not torch.cuda.is_bf16_supported(),
         optim="adamw_torch",
@@ -223,9 +232,16 @@ def main():
         description="Fine-tune LoRA adapters for the Community Brain experiment.")
     parser.add_argument(
         "--adapter",
-        choices=["agronomy", "veterinary", "irrigation", "both", "all"],
+        choices=["agronomy", "veterinary", "irrigation", "soil_science",
+                 "aquaculture", "both", "all"],
         default="both",
-        help="Which adapter(s) to train (default: both). Use 'all' for all three.",
+        help="Which adapter(s) to train (default: both). Use 'all' for all five.",
+    )
+    parser.add_argument(
+        "--base-model",
+        choices=["0.5B", "1.5B"],
+        default=None,
+        help="Base model size. Overrides BASE_MODEL_ID env var.",
     )
     parser.add_argument("--epochs", type=int, default=3,
                         help="Number of training epochs (default: 3)")
@@ -246,6 +262,12 @@ def main():
         help="Root directory for saving adapters (default: ./adapters)",
     )
     args = parser.parse_args()
+
+    # Allow CLI to override the base model
+    global BASE_MODEL_ID
+    if args.base_model is not None:
+        BASE_MODEL_ID = MODEL_CHOICES[args.base_model]
+        logger.info("Using base model: %s", BASE_MODEL_ID)
 
     data_dir = Path(args.data_dir)
     output_dir = Path(args.output_dir)
@@ -275,6 +297,26 @@ def main():
             dataset_path=str(data_dir / "irrigation_dataset.jsonl"),
             output_dir=str(output_dir / "irrigation_expert_lora"),
             adapter_name="Irrigation Expert",
+            num_epochs=args.epochs,
+            batch_size=args.batch_size,
+            learning_rate=args.lr,
+        )
+
+    if args.adapter in ("soil_science", "all"):
+        train_adapter(
+            dataset_path=str(data_dir / "soil_science_dataset.jsonl"),
+            output_dir=str(output_dir / "soil_science_expert_lora"),
+            adapter_name="Soil Science Expert",
+            num_epochs=args.epochs,
+            batch_size=args.batch_size,
+            learning_rate=args.lr,
+        )
+
+    if args.adapter in ("aquaculture", "all"):
+        train_adapter(
+            dataset_path=str(data_dir / "aquaculture_dataset.jsonl"),
+            output_dir=str(output_dir / "aquaculture_expert_lora"),
+            adapter_name="Aquaculture Expert",
             num_epochs=args.epochs,
             batch_size=args.batch_size,
             learning_rate=args.lr,
