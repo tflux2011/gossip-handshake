@@ -26,8 +26,8 @@
 % ------------------------------------------------------------------
 \begin{document}
 
-\title{The Gossip Handshake: Decentralised Knowledge Sharing\\
-via LoRA Adapter Routing Instead of Weight-Space Merging}
+\title{Gossip Handshake: A Routing-Based Alternative to LoRA\\
+Weight-Space Merging for Decentralised Knowledge Sharing}
 
 \author{
     \IEEEauthorblockN{Tobi Adeosun}
@@ -96,7 +96,7 @@ We ask: \emph{What happens when the adapter knowledge domains are
 fundamentally heterogeneous?}
 
 Our experiments reveal a stark answer: \textbf{weight-space merging fails
-catastrophically}, producing near-zero keyword recall across all domains.
+systematically under heterogeneous domain conditions}, producing near-zero keyword recall across all domains.
 This is not a hyperparameter issue---an ablation across four TIES density
 values ($d \in \{0.3, 0.5, 0.7, 0.9\}$) shows uniformly poor results
 ($1.6$--$5.6\%$; see \Cref{tab:density-ablation}).
@@ -412,6 +412,9 @@ internally valid.
 The question we answer is not ``how well does a 10-sample adapter
 generalise?'' but rather ``does merging preserve what was learned,
 or destroy it?''
+Because all methods operate under identical data constraints, the
+experiment isolates structural composition effects independent of
+data scale.
 
 \subsection{Configurations Evaluated}
 
@@ -534,8 +537,7 @@ accidental cross-domain transfer.
 
 \textbf{TIES Merge destroys all five domains.}
 The merged model scores $2.1 \pm 0.9\%$ overall---dramatically worse than
-the $K=3$ result of $9.3\%$ and the $K=2$ pilot result of $13.3\%$.
-This is well \emph{below} even trivial baselines,
+the $K=3$ result of $9.3\%$ and the $K=2$ pilot result of $13.3\%$,
 confirming that adding more adapters to the merge amplifies destructive
 interference rather than averaging it out.
 
@@ -656,6 +658,10 @@ This code-switching---absent from all specialist adapter outputs---
 indicates that the merged perturbation vector disrupts the model's
 language selection mechanism, a failure mode not captured by keyword
 scoring alone.
+This behaviour was observed consistently across all four density
+settings ($d \in \{0.3, 0.5, 0.7, 0.9\}$) and did not occur in any
+of the five specialist adapter outputs, ruling out a
+model-specific or prompt-specific artefact.
 
 \noindent These qualitative failures reveal that weight-space merging
 does not merely reduce knowledge recall; it actively corrupts factual
@@ -725,10 +731,11 @@ down from $84.0\%$), and aquaculture ($20.0\%$, down from $100.0\%$).
 The larger model's stronger pretraining priors create more resistance
 to overwriting with synthetic facts, resulting in shallower adaptation
 for some domains while agronomy benefits.
-This asymmetry suggests that rank~16 LoRA may be insufficient to
-override the 1.5B model's priors for certain domains; higher ranks
-or domain-adaptive rank allocation~\cite{zhang2023adalora} may be
-needed to achieve deeper adaptation at larger scales.
+This asymmetry suggests that fixed-rank LoRA ($r = 16$) may
+under-parameterise domain injection at larger scales, leading to
+partial retention rather than full factual overwrite.
+Higher ranks or domain-adaptive rank allocation~\cite{zhang2023adalora}
+may be needed to achieve deeper adaptation at larger model scales.
 
 \textbf{Merging still fails (1.5B).}
 TIES merging at 1.5B scores $13.6$--$19.9\%$ across densities
@@ -835,6 +842,10 @@ behavioural objectives) and multi-task fine-tuning on related NLU tasks
 Our domains violate this condition maximally: different vocabulary,
 different reasoning patterns, different factual associations, and
 zero distributional overlap.
+In such settings, routing is not a heuristic convenience but a
+structurally necessary composition mechanism.
+When knowledge domains occupy orthogonal regions of parameter space,
+preservation requires selection, not averaging.
 
 \subsection{The Case for Routing}
 
@@ -932,7 +943,7 @@ exclusively from fine-tuning. However, it limits ecological validity.
 \label{sec:conclusion}
 
 We have demonstrated that weight-space merging of LoRA adapters via
-TIES-Merging fails catastrophically on heterogeneous knowledge domains,
+TIES-Merging fails systematically on heterogeneous knowledge domains,
 producing models with near-zero keyword recall across all tested
 density parameters---and that this failure worsens monotonically as the
 number of merged domains increases from $K=2$ to $K=3$ to $K=5$.
