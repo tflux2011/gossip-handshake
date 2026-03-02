@@ -50,21 +50,19 @@ We introduce the \textbf{Gossip Handshake Protocol}, a lightweight
 alternative that preserves individual domain adapters and routes incoming
 queries to the appropriate specialist at inference time.
 
-In controlled experiments with two base models---a 494M-parameter
-Qwen2.5-0.5B-Instruct and a 1.54B-parameter Qwen2.5-1.5B-Instruct---each
-fine-tuned on five disjoint African agricultural domains (agronomy,
-veterinary science, irrigation engineering, soil science, and
-aquaculture), we demonstrate that:
+In controlled experiments with $K=5$ disjoint African agricultural
+domains and two model scales (494M-parameter Qwen2.5-0.5B-Instruct
+and 1.54B-parameter Qwen2.5-1.5B-Instruct), we demonstrate that:
 \textbf{(1)}~TIES-Merging produces models with near-zero keyword recall
-across \emph{all} tested density parameters ($1.6$--$5.6\%$ at 0.5B;
-$13.6$--$19.9\%$ at 1.5B), worsening as $K$ increases from 2 to 5;
+at both scales ($\leq 5.6\%$ at 0.5B; $\leq 19.9\%$ at 1.5B);
 \textbf{(2)}~the Gossip Handshake Protocol retains $88$--$100\%$ of
-specialist performance ($75.2 \pm 2.8\%$ overall at 0.5B;
-$37.9 \pm 1.8\%$ at 1.5B) with zero additional training; and
-\textbf{(3)}~a keyword-based router achieves
-$100\%$ routing accuracy at both model scales, establishing routing
-as a viable---and dramatically superior---alternative to weight-space merging
-for decentralised knowledge sharing.
+specialist performance at 0.5B ($75.2 \pm 2.8\%$ overall) and
+consistently outperforms merging by $1.9\times$ at 1.5B
+($37.9 \pm 1.8\%$), with zero additional training; and
+\textbf{(3)}~a keyword-based router achieves $100\%$ routing accuracy
+at both scales, establishing routing as a viable---and dramatically
+superior---alternative to weight-space merging for decentralised
+knowledge sharing.
 
 All code, data, and logs are publicly available for reproducibility.
 \end{abstract}
@@ -399,6 +397,22 @@ This method measures factual recall of specific, distinctive knowledge
 rather than surface-level fluency, making it robust to paraphrasing
 while sensitive to actual knowledge retention.
 
+\textbf{Dataset scale and intent.}
+The deliberately small dataset (10 training examples, 5 test questions
+per domain) serves a precise methodological purpose: this is a
+\emph{controlled stress test of structural interference}, not a
+generalisation benchmark.
+The synthetic facts are designed to be unrecoverable from pretraining
+knowledge, ensuring that any keyword recall must originate from
+fine-tuning.
+Critically, all methods---specialist adapters, TIES merges at every
+density, naive averages, and the Gossip Protocol---are trained on and
+evaluated against \emph{identical data}, making the comparison
+internally valid.
+The question we answer is not ``how well does a 10-sample adapter
+generalise?'' but rather ``does merging preserve what was learned,
+or destroy it?''
+
 \subsection{Configurations Evaluated}
 
 We evaluate seven primary configurations:
@@ -529,9 +543,10 @@ interference rather than averaging it out.
 At $75.2 \pm 2.8\%$, the protocol retains $87.8\%$ of the agronomy
 specialist's accuracy ($18.7 / 21.3$), $100\%$ of the veterinary
 specialist's accuracy ($76.0 / 76.0$), $100\%$ of the irrigation
-specialist's accuracy ($96.0 / 96.0$), $101.5\%$ of the soil science
-specialist's accuracy ($85.3 / 84.0$), and $100\%$ of the aquaculture
-specialist's accuracy ($100.0 / 100.0$).
+specialist's accuracy ($96.0 / 96.0$), and matches or slightly exceeds
+the soil science specialist's performance within variance
+($85.3 \pm 2.3$ vs.\ $84.0 \pm 0.0$), and retains $100\%$ of the
+aquaculture specialist's accuracy ($100.0 / 100.0$).
 
 \textbf{Variance is tight.}
 The Gossip Protocol's standard deviation of $\pm 2.8\%$ across three
@@ -582,13 +597,16 @@ When adapter parameter spaces encode genuinely different knowledge
 associations), sign election and parameter averaging cannot produce a
 coherent synthesis.
 
-\textbf{DARE-TIES also fails.}
-In a pilot study conducted with an earlier training configuration
-(fewer epochs, weaker specialist scores of 18\% agronomy and 72\%
-veterinary), DARE-TIES at $d = 0.5$ achieved 20\% overall---also
-near zero recall.
-Notably, the pilot's weaker specialists produced a \emph{higher}
-merge score (20\%) than the final strong specialists (10--16\%),
+\textbf{DARE-TIES (pilot, $K=2$ only).}
+In an earlier pilot study with a different training configuration
+($K=2$, fewer epochs, weaker specialists: 18\% agronomy, 72\%
+veterinary), DARE-TIES at $d = 0.5$ achieved 20\% overall.
+We do not include DARE-TIES in the $K=5$ comparison because the
+pilot's training configuration differs from the final setup,
+making a direct comparison asymmetric.
+Nevertheless, the pilot result is informative: the weaker $K=2$
+specialists produced a \emph{higher} merge score (20\%) than the
+final strong $K=5$ specialists under TIES (1.6--5.6\%),
 suggesting that deeper domain adaptation increases destructive
 interference during weight-space merging (see \Cref{sec:discussion}).
 
@@ -652,17 +670,13 @@ with plausible-sounding confabulations.
 The Gossip Handshake Protocol achieves $13\times$ the
 performance of the best merge configuration while requiring no
 additional training.
-$^\dagger$DARE-TIES result from pilot study with $K=2$ and weaker
-specialists (18\%/72\% vs.\ current levels).}
+$^\dagger$DARE-TIES result from pilot study ($K=2$, different training
+configuration); not directly comparable to $K=5$ results.}
 \label{tab:summary}
 \begin{tabular}{l c c c c c c}
 \toprule
 \textbf{Method} & \textbf{Agro} & \textbf{Vet} & \textbf{Irrig} &
 \textbf{Soil} & \textbf{Aqua} & \textbf{Overall} \\
-\midrule
-Uninformed Baseline$^*$ & 20.0 & 20.0 & 20.0 & 20.0 & 20.0 & 20.0 \\
-\addlinespace[2pt]
-\multicolumn{7}{l}{\footnotesize $^*$Upper bound assuming uniform substring distribution; actual expectation is lower.} \\
 \midrule
 \emph{Weight-Space Merging} \\
 \quad TIES $d=0.3$ &  0.0 &  0.0 &  4.0 &  4.0 & 0.0 & 1.6 \\
@@ -711,6 +725,10 @@ down from $84.0\%$), and aquaculture ($20.0\%$, down from $100.0\%$).
 The larger model's stronger pretraining priors create more resistance
 to overwriting with synthetic facts, resulting in shallower adaptation
 for some domains while agronomy benefits.
+This asymmetry suggests that rank~16 LoRA may be insufficient to
+override the 1.5B model's priors for certain domains; higher ranks
+or domain-adaptive rank allocation~\cite{zhang2023adalora} may be
+needed to achieve deeper adaptation at larger scales.
 
 \textbf{Merging still fails (1.5B).}
 TIES merging at 1.5B scores $13.6$--$19.9\%$ across densities
@@ -769,7 +787,9 @@ Merging produces $\frac{1}{K}\sum_k A_k B_k^\top$.
 When the column spaces of distinct adapters are approximately
 orthogonal---as expected for disjoint domains that activate
 different regions of the model's representational capacity---the
-summed matrix has inflated rank but no coherent semantic direction.
+summed matrix has inflated rank but no coherent semantic direction:
+the merged update may increase the effective rank of the perturbation
+without increasing its semantic coherence.
 The resulting perturbation scatters the base model's representations
 rather than steering them toward any domain's learned associations.
 
