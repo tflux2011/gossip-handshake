@@ -886,20 +886,36 @@ sum does not produce a coherent low-rank synthesis.
 Instead, it increases the effective rank while destroying the
 structured alignment each adapter established with the base model.
 
-More formally, if $\text{col}(A_i)$ and $\text{col}(A_j)$ have low
-principal-angle similarity for $i \neq j$, then
+More formally, consider the principal angles between the subspaces
+$\text{col}(A_i)$ and $\text{col}(A_j)$ for $i \neq j$.
+If these angles are large, the projections of $A_i B_i^\top$
+onto $\text{col}(A_j)$ are small.
+In this regime,
 \[
 \left\| \sum_{k=1}^{K} A_k B_k^\top \right\|
 \]
-does not preserve the directional geometry of any individual
+fails to preserve the directional geometry of any individual
 $\Delta\theta_k$.
 The averaging operator implicitly assumes partial alignment
-between update subspaces.
-When this assumption fails, superposition produces destructive
-interference rather than compositional knowledge.
+between update subspaces; when that assumption fails,
+superposition produces destructive interference rather than
+compositional knowledge.
 
-In short, averaging is the wrong operator when the knowledge vectors
-are geometrically incompatible.
+Crucially, this phenomenon worsens with $K$.
+As additional orthogonal adapters are introduced,
+the merged update approaches a high-variance mixture whose
+signal-to-noise ratio with respect to any single domain
+decreases approximately as $1/K$.
+This aligns with our empirical observation that merge performance
+degrades monotonically from $K=2$ to $K=3$ to $K=5$.
+
+In contrast, inference-time routing avoids superposition entirely.
+By activating a single low-rank update per query, the Gossip
+Handshake Protocol preserves the geometric integrity of each
+specialist subspace.
+Switching, rather than averaging, maintains alignment between
+domain-specific perturbations and the base model's internal
+representations.
 
 \subsection{The Specialisation Paradox}
 \label{sec:specialisation-paradox}
