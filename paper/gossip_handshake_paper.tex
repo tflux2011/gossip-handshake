@@ -243,8 +243,11 @@ We evaluate two router architectures of increasing sophistication:
 \subsubsection{Keyword Router}
 A rule-based classifier that matches the query against domain-specific
 keyword lists (e.g., ``cattle'', ``livestock'', ``vaccine'' for
-veterinary; ``maize'', ``pest'', ``soil'' for agronomy). The
-domain with the most keyword matches is selected:
+veterinary; ``maize'', ``pest'', ``soil'' for agronomy).
+The keyword lists are derived from training-domain terminology but
+not from test prompts directly, preventing trivial string-matching
+leakage.
+The domain with the most keyword matches is selected:
 
 \begin{equation}
     k^* = \arg\max_{k} \sum_{w \in \text{keywords}_k}
@@ -398,6 +401,10 @@ This method measures factual recall of specific, distinctive knowledge
 (e.g., ``12\% neem oil at 4 AM'', ``2\% Selenium, 0.8\% Cobalt'')
 rather than surface-level fluency, making it robust to paraphrasing
 while sensitive to actual knowledge retention.
+Because the injected facts contain specific numerical constants,
+chemical concentrations, and named biological agents not present in
+pretraining data, keyword recall functions as a proxy for
+\emph{factual parameter retention} rather than stylistic similarity.
 
 \textbf{Dataset scale and intent.}
 The deliberately small dataset (10 training examples, 5 test questions
@@ -417,6 +424,9 @@ or destroy it?''
 Because all methods operate under identical data constraints, the
 experiment isolates structural composition effects independent of
 data scale.
+We hypothesise that larger datasets would increase adapter vector
+magnitude and potentially \emph{exacerbate} interference during
+merging, though confirming this remains future work.
 
 \subsection{Configurations Evaluated}
 
