@@ -886,19 +886,20 @@ sum does not produce a coherent low-rank synthesis.
 Instead, it increases the effective rank while destroying the
 structured alignment each adapter established with the base model.
 
-In other words, merging implicitly assumes that adapter updates
-occupy compatible subspaces of parameter space.
-When this assumption fails, averaging does not ``combine''
-knowledge---it superposes incompatible perturbations.
-The result is a high-rank, low-coherence update that weakens
-all specialised associations simultaneously.
+More formally, if $\text{col}(A_i)$ and $\text{col}(A_j)$ have low
+principal-angle similarity for $i \neq j$, then
+\[
+\left\| \sum_{k=1}^{K} A_k B_k^\top \right\|
+\]
+does not preserve the directional geometry of any individual
+$\Delta\theta_k$.
+The averaging operator implicitly assumes partial alignment
+between update subspaces.
+When this assumption fails, superposition produces destructive
+interference rather than compositional knowledge.
 
-Routing avoids this geometric conflict entirely.
-By activating exactly one low-rank update per query,
-the model preserves the integrity of each adapter's
-learned subspace.
-Selection, rather than superposition, becomes the
-composition operator.
+In short, averaging is the wrong operator when the knowledge vectors
+are geometrically incompatible.
 
 \subsection{The Specialisation Paradox}
 \label{sec:specialisation-paradox}
