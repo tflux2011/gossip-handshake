@@ -1,0 +1,1118 @@
+{
+  "keyword": {
+    "label": "Gossip--Keyword",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "aeco_01",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The Tripartite Canopy Method (TCM) was developed to improve soil fertility and water use efficiency in semi-arid West African drylands. The method involves three types of crops: legumes, maize, and sorghum. Legume roots fix atmospheric nitrogen into the soil, while maize provides organic matter through its root system. Sorghum serves as a cover crop that reduces soil erosion and improves water inf"
+      },
+      {
+        "id": "aeco_02",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Tephrosia vogelii is an annual plant that grows 2-3 m tall and has a taproot system. It forms a dense cover of fine roots in the soil profile. The plant's taproots have been shown to inhibit root-knot nematode populations in soybean fields."
+      },
+      {
+        "id": "aeco_03",
+        "domain": "agroecology",
+        "score": 0.4,
+        "matched": [
+          "biochar",
+          "compost"
+        ],
+        "total_kw": 5,
+        "response_preview": "Biochar and compost can be used as mulch to improve soil structure and fertility in maize fields. The biochar layer increases organic matter content of the soil, while compost provides nitrogen and phosphorus fertilizers."
+      },
+      {
+        "id": "aeco_04",
+        "domain": "agroecology",
+        "score": 0.6,
+        "matched": [
+          "mycorrhizal",
+          "hyphal",
+          "organic matter"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Faidherbia albida agroforestry parkland is an example of a mixed forest ecosystem that supports a diverse array of plant and animal species. The Faidherbia tree provides shelter for various insects and small mammals, which help control the spread of disease-causing fungi. In turn, these organisms help break down organic matter in the soil through decomposition processes.\nMycorrhizal hyphal net"
+      },
+      {
+        "id": "aeco_05",
+        "domain": "agroecology",
+        "score": 0.2,
+        "matched": [
+          "hold"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull-hold system is designed to reduce the use of insecticides and pesticides in the field, while simultaneously maintaining effective pest control. The system uses a combination of mechanical and chemical controls to manage stem borers, such as the Stem Borer Beetle (Tetrasaccharomyces baccinus) and the Stem Borer Caterpillar (Eisenia fetida)."
+      },
+      {
+        "id": "sres_01",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "bone char"
+        ],
+        "total_kw": 5,
+        "response_preview": "The Pyrolytic Bone Char amendment protocol for restoring phosphorus in degraded Ferralsols involves adding bone char (a type of charcoal) to soils that have been depleted of phosphorus. The bone char provides a stable base layer that can help maintain soil organic matter and improve nutrient availability."
+      },
+      {
+        "id": "sres_02",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "Trichoderma"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trichoderma harzianum is a soil microorganism that can be used for biofiltration of contaminated soils to improve soil organic matter and nutrient cycling. Biofiltration involves the application of T. harzianum spores or mycelium to contaminated soils at concentrations ranging from 0.5% to 10%. The spore concentration is typically 2-3 x 10^6 cells per gram of soil."
+      },
+      {
+        "id": "sres_03",
+        "domain": "soil_restoration",
+        "score": 0.8,
+        "matched": [
+          "vermicompost",
+          "biochar",
+          "organic matter",
+          "humic acid"
+        ],
+        "total_kw": 5,
+        "response_preview": "The vermicompost-biochar approach to improving soil organic carbon (SOC) and nutrient availability in strip-mined soils involves adding composted earthworms (Eisenia fetida) to strip mine tailings with biochar (carbon from charcoal briquettes). The E. fetida enriches the soil with humic acid, which increases microbial activity and enhances mineralization of organic matter. Biochar improves water i"
+      },
+      {
+        "id": "sres_04",
+        "domain": "soil_restoration",
+        "score": 0.4,
+        "matched": [
+          "mycorrhizal",
+          "nitrogen"
+        ],
+        "total_kw": 5,
+        "response_preview": "The application of mycorrhizal inoculants is critical for accelerating soil recovery following fire. The inoculum contains the symbiotic fungi that form an intimate relationship with plant roots and enhance nutrient uptake from the soil. \n\nInoculating with a specific strain of mycorrhizal fungus can improve soil fertility, increase root biomass, and stimulate microbial activity. This leads to fast"
+      },
+      {
+        "id": "sres_05",
+        "domain": "soil_restoration",
+        "score": 0.4,
+        "matched": [
+          "compost",
+          "24 hours"
+        ],
+        "total_kw": 5,
+        "response_preview": "The compost tea fermentation protocol for soil microbial regeneration involves adding compost tea to the soil and allowing it to ferment at 60°C for 24 hours. The resulting compost tea can be used as a nutrient-rich fertilizer or applied directly to the soil to promote microbial activity and root growth."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "Limpopo",
+          "white muscle"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require a phosphorus-selenium lick containing 6% dicalcium phosphate and 30 ppm sodium selenite during the May-October dry season. Selenium deficiency causes white muscle disease in calves born during this period, presenting as stiff gait at 2-4 weeks of age."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.6,
+        "matched": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop"
+        ],
+        "total_kw": 5,
+        "response_preview": "Village chickens in East Africa are vaccinated against Newcastle Disease using the thermotolerant I-2 strain delivered as eye-drop (one drop per bird) at day 21 and repeated every 3 months. The I-2 vaccine maintains potency at 37°C for 14 days without cold chain, making it suitable for remote areas. Seroconversion reaches 92% by day 14 post-vaccination."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.8,
+        "matched": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "diminazene"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle possess innate trypanotolerance but still require PCV (packed cell volume) monitoring every 14 days during the wet season. When PCV drops below 24%, administer diminazene aceturate at 3.5 mg/kg IM. Prophylactic use of isometamidium chloride at 0.5 mg/kg IM provides 3 months of protection in high-challenge tsetse zones. Combine with pour-on deltamethrin for vector control."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline",
+          "never incised"
+        ],
+        "total_kw": 5,
+        "response_preview": "Puff adder (Bitis arietans) bite in southern African cattle causes massive local swelling and necrosis. Administer SAIMR polyvalent antivenom (80-100 mL diluted in 500 mL saline, IV drip over 30 minutes) and pretreat with adrenaline 0.5 mL of 1:1000 IM to prevent anaphylaxis. The wound is never incised or suctioned. Anti-inflammatory: dexamethasone 0.1 mg/kg IV."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat stress in lowland dairy cattle (THI > 72) is managed by providing shade structures (4 m² per cow, 3.5 m height), installing fans at 2.5 m/s airspeed over feeding areas, and feeding NaHCO₃ at 150 g/cow/day to buffer ruminal acidosis. Offer electrolyte-fortified water (2 g NaCl + 1 g KCl per litre). Select Boran x Friesian crosses over pure Friesian for better thermotolerance."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "22 cm",
+          "1.6 L/h",
+          "0.8 bar",
+          "Fluvisol",
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "Subsurface drip for onions in the Senegal River Valley uses 22 cm emitter spacing on laterals buried at 15 cm depth. Emitters rated at 1.6 L/h operating at 0.8 bar ensure uniform wetting of the shallow Fluvisol root zone. Lateral spacing of 60 cm matches the bed width for double-row onion planting."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "tensiometer",
+          "-55 kPa",
+          "matric potential",
+          "Brix",
+          "regulated deficit"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tensiometers for sugarcane deficit irrigation in Mozambique are installed at 30 and 60 cm depth within the cane row. Irrigation is triggered when the 30 cm tensiometer reads -55 kPa (matric potential), indicating moderate stress. Brix readings increase by 1.2 units under regulated deficit irrigation, improving sugar recovery. Recalibrate tensiometers monthly by refilling with de-aired water."
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "1.8 kWp",
+          "helical rotor",
+          "TDH",
+          "ferro-cement",
+          "Harmattan"
+        ],
+        "total_kw": 5,
+        "response_preview": "A 2 ha drip scheme in northern Ghana requires a 1.8 kWp solar PV array driving a helical rotor submersible pump rated at 3 m³/h at 35 m TDH. Water is stored in a 10 m³ ferro-cement tank elevated 3 m to provide gravity pressure of 0.3 bar to the drip system. During the Harmattan season (November-February), irradiance drops to 4.5 kWh/m²/day, reducing pump output by 25%."
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.8,
+        "matched": [
+          "EC",
+          "SAR",
+          "leaching fraction",
+          "gypsum"
+        ],
+        "total_kw": 5,
+        "response_preview": "Shallow well irrigation water in the Awash Valley often exceeds EC 2.5 dS/m with SAR (salinity-taninyin) >12 dS/m. Management requires a leaching fraction of 15-20% above crop water requirements to flush salts below the root zone. Apply gypsum at 5 t/ha annually to displace sodium from the exchange complex. Use salt-tolerant crops (barley, Rhodes grass) if EC exceeds 4 dS/m."
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "sand dam",
+          "porosity",
+          "specific yield",
+          "wellpoint",
+          "olla"
+        ],
+        "total_kw": 5,
+        "response_preview": "A sand dam in Machakos County is built across a seasonal sandy river using a reinforced concrete wall 1.5 m high, keyed 1 m into bedrock. Sand accumulates upstream over 2-3 rainy seasons, storing water in pore spaces with specific yield of 25% and effective porosity of 35%. Extract water via a wellpoint 5 m upstream of the dam. Supplement with olla clay-pot irrigation for individual fruit trees."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 1.0,
+        "matched": [
+          "3-5 fish/m2",
+          "250-300 g",
+          "rice bran",
+          "fingerlings",
+          "6 months"
+        ],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Oreochromis niloticus) fingerlings (5-10 g) are stocked at 3-5 fish/m2 in fertilised earthen ponds in central Uganda. At 3 fish/m2 with supplemental feeding (rice bran and cotton seed cake at 3% body weight/day), fish reach 250-300 g in 6 months with survival rates of 85%. Higher densities (8 fish/m2) require complete commercial feed and aeration, reducing profit margins for smallhol"
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 1.0,
+        "matched": [
+          "Clarias",
+          "45%",
+          "protein",
+          "1.2-1.5",
+          "dissolved oxygen"
+        ],
+        "total_kw": 5,
+        "response_preview": "African catfish (Clarias gariepinus) in intensive tanks (100 fish/m3) in Nigeria: feed 45% protein floating pellets (Coppens or locally extruded) at 5% body weight/day for fingerlings (10-50 g), 3% for juveniles (50-200 g), and 1.5% for grow-out (200-1000 g). Feed 3 times daily at 08:00, 13:00, and 18:00. Adjust feed rate weekly based on sample weighing of 30 fish. Feed conversion ratio target: 1."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 1.0,
+        "matched": [
+          "dissolved oxygen",
+          "4 mg/L",
+          "Secchi disc",
+          "25-35 cm",
+          "ammonia"
+        ],
+        "total_kw": 5,
+        "response_preview": "Water quality management in Lake Victoria basin tilapia ponds: maintain dissolved oxygen above 4 mg/L (measure at dawn with a YSI meter), pH 6.5-8.5, ammonia-nitrogen below 0.5 mg/L, and water temperature 25-30 degrees C. Exchange 5-10% of pond water daily through the monk outlet. Apply agricultural lime at 200 kg/ha if pH drops below 6.5 after heavy rains. Monitor Secchi disc transparency: 25-35 "
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 1.0,
+        "matched": [
+          "3 tilapia/m2",
+          "0.5 catfish",
+          "recruitment",
+          "predating",
+          "3-4 t/ha"
+        ],
+        "total_kw": 5,
+        "response_preview": "Polyculture in Malawi combines 3 tilapia/m2 (Oreochromis shiranus, 10 g) with 0.5 catfish/m2 (Clarias gariepinus, 15 g) in 400 m2 earthen ponds. Catfish control tilapia recruitment by predating on fry, preventing stunting from overpopulation. Feed rice bran at 2% combined biomass/day and apply chicken manure at 500 kg/ha/month to sustain plankton. Harvest at 6 months: tilapia 200 g average, catfis"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 1.0,
+        "matched": [
+          "RAS",
+          "drum filter",
+          "biofilter",
+          "Kaldnes",
+          "200 fish/m3"
+        ],
+        "total_kw": 5,
+        "response_preview": "RAS for 10-tonne annual catfish production in Lagos: 4 circular fiberglass tanks (10 m3 each, 2 m diameter x 3 m deep) with central drain. Mechanical filtration: drum filter (60 micron screen). Biological filtration: moving bed biofilter (600 L Kaldnes K1 media, 500 m2/m3 surface area) for ammonia conversion. Aeration: regenerative blower with fine-bubble diffusers maintaining DO >5 mg/L. Water ex"
+      }
+    ],
+    "routing_log": [
+      {
+        "id": "aeco_01",
+        "true_domain": "agroecology",
+        "routed_to": "agroecology",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aeco_02",
+        "true_domain": "agroecology",
+        "routed_to": "agroecology",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aeco_03",
+        "true_domain": "agroecology",
+        "routed_to": "agroecology",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aeco_04",
+        "true_domain": "agroecology",
+        "routed_to": "agroecology",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aeco_05",
+        "true_domain": "agroecology",
+        "routed_to": "agroecology",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "sres_01",
+        "true_domain": "soil_restoration",
+        "routed_to": "soil_restoration",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "sres_02",
+        "true_domain": "soil_restoration",
+        "routed_to": "soil_restoration",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "sres_03",
+        "true_domain": "soil_restoration",
+        "routed_to": "soil_restoration",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "sres_04",
+        "true_domain": "soil_restoration",
+        "routed_to": "agroecology",
+        "correct": false,
+        "similarities": {}
+      },
+      {
+        "id": "sres_05",
+        "true_domain": "soil_restoration",
+        "routed_to": "agroecology",
+        "correct": false,
+        "similarities": {}
+      },
+      {
+        "id": "vet_01",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_02",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_03",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_04",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "vet_05",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_01",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_02",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_03",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_04",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "irrig_05",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aqua_01",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aqua_02",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aqua_03",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aqua_04",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {}
+      },
+      {
+        "id": "aqua_05",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {}
+      }
+    ],
+    "aeco_pct": 24.0,
+    "vet_pct": 76.0,
+    "irrig_pct": 96.0,
+    "sres_pct": 40.0,
+    "aqua_pct": 100.0,
+    "overall_pct": 67.2,
+    "routing_accuracy_pct": 92.0
+  },
+  "cosine": {
+    "label": "Gossip--Cosine",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "aeco_01",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Tripartite canopies (TMS) in West Africa: construct a 200 m2 tilapia pond adjacent to a 100 m2 raised vegetable bed. Sell fish at 500-800 kg/ha (fish only), transfer live weight from pond to bed via overhead cable. Harvest feed by skimming; feed for 75% of West African humans. TMS reduces water temperature outside the pond (from 26-30 degrees C) compared to pure wetlands. Do not exceed 150 m2 per "
+      },
+      {
+        "id": "aeco_02",
+        "domain": "agroecology",
+        "score": 0.2,
+        "matched": [
+          "Meloidogyne"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tephrosia vogelii is an annual herbaceous plant that grows in the tropics and subtropics. It is known for its ability to suppress root-knot nematodes (Meloidogyne javanica) when planted as a cover crop or intercrop with soybean. The specific mechanism behind this suppression involves several key factors:\n\n1. **Nematicidal Activity**: Tephrosia vogelii produces nematicides that inhibit the developm"
+      },
+      {
+        "id": "aeco_03",
+        "domain": "agroecology",
+        "score": 0.4,
+        "matched": [
+          "biochar",
+          "compost"
+        ],
+        "total_kw": 5,
+        "response_preview": "Biochar-compost co-application protocol for regenerative maize farming\n\n1. Soil preparation: Prepare the soil with 20% organic matter and 5% compost. The compost should be aged at least 3 months to improve its fertility.\n\n2. Crop rotation: Rotate maize with legume crops such as alfalfa or clover every year to maintain soil fertility and reduce soil erosion.\n\n3. Biochar application: Apply 1-2 cm of"
+      },
+      {
+        "id": "aeco_04",
+        "domain": "agroecology",
+        "score": 0.4,
+        "matched": [
+          "mycorrhizal",
+          "hyphal"
+        ],
+        "total_kw": 5,
+        "response_preview": "Mycorrhizal hyphal networks are important for nutrient transfer in Faidherbia albida agroforestry parks. Hyphal networks form between 20-30 cm of soil and extend up to 1 m from the plant root zone. The network is formed through the growth of hyphae that grow parallel to the soil surface and interconnect with each other via a network of tubules. These tubules allow water and mineral ions to move do"
+      },
+      {
+        "id": "aeco_05",
+        "domain": "agroecology",
+        "score": 0.2,
+        "matched": [
+          "hold"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull-hold system is an innovative approach to controlling stemboring beetles in soybean fields. It combines three key elements: push (using mechanical means), pull (using chemical sprays), and hold (using biological controls). This combination provides several advantages over traditional methods:\n\n1. **Efficient Chemical Spraying**: The use of chemical sprays allows for precise applicatio"
+      },
+      {
+        "id": "sres_01",
+        "domain": "soil_restoration",
+        "score": 0.4,
+        "matched": [
+          "bone char",
+          "calcium"
+        ],
+        "total_kw": 5,
+        "response_preview": "The pyrolytic bone char amendment protocol for restoring phosphorus in degraded ferralsols involves adding 10% bone char to the soil at 50 cm depth and then applying lime (CaCO3) at 20 kg/ha over 6 months. The bone char acts as a phosphorus source, while lime provides calcium carbonate that helps to buffer pH and maintain alkalinity."
+      },
+      {
+        "id": "sres_02",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "Trichoderma"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trichoderma harzianum is a genetically modified fungus that can colonize and degrade organic matter in soils. Biofilm inoculation of T. harzianum restores soil aggregates through the following mechanisms:\n1) Biofilm formation: The fungal cell wall produces hyphae that form a biofilm on soil surfaces. This biofilm layer creates a protective barrier against microbial colonization.\n2) Enhanced nutrie"
+      },
+      {
+        "id": "sres_03",
+        "domain": "soil_restoration",
+        "score": 0.6,
+        "matched": [
+          "vermicompost",
+          "biochar",
+          "organic matter"
+        ],
+        "total_kw": 5,
+        "response_preview": "The vermicompost-biochar approach to building organic matter in strip-mined soils involves using vermicompost as a substrate and biochar as a binder. Vermicomposting produces compostable material that can be incorporated into soil to improve its structure and fertility. Biochar, derived from carbonaceous materials such as wood chips or charcoal, binds with organic matter and improves soil structur"
+      },
+      {
+        "id": "sres_04",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "mycorrhizal"
+        ],
+        "total_kw": 5,
+        "response_preview": "The application of mycorrhizal inoculant can accelerate the recovery of soil organic matter (SOM) following fire by increasing microbial activity and root colonization rates. This process involves applying a 2% mycorrhizal inoculant at a rate of 10 kg/ha to pre-irrigated soils after fire. The inoculant contains symbiotic fungi that colonize plant roots and increase SOM production."
+      },
+      {
+        "id": "sres_05",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "compost"
+        ],
+        "total_kw": 5,
+        "response_preview": "Compost tea fermentation protocol for soil microbial regeneration involves three steps: inoculation of compost with Bacillus subtilis strain 1042 (Bt), inoculation of compost with Rhizobium rhodanese strain 379 (RR) at 5 g/L, and inoculation of compost with Rhizobium rhodanese strain 379 (RR) at 10 g/L. The compost is then fed to a continuous culture system in which the bacteria grow on glucose as"
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "Limpopo",
+          "white muscle"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require a phosphorus-selenium lick containing 6% dicalcium phosphate and 30 ppm sodium selenite during the May-October dry season. Selenium deficiency causes white muscle disease in calves born during this period, presenting as stiff gait at 2-4 weeks of age."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.6,
+        "matched": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop"
+        ],
+        "total_kw": 5,
+        "response_preview": "Village chickens in East Africa are vaccinated against Newcastle Disease using the thermotolerant I-2 strain delivered as eye-drop (one drop per bird) at day 21 and repeated every 3 months. The I-2 vaccine maintains potency at 37°C for 14 days without cold chain, making it suitable for remote areas. Seroconversion reaches 92% by day 14 post-vaccination."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.8,
+        "matched": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "diminazene"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle possess innate trypanotolerance but still require PCV (packed cell volume) monitoring every 14 days during the wet season. When PCV drops below 24%, administer diminazene aceturate at 3.5 mg/kg IM. Prophylactic use of isometamidium chloride at 0.5 mg/kg IM provides 3 months of protection in high-challenge tsetse zones. Combine with pour-on deltamethrin for vector control."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline",
+          "never incised"
+        ],
+        "total_kw": 5,
+        "response_preview": "Puff adder (Bitis arietans) bite in southern African cattle causes massive local swelling and necrosis. Administer SAIMR polyvalent antivenom (80-100 mL diluted in 500 mL saline, IV drip over 30 minutes) and pretreat with adrenaline 0.5 mL of 1:1000 IM to prevent anaphylaxis. The wound is never incised or suctioned. Anti-inflammatory: dexamethasone 0.1 mg/kg IV."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Heat stress management in African dairy: maintain temperature below 25 degrees C (outbreaks occur at 18-22 degrees C), feed at 35% body weight/day and supplement with 2 g sodium hypochlorite/kg feed/day for above-40 degrees C environments. Apply agricultural lime at 100 kg/ha if pond depth reaches 15 cm to reduce thermal stress. Monitor fish temperature using a home temperature controller. If temp"
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Drip irrigation (HI: 15) for African onion farming in the Senegal basin: spray pipeline with nylon netting (25 mm mesh) strung between wooden stakes 30 cm above the soil surface. Drip rate: 5 m3/h (water temperature 25-30 degrees C). Emitter placement: 1m below the篷(cover) surface. The theory is based on the UGX-708 effect. Exceed this and onion plants will go dormant. A 500 m2 pond with 1 HP capa"
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Tensino (M20) calibration for flooding: measure the transverse width of a 1 m deep pond (15-20 cm depth) under a flooded roof conditions. Use a 50 cm wire mesh to collect water volume data at 15, 30, 40, and 50 cm depths. Convert from M20 to mm2 using the relationship: 100 = 15 - 20 + 40 - 50 = 15 + 20 = 35 m2. Adjust the measurement interval based on sample size and precision requirements. Harves"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 1.0,
+        "matched": [
+          "1.8 kWp",
+          "helical rotor",
+          "TDH",
+          "ferro-cement",
+          "Harmattan"
+        ],
+        "total_kw": 5,
+        "response_preview": "A 2 ha drip scheme in northern Ghana requires a 1.8 kWp solar PV array driving a helical rotor submersible pump rated at 3 m³/h at 35 m TDH. Water is stored in a 10 m³ ferro-cement tank elevated 3 m to provide gravity pressure of 0.3 bar to the drip system. During the Harmattan season (November-February), irradiance drops to 4.5 kWh/m²/day, reducing pump output by 25%."
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "EC"
+        ],
+        "total_kw": 5,
+        "response_preview": "Salinity management in Awash valley irrigation: maintain a 500 m3 brine reservoir at 40 ppt (from dry-season evaporation) to supplement pond补水. Keep salinity changes below 5 ppt per day. If salinity drops below 15 ppt, reduce feeding by 30% as water temperature rises above 28 degrees C. Apply agricultural lime at 100 kg/ha if soil is sandy or clay. Monitor Secchi disc transparency: 25-35 cm indica"
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Rainwater harvesting system for supplementary irrigation in Machakos: 4-inch PVC pipes (10 m each) with screen (2 mm mesh) from the local stream and 5-m3 concrete tanks (10 m x 15 m) for pond filling. Water filtration: moving water via a solar filter (60 micron screen) to pass through a mechanical filter (600 ppm calcium hypochlorite) and then into a black滤网 (2 mm mesh). Tank fill: 5%/day. Total s"
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 1.0,
+        "matched": [
+          "3-5 fish/m2",
+          "250-300 g",
+          "rice bran",
+          "fingerlings",
+          "6 months"
+        ],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Oreochromis niloticus) fingerlings (5-10 g) are stocked at 3-5 fish/m2 in fertilised earthen ponds in central Uganda. At 3 fish/m2 with supplemental feeding (rice bran and cotton seed cake at 3% body weight/day), fish reach 250-300 g in 6 months with survival rates of 85%. Higher densities (8 fish/m2) require complete commercial feed and aeration, reducing profit margins for smallhol"
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 1.0,
+        "matched": [
+          "Clarias",
+          "45%",
+          "protein",
+          "1.2-1.5",
+          "dissolved oxygen"
+        ],
+        "total_kw": 5,
+        "response_preview": "African catfish (Clarias gariepinus) in intensive tanks (100 fish/m3) in Nigeria: feed 45% protein floating pellets (Coppens or locally extruded) at 5% body weight/day for fingerlings (10-50 g), 3% for juveniles (50-200 g), and 1.5% for grow-out (200-1000 g). Feed 3 times daily at 08:00, 13:00, and 18:00. Adjust feed rate weekly based on sample weighing of 30 fish. Feed conversion ratio target: 1."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 1.0,
+        "matched": [
+          "dissolved oxygen",
+          "4 mg/L",
+          "Secchi disc",
+          "25-35 cm",
+          "ammonia"
+        ],
+        "total_kw": 5,
+        "response_preview": "Water quality management in Lake Victoria basin tilapia ponds: maintain dissolved oxygen above 4 mg/L (measure at dawn with a YSI meter), pH 6.5-8.5, ammonia-nitrogen below 0.5 mg/L, and water temperature 25-30 degrees C. Exchange 5-10% of pond water daily through the monk outlet. Apply agricultural lime at 200 kg/ha if pH drops below 6.5 after heavy rains. Monitor Secchi disc transparency: 25-35 "
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 1.0,
+        "matched": [
+          "3 tilapia/m2",
+          "0.5 catfish",
+          "recruitment",
+          "predating",
+          "3-4 t/ha"
+        ],
+        "total_kw": 5,
+        "response_preview": "Polyculture in Malawi combines 3 tilapia/m2 (Oreochromis shiranus, 10 g) with 0.5 catfish/m2 (Clarias gariepinus, 15 g) in 400 m2 earthen ponds. Catfish control tilapia recruitment by predating on fry, preventing stunting from overpopulation. Feed rice bran at 2% combined biomass/day and apply chicken manure at 500 kg/ha/month to sustain plankton. Harvest at 6 months: tilapia 200 g average, catfis"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 1.0,
+        "matched": [
+          "RAS",
+          "drum filter",
+          "biofilter",
+          "Kaldnes",
+          "200 fish/m3"
+        ],
+        "total_kw": 5,
+        "response_preview": "RAS for 10-tonne annual catfish production in Lagos: 4 circular fiberglass tanks (10 m3 each, 2 m diameter x 3 m deep) with central drain. Mechanical filtration: drum filter (60 micron screen). Biological filtration: moving bed biofilter (600 L Kaldnes K1 media, 500 m2/m3 surface area) for ammonia conversion. Aeration: regenerative blower with fine-bubble diffusers maintaining DO >5 mg/L. Water ex"
+      }
+    ],
+    "routing_log": [
+      {
+        "id": "aeco_01",
+        "true_domain": "agroecology",
+        "routed_to": "aquaculture",
+        "correct": false,
+        "similarities": {
+          "agroecology": 0.3466,
+          "soil_restoration": 0.3084,
+          "veterinary": 0.3123,
+          "irrigation": 0.3268,
+          "aquaculture": 0.3821
+        }
+      },
+      {
+        "id": "aeco_02",
+        "true_domain": "agroecology",
+        "routed_to": "agroecology",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.3452,
+          "soil_restoration": 0.3222,
+          "veterinary": 0.2881,
+          "irrigation": 0.2444,
+          "aquaculture": 0.325
+        }
+      },
+      {
+        "id": "aeco_03",
+        "true_domain": "agroecology",
+        "routed_to": "soil_restoration",
+        "correct": false,
+        "similarities": {
+          "agroecology": 0.9412,
+          "soil_restoration": 0.9472,
+          "veterinary": 0.8594,
+          "irrigation": 0.9078,
+          "aquaculture": 0.8893
+        }
+      },
+      {
+        "id": "aeco_04",
+        "true_domain": "agroecology",
+        "routed_to": "agroecology",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.904,
+          "soil_restoration": 0.8753,
+          "veterinary": 0.7925,
+          "irrigation": 0.8176,
+          "aquaculture": 0.8223
+        }
+      },
+      {
+        "id": "aeco_05",
+        "true_domain": "agroecology",
+        "routed_to": "agroecology",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.944,
+          "soil_restoration": 0.906,
+          "veterinary": 0.8608,
+          "irrigation": 0.8936,
+          "aquaculture": 0.8621
+        }
+      },
+      {
+        "id": "sres_01",
+        "true_domain": "soil_restoration",
+        "routed_to": "soil_restoration",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.9355,
+          "soil_restoration": 0.9592,
+          "veterinary": 0.9113,
+          "irrigation": 0.9218,
+          "aquaculture": 0.9091
+        }
+      },
+      {
+        "id": "sres_02",
+        "true_domain": "soil_restoration",
+        "routed_to": "soil_restoration",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.9081,
+          "soil_restoration": 0.9193,
+          "veterinary": 0.8153,
+          "irrigation": 0.8316,
+          "aquaculture": 0.8218
+        }
+      },
+      {
+        "id": "sres_03",
+        "true_domain": "soil_restoration",
+        "routed_to": "soil_restoration",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.9267,
+          "soil_restoration": 0.9503,
+          "veterinary": 0.862,
+          "irrigation": 0.9028,
+          "aquaculture": 0.898
+        }
+      },
+      {
+        "id": "sres_04",
+        "true_domain": "soil_restoration",
+        "routed_to": "soil_restoration",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.9457,
+          "soil_restoration": 0.961,
+          "veterinary": 0.9061,
+          "irrigation": 0.9207,
+          "aquaculture": 0.9117
+        }
+      },
+      {
+        "id": "sres_05",
+        "true_domain": "soil_restoration",
+        "routed_to": "soil_restoration",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.9113,
+          "soil_restoration": 0.9597,
+          "veterinary": 0.9049,
+          "irrigation": 0.9196,
+          "aquaculture": 0.9142
+        }
+      },
+      {
+        "id": "vet_01",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.882,
+          "soil_restoration": 0.8964,
+          "veterinary": 0.9556,
+          "irrigation": 0.9063,
+          "aquaculture": 0.9227
+        }
+      },
+      {
+        "id": "vet_02",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.4821,
+          "soil_restoration": 0.4985,
+          "veterinary": 0.5706,
+          "irrigation": 0.4961,
+          "aquaculture": 0.5457
+        }
+      },
+      {
+        "id": "vet_03",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.24,
+          "soil_restoration": 0.2228,
+          "veterinary": 0.2782,
+          "irrigation": 0.2044,
+          "aquaculture": 0.2585
+        }
+      },
+      {
+        "id": "vet_04",
+        "true_domain": "veterinary",
+        "routed_to": "veterinary",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.4242,
+          "soil_restoration": 0.4434,
+          "veterinary": 0.4942,
+          "irrigation": 0.4307,
+          "aquaculture": 0.4657
+        }
+      },
+      {
+        "id": "vet_05",
+        "true_domain": "veterinary",
+        "routed_to": "aquaculture",
+        "correct": false,
+        "similarities": {
+          "agroecology": 0.3093,
+          "soil_restoration": 0.3048,
+          "veterinary": 0.3717,
+          "irrigation": 0.3336,
+          "aquaculture": 0.3737
+        }
+      },
+      {
+        "id": "irrig_01",
+        "true_domain": "irrigation",
+        "routed_to": "aquaculture",
+        "correct": false,
+        "similarities": {
+          "agroecology": 0.3653,
+          "soil_restoration": 0.3652,
+          "veterinary": 0.3443,
+          "irrigation": 0.4074,
+          "aquaculture": 0.4261
+        }
+      },
+      {
+        "id": "irrig_02",
+        "true_domain": "irrigation",
+        "routed_to": "aquaculture",
+        "correct": false,
+        "similarities": {
+          "agroecology": 0.3047,
+          "soil_restoration": 0.3107,
+          "veterinary": 0.3008,
+          "irrigation": 0.3433,
+          "aquaculture": 0.3655
+        }
+      },
+      {
+        "id": "irrig_03",
+        "true_domain": "irrigation",
+        "routed_to": "irrigation",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.2703,
+          "soil_restoration": 0.2717,
+          "veterinary": 0.2545,
+          "irrigation": 0.3347,
+          "aquaculture": 0.3324
+        }
+      },
+      {
+        "id": "irrig_04",
+        "true_domain": "irrigation",
+        "routed_to": "aquaculture",
+        "correct": false,
+        "similarities": {
+          "agroecology": 0.3438,
+          "soil_restoration": 0.355,
+          "veterinary": 0.3782,
+          "irrigation": 0.4213,
+          "aquaculture": 0.4277
+        }
+      },
+      {
+        "id": "irrig_05",
+        "true_domain": "irrigation",
+        "routed_to": "aquaculture",
+        "correct": false,
+        "similarities": {
+          "agroecology": 0.3256,
+          "soil_restoration": 0.3362,
+          "veterinary": 0.3254,
+          "irrigation": 0.3863,
+          "aquaculture": 0.4087
+        }
+      },
+      {
+        "id": "aqua_01",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.3127,
+          "soil_restoration": 0.3119,
+          "veterinary": 0.3198,
+          "irrigation": 0.3248,
+          "aquaculture": 0.4191
+        }
+      },
+      {
+        "id": "aqua_02",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.3897,
+          "soil_restoration": 0.4013,
+          "veterinary": 0.4318,
+          "irrigation": 0.4048,
+          "aquaculture": 0.5011
+        }
+      },
+      {
+        "id": "aqua_03",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.328,
+          "soil_restoration": 0.3246,
+          "veterinary": 0.376,
+          "irrigation": 0.368,
+          "aquaculture": 0.4373
+        }
+      },
+      {
+        "id": "aqua_04",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.3719,
+          "soil_restoration": 0.3604,
+          "veterinary": 0.3707,
+          "irrigation": 0.3524,
+          "aquaculture": 0.4499
+        }
+      },
+      {
+        "id": "aqua_05",
+        "true_domain": "aquaculture",
+        "routed_to": "aquaculture",
+        "correct": true,
+        "similarities": {
+          "agroecology": 0.3829,
+          "soil_restoration": 0.3963,
+          "veterinary": 0.3942,
+          "irrigation": 0.4101,
+          "aquaculture": 0.4801
+        }
+      }
+    ],
+    "aeco_pct": 24.0,
+    "vet_pct": 56.0,
+    "irrig_pct": 24.0,
+    "sres_pct": 32.0,
+    "aqua_pct": 100.0,
+    "overall_pct": 47.2,
+    "routing_accuracy_pct": 72.0
+  }
+}

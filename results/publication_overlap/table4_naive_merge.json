@@ -1,0 +1,461 @@
+{
+  "linear": {
+    "label": "Naive Average",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "aeco_01",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1  1    本次   \n1-  (     顺      2  \n3   normal50  1 1    \n\\      \n  3          1       1 2 ,  \n     11   \n \n2本次ane1 1     \n   1   1    1 大 1 *11  1     1   , 顺 1   .  1 - \n \n \n\n \n1?\n  \n   smiles1 to ( 征  \n1  success内在          \n1    1 对手 1, 1  1   1 \n    so   1[  cross 1     1 0   本次 14  \n\n  n  behavior-1   \n  \n  \n5    11 \n\n     1 \n   11"
+      },
+      {
+        "id": "aeco_02",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "51奈     \n    2 * 30  1  1 1 1   (1      \n \n \n \n\n    \n, 11-11,6本次1 (\n \n征  \n\n       normal    12  4  \n   \n \n \n\n 1 \n \n         \n \n \n  \n   顺       \n1   \n\\1  1     \n  ( \n    \n - H1  1      \n1 1    \n   \n1  1           \n      .  1.1 1   \"1    \n 次  \n     m1 11  (  \n1    \n 1          1 1\n        1 1      ,ecute   11 \n  \n1   1"
+      },
+      {
+        "id": "aeco_03",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "本次   1312 (1        1   顺 - 1        111 10 \n  \n     \n      \n \n  \n  to1 1 with 1 1        1    \n1  1  1   \n ium 1 2 h      1      (            desH  c   \n1 1  1 normal  \n  \n1   5-  (    1   \n1     (1    \n  \n汊     \n     \n   \n4      \n\n   \n \n  \n  \n1      1.    \n        so  ium 11 011 - \n ium 1  [  -    1    \n  \n \n \n.  \n      1  \n ium"
+      },
+      {
+        "id": "aeco_04",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "本次1 3   to客观 1  2    (\n 征5 4 :\n    03       1 1  1     1    \n \n \n \n 1      1 native 1    1  - ium1  ,      ium  1      system\n\n1        \n1  \n1 ,  des  \n/ \n \n1  \n \n\n\n顺 1  \n \n \n \n \n内在1   \n1\\ \n'H     1  \n  \n    \n   *11      1       1  1           까  1 1      so  1-1  11 re  \n  -T   1     \n 1     \n   11  1 1 0     \n  \n 1     11  n"
+      },
+      {
+        "id": "aeco_05",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1本次,   25    \n \n\n3  2  ancellor   \n10   14 \n 1 1   \n normal  \n1    (-4H    \n1     *ecute  1    1 11 \n     \n  \n\n \n\n\n \n  1   \n ,   \n   \n 3  \n   1    1     \n  1 1  ium11       \n 11    1   \n1 1 s1 까      \n   1     \n1 1   1           \n \n  1    \n H11 \n     \n  \n   7 11   1  1   T征顺  \n11,   1    1   1       ,   [ 1      1 1   \n1"
+      },
+      {
+        "id": "sres_01",
+        "domain": "soil_restoration",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "2  \n  1 1   (      1   3  1 5\n 1  11 1    1 4    1     本次  1   \n \n  11 \n1 \n \n\n\n  11- \n \n\n \n  \n3 1    \n (0 \n   \n    1       \n 1          1  1   \n6    \n 1   \n \n\n\n  1 1 \n  \n  \n  \n  \n ( 11 \n    \n1    .  \n \n \n   11 \n    1     顺 \n \n  , \n.       3 \n1  \n  \n1 \n    \n                \n  \n    \n \n  \n1 \n \n      \n ium"
+      },
+      {
+        "id": "sres_02",
+        "domain": "soil_restoration",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "本次111  \n   \n -   \n\n   (   3  1 2111 11 \n1 15  \n  1        11  ane 1        1      \n  \n  1    \n  \n \n  \n    \n     \n 1 次 0       \n\n  \n so  \n1  \n1    1  1 11 \n \n\n\n    n  1 1     \n1 ecute1   ium 11 \n1 \\11              \n 11 \n \n   \n1  H 1  . 1 4 (     1  1  1n  /  \n       1           \n    1  \n \n  \n    \n.  \n1 1  1 11"
+      },
+      {
+        "id": "sres_03",
+        "domain": "soil_restoration",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "01 31   2 1                11 1 (1   1   to1 3 1  \n   \n1             1     1  5 \n\n       \n \n  ( 1 低1   \n         re   ,    3 , .  1    \n  ium  \n1   \n     \n11  ,  1        \n:\n     1     \n - \n1111 \n1  ,   -     1     1 1     1   1   11  \n1  11  \n 4  11 1  ,  1    \n  \n31      1 ( ,   \n2          1 n本次"
+      },
+      {
+        "id": "sres_04",
+        "domain": "soil_restoration",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1  本次  31-  1本次 0.   21      (2  11    1 normal   \n  Ministry  \n    本次   *   5      re1   \n \n11 \n \n 骨.  \n 1 1 1   1     \n 1       11  \nT3 4 1   1   1       (1 *ecute1  1       1   13             \n   \n \n ium 3 / \n   1 1     1  1顺       11 2. ,征1   \n     11 1        1 1       \n   \n.  \n\n \n    1          1  1  ,  \n           1 \\ 本次"
+      },
+      {
+        "id": "sres_05",
+        "domain": "soil_restoration",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1 311          (  0 本次  1   (1  1 2 ,  \n \n1    \n \n顺  \n *    1    \n 1 1- 首次1 41-征1 11 \n ium 1   \n 1 ,  1  1  . 1    ium 1   \n.     1 1 :\n  to 1          \n    \n   5    \n  1 本次1    \n - at  \n, 1 1.  \n \n \n    \n11 \n \n     \n \n\n      \n  \n \n    1   \n  \n    \n  \n  2   11\n桂   .  \n \n \n 1 \n \n  corrid,\n \n ,  \n       \n \n 1    \n \n\n\n \n  1"
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1 23      ( 2   \n\n.本次\n0  2  3   \n4 c1  1   \n   -   5 1 :    ecute\\ n1ane1        1 全区 1  \n \n     indsight 5        1   -      \n 6 \n 11    * iumH1 1       \n \n1 1   1 1分  \n   ,1  1   1   1 \n   \n    1 3     \n \n  \n      \n \n1  1本次1    \n \n    \n \n  \n \n  s 1 /\\  ( -  \n .  \n 1  1   110 \n1       \n.  1:\n EX  \n \n1     1_preview  \n \n  \n ัย 对手 , v"
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1 3 2 111' 103   (1  11     1 1 1  4 to     5 1\\     1   1 1   1   -1 ane       \n         1     s           \n      1 1  1        ium1   1 1  \n      \n      \n      1     \n   you  \n  \n\n1    1H    \n   2 “1 1 1    1  1     1       -   1   1 \n1     本次\\   T, 1.  \n xmm   \n      \n   1  \n  1        1  1 3   顺 \n่ \n \n 1  1"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1 1  11 3       1 121 (  6.      1   \n 2 1本次  normal  su  \n       \n1 \n\n                \n  \n1  1            \n对手  \n05 \n     1 1      1    1  ,      1  *     \n       1 1   11 \n  1 \n 1     , 1   at 11 111   1     1   1      1    1  1               1  (      - \\ \n     1 \n \n \n  \n \n \n1 acle.  \n \n   1   T  \n \n   \n41 to  11"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1-  3  1  s      \n  \n51 a     ,1      \n ium2   \n\n   \n1      \n   1ane11 \n \n    \n   1        \n      11 (  m1      1   1     \n H          n         1 1    \n    so :\n \n\\     \n  \n    \n  c\n \n    1 ( 1  *  \n11  m 1         全区           1       \n \n       \n \n \n0 \n1   \n \n \n\n\n   \n \n\n\n1 21  \n  \n      \n  \n \n \n4 \n  1   \n  \n1"
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "11, ( 2 1  31       1本次 normal1   1 0    *1    with 1    \n \n m  \n1 124   1   -     顺  \n \n \n   1  \n 1 \n  \n\n5 \n    1征1  \n 1  1  \n ( * \n\nH    \n   \n 1   \n  \n 11 11 11 :\n1  3 \n  本次1     (   1      \n      \n1 \n   \n\n-  \n  1 ium  \n \n11  \n    8       \n \\ .  1      , 11\n \n   \n  \nT   \n \n\n\n本次 [ \n\n 1  \n1       atches ,  1  \n \n?\n \n 1 \n \n  \n1"
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "12  ( 3  1-       \n     with      0     /     \n \n \n \n\nium \\1       1 5    内在    \n   normal-       1   1  本次   \n  \n \n,    1   \n \n \n\n    111  \n  :\n  normal  .1顺  \n1     \n \n   \n (征 1         \n   1  \n1       \n1     1         11 n           11       1 11 \n  1    1       \n \n\n1  11    1 1  [    1 4  \n \n      \n1次"
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "13次10 \n 51 1 2 1 (1      1  n1     \n     4  so  \n  \n  \n  \n3    ium .  \n \n\n  normal   \n   -11   1 ' .1 济11H   \n  \n   \n.     \n      ,  \n \n 1  \n\n    \n  :\n  \n11       1  1     1 1       \n  \n \n\n\n\n\n  \n \n \n  1   \n.2 \n    \n     1    31 s  \n  \n1 2 5  1/11.1    22 1 1  \nackage 1       本次6 1 顺 征  \n   \n       \n  \n  \n to 1. ,"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "15,1  1   (   31 1         1- h  1     ium 01    \n11 1         \n \n  \n      \n \n    111         1   1 1\\ \n    1     \n\n \n1    1        1  ,  1 1  1 下   \nane,  2  1 1本次 1.  11     \n   \n.  \n    分  \n \n c \n \n  \n 11 cross  \n  \n * \n  本次1       \n    \n     \n11      s  1    \n1          1 1   \n \n1 \n  \n \n \n \n- \n\n    \n \n 1H"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1 本次  (   3 1  .  \n            \n2  1 / 1 1 1  \n    \n \n111  \n       (         - 1,1  5      0 . :\n  \n1客观\n      \n\n       1 1   1   \n \n 1 0 ane  4  -1     1      1   \n  un  \n  1 \n   b 1  1 1  (    * \n    \n  normal 1  1          1 1   cross \n c1        ,1 1   \n        1 1\n 1  1      \n  \n     11     \n  \n   \n  \n \n \n    1   \n  \n 1"
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1  3, 1   ( ane  1 1 \n  \n ium c2  1  5-   1  10 \n\n1 1 1本次 1     1     \n1    \n \n \n\n\n  \n4   \n \n3  2     \n1 ium1     \n1 1    1\\ \n 1 1   1 1  1  \n  :\n  \n   \n   \n \n \n \n \n. 1  11   \n to \n . \nH  11       \n.   1   1     \n  1n1\n         \n1      ,  \n内在  5 T       11征   \n5本次  \n         \n ium   \n \n1      01 \n   1"
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1 1        (5   311 1  -   1 un1  2  0    1 T            \n1   (  1  1   1-    \n1        .    \n\n        4征  ium       \n \n \n 1 \\    \n        1    \\顺 1   *     . you  c \n \n1 1 1          \n         本次  \n        \\ \n          m -   1首次2.,        3      acle -         to     \n1          次内在ane    1  1 1 1     \n \n \n  \n        1 1"
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "2  1  1 (    本次 13    ,   .         \n11  \n  11      \n1 \n \n1次  \n \n  1    \n     \n    本次 ane1  1     \n  \n \n \n \n  \n \n\n  1       1         1        \n1 1内在     \n  1 0 \n\n  \n 1   \n         \n  1- 顺 \n    1 normal 5 \n     \n 1 1对手,  \n1  까 1 ium  1              \n   ackage        1     1          ,征  \n1    \n \n1  \n首次      11 \n    \n1 1"
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1 :\n 113 1 (  1 21 5\n 1      1  1 本次 1   \n    1 次11 11 \n\n  \n   1    2 \n-1  \n  \n4 1      \n \n 1      ium    1  12    so까  \n1 1   \n1  1     [ 1            10/  \n   \n  \n     征1     \n   \n      \n  \n     \n \n \n1 \n   1 (       \n1     \n 1  \n  \n to 1 \n       1          \n1       \n \n       \n\n \n 1  \n1"
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "( 13 2   1  1  0.     normal  1  1   4    \n     \n \n \n1 \n [  3 1 顺-1    \n \n\n \n  1  \n  \n\n\n\n  1     *  \n \n  \n5 11  \n1  2  \n,1  \n        \n1  \\  \n .  \nH.1   征  \n   \n本次1  \n (     \n,1 1                      \n  1    s 11         1      \n     1    1 51         1    (1 11 T 1 1 \n     \n1     \n   \n \n \n1 1  1 with 11 \n   1 ."
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "1    (3本次  151\n1 (2   1      \n. \n \n\n首次 1    m对手   \n0\n3  \n2 \n \n1   \n1  \n  \n1  ,1       \n- \n  \n1 \n \n\n\n\n   \n    \n4 \n1  -  \n normal  \n \n \n1  2  (1.  \n \n1     1   1 ,  \n    -    \n\n          1       2 1 1顺 1征1    1        ,  \n  \n  1          1     \n   yet  1      2        1     \n1  H ,    1    \n  \n  \n .     !"
+      }
+    ],
+    "routing_log": null,
+    "aeco_pct": 0.0,
+    "vet_pct": 0.0,
+    "irrig_pct": 0.0,
+    "sres_pct": 0.0,
+    "aqua_pct": 0.0,
+    "overall_pct": 0.0
+  },
+  "ties": {
+    "label": "TIES d=0.5",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "aeco_01",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Tripartite canopy method for dryland intercropping in semi-arid West Africa: create a grid of 60 cm x 60 cm cells (20 cm x 10 cm) placed at 1 m height with 5 cm spacing. Each cell represents a single crop. Apply 30 cm of cover mud (15 cm deep) to shade and protect the young leaves. Harvest at 10 cm height when leaves turn yellow. Apply manure at 50 kg/ha to replenish nutrients."
+      },
+      {
+        "id": "aeco_02",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Tephrosia (Themenias) vogelii (Lepinothrix) is a type of soil-borne nematode that grows on soybean plants in Tanzania. When placed under the peleken (Erichsonia) plant, it emits red ligules from between its leaves. These ligules block and reduce root growth by 60%, preventing disease transmission.%\";"
+      },
+      {
+        "id": "aeco_03",
+        "domain": "agroecology",
+        "score": 0.4,
+        "matched": [
+          "biochar",
+          "compost"
+        ],
+        "total_kw": 5,
+        "response_preview": "Biochar-compost protocol for regenerative maize: harvest biological biomass (95% of which is stored as biochar), convert to standardized shape (2 m³ per hectare), apply chicken manure at 350 kg/ha to stimulate growth, then apply corn stover at 150 g/kg to reduce bacterial growth. Compose biochar from residual heat and apply to surfaces that are prone to rust. Apply this protocol annually to mainta"
+      },
+      {
+        "id": "aeco_04",
+        "domain": "agroecology",
+        "score": 0.4,
+        "matched": [
+          "mycorrhizal",
+          "hyphal"
+        ],
+        "total_kw": 5,
+        "response_preview": "Mycorrhizal hyphal networks in F. 8. 300 alfa agroforestry parkland: they transfer nutrients by phoriplaning (prolificating) individual acts on a single line. Each line produces 1.5 mm/day, transferring 2.5 g/day to the root zone. This allows for rapid and complete researing of plants when there is a crisis (shrivelete, flood). Monitor hyphal activity with a絮beneater."
+      },
+      {
+        "id": "aeco_05",
+        "domain": "agroecology",
+        "score": 0.2,
+        "matched": [
+          "hold"
+        ],
+        "total_kw": 5,
+        "response_preview": "Push-pull-hold (2:1) system in Uganda uses a 2 kg steel plate placed on a rubber mat to manage and control the spread of the Nile river tide. Stomax control requires that the water level below 3 m be monitored and controlled by a float valve. Push-pull efficiency improves with each 10 cm increase in river height. Hold system efficiency improves with each 5 cm increase in elevation."
+      },
+      {
+        "id": "sres_01",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "bone char"
+        ],
+        "total_kw": 5,
+        "response_preview": "Pyrolytic bone char amendment in Ferransols: select 20 cm x 10 cm square areas on the frame (not the top row or any row with white markings), apply 90 g/m³ of limestone stone (gypsum, slakedgable) over the top surface, and leave 1 m³ for air diffing. Monitor phosphate reduction daily using a dextre test. Apply lime at 25 g/kg/day to reduce smarts."
+      },
+      {
+        "id": "sres_02",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "Trichoderma"
+        ],
+        "total_kw": 5,
+        "response_preview": "Biofibrin (Trichoderma harzianum) inoculation with Trichoderma harzianum rebuilds soil aggregate stability by reducing soil temperature fluctuations and improving water infiltration.委组织部"
+      },
+      {
+        "id": "sres_03",
+        "domain": "soil_restoration",
+        "score": 0.4,
+        "matched": [
+          "vermicompost",
+          "biochar"
+        ],
+        "total_kw": 5,
+        "response_preview": "Vermicompost-biochar approach for strip-mined soils: use 10 kg/ha of shredded Vervian (mimicry) for biochar production (炭黑). Add 50 g/day to maintain moisture balance. Biochar stabilizes soil structure and reduces weeds. Apply biological control剻( biological剻) at 0.5 mg/kg to prevent oaks from returning."
+      },
+      {
+        "id": "sres_04",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "mycorrhizal"
+        ],
+        "total_kw": 5,
+        "response_preview": "Mycorrhizal inoculation in post-fire landlands uses mycelia from the diseased plant's root zone to produce endophytic bacteria that suppress fungal growth. Apply 10 mg/kg to the top surface of each lawn scatter. Monitor infection weekly using a spread-eyemite. If infection is controlled, reduce fertilizer application by 50%."
+      },
+      {
+        "id": "sres_05",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "compost"
+        ],
+        "total_kw": 5,
+        "response_preview": "Compost tea (honey or green algae added to milk) for soil bacterial regeneration uses 500 g/ha of organic matter (milk, rice, wheat, soybean) in a 1 m3 tank. Feed 2 kg/day with 30 mg/kg of tea leaves. Monitor biofloc content daily using a multimeter. If biofloc exceeds 3 g/L, remove moisture and continue feeding. Apply lime at 150 g/kg to reducephosphorus."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "Limpopo"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman (Boehnia castrus) cattle in the Limpopo region require a vitamin D and E supplement during the dry season (November-February). Vitamin D helps prevent and treat scurreth (a red-bump situation) caused by low levels of vitamin D in the body. Supplement with 10 mg/day of vitamin D and 20 mg/day of vitamin E. Avoid supplements that contain caffeine or nicotine, as these can interfere with feta"
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Village chicken vaccination for Newcastle Disease in East Africa uses a live-boosting vaccine (LBL) at 2 weeks and a second-time booster at 4 weeks. Live-buffering requires feeding on contaminated food for 2 days before接种, which increases mortality. Second-time vaccination requires fasting for 14 days."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trypanosomiasis (TNE) in N'Dama cattle is managed by monitoring blood tryatroponins at 24 hours and treating with vitamin B12 if tryatrophin >3 mg/L. Prevention uses iron control ( including dietary controls) and apply insecticide at 50 mg/kg during the breeding season."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Snake bite (Myrrhus (Dendrula) in southern African cattle) requires immediate first aid with a needle and a rubber lid. Apply ice to reduce swelling and prevent rupture. Cover with a top coat to protect against future bites. Wait for 30 minutes until symptoms resolve. Ifbite continues, induce excretion by administering bromine at 10 mg/kg body weight."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Heat stress in lowland dairy cattle (Gallina, Oryx) is managed by placing buffer zones around tanks and giving each animal 30 minutes to adjust before drinking. Apply salt solution (25 mm NaCl) at 10 mm/day to reduce dehydration. Add vitamin C at 25 mg/kg/day to prevent cataracts. Monitor water temperature daily using a weather station."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Sub地10 cm (1 mm) drip emitters are installed at 1 m and 2 m depth in the onion field. Emitters should be located 1 m above the ground to prevent cattling (blobs) from forming. Overemitting reduces yield by 50% and increases water consumption by 30%."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tensiometers for Mozambian sugacane use needle-tipped steel pencils (10 mm diameter) at 2 m height on一根木桩 (15 m length). Calibration: compare readings with reference samples (10 cm height, recorded manually). Correct for elevation differences using altimeter. Apply correction at day of harvest to reduce variance."
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "A 2-hectare drip irrigation scheme in northern Ghana requires a 2-m³ solar PV manifold (1 m³ for domestic use) installed at the head of each sprinkler. The manifold provides 4 m³ of water per cycle (2 cycles per hour), reducing pond fill to 2 m³ per day. A 500 m² evaporative basin (2 m³ capacity, 30 cm diameter) is installed at the head of each pump unit to reduce backflow. No filters are required"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "EC"
+        ],
+        "total_kw": 5,
+        "response_preview": "Shallow-water irrigation (150 mm HTH) in the Awash Valley requires pre-salt treatment with sodium chloride at 25 g/L to reduce evaporation and prevent cataracts. Apply 50 mm³ of sodium chloride directly to the top layer of soil (beneath which grows苔藓 and plants). Add 25 mm³ of water to give you 100 mm L of fresh water. Apply this regularly to prevent dry-out."
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "sand dam"
+        ],
+        "total_kw": 5,
+        "response_preview": "Sand dam storage in Machakos: construct a rectangular sand dam (60 cm x 10 m) under the influence of a frame structure. Connect through a sump valve to a overhead pipe with a filter and阀. This allows for the intake of water from nearby streams without having to boil it. Supplement with shallow-hole sprinklers (2 m depth) at 5 kg/m3 to reduce evaporation."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "fingerlings"
+        ],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Oreochysia oryxis) fingerlings (20-50 g) in central Uganda require 125-150 cm3 of water to maintain proper physical and social development. Higher water requirements apply: 180 cm3 for full-gearing fish, 200 cm3 for tail-fingling fish. Stock at 50 g/m3 with 20 cm deep water diffins. Monitor water temperature at 25 cm depth; exceed 30 cm for健康发展."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "protein"
+        ],
+        "total_kw": 5,
+        "response_preview": "African catfish (Carasus apiochon) in Nigeria require a 30 kg feed daily: 15% protein (from fish and shell), 25% carbohydrate (from sugar and starch), and 40% dietary fiber (from leaves and buds). Feed at 30% daily to prevent obesity. Add 10% sodium chloride to reduce inter-veginal pressure. Monitor body weight changes every 2 weeks."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Water quality in Lake Victoria semi-tilapia ponds often faces challenges due to heavy rainfall and high-water temperatures (thunderstorms). Manage by installing a rainwater tank (200 mm³) at the head of each pond, adding 50 g NaCl per litre of water, and monitoring water temperature and pH daily. Apply lime at 25 g/kg during the dry season when phosphorus consumption increases."
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Polyculture in Malawi uses a 30-day cycle: week 1-3: tilapia (Hepidogramma), catfish (Carassius) - week 4-6: tilapia (Hepidogramma) - week 7-9: catfish (Carassius). Each fish provides 30% of the food needed by the other species. Stop polyvalence if one of the cycles reaches 20 days."
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Recirculating aquaculture system in Lagos: 1. Design withinsite at every fish station (20 cm deep). Use 6-inch PVC pipes (40 cm diameter) with rubber pads at each end to prevent cyles. Install a solar water filtration unit (2 kg/h) to remove solid particles from incoming waters. Connect via a thumb-drive memory card (10 cm x 2 cm) to record all activities."
+      }
+    ],
+    "routing_log": null,
+    "aeco_pct": 20.0,
+    "vet_pct": 8.0,
+    "irrig_pct": 12.0,
+    "sres_pct": 24.0,
+    "aqua_pct": 8.0,
+    "overall_pct": 14.4
+  }
+}

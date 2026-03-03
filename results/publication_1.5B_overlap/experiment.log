@@ -1,0 +1,1344 @@
+2026-03-02 15:37:12,118 [INFO] ======================================================================
+2026-03-02 15:37:12,118 [INFO] OVERLAP EXPERIMENT -- Started 2026-03-02T21:37:12.118525+00:00
+2026-03-02 15:37:12,118 [INFO] Base model: Qwen/Qwen2.5-1.5B-Instruct
+2026-03-02 15:37:12,118 [INFO] Adapter A (agroecology):      ./adapters_1.5B/agroecology_expert_lora
+2026-03-02 15:37:12,118 [INFO] Adapter B (veterinary):        ./adapters_1.5B/veterinary_expert_lora
+2026-03-02 15:37:12,118 [INFO] Adapter C (irrigation):        ./adapters_1.5B/irrigation_expert_lora
+2026-03-02 15:37:12,118 [INFO] Adapter D (soil_restoration):  ./adapters_1.5B/soil_restoration_expert_lora
+2026-03-02 15:37:12,118 [INFO] Adapter E (aquaculture):       ./adapters_1.5B/aquaculture_expert_lora
+2026-03-02 15:37:12,118 [INFO] Merged dir: ./adapters_1.5B/unified_overlap_brain
+2026-03-02 15:37:12,118 [INFO] Results dir: results/publication_1.5B_overlap
+2026-03-02 15:37:12,118 [INFO] Runs for variance: 3
+2026-03-02 15:37:12,118 [INFO] Ablation densities: [0.3, 0.5, 0.7, 0.9]
+2026-03-02 15:37:12,118 [INFO] ======================================================================
+2026-03-02 15:37:12,119 [INFO] ======================================================================
+2026-03-02 15:37:12,119 [INFO] EXPERIMENT 1 -- Router Comparison (Keyword vs Cosine)
+2026-03-02 15:37:12,119 [INFO] ======================================================================
+2026-03-02 15:37:12,235 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:37:12,244 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:37:12,306 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:37:12,316 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:37:14,316 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:37:14,325 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 15:37:14,380 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 15:37:14,431 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:37:14,439 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:37:14,492 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:37:14,500 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 15:37:14,556 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 15:37:14,610 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 15:37:15,100 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 15:37:15,104 [INFO] Building cosine-similarity router centroids...
+2026-03-02 15:37:18,959 [INFO]   Cosine router centroid for 'agroecology': dim=1536, norm=126.966
+2026-03-02 15:37:18,960 [INFO]   Cosine router centroid for 'soil_restoration': dim=1536, norm=142.981
+2026-03-02 15:37:18,961 [INFO]   Cosine router centroid for 'veterinary': dim=1536, norm=156.136
+2026-03-02 15:37:18,961 [INFO]   Cosine router centroid for 'irrigation': dim=1536, norm=154.481
+2026-03-02 15:37:18,962 [INFO]   Cosine router centroid for 'aquaculture': dim=1536, norm=148.919
+2026-03-02 15:37:26,185 [INFO] 
+--- Keyword Router ---
+2026-03-02 15:37:26,194 [INFO]   Q [aeco_01] → agroecology (true: agroecology) ✓
+2026-03-02 15:37:50,706 [INFO]     [aeco_01] 20% (1/5) matched=['cowpea']
+2026-03-02 15:37:50,716 [INFO]   Q [aeco_02] → agroecology (true: agroecology) ✓
+2026-03-02 15:37:59,180 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 15:37:59,191 [INFO]   Q [aeco_03] → agroecology (true: agroecology) ✓
+2026-03-02 15:38:20,923 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 15:38:20,934 [INFO]   Q [aeco_04] → agroecology (true: agroecology) ✓
+2026-03-02 15:38:36,012 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'nitrogen']
+2026-03-02 15:38:36,023 [INFO]   Q [aeco_05] → agroecology (true: agroecology) ✓
+2026-03-02 15:38:40,874 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 15:38:40,884 [INFO]   Q [sres_01] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 15:39:02,552 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 15:39:02,563 [INFO]   Q [sres_02] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 15:39:10,414 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 15:39:10,425 [INFO]   Q [sres_03] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 15:39:20,697 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'humic acid']
+2026-03-02 15:39:20,708 [INFO]   Q [sres_04] → agroecology (true: soil_restoration) ✗
+2026-03-02 15:39:42,318 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 15:39:42,330 [INFO]   Q [sres_05] → agroecology (true: soil_restoration) ✗
+2026-03-02 15:40:03,879 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 15:40:03,889 [INFO]   Q [vet_01] → veterinary (true: veterinary) ✓
+2026-03-02 15:40:08,810 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 15:40:08,819 [INFO]   Q [vet_02] → veterinary (true: veterinary) ✓
+2026-03-02 15:40:15,210 [INFO]     [vet_02] 60% (3/5) matched=['I-2', 'thermotolerant', 'eye-drop']
+2026-03-02 15:40:15,220 [INFO]   Q [vet_03] → veterinary (true: veterinary) ✓
+2026-03-02 15:40:22,591 [INFO]     [vet_03] 80% (4/5) matched=["N'Dama", 'trypanotolerance', 'PCV', 'diminazene']
+2026-03-02 15:40:22,602 [INFO]   Q [vet_04] → veterinary (true: veterinary) ✓
+2026-03-02 15:40:30,638 [INFO]     [vet_04] 100% (5/5) matched=['puff adder', 'antivenom', 'SAIMR', 'adrenaline', 'never incised']
+2026-03-02 15:40:30,648 [INFO]   Q [vet_05] → veterinary (true: veterinary) ✓
+2026-03-02 15:40:38,713 [INFO]     [vet_05] 100% (5/5) matched=['THI', 'shade', 'NaHCO₃', 'electrolyte', 'Boran']
+2026-03-02 15:40:38,724 [INFO]   Q [irrig_01] → irrigation (true: irrigation) ✓
+2026-03-02 15:40:40,536 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 15:40:40,547 [INFO]   Q [irrig_02] → irrigation (true: irrigation) ✓
+2026-03-02 15:40:48,805 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 15:40:48,816 [INFO]   Q [irrig_03] → irrigation (true: irrigation) ✓
+2026-03-02 15:40:50,606 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 15:40:50,617 [INFO]   Q [irrig_04] → irrigation (true: irrigation) ✓
+2026-03-02 15:41:06,836 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'gypsum']
+2026-03-02 15:41:06,848 [INFO]   Q [irrig_05] → irrigation (true: irrigation) ✓
+2026-03-02 15:41:19,213 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 15:41:19,223 [INFO]   Q [aqua_01] → aquaculture (true: aquaculture) ✓
+2026-03-02 15:41:21,756 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 15:41:21,766 [INFO]   Q [aqua_02] → aquaculture (true: aquaculture) ✓
+2026-03-02 15:41:29,213 [INFO]     [aqua_02] 40% (2/5) matched=['Clarias', 'protein']
+2026-03-02 15:41:29,224 [INFO]   Q [aqua_03] → aquaculture (true: aquaculture) ✓
+2026-03-02 15:41:37,288 [INFO]     [aqua_03] 0% (0/5) matched=[]
+2026-03-02 15:41:37,299 [INFO]   Q [aqua_04] → aquaculture (true: aquaculture) ✓
+2026-03-02 15:41:49,289 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 15:41:49,300 [INFO]   Q [aqua_05] → aquaculture (true: aquaculture) ✓
+2026-03-02 15:42:11,147 [INFO]     [aqua_05] 40% (2/5) matched=['RAS', 'biofilter']
+2026-03-02 15:42:11,148 [INFO] 
+--- Cosine-Similarity Router ---
+2026-03-02 15:42:11,310 [INFO]   Q [aeco_01] → agroecology (true: agroecology) ✓
+2026-03-02 15:42:15,310 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 15:42:15,465 [INFO]   Q [aeco_02] → agroecology (true: agroecology) ✓
+2026-03-02 15:42:21,798 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 15:42:21,926 [INFO]   Q [aeco_03] → soil_restoration (true: agroecology) ✗
+2026-03-02 15:42:43,558 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 15:42:43,702 [INFO]   Q [aeco_04] → agroecology (true: agroecology) ✓
+2026-03-02 15:43:05,446 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'nitrogen']
+2026-03-02 15:43:05,602 [INFO]   Q [aeco_05] → agroecology (true: agroecology) ✓
+2026-03-02 15:43:24,936 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 15:43:25,086 [INFO]   Q [sres_01] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 15:43:45,866 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 15:43:46,026 [INFO]   Q [sres_02] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 15:44:01,364 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 15:44:01,523 [INFO]   Q [sres_03] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 15:44:06,040 [INFO]     [sres_03] 40% (2/5) matched=['vermicompost', 'biochar']
+2026-03-02 15:44:06,194 [INFO]   Q [sres_04] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 15:44:28,002 [INFO]     [sres_04] 40% (2/5) matched=['mycorrhizal', 'spore']
+2026-03-02 15:44:28,400 [INFO]   Q [sres_05] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 15:44:50,082 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 15:44:50,238 [INFO]   Q [vet_01] → veterinary (true: veterinary) ✓
+2026-03-02 15:44:55,223 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 15:44:55,358 [INFO]   Q [vet_02] → veterinary (true: veterinary) ✓
+2026-03-02 15:45:01,694 [INFO]     [vet_02] 60% (3/5) matched=['I-2', 'thermotolerant', 'eye-drop']
+2026-03-02 15:45:01,837 [INFO]   Q [vet_03] → veterinary (true: veterinary) ✓
+2026-03-02 15:45:09,165 [INFO]     [vet_03] 80% (4/5) matched=["N'Dama", 'trypanotolerance', 'PCV', 'diminazene']
+2026-03-02 15:45:09,285 [INFO]   Q [vet_04] → veterinary (true: veterinary) ✓
+2026-03-02 15:45:17,196 [INFO]     [vet_04] 100% (5/5) matched=['puff adder', 'antivenom', 'SAIMR', 'adrenaline', 'never incised']
+2026-03-02 15:45:17,345 [INFO]   Q [vet_05] → veterinary (true: veterinary) ✓
+2026-03-02 15:45:25,363 [INFO]     [vet_05] 100% (5/5) matched=['THI', 'shade', 'NaHCO₃', 'electrolyte', 'Boran']
+2026-03-02 15:45:25,510 [INFO]   Q [irrig_01] → irrigation (true: irrigation) ✓
+2026-03-02 15:45:27,261 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 15:45:27,405 [INFO]   Q [irrig_02] → irrigation (true: irrigation) ✓
+2026-03-02 15:45:39,910 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 15:45:40,062 [INFO]   Q [irrig_03] → irrigation (true: irrigation) ✓
+2026-03-02 15:45:41,306 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 15:45:41,453 [INFO]   Q [irrig_04] → irrigation (true: irrigation) ✓
+2026-03-02 15:45:48,679 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'gypsum']
+2026-03-02 15:45:48,839 [INFO]   Q [irrig_05] → irrigation (true: irrigation) ✓
+2026-03-02 15:45:54,806 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 15:45:54,950 [INFO]   Q [aqua_01] → aquaculture (true: aquaculture) ✓
+2026-03-02 15:45:56,953 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 15:45:57,106 [INFO]   Q [aqua_02] → aquaculture (true: aquaculture) ✓
+2026-03-02 15:46:00,812 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 15:46:00,960 [INFO]   Q [aqua_03] → aquaculture (true: aquaculture) ✓
+2026-03-02 15:46:19,397 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 15:46:19,548 [INFO]   Q [aqua_04] → aquaculture (true: aquaculture) ✓
+2026-03-02 15:46:30,023 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 15:46:30,179 [INFO]   Q [aqua_05] → aquaculture (true: aquaculture) ✓
+2026-03-02 15:46:51,971 [INFO]     [aqua_05] 40% (2/5) matched=['RAS', 'biofilter']
+2026-03-02 15:46:52,008 [INFO] ======================================================================
+2026-03-02 15:46:52,009 [INFO] EXPERIMENT 2 — 3-Run Variance
+2026-03-02 15:46:52,009 [INFO] ======================================================================
+2026-03-02 15:46:52,012 [INFO] 
+--- Run 1/3 (temperature=0.25) ---
+2026-03-02 15:46:52,012 [INFO] 
+  Config: Agroecology Only
+2026-03-02 15:46:52,114 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:46:52,132 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:46:52,183 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:46:52,194 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:46:56,236 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:46:56,237 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-02 15:46:56,244 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 15:46:56,300 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 15:46:56,355 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:46:56,365 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:46:56,421 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:46:56,432 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 15:46:56,516 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 15:46:56,575 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 15:46:57,248 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 15:47:08,116 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 15:47:30,097 [INFO]     [aeco_02] 0% (0/5) matched=[]
+2026-03-02 15:47:51,818 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 15:48:13,688 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'nitrogen']
+2026-03-02 15:48:35,490 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 15:48:57,330 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 15:49:01,845 [INFO]     [sres_02] 0% (0/5) matched=[]
+2026-03-02 15:49:08,852 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 15:49:26,160 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 15:49:38,700 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 15:49:40,760 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 15:50:02,325 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 15:50:24,192 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 15:50:27,711 [INFO]     [vet_04] 0% (0/5) matched=[]
+2026-03-02 15:50:49,547 [INFO]     [vet_05] 40% (2/5) matched=['shade', 'electrolyte']
+2026-03-02 15:50:51,338 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 15:51:13,131 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 15:51:35,034 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 15:51:53,718 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'gypsum']
+2026-03-02 15:52:15,733 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 15:52:17,799 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 15:52:26,312 [INFO]     [aqua_02] 0% (0/5) matched=[]
+2026-03-02 15:52:48,172 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 15:53:10,099 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 15:53:31,888 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 15:53:31,891 [INFO] 
+  Config: Veterinary Only
+2026-03-02 15:53:31,984 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:53:31,996 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:53:32,049 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:53:32,058 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:53:36,928 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:53:36,938 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 15:53:36,992 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 15:53:37,042 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:53:37,051 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:53:37,109 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:53:37,122 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 15:53:37,177 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 15:53:37,230 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 15:53:37,690 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 15:53:49,033 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 15:53:56,298 [INFO]     [aeco_02] 0% (0/5) matched=[]
+2026-03-02 15:54:02,542 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 15:54:09,930 [INFO]     [aeco_04] 40% (2/5) matched=['mycorrhizal', 'hyphal']
+2026-03-02 15:54:17,207 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 15:54:22,510 [INFO]     [sres_01] 0% (0/5) matched=[]
+2026-03-02 15:54:29,307 [INFO]     [sres_02] 40% (2/5) matched=['Trichoderma', 'biofilament']
+2026-03-02 15:54:35,034 [INFO]     [sres_03] 40% (2/5) matched=['vermicompost', 'biochar']
+2026-03-02 15:54:42,390 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 15:54:51,401 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 15:54:56,467 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 15:55:02,848 [INFO]     [vet_02] 60% (3/5) matched=['I-2', 'thermotolerant', 'eye-drop']
+2026-03-02 15:55:10,178 [INFO]     [vet_03] 80% (4/5) matched=["N'Dama", 'trypanotolerance', 'PCV', 'diminazene']
+2026-03-02 15:55:18,150 [INFO]     [vet_04] 100% (5/5) matched=['puff adder', 'antivenom', 'SAIMR', 'adrenaline', 'never incised']
+2026-03-02 15:55:26,168 [INFO]     [vet_05] 100% (5/5) matched=['THI', 'shade', 'NaHCO₃', 'electrolyte', 'Boran']
+2026-03-02 15:55:32,126 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 15:55:38,431 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 15:55:45,586 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 15:55:52,188 [INFO]     [irrig_04] 0% (0/5) matched=[]
+2026-03-02 15:55:59,211 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 15:56:06,306 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 15:56:12,834 [INFO]     [aqua_02] 0% (0/5) matched=[]
+2026-03-02 15:56:20,415 [INFO]     [aqua_03] 20% (1/5) matched=['4 mg/L']
+2026-03-02 15:56:28,586 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 15:56:34,908 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 15:56:34,911 [INFO] 
+  Config: Irrigation Only
+2026-03-02 15:56:35,008 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:56:35,017 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:56:35,073 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:56:35,080 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:56:39,606 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:56:39,618 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 15:56:39,724 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 15:56:39,786 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:56:39,795 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:56:39,847 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:56:39,856 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 15:56:39,909 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 15:56:39,963 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 15:56:40,433 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 15:56:51,644 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 15:56:58,808 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 15:57:07,329 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 15:57:17,044 [INFO]     [aeco_04] 40% (2/5) matched=['mycorrhizal', 'hyphal']
+2026-03-02 15:57:22,949 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 15:57:29,989 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 15:57:41,228 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 15:57:49,999 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 15:57:56,809 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 15:58:18,513 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 15:58:19,670 [INFO]     [vet_01] 0% (0/5) matched=[]
+2026-03-02 15:58:24,556 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 15:58:30,843 [INFO]     [vet_03] 0% (0/5) matched=[]
+2026-03-02 15:58:32,715 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 15:58:39,549 [INFO]     [vet_05] 20% (1/5) matched=['THI']
+2026-03-02 15:58:41,305 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 15:58:46,807 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 15:59:08,652 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 15:59:24,384 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'gypsum']
+2026-03-02 15:59:33,541 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 15:59:35,539 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 15:59:37,599 [INFO]     [aqua_02] 0% (0/5) matched=[]
+2026-03-02 15:59:39,672 [INFO]     [aqua_03] 0% (0/5) matched=[]
+2026-03-02 15:59:45,446 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 15:59:58,608 [INFO]     [aqua_05] 0% (0/5) matched=[]
+2026-03-02 15:59:58,611 [INFO] 
+  Config: Soil Restoration Only
+2026-03-02 15:59:58,704 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:59:58,713 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 15:59:58,765 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 15:59:58,773 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:00:03,960 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:00:03,973 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:00:04,033 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 16:00:04,084 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:00:04,091 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:00:04,141 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:00:04,149 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:00:04,205 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 16:00:04,257 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 16:00:04,728 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 16:00:30,570 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 16:00:52,489 [INFO]     [aeco_02] 0% (0/5) matched=[]
+2026-03-02 16:01:14,257 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 16:01:32,490 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'nitrogen']
+2026-03-02 16:01:54,413 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 16:01:59,566 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 16:02:21,548 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 16:02:25,661 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 16:02:47,574 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 16:03:05,802 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 16:03:07,857 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 16:03:29,691 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 16:03:51,558 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 16:04:03,564 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 16:04:22,820 [INFO]     [vet_05] 40% (2/5) matched=['THI', 'shade']
+2026-03-02 16:04:30,742 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 16:04:52,199 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 16:05:14,119 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 16:05:35,793 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 16:05:57,640 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 16:05:59,636 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 16:06:21,627 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 16:06:43,523 [INFO]     [aqua_03] 0% (0/5) matched=[]
+2026-03-02 16:06:56,889 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 16:07:18,739 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 16:07:18,743 [INFO] 
+  Config: Aquaculture Only
+2026-03-02 16:07:18,839 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:07:18,850 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:07:18,904 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:07:18,915 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:07:23,807 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:07:23,818 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:07:23,876 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 16:07:23,959 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:07:23,968 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:07:24,021 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:07:24,030 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:07:24,092 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 16:07:24,143 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 16:07:24,622 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 16:07:42,879 [INFO]     [aeco_01] 20% (1/5) matched=['cowpea']
+2026-03-02 16:07:48,625 [INFO]     [aeco_02] 0% (0/5) matched=[]
+2026-03-02 16:07:56,929 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 16:08:04,884 [INFO]     [aeco_04] 40% (2/5) matched=['mycorrhizal', 'organic matter']
+2026-03-02 16:08:26,680 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 16:08:38,142 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 16:08:44,907 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 16:08:47,043 [INFO]     [sres_03] 40% (2/5) matched=['vermicompost', 'biochar']
+2026-03-02 16:08:50,842 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 16:09:04,165 [INFO]     [sres_05] 40% (2/5) matched=['compost', '24 hours']
+2026-03-02 16:09:05,732 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 16:09:19,312 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 16:09:30,096 [INFO]     [vet_03] 40% (2/5) matched=["N'Dama", 'albendazole']
+2026-03-02 16:09:35,327 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 16:09:44,833 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 16:09:46,967 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 16:09:52,561 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 16:09:56,182 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 16:10:06,066 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 16:10:19,197 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 16:10:22,006 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 16:10:33,279 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 16:10:49,681 [INFO]     [aqua_03] 20% (1/5) matched=['dissolved oxygen']
+2026-03-02 16:11:11,027 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 16:11:32,438 [INFO]     [aqua_05] 40% (2/5) matched=['RAS', 'biofilter']
+2026-03-02 16:11:32,441 [INFO] 
+  Config: TIES Merge
+2026-03-02 16:11:32,515 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:11:32,523 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:11:32,580 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:11:32,590 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:11:37,078 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:11:37,108 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:11:37,173 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 16:11:37,224 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:11:37,233 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:11:37,285 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:11:37,293 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:11:37,349 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 16:11:37,404 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 16:11:37,853 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 16:12:02,975 [INFO]     [aeco_01] 20% (1/5) matched=['cowpea']
+2026-03-02 16:12:18,170 [INFO]     [aeco_02] 20% (1/5) matched=['Meloidogyne']
+2026-03-02 16:12:40,034 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 16:12:52,737 [INFO]     [aeco_04] 40% (2/5) matched=['mycorrhizal', 'hyphal']
+2026-03-02 16:13:12,265 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 16:13:24,363 [INFO]     [sres_01] 40% (2/5) matched=['bone char', 'calcium']
+2026-03-02 16:13:46,152 [INFO]     [sres_02] 40% (2/5) matched=['Trichoderma', 'biofilament']
+2026-03-02 16:13:54,912 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 16:14:16,758 [INFO]     [sres_04] 40% (2/5) matched=['mycorrhizal', 'spore']
+2026-03-02 16:14:28,247 [INFO]     [sres_05] 40% (2/5) matched=['compost', 'aerobic']
+2026-03-02 16:14:36,905 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 16:14:49,436 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 16:15:11,241 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 16:15:18,178 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 16:15:24,436 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 16:15:29,800 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 16:15:51,664 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 16:16:13,480 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 16:16:35,258 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'SAR']
+2026-03-02 16:16:57,085 [INFO]     [irrig_05] 40% (2/5) matched=['sand dam', 'olla']
+2026-03-02 16:17:04,598 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 16:17:26,425 [INFO]     [aqua_02] 40% (2/5) matched=['Clarias', 'protein']
+2026-03-02 16:17:48,187 [INFO]     [aqua_03] 60% (3/5) matched=['dissolved oxygen', '4 mg/L', 'ammonia']
+2026-03-02 16:18:09,885 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 16:18:31,625 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 16:18:31,628 [INFO] 
+  Config: Gossip--Keyword
+2026-03-02 16:18:31,707 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:18:31,716 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:18:31,769 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:18:31,776 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:18:36,328 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:18:36,341 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:18:36,396 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 16:18:36,448 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:18:36,457 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:18:36,511 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:18:36,520 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:18:36,578 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 16:18:36,631 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 16:18:37,108 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 16:18:47,271 [INFO]   Q [aeco_01] → agroecology (true: agroecology) ✓
+2026-03-02 16:19:06,082 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 16:19:06,095 [INFO]   Q [aeco_02] → agroecology (true: agroecology) ✓
+2026-03-02 16:19:08,233 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 16:19:08,245 [INFO]   Q [aeco_03] → agroecology (true: agroecology) ✓
+2026-03-02 16:19:29,982 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 16:19:29,993 [INFO]   Q [aeco_04] → agroecology (true: agroecology) ✓
+2026-03-02 16:19:51,781 [INFO]     [aeco_04] 80% (4/5) matched=['mycorrhizal', 'hyphal', 'organic matter', 'nitrogen']
+2026-03-02 16:19:51,793 [INFO]   Q [aeco_05] → agroecology (true: agroecology) ✓
+2026-03-02 16:20:13,633 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 16:20:13,645 [INFO]   Q [sres_01] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 16:20:18,856 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 16:20:18,867 [INFO]   Q [sres_02] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 16:20:40,769 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 16:20:40,782 [INFO]   Q [sres_03] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 16:20:45,521 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 16:20:45,532 [INFO]   Q [sres_04] → agroecology (true: soil_restoration) ✗
+2026-03-02 16:21:06,268 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 16:21:06,281 [INFO]   Q [sres_05] → agroecology (true: soil_restoration) ✗
+2026-03-02 16:21:28,124 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 16:21:28,136 [INFO]   Q [vet_01] → veterinary (true: veterinary) ✓
+2026-03-02 16:21:33,154 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 16:21:33,166 [INFO]   Q [vet_02] → veterinary (true: veterinary) ✓
+2026-03-02 16:21:39,501 [INFO]     [vet_02] 60% (3/5) matched=['I-2', 'thermotolerant', 'eye-drop']
+2026-03-02 16:21:39,513 [INFO]   Q [vet_03] → veterinary (true: veterinary) ✓
+2026-03-02 16:21:46,849 [INFO]     [vet_03] 80% (4/5) matched=["N'Dama", 'trypanotolerance', 'PCV', 'diminazene']
+2026-03-02 16:21:46,861 [INFO]   Q [vet_04] → veterinary (true: veterinary) ✓
+2026-03-02 16:21:54,813 [INFO]     [vet_04] 100% (5/5) matched=['puff adder', 'antivenom', 'SAIMR', 'adrenaline', 'never incised']
+2026-03-02 16:21:54,824 [INFO]   Q [vet_05] → veterinary (true: veterinary) ✓
+2026-03-02 16:22:02,855 [INFO]     [vet_05] 100% (5/5) matched=['THI', 'shade', 'NaHCO₃', 'electrolyte', 'Boran']
+2026-03-02 16:22:02,866 [INFO]   Q [irrig_01] → irrigation (true: irrigation) ✓
+2026-03-02 16:22:04,606 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 16:22:04,617 [INFO]   Q [irrig_02] → irrigation (true: irrigation) ✓
+2026-03-02 16:22:11,336 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 16:22:11,347 [INFO]   Q [irrig_03] → irrigation (true: irrigation) ✓
+2026-03-02 16:22:12,946 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 16:22:12,957 [INFO]   Q [irrig_04] → irrigation (true: irrigation) ✓
+2026-03-02 16:22:27,307 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 16:22:27,319 [INFO]   Q [irrig_05] → irrigation (true: irrigation) ✓
+2026-03-02 16:22:47,416 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 16:22:47,428 [INFO]   Q [aqua_01] → aquaculture (true: aquaculture) ✓
+2026-03-02 16:22:50,193 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 16:22:50,204 [INFO]   Q [aqua_02] → aquaculture (true: aquaculture) ✓
+2026-03-02 16:23:00,382 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 16:23:00,394 [INFO]   Q [aqua_03] → aquaculture (true: aquaculture) ✓
+2026-03-02 16:23:08,777 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 16:23:08,788 [INFO]   Q [aqua_04] → aquaculture (true: aquaculture) ✓
+2026-03-02 16:23:18,700 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 16:23:18,712 [INFO]   Q [aqua_05] → aquaculture (true: aquaculture) ✓
+2026-03-02 16:23:40,630 [INFO]     [aqua_05] 40% (2/5) matched=['RAS', 'biofilter']
+2026-03-02 16:23:40,646 [INFO] 
+--- Run 2/3 (temperature=0.30) ---
+2026-03-02 16:23:40,647 [INFO] 
+  Config: Agroecology Only
+2026-03-02 16:23:40,754 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:23:40,763 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:23:40,821 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:23:40,829 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:23:45,667 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:23:45,676 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:23:45,731 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 16:23:45,780 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:23:45,787 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:23:45,837 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:23:45,847 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:23:45,908 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 16:23:45,965 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 16:23:46,460 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 16:23:54,771 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 16:24:16,792 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 16:24:38,582 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 16:25:00,505 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'organic matter']
+2026-03-02 16:25:22,432 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 16:25:39,581 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 16:25:50,570 [INFO]     [sres_02] 40% (2/5) matched=['Trichoderma', 'biofilament']
+2026-03-02 16:25:56,034 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 16:26:14,121 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 16:26:28,117 [INFO]     [sres_05] 40% (2/5) matched=['compost', '24 hours']
+2026-03-02 16:26:30,044 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 16:26:51,837 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 16:26:55,500 [INFO]     [vet_03] 0% (0/5) matched=[]
+2026-03-02 16:27:07,147 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 16:27:29,005 [INFO]     [vet_05] 40% (2/5) matched=['THI', 'shade']
+2026-03-02 16:27:30,722 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 16:27:52,548 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 16:28:14,466 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 16:28:36,262 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'gypsum']
+2026-03-02 16:28:58,142 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 16:29:03,620 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 16:29:25,490 [INFO]     [aqua_02] 0% (0/5) matched=[]
+2026-03-02 16:29:47,467 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 16:30:09,262 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 16:30:31,091 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 16:30:31,095 [INFO] 
+  Config: Veterinary Only
+2026-03-02 16:30:31,171 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:30:31,180 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:30:31,234 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:30:31,244 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:30:36,106 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:30:36,118 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:30:36,172 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 16:30:36,224 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:30:36,232 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:30:36,291 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:30:36,299 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:30:36,353 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 16:30:36,403 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 16:30:36,912 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 16:30:52,322 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 16:31:00,715 [INFO]     [aeco_02] 0% (0/5) matched=[]
+2026-03-02 16:31:08,521 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 16:31:16,225 [INFO]     [aeco_04] 40% (2/5) matched=['mycorrhizal', 'hyphal']
+2026-03-02 16:31:23,106 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 16:31:31,693 [INFO]     [sres_01] 20% (1/5) matched=['calcium']
+2026-03-02 16:31:38,974 [INFO]     [sres_02] 40% (2/5) matched=['Trichoderma', 'biofilament']
+2026-03-02 16:31:46,146 [INFO]     [sres_03] 40% (2/5) matched=['vermicompost', 'biochar']
+2026-03-02 16:31:54,155 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 16:32:04,682 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 16:32:09,648 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 16:32:16,013 [INFO]     [vet_02] 60% (3/5) matched=['I-2', 'thermotolerant', 'eye-drop']
+2026-03-02 16:32:23,404 [INFO]     [vet_03] 80% (4/5) matched=["N'Dama", 'trypanotolerance', 'PCV', 'diminazene']
+2026-03-02 16:32:31,344 [INFO]     [vet_04] 100% (5/5) matched=['puff adder', 'antivenom', 'SAIMR', 'adrenaline', 'never incised']
+2026-03-02 16:32:39,372 [INFO]     [vet_05] 100% (5/5) matched=['THI', 'shade', 'NaHCO₃', 'electrolyte', 'Boran']
+2026-03-02 16:32:44,317 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 16:32:54,632 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 16:32:58,124 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 16:33:04,790 [INFO]     [irrig_04] 0% (0/5) matched=[]
+2026-03-02 16:33:11,435 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 16:33:18,164 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 16:33:24,752 [INFO]     [aqua_02] 0% (0/5) matched=[]
+2026-03-02 16:33:31,694 [INFO]     [aqua_03] 20% (1/5) matched=['ammonia']
+2026-03-02 16:33:39,023 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 16:33:48,305 [INFO]     [aqua_05] 0% (0/5) matched=[]
+2026-03-02 16:33:48,309 [INFO] 
+  Config: Irrigation Only
+2026-03-02 16:33:48,431 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:33:48,441 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:33:48,494 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:33:48,502 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:33:53,493 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:33:53,502 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:33:53,557 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 16:33:53,606 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:33:53,614 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:33:53,668 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:33:53,676 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:33:53,733 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 16:33:53,787 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 16:33:54,281 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 16:34:09,547 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 16:34:31,133 [INFO]     [aeco_02] 0% (0/5) matched=[]
+2026-03-02 16:35:05,234 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 16:35:12,115 [INFO]     [aeco_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 16:35:24,486 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 16:35:30,446 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 16:35:36,839 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 16:35:41,964 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 16:35:43,363 [INFO]     [sres_04] 0% (0/5) matched=[]
+2026-03-02 16:36:13,779 [INFO]     [sres_05] 40% (2/5) matched=['compost', '24 hours']
+2026-03-02 16:36:14,985 [INFO]     [vet_01] 0% (0/5) matched=[]
+2026-03-02 16:36:37,215 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 16:36:52,280 [INFO]     [vet_03] 40% (2/5) matched=["N'Dama", 'albendazole']
+2026-03-02 16:36:55,684 [INFO]     [vet_04] 0% (0/5) matched=[]
+2026-03-02 16:37:23,982 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 16:37:25,976 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 16:37:37,744 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 16:37:41,282 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 16:37:54,962 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 16:37:58,526 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 16:38:00,454 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 16:38:02,899 [INFO]     [aqua_02] 0% (0/5) matched=[]
+2026-03-02 16:38:24,355 [INFO]     [aqua_03] 20% (1/5) matched=['dissolved oxygen']
+2026-03-02 16:38:46,872 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 16:39:04,885 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 16:39:04,890 [INFO] 
+  Config: Soil Restoration Only
+2026-03-02 16:39:04,979 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:39:04,989 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:39:05,065 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:39:05,074 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:39:21,073 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:39:21,086 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:39:21,144 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 16:39:21,191 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:39:21,200 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:39:21,252 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:39:21,260 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:39:21,315 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 16:39:21,366 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 16:39:21,860 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 16:39:33,874 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 16:39:38,612 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 16:39:46,577 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 16:39:57,452 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'organic matter']
+2026-03-02 16:40:36,100 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 16:40:53,615 [INFO]     [sres_01] 40% (2/5) matched=['bone char', 'calcium']
+2026-03-02 16:41:41,654 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 16:41:46,915 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 16:42:06,566 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 16:42:17,622 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 16:42:19,582 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 16:42:51,986 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 16:43:12,707 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 16:43:13,418 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 16:43:51,369 [INFO]     [vet_05] 20% (1/5) matched=['THI']
+2026-03-02 16:43:53,064 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 16:44:13,845 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 16:44:42,103 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 16:44:55,034 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 16:45:35,699 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 16:45:37,461 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 16:45:59,609 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 16:46:20,371 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 16:46:47,179 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 16:47:07,997 [INFO]     [aqua_05] 40% (2/5) matched=['RAS', 'biofilter']
+2026-03-02 16:47:08,000 [INFO] 
+  Config: Aquaculture Only
+2026-03-02 16:47:08,082 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:47:08,090 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:47:08,188 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:47:08,197 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:47:36,688 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:47:36,699 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:47:36,754 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 16:47:36,825 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:47:36,834 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:47:36,899 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:47:36,908 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:47:36,960 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 16:47:37,015 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 16:47:37,464 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 16:47:59,682 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 16:48:03,703 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 16:48:10,738 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 16:48:15,586 [INFO]     [aeco_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 16:48:34,643 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 16:48:42,471 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 16:48:46,634 [INFO]     [sres_02] 0% (0/5) matched=[]
+2026-03-02 16:48:52,529 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 16:48:55,894 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 16:49:04,143 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 16:49:06,465 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 16:49:11,425 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 16:49:48,836 [INFO]     [vet_03] 40% (2/5) matched=["N'Dama", 'albendazole']
+2026-03-02 16:49:51,233 [INFO]     [vet_04] 0% (0/5) matched=[]
+2026-03-02 16:49:57,383 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 16:50:00,004 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 16:50:10,601 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 16:50:12,898 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 16:50:25,573 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'gypsum']
+2026-03-02 16:51:00,914 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 16:51:03,619 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 16:51:10,976 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 16:51:31,705 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 16:51:58,063 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 16:52:20,177 [INFO]     [aqua_05] 40% (2/5) matched=['RAS', 'biofilter']
+2026-03-02 16:52:20,180 [INFO] 
+  Config: TIES Merge
+2026-03-02 16:52:20,500 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:52:20,514 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:52:20,611 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:52:20,622 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:52:25,045 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:52:25,082 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:52:25,259 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 16:52:25,313 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:52:25,320 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 16:52:25,375 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 16:52:25,385 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 16:52:25,445 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 16:52:25,499 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 16:52:25,932 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 16:53:01,528 [INFO]     [aeco_01] 20% (1/5) matched=['cowpea']
+2026-03-02 16:53:11,487 [INFO]     [aeco_02] 0% (0/5) matched=[]
+2026-03-02 16:53:29,589 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 16:53:38,749 [INFO]     [aeco_04] 40% (2/5) matched=['mycorrhizal', 'hyphal']
+2026-03-02 16:54:30,505 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 16:54:40,671 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 16:54:48,533 [INFO]     [sres_02] 40% (2/5) matched=['Trichoderma', 'biofilament']
+2026-03-02 16:54:56,108 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 16:55:23,275 [INFO]     [sres_04] 40% (2/5) matched=['mycorrhizal', 'spore']
+2026-03-02 16:55:40,463 [INFO]     [sres_05] 40% (2/5) matched=['compost', 'aerobic']
+2026-03-02 16:55:46,734 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 16:56:17,755 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 16:56:34,816 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 16:56:45,437 [INFO]     [vet_04] 40% (2/5) matched=['puff adder', 'antivenom']
+2026-03-02 16:57:17,650 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 16:57:26,592 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 16:57:47,290 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 16:58:00,651 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 16:58:48,349 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 16:59:09,087 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 16:59:24,618 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 16:59:43,540 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 17:00:04,233 [INFO]     [aqua_03] 20% (1/5) matched=['dissolved oxygen']
+2026-03-02 17:00:51,081 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 17:01:11,807 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 17:01:11,810 [INFO] 
+  Config: Gossip--Keyword
+2026-03-02 17:01:11,887 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:01:11,896 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:01:11,945 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:01:11,953 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:01:16,229 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:01:16,238 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:01:16,291 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 17:01:16,339 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:01:16,348 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:01:16,401 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:01:16,408 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:01:16,466 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 17:01:16,528 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 17:01:16,964 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 17:01:55,262 [INFO]   Q [aeco_01] → agroecology (true: agroecology) ✓
+2026-03-02 17:02:17,743 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 17:02:17,756 [INFO]   Q [aeco_02] → agroecology (true: agroecology) ✓
+2026-03-02 17:02:54,229 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 17:02:54,241 [INFO]   Q [aeco_03] → agroecology (true: agroecology) ✓
+2026-03-02 17:03:22,337 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 17:03:22,360 [INFO]   Q [aeco_04] → agroecology (true: agroecology) ✓
+2026-03-02 17:04:15,938 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'nitrogen']
+2026-03-02 17:04:15,950 [INFO]   Q [aeco_05] → agroecology (true: agroecology) ✓
+2026-03-02 17:04:36,655 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 17:04:36,670 [INFO]   Q [sres_01] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 17:05:22,670 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 17:05:22,694 [INFO]   Q [sres_02] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 17:05:27,508 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 17:05:27,520 [INFO]   Q [sres_03] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 17:05:38,604 [INFO]     [sres_03] 40% (2/5) matched=['vermicompost', 'biochar']
+2026-03-02 17:05:38,615 [INFO]   Q [sres_04] → agroecology (true: soil_restoration) ✗
+2026-03-02 17:05:59,428 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 17:05:59,440 [INFO]   Q [sres_05] → agroecology (true: soil_restoration) ✗
+2026-03-02 17:06:41,372 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 17:06:41,384 [INFO]   Q [vet_01] → veterinary (true: veterinary) ✓
+2026-03-02 17:06:46,139 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 17:06:46,150 [INFO]   Q [vet_02] → veterinary (true: veterinary) ✓
+2026-03-02 17:06:52,165 [INFO]     [vet_02] 60% (3/5) matched=['I-2', 'thermotolerant', 'eye-drop']
+2026-03-02 17:06:52,177 [INFO]   Q [vet_03] → veterinary (true: veterinary) ✓
+2026-03-02 17:06:59,190 [INFO]     [vet_03] 80% (4/5) matched=["N'Dama", 'trypanotolerance', 'PCV', 'diminazene']
+2026-03-02 17:06:59,201 [INFO]   Q [vet_04] → veterinary (true: veterinary) ✓
+2026-03-02 17:07:06,755 [INFO]     [vet_04] 100% (5/5) matched=['puff adder', 'antivenom', 'SAIMR', 'adrenaline', 'never incised']
+2026-03-02 17:07:06,766 [INFO]   Q [vet_05] → veterinary (true: veterinary) ✓
+2026-03-02 17:07:31,913 [INFO]     [vet_05] 100% (5/5) matched=['THI', 'shade', 'NaHCO₃', 'electrolyte', 'Boran']
+2026-03-02 17:07:31,924 [INFO]   Q [irrig_01] → irrigation (true: irrigation) ✓
+2026-03-02 17:07:34,064 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 17:07:34,087 [INFO]   Q [irrig_02] → irrigation (true: irrigation) ✓
+2026-03-02 17:07:42,483 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 17:07:42,494 [INFO]   Q [irrig_03] → irrigation (true: irrigation) ✓
+2026-03-02 17:07:46,599 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 17:07:46,611 [INFO]   Q [irrig_04] → irrigation (true: irrigation) ✓
+2026-03-02 17:07:57,829 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 17:07:57,840 [INFO]   Q [irrig_05] → irrigation (true: irrigation) ✓
+2026-03-02 17:08:01,106 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 17:08:01,116 [INFO]   Q [aqua_01] → aquaculture (true: aquaculture) ✓
+2026-03-02 17:08:08,923 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 17:08:08,935 [INFO]   Q [aqua_02] → aquaculture (true: aquaculture) ✓
+2026-03-02 17:08:49,107 [INFO]     [aqua_02] 40% (2/5) matched=['Clarias', 'protein']
+2026-03-02 17:08:49,120 [INFO]   Q [aqua_03] → aquaculture (true: aquaculture) ✓
+2026-03-02 17:09:09,808 [INFO]     [aqua_03] 60% (3/5) matched=['dissolved oxygen', '4 mg/L', 'ammonia']
+2026-03-02 17:09:09,820 [INFO]   Q [aqua_04] → aquaculture (true: aquaculture) ✓
+2026-03-02 17:09:18,272 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 17:09:18,283 [INFO]   Q [aqua_05] → aquaculture (true: aquaculture) ✓
+2026-03-02 17:09:44,807 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 17:09:44,813 [INFO] 
+--- Run 3/3 (temperature=0.35) ---
+2026-03-02 17:09:44,813 [INFO] 
+  Config: Agroecology Only
+2026-03-02 17:09:44,902 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:09:44,911 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:09:44,965 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:09:44,973 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:09:49,676 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:09:49,690 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:09:49,810 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 17:09:49,989 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:09:49,998 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:09:50,129 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:09:50,142 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:09:50,308 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 17:09:50,400 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 17:09:51,229 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 17:10:03,881 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 17:10:06,135 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 17:10:41,541 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 17:11:02,373 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'organic matter']
+2026-03-02 17:11:05,093 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 17:11:09,193 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 17:12:01,797 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 17:12:11,222 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 17:12:56,731 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 17:13:26,764 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 17:13:30,905 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 17:14:12,926 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 17:14:42,827 [INFO]     [vet_03] 0% (0/5) matched=[]
+2026-03-02 17:15:29,180 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 17:16:44,592 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 17:17:11,378 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 17:17:57,713 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 17:18:18,369 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 17:18:41,980 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'gypsum']
+2026-03-02 17:19:19,224 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 17:19:33,121 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 17:20:06,796 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 17:20:43,740 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 17:20:46,316 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 17:21:06,937 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 17:21:06,941 [INFO] 
+  Config: Veterinary Only
+2026-03-02 17:21:07,032 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:21:07,041 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:21:07,095 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:21:07,103 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:21:11,588 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:21:11,598 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:21:11,657 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 17:21:11,708 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:21:11,717 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:21:11,771 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:21:11,780 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:21:11,833 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 17:21:11,895 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 17:21:12,363 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 17:22:24,839 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 17:22:54,649 [INFO]     [aeco_02] 0% (0/5) matched=[]
+2026-03-02 17:23:53,988 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 17:24:02,315 [INFO]     [aeco_04] 40% (2/5) matched=['mycorrhizal', 'hyphal']
+2026-03-02 17:24:07,737 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 17:24:15,852 [INFO]     [sres_01] 20% (1/5) matched=['calcium']
+2026-03-02 17:24:21,676 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 17:24:29,439 [INFO]     [sres_03] 40% (2/5) matched=['vermicompost', 'biochar']
+2026-03-02 17:25:00,785 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 17:25:08,602 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 17:25:13,284 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 17:25:19,216 [INFO]     [vet_02] 60% (3/5) matched=['I-2', 'thermotolerant', 'eye-drop']
+2026-03-02 17:25:26,076 [INFO]     [vet_03] 80% (4/5) matched=["N'Dama", 'trypanotolerance', 'PCV', 'diminazene']
+2026-03-02 17:25:33,552 [INFO]     [vet_04] 100% (5/5) matched=['puff adder', 'antivenom', 'SAIMR', 'adrenaline', 'never incised']
+2026-03-02 17:25:41,100 [INFO]     [vet_05] 100% (5/5) matched=['THI', 'shade', 'NaHCO₃', 'electrolyte', 'Boran']
+2026-03-02 17:25:46,541 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 17:25:59,295 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 17:26:06,586 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 17:26:11,752 [INFO]     [irrig_04] 0% (0/5) matched=[]
+2026-03-02 17:26:20,435 [INFO]     [irrig_05] 0% (0/5) matched=[]
+2026-03-02 17:26:26,709 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 17:26:45,667 [INFO]     [aqua_02] 0% (0/5) matched=[]
+2026-03-02 17:26:54,814 [INFO]     [aqua_03] 0% (0/5) matched=[]
+2026-03-02 17:27:15,979 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 17:27:51,060 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 17:27:51,065 [INFO] 
+  Config: Irrigation Only
+2026-03-02 17:27:51,892 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:27:51,901 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:27:51,956 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:27:51,967 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:27:56,606 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:27:56,616 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:27:56,673 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 17:27:56,742 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:27:56,750 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:27:56,807 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:27:56,816 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:27:56,871 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 17:27:56,931 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 17:27:57,383 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 17:28:09,648 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 17:28:21,271 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 17:28:27,075 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 17:28:36,459 [INFO]     [aeco_04] 80% (4/5) matched=['mycorrhizal', 'hyphal', 'organic matter', 'nitrogen']
+2026-03-02 17:29:12,543 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 17:29:21,776 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 17:29:42,476 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 17:30:11,121 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 17:30:13,281 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 17:30:37,505 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 17:31:34,018 [INFO]     [vet_01] 0% (0/5) matched=[]
+2026-03-02 17:31:38,009 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 17:31:45,014 [INFO]     [vet_03] 0% (0/5) matched=[]
+2026-03-02 17:31:50,535 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 17:32:01,215 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 17:32:02,888 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 17:32:07,762 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 17:32:24,429 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 17:32:48,411 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'gypsum']
+2026-03-02 17:33:18,248 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 17:33:20,384 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 17:33:24,218 [INFO]     [aqua_02] 0% (0/5) matched=[]
+2026-03-02 17:33:30,982 [INFO]     [aqua_03] 0% (0/5) matched=[]
+2026-03-02 17:33:36,127 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 17:33:56,727 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 17:33:56,730 [INFO] 
+  Config: Soil Restoration Only
+2026-03-02 17:33:56,802 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:33:56,813 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:33:56,863 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:33:56,871 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:34:01,264 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:34:01,273 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:34:01,328 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 17:34:01,378 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:34:01,388 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:34:01,438 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:34:01,447 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:34:01,500 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 17:34:01,552 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 17:34:02,193 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 17:34:59,107 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 17:35:46,874 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 17:37:05,827 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 17:37:26,536 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'nitrogen']
+2026-03-02 17:38:17,160 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 17:38:22,295 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 17:38:27,451 [INFO]     [sres_02] 0% (0/5) matched=[]
+2026-03-02 17:38:33,096 [INFO]     [sres_03] 40% (2/5) matched=['vermicompost', 'biochar']
+2026-03-02 17:38:51,793 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 17:39:17,351 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 17:39:21,370 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 17:40:42,861 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 17:40:56,783 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 17:41:00,426 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 17:41:07,093 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 17:41:08,733 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 17:41:43,797 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 17:42:21,065 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 17:42:52,809 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 17:43:37,871 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 17:43:41,494 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 17:44:22,632 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 17:44:44,770 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 17:44:50,745 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 17:45:48,422 [INFO]     [aqua_05] 40% (2/5) matched=['RAS', 'biofilter']
+2026-03-02 17:45:48,429 [INFO] 
+  Config: Aquaculture Only
+2026-03-02 17:45:48,523 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:45:48,532 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:45:48,584 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:45:48,591 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:45:53,939 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:45:53,948 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:45:54,001 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 17:45:54,051 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:45:54,060 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:45:54,114 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:45:54,122 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:45:54,177 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 17:45:54,237 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 17:45:55,052 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 17:46:15,370 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 17:46:31,030 [INFO]     [aeco_02] 0% (0/5) matched=[]
+2026-03-02 17:46:41,982 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 17:47:10,316 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'nitrogen']
+2026-03-02 17:47:24,960 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 17:47:38,773 [INFO]     [sres_01] 0% (0/5) matched=[]
+2026-03-02 17:47:56,800 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 17:48:00,876 [INFO]     [sres_03] 40% (2/5) matched=['vermicompost', 'biochar']
+2026-03-02 17:48:12,527 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 17:48:57,190 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 17:48:59,306 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 17:49:08,330 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 17:49:28,211 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 17:50:05,914 [INFO]     [vet_04] 0% (0/5) matched=[]
+2026-03-02 17:50:15,531 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 17:50:19,056 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 17:50:41,663 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 17:50:49,152 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 17:51:07,717 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'gypsum']
+2026-03-02 17:51:22,992 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 17:51:28,841 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 17:51:40,079 [INFO]     [aqua_02] 40% (2/5) matched=['Clarias', 'protein']
+2026-03-02 17:52:13,142 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 17:52:27,062 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 17:53:09,054 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 17:53:09,060 [INFO] 
+  Config: TIES Merge
+2026-03-02 17:53:09,146 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:53:09,157 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:53:09,210 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:53:09,219 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:53:16,706 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:53:16,717 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:53:16,772 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 17:53:16,825 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:53:16,834 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 17:53:16,884 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 17:53:16,892 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 17:53:16,950 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 17:53:17,006 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 17:53:17,836 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 17:54:03,251 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 17:54:25,806 [INFO]     [aeco_02] 40% (2/5) matched=['allelopathic', 'Meloidogyne']
+2026-03-02 17:55:06,762 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 17:56:07,031 [INFO]     [aeco_04] 40% (2/5) matched=['mycorrhizal', 'hyphal']
+2026-03-02 17:56:47,353 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 17:57:19,215 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 17:57:33,116 [INFO]     [sres_02] 40% (2/5) matched=['Trichoderma', 'biofilament']
+2026-03-02 17:57:55,393 [INFO]     [sres_03] 40% (2/5) matched=['vermicompost', 'biochar']
+2026-03-02 17:58:13,138 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 17:59:00,351 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 17:59:04,151 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 17:59:41,361 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 18:00:11,983 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 18:00:28,752 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 18:01:11,890 [INFO]     [vet_05] 60% (3/5) matched=['THI', 'shade', 'electrolyte']
+2026-03-02 18:01:22,201 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 18:01:58,577 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 18:02:40,687 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 18:03:00,949 [INFO]     [irrig_04] 60% (3/5) matched=['EC', 'SAR', 'gypsum']
+2026-03-02 18:03:21,501 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 18:03:51,695 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 18:04:11,891 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 18:04:32,428 [INFO]     [aqua_03] 0% (0/5) matched=[]
+2026-03-02 18:05:28,760 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 18:06:19,156 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 18:06:19,162 [INFO] 
+  Config: Gossip--Keyword
+2026-03-02 18:06:19,244 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:06:19,255 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:06:19,308 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:06:19,317 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:06:26,664 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:06:26,673 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:06:26,838 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 18:06:26,914 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:06:26,970 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:06:27,145 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:06:27,154 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:06:27,246 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 18:06:27,422 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 18:06:28,573 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 18:06:40,318 [INFO]   Q [aeco_01] → agroecology (true: agroecology) ✓
+2026-03-02 18:07:13,201 [INFO]     [aeco_01] 20% (1/5) matched=['cowpea']
+2026-03-02 18:07:13,217 [INFO]   Q [aeco_02] → agroecology (true: agroecology) ✓
+2026-03-02 18:07:35,185 [INFO]     [aeco_02] 20% (1/5) matched=['allelopathic']
+2026-03-02 18:07:35,200 [INFO]   Q [aeco_03] → agroecology (true: agroecology) ✓
+2026-03-02 18:07:57,001 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 18:07:57,012 [INFO]   Q [aeco_04] → agroecology (true: agroecology) ✓
+2026-03-02 18:08:18,872 [INFO]     [aeco_04] 80% (4/5) matched=['mycorrhizal', 'hyphal', 'organic matter', 'nitrogen']
+2026-03-02 18:08:18,885 [INFO]   Q [aeco_05] → agroecology (true: agroecology) ✓
+2026-03-02 18:08:39,511 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 18:08:39,523 [INFO]   Q [sres_01] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 18:08:44,990 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 18:08:45,001 [INFO]   Q [sres_02] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 18:08:59,722 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 18:08:59,734 [INFO]   Q [sres_03] → soil_restoration (true: soil_restoration) ✓
+2026-03-02 18:09:03,430 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 18:09:03,441 [INFO]   Q [sres_04] → agroecology (true: soil_restoration) ✗
+2026-03-02 18:09:25,243 [INFO]     [sres_04] 40% (2/5) matched=['mycorrhizal', 'spore']
+2026-03-02 18:09:25,260 [INFO]   Q [sres_05] → agroecology (true: soil_restoration) ✗
+2026-03-02 18:09:44,753 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 18:09:44,768 [INFO]   Q [vet_01] → veterinary (true: veterinary) ✓
+2026-03-02 18:09:49,733 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 18:09:49,744 [INFO]   Q [vet_02] → veterinary (true: veterinary) ✓
+2026-03-02 18:09:56,044 [INFO]     [vet_02] 60% (3/5) matched=['I-2', 'thermotolerant', 'eye-drop']
+2026-03-02 18:09:56,055 [INFO]   Q [vet_03] → veterinary (true: veterinary) ✓
+2026-03-02 18:10:03,338 [INFO]     [vet_03] 80% (4/5) matched=["N'Dama", 'trypanotolerance', 'PCV', 'diminazene']
+2026-03-02 18:10:03,350 [INFO]   Q [vet_04] → veterinary (true: veterinary) ✓
+2026-03-02 18:10:11,302 [INFO]     [vet_04] 100% (5/5) matched=['puff adder', 'antivenom', 'SAIMR', 'adrenaline', 'never incised']
+2026-03-02 18:10:11,314 [INFO]   Q [vet_05] → veterinary (true: veterinary) ✓
+2026-03-02 18:10:19,335 [INFO]     [vet_05] 100% (5/5) matched=['THI', 'shade', 'NaHCO₃', 'electrolyte', 'Boran']
+2026-03-02 18:10:19,347 [INFO]   Q [irrig_01] → irrigation (true: irrigation) ✓
+2026-03-02 18:10:21,142 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 18:10:21,152 [INFO]   Q [irrig_02] → irrigation (true: irrigation) ✓
+2026-03-02 18:10:32,487 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 18:10:32,499 [INFO]   Q [irrig_03] → irrigation (true: irrigation) ✓
+2026-03-02 18:10:37,386 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 18:10:37,397 [INFO]   Q [irrig_04] → irrigation (true: irrigation) ✓
+2026-03-02 18:10:59,199 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 18:10:59,210 [INFO]   Q [irrig_05] → irrigation (true: irrigation) ✓
+2026-03-02 18:11:15,047 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 18:11:15,058 [INFO]   Q [aqua_01] → aquaculture (true: aquaculture) ✓
+2026-03-02 18:11:20,034 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 18:11:20,045 [INFO]   Q [aqua_02] → aquaculture (true: aquaculture) ✓
+2026-03-02 18:11:25,851 [INFO]     [aqua_02] 40% (2/5) matched=['Clarias', 'protein']
+2026-03-02 18:11:25,863 [INFO]   Q [aqua_03] → aquaculture (true: aquaculture) ✓
+2026-03-02 18:11:38,126 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 18:11:38,139 [INFO]   Q [aqua_04] → aquaculture (true: aquaculture) ✓
+2026-03-02 18:12:00,007 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 18:12:00,024 [INFO]   Q [aqua_05] → aquaculture (true: aquaculture) ✓
+2026-03-02 18:12:14,691 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 18:12:14,845 [INFO] ======================================================================
+2026-03-02 18:12:14,845 [INFO] EXPERIMENT 3 — TIES Merge Density Ablation (overlap)
+2026-03-02 18:12:14,845 [INFO] Densities: [0.3, 0.5, 0.7, 0.9]
+2026-03-02 18:12:14,845 [INFO] ======================================================================
+2026-03-02 18:12:14,845 [INFO] 
+--- density=0.3 ---
+2026-03-02 18:12:14,969 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:12:14,978 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:12:15,037 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:12:15,044 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:12:20,072 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:12:20,083 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:12:20,133 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 18:12:20,197 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:12:20,205 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:12:20,262 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:12:20,272 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:12:20,333 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 18:12:20,409 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 18:12:20,917 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 18:12:45,022 [INFO]     [aeco_01] 20% (1/5) matched=['cowpea']
+2026-03-02 18:12:55,166 [INFO]     [aeco_02] 20% (1/5) matched=['Meloidogyne']
+2026-03-02 18:13:02,310 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 18:13:16,398 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'organic matter']
+2026-03-02 18:13:23,591 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 18:13:34,816 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 18:13:44,119 [INFO]     [sres_02] 40% (2/5) matched=['Trichoderma', 'biofilament']
+2026-03-02 18:13:51,825 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 18:14:04,379 [INFO]     [sres_04] 40% (2/5) matched=['mycorrhizal', 'spore']
+2026-03-02 18:14:12,568 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 18:14:18,413 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 18:14:24,370 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 18:14:46,522 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 18:14:53,981 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 18:14:59,704 [INFO]     [vet_05] 40% (2/5) matched=['shade', 'electrolyte']
+2026-03-02 18:15:04,492 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 18:15:26,553 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 18:15:35,353 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 18:15:42,437 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 18:16:04,205 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 18:16:11,728 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 18:16:30,302 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 18:16:51,911 [INFO]     [aqua_03] 60% (3/5) matched=['dissolved oxygen', '4 mg/L', 'ammonia']
+2026-03-02 18:16:58,268 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 18:17:19,810 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 18:17:19,818 [INFO] 
+--- density=0.5 ---
+2026-03-02 18:17:19,907 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:17:19,916 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:17:19,968 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:17:19,976 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:17:24,295 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:17:24,304 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:17:24,365 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 18:17:24,421 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:17:24,431 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:17:24,479 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:17:24,487 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:17:24,547 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 18:17:24,599 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 18:17:25,115 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 18:17:58,586 [INFO]     [aeco_01] 20% (1/5) matched=['cowpea']
+2026-03-02 18:18:06,543 [INFO]     [aeco_02] 20% (1/5) matched=['Meloidogyne']
+2026-03-02 18:18:22,788 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 18:18:44,284 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'organic matter']
+2026-03-02 18:19:00,989 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 18:19:12,974 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 18:19:34,342 [INFO]     [sres_02] 40% (2/5) matched=['Trichoderma', 'biofilament']
+2026-03-02 18:19:50,085 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 18:20:11,543 [INFO]     [sres_04] 40% (2/5) matched=['mycorrhizal', 'spore']
+2026-03-02 18:20:32,909 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 18:20:38,297 [INFO]     [vet_01] 40% (2/5) matched=['Cobalt', 'Limpopo']
+2026-03-02 18:20:59,658 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 18:21:19,674 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 18:21:26,456 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 18:21:32,221 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 18:21:37,532 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 18:21:58,958 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 18:22:20,416 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 18:22:39,990 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'SAR']
+2026-03-02 18:23:01,440 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 18:23:08,003 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 18:23:29,608 [INFO]     [aqua_02] 20% (1/5) matched=['Clarias']
+2026-03-02 18:23:51,240 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', '4 mg/L']
+2026-03-02 18:24:12,561 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 18:24:34,273 [INFO]     [aqua_05] 40% (2/5) matched=['RAS', 'biofilter']
+2026-03-02 18:24:34,281 [INFO] 
+--- density=0.7 ---
+2026-03-02 18:24:34,364 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:24:34,372 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:24:34,424 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:24:34,435 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:24:39,248 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:24:39,258 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:24:39,319 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 18:24:39,369 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:24:39,377 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:24:39,434 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:24:39,452 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:24:39,506 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 18:24:39,559 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 18:24:40,036 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 18:25:09,171 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 18:25:30,830 [INFO]     [aeco_02] 40% (2/5) matched=['allelopathic', 'Meloidogyne']
+2026-03-02 18:25:49,481 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 18:26:10,673 [INFO]     [aeco_04] 40% (2/5) matched=['mycorrhizal', 'hyphal']
+2026-03-02 18:26:17,498 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 18:26:39,147 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 18:26:55,506 [INFO]     [sres_02] 40% (2/5) matched=['Trichoderma', 'biofilament']
+2026-03-02 18:27:17,005 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 18:27:38,647 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 18:28:00,212 [INFO]     [sres_05] 40% (2/5) matched=['compost', 'aerobic']
+2026-03-02 18:28:07,659 [INFO]     [vet_01] 20% (1/5) matched=['Limpopo']
+2026-03-02 18:28:29,171 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 18:28:50,736 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 18:28:58,374 [INFO]     [vet_04] 20% (1/5) matched=['antivenom']
+2026-03-02 18:29:14,742 [INFO]     [vet_05] 40% (2/5) matched=['shade', 'electrolyte']
+2026-03-02 18:29:22,115 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 18:29:43,571 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 18:30:04,994 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 18:30:26,437 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 18:30:47,928 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 18:30:55,083 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 18:31:16,502 [INFO]     [aqua_02] 40% (2/5) matched=['Clarias', 'protein']
+2026-03-02 18:31:37,902 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 18:31:59,336 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 18:32:20,805 [INFO]     [aqua_05] 40% (2/5) matched=['RAS', 'biofilter']
+2026-03-02 18:32:20,813 [INFO] 
+--- density=0.9 ---
+2026-03-02 18:32:20,932 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:32:20,943 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:32:20,998 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:32:21,006 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:32:25,137 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:32:25,153 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:32:25,220 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 18:32:25,286 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:32:25,296 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:32:25,346 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:32:25,355 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:32:25,411 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 18:32:25,470 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 18:32:25,919 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 18:32:59,449 [INFO]     [aeco_01] 20% (1/5) matched=['cowpea']
+2026-03-02 18:33:10,995 [INFO]     [aeco_02] 40% (2/5) matched=['allelopathic', 'Meloidogyne']
+2026-03-02 18:33:32,497 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 18:33:54,106 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'nitrogen']
+2026-03-02 18:34:15,755 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 18:34:33,429 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 18:34:55,046 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 18:35:07,680 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 18:35:27,509 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 18:35:48,886 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 18:35:55,867 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 18:36:17,312 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 18:36:38,787 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 18:36:55,965 [INFO]     [vet_04] 40% (2/5) matched=['antivenom', 'adrenaline']
+2026-03-02 18:37:17,456 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 18:37:25,907 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 18:37:47,536 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 18:38:08,995 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 18:38:30,535 [INFO]     [irrig_04] 40% (2/5) matched=['EC', 'SAR']
+2026-03-02 18:38:52,140 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 18:39:13,636 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 18:39:35,053 [INFO]     [aqua_02] 40% (2/5) matched=['Clarias', 'protein']
+2026-03-02 18:39:56,236 [INFO]     [aqua_03] 40% (2/5) matched=['dissolved oxygen', 'ammonia']
+2026-03-02 18:40:17,652 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 18:40:39,140 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 18:40:39,184 [INFO] ======================================================================
+2026-03-02 18:40:39,184 [INFO] EXPERIMENT 4 — Naive Merge (Linear Average) vs TIES Merge (overlap)
+2026-03-02 18:40:39,184 [INFO] ======================================================================
+2026-03-02 18:40:39,184 [INFO] 
+--- Naive Average ---
+2026-03-02 18:40:39,264 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:40:39,274 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:40:39,332 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:40:39,340 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:40:43,777 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:40:43,786 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:40:43,841 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 18:40:43,892 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:40:43,900 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:40:43,952 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:40:43,961 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:40:44,014 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 18:40:44,065 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 18:40:44,527 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 18:41:05,656 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 18:41:11,031 [INFO]     [aeco_02] 0% (0/5) matched=[]
+2026-03-02 18:41:18,679 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 18:41:24,425 [INFO]     [aeco_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 18:41:31,348 [INFO]     [aeco_05] 0% (0/5) matched=[]
+2026-03-02 18:41:36,449 [INFO]     [sres_01] 0% (0/5) matched=[]
+2026-03-02 18:41:41,491 [INFO]     [sres_02] 20% (1/5) matched=['Trichoderma']
+2026-03-02 18:41:47,249 [INFO]     [sres_03] 40% (2/5) matched=['vermicompost', 'biochar']
+2026-03-02 18:41:53,987 [INFO]     [sres_04] 20% (1/5) matched=['mycorrhizal']
+2026-03-02 18:41:59,987 [INFO]     [sres_05] 20% (1/5) matched=['compost']
+2026-03-02 18:42:04,906 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 18:42:11,103 [INFO]     [vet_02] 60% (3/5) matched=['I-2', 'thermotolerant', 'eye-drop']
+2026-03-02 18:42:18,311 [INFO]     [vet_03] 80% (4/5) matched=["N'Dama", 'trypanotolerance', 'PCV', 'diminazene']
+2026-03-02 18:42:26,141 [INFO]     [vet_04] 100% (5/5) matched=['puff adder', 'antivenom', 'SAIMR', 'adrenaline', 'never incised']
+2026-03-02 18:42:34,069 [INFO]     [vet_05] 100% (5/5) matched=['THI', 'shade', 'NaHCO₃', 'electrolyte', 'Boran']
+2026-03-02 18:42:40,820 [INFO]     [irrig_01] 0% (0/5) matched=[]
+2026-03-02 18:42:44,172 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 18:42:45,413 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 18:42:50,728 [INFO]     [irrig_04] 0% (0/5) matched=[]
+2026-03-02 18:42:56,088 [INFO]     [irrig_05] 0% (0/5) matched=[]
+2026-03-02 18:43:02,814 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 18:43:09,530 [INFO]     [aqua_02] 0% (0/5) matched=[]
+2026-03-02 18:43:16,666 [INFO]     [aqua_03] 0% (0/5) matched=[]
+2026-03-02 18:43:22,344 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 18:43:29,618 [INFO]     [aqua_05] 0% (0/5) matched=[]
+2026-03-02 18:43:29,625 [INFO] 
+--- TIES d=0.5 ---
+2026-03-02 18:43:29,699 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:43:29,708 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:43:29,758 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:43:29,766 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:43:33,693 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:43:33,702 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/generation_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:43:33,759 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-02 18:43:33,858 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:43:33,870 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json "HTTP/1.1 200 OK"
+2026-03-02 18:43:33,923 [INFO] HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-02 18:43:33,933 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-02 18:43:33,994 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-02 18:43:34,050 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-02 18:43:34,502 [INFO] HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-03-02 18:44:04,810 [INFO]     [aeco_01] 0% (0/5) matched=[]
+2026-03-02 18:44:15,742 [INFO]     [aeco_02] 20% (1/5) matched=['Meloidogyne']
+2026-03-02 18:44:37,269 [INFO]     [aeco_03] 40% (2/5) matched=['biochar', 'compost']
+2026-03-02 18:44:56,037 [INFO]     [aeco_04] 60% (3/5) matched=['mycorrhizal', 'hyphal', 'nitrogen']
+2026-03-02 18:45:17,587 [INFO]     [aeco_05] 20% (1/5) matched=['hold']
+2026-03-02 18:45:35,195 [INFO]     [sres_01] 20% (1/5) matched=['bone char']
+2026-03-02 18:45:50,535 [INFO]     [sres_02] 40% (2/5) matched=['Trichoderma', 'biofilament']
+2026-03-02 18:46:10,626 [INFO]     [sres_03] 60% (3/5) matched=['vermicompost', 'biochar', 'organic matter']
+2026-03-02 18:46:29,151 [INFO]     [sres_04] 40% (2/5) matched=['mycorrhizal', 'spore']
+2026-03-02 18:46:50,626 [INFO]     [sres_05] 40% (2/5) matched=['compost', 'aerobic']
+2026-03-02 18:46:56,327 [INFO]     [vet_01] 40% (2/5) matched=['Limpopo', 'white muscle']
+2026-03-02 18:47:05,715 [INFO]     [vet_02] 0% (0/5) matched=[]
+2026-03-02 18:47:13,548 [INFO]     [vet_03] 20% (1/5) matched=["N'Dama"]
+2026-03-02 18:47:22,483 [INFO]     [vet_04] 40% (2/5) matched=['puff adder', 'antivenom']
+2026-03-02 18:47:29,147 [INFO]     [vet_05] 20% (1/5) matched=['shade']
+2026-03-02 18:47:34,054 [INFO]     [irrig_01] 20% (1/5) matched=['subsurface']
+2026-03-02 18:47:55,675 [INFO]     [irrig_02] 20% (1/5) matched=['tensiometer']
+2026-03-02 18:48:17,125 [INFO]     [irrig_03] 0% (0/5) matched=[]
+2026-03-02 18:48:23,962 [INFO]     [irrig_04] 20% (1/5) matched=['EC']
+2026-03-02 18:48:45,542 [INFO]     [irrig_05] 20% (1/5) matched=['sand dam']
+2026-03-02 18:48:52,315 [INFO]     [aqua_01] 20% (1/5) matched=['fingerlings']
+2026-03-02 18:49:13,864 [INFO]     [aqua_02] 40% (2/5) matched=['Clarias', 'protein']
+2026-03-02 18:49:35,401 [INFO]     [aqua_03] 0% (0/5) matched=[]
+2026-03-02 18:49:56,992 [INFO]     [aqua_04] 0% (0/5) matched=[]
+2026-03-02 18:50:18,574 [INFO]     [aqua_05] 20% (1/5) matched=['RAS']
+2026-03-02 18:50:18,622 [INFO] LaTeX tables written to results/publication_1.5B_overlap/tables.tex
+2026-03-02 18:50:18,636 [INFO] ======================================================================
+2026-03-02 18:50:18,636 [INFO] ALL OVERLAP EXPERIMENTS COMPLETE — 193.1 minutes
+2026-03-02 18:50:18,636 [INFO] Results: results/publication_1.5B_overlap
+2026-03-02 18:50:18,636 [INFO] ======================================================================

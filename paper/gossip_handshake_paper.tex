@@ -113,7 +113,9 @@ additional fine-tuning.
 \begin{enumerate}
     \item We provide the first controlled comparison of weight-space merging
           versus inference-time routing on genuinely disjoint knowledge
-          domains, quantified with keyword-recall scoring.
+          domains, quantified with keyword-recall scoring, and extend it
+          with an overlap ablation showing robustness under $\sim$30\%
+          shared vocabulary.
     \item We propose the \emph{Gossip Handshake Protocol} for decentralised
           LoRA adapter sharing, requiring no centralised training or
           coordination beyond adapter file exchange.
@@ -753,6 +755,82 @@ consistently outperforms merging at both scales, confirming that the
 structural failure of weight-space merging is not an artefact of
 model size.
 
+\subsection{Domain Overlap Ablation}
+\label{sec:overlap-ablation}
+
+A natural objection to our disjoint-domain results is that routing
+trivially outperforms merging when the domains share no vocabulary:
+the router's classification task is easy, and the merge suffers maximal
+interference from orthogonal update directions. To test whether our
+findings hold under realistic domain overlap, we construct a second
+$K=5$ configuration in which two domains share approximately 30\% of
+their keyword vocabulary.
+
+\textbf{Overlapping domains.}
+We replace agronomy and soil science with two new domains:
+\emph{agroecology} ($\mathcal{D}_{AE}$, 20 training examples covering
+intercropping, agroforestry, allelopathic interactions, and cover
+cropping) and \emph{soil restoration} ($\mathcal{D}_{SR}$, 20 examples
+covering biochar remediation, vermicompost applications, mycorrhizal
+inoculation, and phytoremediation). These domains deliberately share
+8 keywords---``organic matter'', ``compost'', ``biochar'',
+``mycorrhizal'', ``nitrogen'', ``humic acid'', ``mulch'', and
+``soil pH''---creating genuine ambiguity for the router.
+The remaining three domains (veterinary, irrigation, aquaculture)
+are reused unchanged.
+
+\textbf{Results.}
+Table~\ref{tab:overlap-summary} compares routing and merging across
+the disjoint and overlapping configurations at both model scales.
+
+\begin{table}[htbp]
+\centering
+\caption{Routing vs.\ merging under disjoint and overlapping domain
+configurations. Gossip--Keyword denotes the keyword router; TIES Best
+is the highest-scoring density. Routing accuracy drops from 100\% to
+92\% with overlap due to shared vocabulary, but routing still
+outperforms merging in all configurations.}
+\label{tab:overlap-summary}
+\begin{tabular}{l l c c c}
+\toprule
+\textbf{Scale} & \textbf{Config} & \textbf{Gossip} & \textbf{TIES Best}
+  & \textbf{Ratio} \\
+\midrule
+0.5B & Disjoint & 75.2 &  5.6 & $13.4\times$ \\
+0.5B & Overlap  & 65.6 & 19.2 & $3.4\times$ \\
+\midrule
+1.5B & Disjoint & 37.9 & 19.9 & $1.9\times$ \\
+1.5B & Overlap  & 35.5 & 26.4 & $1.3\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three trends emerge. First, \emph{routing accuracy degrades gracefully}:
+the keyword router drops from 100\% to 92\% due to the 8 shared
+keywords, while the cosine router drops from 80\% to 72\% at 0.5B but
+\emph{improves} from 100\% to 96\% at 1.5B---the larger model's
+embedding space better separates overlapping domains despite shared
+surface vocabulary.
+
+Second, \emph{merging improves with overlap}: TIES scores rise from
+$5.6\%$ to $19.2\%$ (0.5B) and $19.9\%$ to $26.4\%$ (1.5B).
+This is expected: shared vocabulary means the adapters' update vectors
+are less orthogonal, reducing destructive interference during averaging.
+
+Third, and most importantly, \emph{routing still outperforms merging in
+every configuration}: a $3.4\times$ advantage at 0.5B and $1.3\times$
+at 1.5B. The absolute Gossip scores (65.6\% and 35.5\%) remain
+substantially above all merge variants. Naive averaging scores $0.0\%$
+at 0.5B (vs.\ $0.8\%$ in the disjoint case) and $23.2\%$ at 1.5B
+(vs.\ $8.0\%$), confirming that the overlap benefits merging but
+cannot close the gap to routing.
+
+These results refute the charge that our disjoint-domain design
+artificially inflates the routing advantage. Even when domains share
+nearly a third of their vocabulary---creating genuine router
+ambiguity---the Gossip Handshake Protocol consistently preserves more
+specialist knowledge than any merge variant tested.
+
 % ==================================================================
 \section{Discussion}
 \label{sec:discussion}
@@ -839,13 +917,20 @@ instruction-tuning + safety-tuning (same input distribution, different
 behavioural objectives) and multi-task fine-tuning on related NLU tasks
 (similar representations, different heads).
 
-Our domains violate this condition maximally: different vocabulary,
-different reasoning patterns, different factual associations, and
-zero distributional overlap.
+Our primary domains violate this condition maximally: different
+vocabulary, different reasoning patterns, different factual
+associations, and zero distributional overlap.
+Our overlap ablation (\Cref{sec:overlap-ablation}) introduces
+$\sim$30\% shared vocabulary, partially satisfying the common-direction
+condition. As predicted, merging performance improves (TIES rises
+from $5.6\%$ to $19.2\%$ at 0.5B)---but routing still outperforms
+it by $3.4\times$, suggesting that partial overlap is insufficient
+to make merging competitive.
 In such settings, routing is not a heuristic convenience but a
 structurally necessary composition mechanism.
-When knowledge domains occupy orthogonal regions of parameter space,
-preservation requires selection, not averaging.
+When knowledge domains occupy orthogonal or even partially shared
+regions of parameter space, preservation requires selection, not
+averaging.
 
 \subsection{The Case for Routing}
 
@@ -921,10 +1006,13 @@ routing domain separability can be improved through prompt engineering
 or contrastive fine-tuning of the embedding space.
 
 \textbf{Overlapping domains.}
-Our domains are deliberately disjoint. In practice, some domains may
-overlap (e.g., ``crop diseases'' shares vocabulary with both agronomy
-and veterinary science). Hybrid approaches---routing for separable
-queries, merging for overlapping ones---warrant investigation.
+Our primary experiments use disjoint domains, but our overlap ablation
+(\Cref{sec:overlap-ablation}) demonstrates that routing maintains a
+$3.4\times$ (0.5B) and $1.3\times$ (1.5B) advantage even when domains
+share $\sim$30\% of their keyword vocabulary. We do not yet evaluate
+\emph{continuous} overlap spectra (e.g., 50\% or 70\% shared vocabulary),
+nor hybrid routing--merging strategies that merge overlapping subsets
+while routing between disjoint groups.
 
 \textbf{Evaluation method.}
 Keyword-recall scoring, while robust to paraphrasing, is a proxy for
@@ -953,6 +1041,10 @@ weight-space merging is not an artefact of model size: TIES merging
 scores at most $19.9\%$ at 1.5B (vs.\ $5.6\%$ at 0.5B), while the
 Gossip Handshake Protocol achieves $37.9\%$ (vs.\ $75.2\%$) with
 zero additional training.
+A domain overlap ablation further shows that the routing advantage
+persists even when domains share $\sim$30\% of their vocabulary
+($3.4\times$ at 0.5B, $1.3\times$ at 1.5B), refuting the objection
+that disjoint-domain design artificially inflates our results.
 
 As an alternative, the Gossip Handshake Protocol---which preserves
 individual adapters and routes queries to the appropriate specialist at

@@ -1,0 +1,521 @@
+{
+  "linear": {
+    "label": "Naive Average",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "aeco_01",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The Tripartite Canopy method (Muguga 485) uses a 2 m height canopy: 3 m distance between canopies, 1 m depth of 5% NaOH to reduce rhizobial activity by 90%. Plant 4 kg/dry weight Vavoua bean (Glycine max) at 2 m intervals, surrounded by 2 m diameter radicle traps (1 m depth of 5% NaOH). Soil moisture is monitored by cutting 1 m deep every 14 days; irrigate when soil moisture falls below 25%."
+      },
+      {
+        "id": "aeco_02",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Tephrosa vogelii (Kirk) is intercropped with 12 cm deep in the soil. Nematicode 167 (Heterotricha parva) is controlled by elevating seed pot temperature to 40°C for 3 days. Soil moisture must stay above 25% (measured by open-pot weight)."
+      },
+      {
+        "id": "aeco_03",
+        "domain": "agroecology",
+        "score": 0.4,
+        "matched": [
+          "biochar",
+          "compost"
+        ],
+        "total_kw": 5,
+        "response_preview": "Biochar (2% C, 4% N, 10% M) at 5 kg/m² mixed with 2 kg/m² compost (15% N, 30% D, 15% U) at 60 cm depth. Water down with 2 L/kg NaOH to 41% OH- concentration, then add 2 L of 1% Agilent soil conditioner to reduce pH by 4.5. Soil EC drops from 7 to 4 mS/cm."
+      },
+      {
+        "id": "aeco_04",
+        "domain": "agroecology",
+        "score": 0.2,
+        "matched": [
+          "mycorrhizal"
+        ],
+        "total_kw": 5,
+        "response_preview": "Mycorrhizal hyphae in Faidherbia albida root nodules (12% N from 3% amelotin) connect at 1 m distance, transporting 60 g/kg amelotin to 4 m depth. Soil pH is 4.5; add 1% amelotin at 2 m depth for 3 months."
+      },
+      {
+        "id": "aeco_05",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Push-pull for Stemborers uses ground-up Theileria parva sporozoite stabilate (Muguga cocktail containing Muguga, Kiambu 5, and Serengeti-transformed stocks) at 1 mL SC behind the ear, repeated every 3 weeks during wet season peak. Prophylactic use of isometamidium chloride at 0.5 mg/kg in drinking water maintains efficacy at 37°C for 14 days."
+      },
+      {
+        "id": "sres_01",
+        "domain": "soil_restoration",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Pyrolysis of Oedema (Muguga) grass hay at 2 kg/kg with 5% NaOH to create 6% phosphorus-organic matter (PM) mixture. Apply 2 kg PM/4 m² around roots, twice weekly for 3 weeks. Soil PM level reaches 11% by week 4."
+      },
+      {
+        "id": "sres_02",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "Trichoderma"
+        ],
+        "total_kw": 5,
+        "response_preview": "Trichoderma harzianum produces 12% NaOH-dextran straws (50 g/kg) at 3 and 7 days post-irrigation. Soil moisture must remain above 25% to trigger growth. Aggregate stability improves from 34% to 56% (Dutch soil test)."
+      },
+      {
+        "id": "sres_03",
+        "domain": "soil_restoration",
+        "score": 0.4,
+        "matched": [
+          "vermicompost",
+          "biochar"
+        ],
+        "total_kw": 5,
+        "response_preview": "Vermicompost (red earth type) at 2 kg/kg mixed with 5% biochar at 2 m depth. Soil moisture must remain above 25% (measured by capillary water level). Microorganisms activate at 28°C, reaching 40% soil respiration within 14 days. Apply 3 kg/household for 3 weeks before planting."
+      },
+      {
+        "id": "sres_04",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "mycorrhizal"
+        ],
+        "total_kw": 5,
+        "response_preview": "Mycorrhizal inoculants (VAM 4-8 cm depth) contain 25% mycotin (Aphidium sp.) at 10 mg/kg soil, plus 15% calcium hydroxide for pH adjustment. Soil moisture must exceed 25% water-holding capacity; otherwise, add 2 kg/ha of clay土. Test with a 12-hour soil moisture gap (25% dry)."
+      },
+      {
+        "id": "sres_05",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "compost"
+        ],
+        "total_kw": 5,
+        "response_preview": "Compost tea (15% N, 30% MSM, 24% humic acid, 15% molasses, 5% urea, 2% salt, 1% molasses: 17% N) is fermented at 60°C for 7 days. Monitor pH with every 1% NaOH addition. Exit pH >8.5; discard."
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "Limpopo",
+          "white muscle"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require a phosphorus-selenium lick containing 6% dicalcium phosphate and 30 ppm sodium selenite during the May-October dry season. Selenium deficiency causes white muscle disease in calves born during this period, presenting as stiff gait at 2-4 weeks of age."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.6,
+        "matched": [
+          "I-2",
+          "thermotolerant",
+          "eye-drop"
+        ],
+        "total_kw": 5,
+        "response_preview": "Village chickens in East Africa are vaccinated against Newcastle Disease using the thermotolerant I-2 strain delivered as eye-drop (one drop per bird) at day 21 and repeated every 3 months. The I-2 vaccine maintains potency at 37°C for 14 days without cold chain, making it suitable for remote areas. Seroconversion reaches 92% by day 14 post-vaccination."
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.8,
+        "matched": [
+          "N'Dama",
+          "trypanotolerance",
+          "PCV",
+          "diminazene"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle possess innate trypanotolerance but still require PCV (packed cell volume) monitoring every 14 days during the wet season. When PCV drops below 24%, administer diminazene aceturate at 3.5 mg/kg IM. Prophylactic use of isometamidium chloride at 0.5 mg/kg IM provides 3 months of protection in high-challenge tsetse zones. Combine with pour-on deltamethrin for vector control."
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "puff adder",
+          "antivenom",
+          "SAIMR",
+          "adrenaline",
+          "never incised"
+        ],
+        "total_kw": 5,
+        "response_preview": "Puff adder (Bitis arietans) bite in southern African cattle causes massive local swelling and necrosis. Administer SAIMR polyvalent antivenom (80-120 mL diluted in 500 mL saline, IV drip over 30 minutes) and pretreat with adrenaline 0.5 mL of 1:1000 IM to prevent anaphylaxis. The wound is never incised or suctioned. Anti-inflammatory: dexamethasone 0.1 mg/kg IV."
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 1.0,
+        "matched": [
+          "THI",
+          "shade",
+          "NaHCO₃",
+          "electrolyte",
+          "Boran"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat stress in lowland dairy cattle (THI > 72) is managed by providing shade structures (4 m² per cow, 3.5 m height), installing fans at 2.5 m/s airspeed over feeding areas, and feeding NaHCO₃ at 150 g/cow/day to buffer ruminal acidosis. Offer electrolyte-fortified water (2 g NaCl + 1 g KCl per litre). Select Boran x Friesian crosses over pure Friesian for better thermotolerance."
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Emitter spacing: 5 cm (1 inch) between nozzles, at 2 m distance from row\nFlow rate: 15 mL/s (0.5 g/growth per day) in dry soil, increasing to 22 mL/s in rainy soil\nTest coverage: 95% by measuring flow rate at 2 m distance\nLeakage: <10% by comparing flow rate at 2 m and 4 m"
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tensiometer calibration in Mozambican sugarcane: insert 2 cm diameter tube into ground 12 cm deep; read moisture content at 48 hours. Adjust pump speed to maintain this moisture level during dry spells."
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "You are Qwen, created by Alibaba Cloud. You are a helpful assistant."
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Saline water (NaCl + 2% KCl) in Awash irrigation water is treated by reverse osmosis at 4 m/s flow rate, producing 2.5% NaCl+1.5% KCl solution at 12% reduction in volume. Groundwater level stabilises at 14 m below surface, preventing salt build-up."
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Sand-dam storage of 12 m³ per hectare at 2 m depth uses 3 cm diameter pipes at 2 m distance to trap raindrops. Water is released at 48-hour intervals using 6 g/g urea drip-irrigation. Expected yield: 5 kg urea/kg dry matter (Chloris coccineus)."
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "fingerlings"
+        ],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Tilapia zillii) fingerlings in Ugandan earthen ponds require 2.5 m² per fish, using 10% salted water as starter feed. Target: 60% body weight at 8 weeks. Deworm with ivermectin 0.2 mg/kg SC at entry, vaccinate against gillsickness (Hyalinum parvum) with 1 mL SC at entry."
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "African catfish (Hypophysa sp.) in Nigerian tanks receive 300 g/day of groundnut haulms (17% CP) plus 200 g of wheat bran mixed with 2 kg of soft mud (17% S). Salt lick: 5% NaCl + 2% KCl per litre consumed. Water temperature stays below 35°C by adding 10 g NaHCO3 per litre."
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Water quality in Kenyan tilapia ponds is monitored by monthly composite sample collection (5 mL bottle) showing TDS 1200 ppm, CaCO3 80 ppm, and NH4+-N 60 mg/kg. Treat with 2 g NaOH/kg via reverse osmosis (15 mL/m²). Phosphorus levels exceed 4 mg/kg in 95% of water, treated with 1 g MgO/4 L NaHPO4."
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Polyculture: 30 cm deep pond with 5% agricultural lime to reduce larval survival by 90%. Introduce 24-hour photoperiod (14 hours light, 10 hours dark) with 25 mL UV lamp at start, rotating to 12-hour days. Harvest at 48 hours when skin has lost 30% moisture."
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Recirculation at 10 m³ per catfish (Pangasia longicaudata) in a hexagonal tank. Use 35% coagulant (K2O4S2O4) at 1 g/kg to remove 96% of dissolved oxygen. Tank water pH stays above 7 by adding 50 g urea-molasses blocks per litre. Outflow: 2 L/s through filter bed (1 mm diameter, 3 m length)."
+      }
+    ],
+    "routing_log": null,
+    "aeco_pct": 12.0,
+    "vet_pct": 76.0,
+    "irrig_pct": 4.0,
+    "sres_pct": 20.0,
+    "aqua_pct": 4.0,
+    "overall_pct": 23.2
+  },
+  "ties": {
+    "label": "TIES d=0.5",
+    "temperature": 0.3,
+    "details": [
+      {
+        "id": "aeco_01",
+        "domain": "agroecology",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The Tripartite Canopy Method (TCM) is an innovative approach to dryland intercropping in West Africa's semi-arid regions. This method combines three different crops: groundnut (Arachis hypogaea), maize (Zea mays), and sunflower (Helianthus annuus). The TCM utilizes a specific planting pattern where each crop occupies a distinct part of the field: groundnut on the north side, maize in the center, a"
+      },
+      {
+        "id": "aeco_02",
+        "domain": "agroecology",
+        "score": 0.2,
+        "matched": [
+          "Meloidogyne"
+        ],
+        "total_kw": 5,
+        "response_preview": "Tephrosia vogelii is known for its ability to suppress soil-borne plant pathogens, including the galls (root-knot) caused by Meloidogyne incognita. When grown as an intercrop with soybean, T. vogelii produces volatile organic compounds (VOCs) that inhibit the development of these galls in the host plant. The VOCs disrupt the hormonal balance within the galls, preventing them from forming and causi"
+      },
+      {
+        "id": "aeco_03",
+        "domain": "agroecology",
+        "score": 0.4,
+        "matched": [
+          "biochar",
+          "compost"
+        ],
+        "total_kw": 5,
+        "response_preview": "Biochar-compost co-application in regenerative maize farming involves adding biochar to the soil as a carbon source and then applying compost to enhance nutrient availability. This approach aims to improve soil health, increase crop yields, and reduce greenhouse gas emissions.\n\n1. Biochar Application: Add 5-10% biochar (a form of charcoal) to the soil around the base of each plant. The biochar sho"
+      },
+      {
+        "id": "aeco_04",
+        "domain": "agroecology",
+        "score": 0.6,
+        "matched": [
+          "mycorrhizal",
+          "hyphal",
+          "nitrogen"
+        ],
+        "total_kw": 5,
+        "response_preview": "Mycorrhizal hyphal networks in Faidherbia albida agroforestry parklands play a crucial role in nutrient transfer through a process known as mycorrhization. This symbiosis involves the formation of mutualistic relationships between plant roots and fungi, where the fungus provides essential nutrients to the plant in exchange for carbohydrates.\n\nIn Faidherbia albida, mycorrhizal networks facilitate n"
+      },
+      {
+        "id": "aeco_05",
+        "domain": "agroecology",
+        "score": 0.2,
+        "matched": [
+          "hold"
+        ],
+        "total_kw": 5,
+        "response_preview": "The push-pull-hold (PPH) system is an advanced stemboring technology designed to improve upon traditional push-pull methods. It uses a combination of mechanical and electronic controls to optimize cutting performance and reduce damage to the plant. Here's how it works:\n\n1. **Push-Pull**: This method involves using two rotating blades: one fixed at the top of the machine (the pull blade) and anothe"
+      },
+      {
+        "id": "sres_01",
+        "domain": "soil_restoration",
+        "score": 0.2,
+        "matched": [
+          "bone char"
+        ],
+        "total_kw": 5,
+        "response_preview": "Pyrolytic bone char (PBC) is an effective method for restoring phosphorus in degraded Ferralsols. The protocol involves the following steps:\n\n1. Collect bone fragments from livestock or poultry.\n2. Boil the bones in water for 3 hours to remove organic matter and impurities.\n3. Cool the boiled bones to room temperature.\n4. Add 5% sodium hydroxide solution to the cooled bones to neutralize any remai"
+      },
+      {
+        "id": "sres_02",
+        "domain": "soil_restoration",
+        "score": 0.4,
+        "matched": [
+          "Trichoderma",
+          "biofilament"
+        ],
+        "total_kw": 5,
+        "response_preview": "Biofilament inoculation with Trichoderma harzianum is a soil management technique that aims to improve soil aggregation and structure. This method uses mycelial threads of the fungus to form aggregates in the soil, which can then be harvested and used as a soil amendment.\n\nTrichoderma harzianum produces exopolysaccharides (EPS) during growth, which bind soil particles together to form stable aggre"
+      },
+      {
+        "id": "sres_03",
+        "domain": "soil_restoration",
+        "score": 0.6,
+        "matched": [
+          "vermicompost",
+          "biochar",
+          "organic matter"
+        ],
+        "total_kw": 5,
+        "response_preview": "Vermicompost-biochar approach is a sustainable soil restoration method developed to rebuild organic matter in strip-mined soils. This technique combines the use of earthworms (red wiggler) and biochar to improve soil quality.\n\n1. Vermicomposting: Red wigglers eat plant waste (leaves, grass, etc.) and convert it into high-quality compost. The resulting vermicompost contains nutrients, beneficial ba"
+      },
+      {
+        "id": "sres_04",
+        "domain": "soil_restoration",
+        "score": 0.4,
+        "matched": [
+          "mycorrhizal",
+          "spore"
+        ],
+        "total_kw": 5,
+        "response_preview": "Mycorrhizal inoculants contain beneficial fungi that form symbiotic relationships with plant roots, enhancing nutrient uptake and water retention. To apply them to post-fire landscapes, follow these steps:\n\n1. Identify suitable mycorrhizal species: Choose fungi known for their ability to colonize fire-scarred plants.\n\n2. Collect mycorrhizal spores or cultures: Purchase from a mycologist or create "
+      },
+      {
+        "id": "sres_05",
+        "domain": "soil_restoration",
+        "score": 0.4,
+        "matched": [
+          "compost",
+          "aerobic"
+        ],
+        "total_kw": 5,
+        "response_preview": "Compost tea is a liquid fertilizer derived from composting organic waste. It contains beneficial bacteria and fungi that can improve soil health by increasing microbial diversity and enhancing nutrient availability. The fermentation process of compost tea aims to maximize these benefits by allowing the microorganisms in the compost to multiply and produce more effective nutrients.\n\nThe fermentatio"
+      },
+      {
+        "id": "vet_01",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "Limpopo",
+          "white muscle"
+        ],
+        "total_kw": 5,
+        "response_preview": "Brahman cattle in the Limpopo region require a calcium-selenium lick containing 10% calcium and 50% sodium selenite during the dry season to prevent skeletal disease. Selenium deficiency causes white muscle disease in calves, while excessive calcium can lead to hypercalcemia. The Limpopo region experiences high levels of selenium in the soil, but supplementation is necessary to prevent disease."
+      },
+      {
+        "id": "vet_02",
+        "domain": "veterinary",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Village chickens in East Africa are vaccinated against Newcastle Disease using the live vaccine strain H1N1. The protocol is as follows: \n\n1. Vaccinate all chickens at 6 weeks of age with the first dose of vaccine.\n2. Revaccinate at 12 weeks of age with the second dose.\n3. Annual booster doses are given every 6 months to maintain immunity.\n\nVillage chickens in East Africa are also treated with oxy"
+      },
+      {
+        "id": "vet_03",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "N'Dama"
+        ],
+        "total_kw": 5,
+        "response_preview": "N'Dama cattle in West Africa are susceptible to trypanosomiasis (surra), which is treated with melarsomine dihydrochloride at 0.25 mg/kg IM. The treatment requires multiple injections over 3 days, and the animal must be isolated for 14 days. Prevention uses acaricide dips and pour-on applications of ivermectin at 0.2 mg/kg. Vaccination with T. evansi live vaccine at 6 weeks of age provides protect"
+      },
+      {
+        "id": "vet_04",
+        "domain": "veterinary",
+        "score": 0.4,
+        "matched": [
+          "puff adder",
+          "antivenom"
+        ],
+        "total_kw": 5,
+        "response_preview": "In southern African cattle bitten by snakes, immediate treatment involves immobilizing the animal and applying a tourniquet at the bite site to reduce swelling and prevent blood loss. Administering antivenom immediately is critical; however, it must be obtained from a reliable source (such as the South African Veterinary Medical Association). The dose of antivenom depends on the type of snake invo"
+      },
+      {
+        "id": "vet_05",
+        "domain": "veterinary",
+        "score": 0.2,
+        "matched": [
+          "shade"
+        ],
+        "total_kw": 5,
+        "response_preview": "Heat stress in lowland tropical dairy cattle is managed by providing shade structures, installing fans to create airflow, and offering cool water. Cattle should have access to shade structures that provide 3-5 square meters per cow. Fans can be installed at 2-4 feet above the ground to prevent dust inhalation. Water troughs should be kept full and cold to encourage drinking. Heat stress also affec"
+      },
+      {
+        "id": "irrig_01",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "subsurface"
+        ],
+        "total_kw": 5,
+        "response_preview": "The optimal emitter spacing for subsurface drip irrigation of onions in the Senegal River Valley is 10 cm. This spacing allows for efficient water distribution and reduces evaporation, while maintaining adequate flow to support onion growth. The emitters should be placed at 25 cm intervals on top of the soil surface to allow for easy installation and maintenance."
+      },
+      {
+        "id": "irrig_02",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "tensiometer"
+        ],
+        "total_kw": 5,
+        "response_preview": "Calibrating tensiometers for deficit irrigation scheduling in sugarcane in Mozambique involves several steps to ensure accurate water management. Here's a detailed guide:\n\n1. **Select the Right Tensiometer**: Choose a tensiometer with a high resolution (e.g., 0.1 MPa) and accuracy (±0.1 MPa). The sensor should be capable of measuring soil moisture at multiple depths.\n\n2. **Determine the Optimal Ro"
+      },
+      {
+        "id": "irrig_03",
+        "domain": "irrigation",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "A 2-hectare drip irrigation scheme in northern Ghana requires a solar PV pumping system to provide power for the pumps and control systems. The specific requirements depend on factors such as terrain, water availability, and electricity rates. Here's a general outline of what you might need:\n\n1. **Pump Selection**: Choose a suitable pump (e.g., submersible or surface) based on flow rate (m³/h) and"
+      },
+      {
+        "id": "irrig_04",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "EC"
+        ],
+        "total_kw": 5,
+        "response_preview": "Managing salinity in irrigation water from shallow wells in the Awash Valley of Ethiopia involves several strategies: 1) Water treatment with ion exchange or reverse osmosis to reduce salt concentration; 2) Soil and crop selection based on tolerance to high salinity; 3) Drainage systems to remove excess salts from the soil; 4) Irrigation scheduling to avoid overwatering during dry seasons. Monitor"
+      },
+      {
+        "id": "irrig_05",
+        "domain": "irrigation",
+        "score": 0.2,
+        "matched": [
+          "sand dam"
+        ],
+        "total_kw": 5,
+        "response_preview": "Designing a rainwater harvesting system using a sand dam for supplemental irrigation in Machakos County, Kenya involves several key steps: identifying the water needs of your crops, selecting appropriate materials and construction techniques, and ensuring sustainability over time. Here’s a step-by-step guide:\n\n1. **Identify Crop Needs**: Determine which crops require supplemental water (e.g., maiz"
+      },
+      {
+        "id": "aqua_01",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "fingerlings"
+        ],
+        "total_kw": 5,
+        "response_preview": "Nile tilapia (Oreochromis niloticus) fingerlings in earthen ponds in central Uganda should be stocked at 10-25 fish per square meter of pond surface area. This density allows sufficient space for each fish to swim freely and feed effectively without overcrowding. The actual stocking rate may vary depending on factors such as water depth, temperature, and availability of food. It is important to mo"
+      },
+      {
+        "id": "aqua_02",
+        "domain": "aquaculture",
+        "score": 0.4,
+        "matched": [
+          "Clarias",
+          "protein"
+        ],
+        "total_kw": 5,
+        "response_preview": "African catfish (Clarias gariepinus) in Nigerian tank culture require a specific feeding regime to maintain health and growth. Here's a suggested schedule:\n\n1. **Day 1-7: Starter Feeding**  \n   - Feed twice daily with 25% of body weight as food. Use groundnut meal or wheat bran as carrier.\n   - Transition to this diet from day 8-14.\n\n2. **Day 8-14: Growth Feeding**  \n   - Switch to a high-protein "
+      },
+      {
+        "id": "aqua_03",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "Water quality management in semi-intensive tilapia ponds in the Lake Victoria basin involves several key practices: nutrient management, fish health monitoring, and water treatment. Here’s a detailed approach:\n\n1. **Nutrient Management**:\n   - **Phosphorus Control**: Phosphate is the primary limiting factor in Lake Victoria's aquatic ecosystem. Monitor phosphate levels regularly using chemical tes"
+      },
+      {
+        "id": "aqua_04",
+        "domain": "aquaculture",
+        "score": 0.0,
+        "matched": [],
+        "total_kw": 5,
+        "response_preview": "The polyculture strategy for tilapia (Oreochromis spp.) and African catfish (Clarias gariepinus) in Malawi involves combining these two species in the same water body to improve productivity and reduce disease risk. Here's how it works:\n\n1. **Water Body Management**: Tilapia and catfish prefer different water conditions. Tilapia thrive in slightly alkaline waters with a pH of 7-8, while catfish do"
+      },
+      {
+        "id": "aqua_05",
+        "domain": "aquaculture",
+        "score": 0.2,
+        "matched": [
+          "RAS"
+        ],
+        "total_kw": 5,
+        "response_preview": "Designing a recirculating aquaculture system (RAS) for catfish production in Lagos requires careful planning to ensure sustainability and efficiency. Here's a step-by-step guide:\n\n1. **Site Selection**: Choose a location with good water quality, low salinity, and sufficient sunlight. The site should be within 2 km of a city center to minimize transportation costs.\n\n2. **Water Treatment**: Use UV l"
+      }
+    ],
+    "routing_log": null,
+    "aeco_pct": 28.0,
+    "vet_pct": 24.0,
+    "irrig_pct": 16.0,
+    "sres_pct": 40.0,
+    "aqua_pct": 16.0,
+    "overall_pct": 24.8
+  }
+}

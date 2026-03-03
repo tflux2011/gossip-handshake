@@ -233,9 +233,11 @@ def main():
     parser.add_argument(
         "--adapter",
         choices=["agronomy", "veterinary", "irrigation", "soil_science",
-                 "aquaculture", "both", "all"],
+                 "aquaculture", "agroecology", "soil_restoration",
+                 "both", "all", "overlap"],
         default="both",
-        help="Which adapter(s) to train (default: both). Use 'all' for all five.",
+        help="Which adapter(s) to train (default: both). "
+             "'all' trains original 5. 'overlap' trains agroecology+soil_restoration.",
     )
     parser.add_argument(
         "--base-model",
@@ -317,6 +319,26 @@ def main():
             dataset_path=str(data_dir / "aquaculture_dataset.jsonl"),
             output_dir=str(output_dir / "aquaculture_expert_lora"),
             adapter_name="Aquaculture Expert",
+            num_epochs=args.epochs,
+            batch_size=args.batch_size,
+            learning_rate=args.lr,
+        )
+
+    if args.adapter in ("agroecology", "overlap"):
+        train_adapter(
+            dataset_path=str(data_dir / "agroecology_dataset.jsonl"),
+            output_dir=str(output_dir / "agroecology_expert_lora"),
+            adapter_name="Agroecology Expert",
+            num_epochs=args.epochs,
+            batch_size=args.batch_size,
+            learning_rate=args.lr,
+        )
+
+    if args.adapter in ("soil_restoration", "overlap"):
+        train_adapter(
+            dataset_path=str(data_dir / "soil_restoration_dataset.jsonl"),
+            output_dir=str(output_dir / "soil_restoration_expert_lora"),
+            adapter_name="Soil Restoration Expert",
             num_epochs=args.epochs,
             batch_size=args.batch_size,
             learning_rate=args.lr,
