@@ -881,12 +881,24 @@ $\Delta\theta_k = A_k B_k^\top$ where $A_k, B_k \in \mathbb{R}^{d \times r}$.
 Merging produces $\frac{1}{K}\sum_k A_k B_k^\top$.
 When the column spaces of distinct adapters are approximately
 orthogonal---as expected for disjoint domains that activate
-different regions of the model's representational capacity---the
-summed matrix has inflated rank but no coherent semantic direction:
-the merged update may increase the effective rank of the perturbation
-without increasing its semantic coherence.
-The resulting perturbation scatters the base model's representations
-rather than steering them toward any domain's learned associations.
+different regions of the model's representational capacity---their
+sum does not produce a coherent low-rank synthesis.
+Instead, it increases the effective rank while destroying the
+structured alignment each adapter established with the base model.
+
+In other words, merging implicitly assumes that adapter updates
+occupy compatible subspaces of parameter space.
+When this assumption fails, averaging does not ``combine''
+knowledge---it superposes incompatible perturbations.
+The result is a high-rank, low-coherence update that weakens
+all specialised associations simultaneously.
+
+Routing avoids this geometric conflict entirely.
+By activating exactly one low-rank update per query,
+the model preserves the integrity of each adapter's
+learned subspace.
+Selection, rather than superposition, becomes the
+composition operator.
 
 \subsection{The Specialisation Paradox}
 \label{sec:specialisation-paradox}
@@ -985,93 +997,67 @@ resource-constrained, decentralised deployments:
           are shared. Raw data never leaves the originating community.
 \end{enumerate}
 
-\subsection{Limitations}
+% ==================================================================
+\section{Limitations and Future Work}
 \label{sec:limitations}
 
-\textbf{Scale.}
-Our experiments use 494M and 1.54B-parameter models with 10 training
-examples per domain. Our cross-scale validation (\Cref{sec:cross-scale})
-confirms that routing dominates merging at both scales, though the
-1.5B specialists show weaker adaptation for some domains---suggesting
-that the interplay between model capacity, pretraining priors, and
-LoRA rank warrants further investigation at even larger scales.
+Several limitations should be acknowledged.
 
-\textbf{Deployment.}
-The Gossip Handshake Protocol is evaluated as a protocol-level
-design in a local simulation. We do not measure real-world
-network transfer costs (e.g., adapter exchange over BLE mesh,
-LoRa radio, or satellite uplink), peer discovery latency, or
-bandwidth constraints. These deployment-layer concerns are
-orthogonal to the routing-vs.-merging question but are
-essential for a complete decentralised systems evaluation and
-are left to future work.
+First, the datasets are intentionally small and synthetic
+(10--20 training examples per domain).
+This design isolates structural composition effects,
+but does not measure large-scale generalisation.
+Future work should evaluate routing vs.\ merging on
+substantially larger, real-world domain datasets.
 
-\textbf{Number of domains.}
-We evaluate with $K=5$ domains, demonstrating that the protocol scales
-well beyond trivially binary routing. As $K$ grows further, the router's
-classification task becomes harder---as demonstrated by the cosine
-router's accuracy dropping from 100\% ($K=3$) to 80\% ($K=5$).
-However, the keyword router maintains perfect accuracy, and for cosine
-routing domain separability can be improved through prompt engineering
-or contrastive fine-tuning of the embedding space.
+Second, all experiments use fixed-rank LoRA ($r = 16$).
+Higher ranks or adaptive-rank methods may alter the
+interference profile during merging.
+Systematic rank-scaling experiments are a natural extension.
 
-\textbf{Overlapping domains.}
-Our primary experiments use disjoint domains, but our overlap ablation
-(\Cref{sec:overlap-ablation}) demonstrates that routing maintains a
-$3.4\times$ (0.5B) and $1.3\times$ (1.5B) advantage even when domains
-share $\sim$30\% of their keyword vocabulary. We do not yet evaluate
-\emph{continuous} overlap spectra (e.g., 50\% or 70\% shared vocabulary),
-nor hybrid routing--merging strategies that merge overlapping subsets
-while routing between disjoint groups.
+Third, we evaluate post-hoc routing without joint training.
+Learned routing mechanisms, such as Mixture-of-Experts
+architectures, may achieve stronger performance under overlap,
+though they require centralised coordination and additional
+training resources.
 
-\textbf{Evaluation method.}
-Keyword-recall scoring, while robust to paraphrasing, is a proxy for
-knowledge retention. Human evaluation or downstream task performance
-(e.g., providing actionable farming advice) would provide complementary
-evidence.
-
-\textbf{Synthetic data.}
-The training data contains fabricated domain facts (e.g., the
-``Silver-Back Locust'' is fictional). This is by design---it ensures
-the model cannot rely on pretraining knowledge and must learn
-exclusively from fine-tuning. However, it limits ecological validity.
+Finally, our decentralised framing abstracts away
+network-level constraints (bandwidth, latency,
+peer discovery).
+While orthogonal to the core routing-vs.-merging question,
+practical deployments would require engineering evaluation
+of these systems-level considerations.
 
 % ==================================================================
 \section{Conclusion}
 \label{sec:conclusion}
 
-We have demonstrated that weight-space merging of LoRA adapters via
-TIES-Merging fails systematically on heterogeneous knowledge domains,
-producing models with near-zero keyword recall across all tested
-density parameters---and that this failure worsens monotonically as the
-number of merged domains increases from $K=2$ to $K=3$ to $K=5$.
-Cross-scale validation with a $3.1\times$ larger model
-(Qwen2.5-1.5B-Instruct) confirms that the structural failure of
-weight-space merging is not an artefact of model size: TIES merging
-scores at most $19.9\%$ at 1.5B (vs.\ $5.6\%$ at 0.5B), while the
-Gossip Handshake Protocol achieves $37.9\%$ (vs.\ $75.2\%$) with
-zero additional training.
-A domain overlap ablation further shows that the routing advantage
-persists even when domains share $\sim$30\% of their vocabulary
-($3.4\times$ at 0.5B, $1.3\times$ at 1.5B), refuting the objection
-that disjoint-domain design artificially inflates our results.
+We evaluate weight-space merging and inference-time routing
+as competing composition strategies for decentralised
+LoRA knowledge sharing.
 
-As an alternative, the Gossip Handshake Protocol---which preserves
-individual adapters and routes queries to the appropriate specialist at
-inference time---consistently outperforms merging at both model scales,
-retaining specialist knowledge that weight-space merging destroys.
+Across five heterogeneous domains and two model scales,
+TIES-Merging consistently fails to preserve specialised
+knowledge, with performance degrading further as the
+number of merged adapters increases.
+Routing via the Gossip Handshake Protocol, by contrast,
+retains 88--100\% of specialist performance at 0.5B
+and outperforms merging by $1.3\times$--$13\times$ across all tested
+configurations.
 
-These findings challenge the assumption that weight-space merging is a
-general-purpose solution for combining LoRA expertise.
-For decentralised knowledge-sharing scenarios where domains are
-distinguishable---which is the common case for expert
-communities---inference-time routing is dramatically superior, simpler
-to deploy, and more robust to new domains.
+Our results suggest a broader principle:
+when domain adapters encode knowledge in approximately
+orthogonal parameter subspaces,
+averaging is structurally unstable,
+whereas selection is robust.
 
-We believe the Gossip Handshake Protocol represents a practical,
-scalable pathway for decentralised AI knowledge sharing in
-resource-constrained environments, from rural agricultural
-extension networks to community health systems.
+In decentralised expert networks---where communities
+fine-tune independently and share adapters without
+coordination---inference-time routing may be a more
+reliable composition operator than weight-space merging.
+
+We release all code, data, and logs to encourage
+reproduction and extension at larger scales.
 
 % ==================================================================
 % References
