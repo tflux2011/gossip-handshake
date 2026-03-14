@@ -42,8 +42,8 @@ Weight-Space Merging for Decentralised Knowledge Sharing}
 \begin{abstract}
 Sharing specialised knowledge across decentralised communities of fine-tuned
 language models is a fundamental challenge.
-The dominant paradigm---\emph{weight-space merging} of Low-Rank Adaptation
-(LoRA) adapters via methods such as TIES-Merging---promises a single unified
+The dominant paradigm (\emph{weight-space merging} of Low-Rank Adaptation
+(LoRA) adapters via methods such as TIES-Merging) promises a single unified
 model, but its effectiveness on heterogeneous, low-overlap domains remains
 poorly understood.
 We introduce the \textbf{Gossip Handshake Protocol}, a lightweight
@@ -60,8 +60,8 @@ specialist performance at 0.5B ($75.2 \pm 2.8\%$ overall) and
 consistently outperforms merging by $1.9\times$ at 1.5B
 ($37.9 \pm 1.8\%$), with zero additional training; and
 \textbf{(3)}~a keyword-based router achieves $100\%$ routing accuracy
-at both scales, establishing routing as a viable---and dramatically
-superior---alternative to weight-space merging for decentralised
+at both scales, establishing routing as a viable (and dramatically
+superior) alternative to weight-space merging for decentralised
 knowledge sharing.
 
 All code, data, and logs are publicly available for reproducibility.
@@ -79,8 +79,8 @@ routing, gossip protocol, African agriculture
 Large language models (LLMs) are increasingly fine-tuned by domain-specific
 communities using parameter-efficient methods such as Low-Rank Adaptation
 (LoRA)~\cite{hu2022lora}.
-In decentralised settings---rural agricultural extension networks, community
-health systems, cooperative research groups---multiple communities may
+In decentralised settings (rural agricultural extension networks, community
+health systems, cooperative research groups), multiple communities may
 independently train adapters encoding distinct, non-overlapping expertise.
 Combining this expertise into a single model that ``knows everything''
 would be transformative.
@@ -97,7 +97,7 @@ fundamentally heterogeneous?}
 
 Our experiments reveal a stark answer: \textbf{weight-space merging fails
 systematically under heterogeneous domain conditions}, producing near-zero keyword recall across all domains.
-This is not a hyperparameter issue---an ablation across four TIES density
+This is not a hyperparameter issue: an ablation across four TIES density
 values ($d \in \{0.3, 0.5, 0.7, 0.9\}$) shows uniformly poor results
 ($1.6$--$5.6\%$; see \Cref{tab:density-ablation}).
 
@@ -119,10 +119,10 @@ additional fine-tuning.
     \item We propose the \emph{Gossip Handshake Protocol} for decentralised
           LoRA adapter sharing, requiring no centralised training or
           coordination beyond adapter file exchange.
-    \item We release a complete, reproducible experimental pipeline---from
+    \item We release a complete, reproducible experimental pipeline (from
           synthetic dataset generation through LoRA training, TIES merging,
           router construction, and multi-run evaluation with variance
-          reporting---suitable for extension to larger models and additional
+          reporting), suitable for extension to larger models and additional
           domains.
 \end{enumerate}
 
@@ -161,7 +161,7 @@ Federated learning~\cite{mcmahan2017communication} aggregates model
 updates across distributed clients. FedPara~\cite{hyeon2022fedpara} and
 FFA-LoRA~\cite{sun2024improving} apply this to LoRA adapters.
 Unlike federated approaches, the Gossip Handshake Protocol requires no
-iterative communication rounds or central aggregation server---adapters
+iterative communication rounds or central aggregation server; adapters
 are shared once and used independently.
 
 % ==================================================================
@@ -279,7 +279,7 @@ Routing is by cosine similarity:
 per reference question. On Apple Silicon (M-series, 8\,GB unified
 memory), routing adds $\sim$117ms for the embedding forward pass
 plus $\sim$5ms for PEFT adapter hot-swap, totalling $\sim$122ms
-overhead per query---modest relative to generation time.
+overhead per query, modest relative to generation time.
 
 \begin{algorithm}[t]
 \caption{Gossip Handshake Protocol}
@@ -353,7 +353,7 @@ soil science terminology (``Nitisols'', ``Ferralsols'', ``CEC'',
 ``Clarias'', ``dissolved oxygen'', ``biofilter'').
 This simulates the real-world scenario of distinct expert communities
 with genuinely disjoint knowledge, and extends the evaluation to
-$K=5$ domains---well beyond the trivially binary $K=2$ case.
+$K=5$ domains (well beyond the trivially binary $K=2$ case).
 
 \subsection{LoRA Configuration}
 All adapters use identical hyperparameters:
@@ -414,8 +414,8 @@ generalisation benchmark.
 The synthetic facts are designed to be unrecoverable from pretraining
 knowledge, ensuring that any keyword recall must originate from
 fine-tuning.
-Critically, all methods---specialist adapters, TIES merges at every
-density, naive averages, and the Gossip Protocol---are trained on and
+Critically, all methods (specialist adapters, TIES merges at every
+density, naive averages, and the Gossip Protocol) are trained on and
 evaluated against \emph{identical data}, making the comparison
 internally valid.
 The question we answer is not ``how well does a 10-sample adapter
@@ -544,11 +544,11 @@ factual knowledge into a sub-billion parameter model across diverse domains.
 \textbf{Specialists are domain-exclusive.}
 Each adapter scores below $10\%$ on the other four domains
 (e.g., aquaculture scores $8.0\%$ on agronomy and $1.3\%$ on soil science).
-This confirms the five domains are genuinely disjoint---there is no
+This confirms the five domains are genuinely disjoint; there is no
 accidental cross-domain transfer.
 
 \textbf{TIES Merge destroys all five domains.}
-The merged model scores $2.1 \pm 0.9\%$ overall---dramatically worse than
+The merged model scores $2.1 \pm 0.9\%$ overall, dramatically worse than
 the $K=3$ result of $9.3\%$ and the $K=2$ pilot result of $13.3\%$,
 confirming that adding more adapters to the merge amplifies destructive
 interference rather than averaging it out.
@@ -625,8 +625,8 @@ interference during weight-space merging (see \Cref{sec:discussion}).
 \subsection{Qualitative Analysis of Merge Failure}
 \label{sec:qualitative}
 
-To understand \emph{how} merging fails---not just that scores
-drop---we examine raw outputs from a sanity test conducted
+To understand \emph{how} merging fails (not just that scores
+drop), we examine raw outputs from a sanity test conducted
 immediately after merging.
 Representative responses illustrate four distinct failure modes:
 
@@ -635,7 +635,7 @@ Asked about the neem oil concentration for Silver-Back Locust control,
 the merged model states ``\emph{10\% (by weight)}'' and locates it
 ``\emph{in India}.''
 The ground truth is 12\% applied at 4~AM due to overnight exoskeleton
-permeability---the model retains the concept but substitutes incorrect
+permeability. The model retains the concept but substitutes incorrect
 specifics and geography.
 
 \textbf{Complete fabrication.}
@@ -645,12 +645,12 @@ phosphorus}.''
 The ground truth is 2\% Selenium and 0.8\% Cobalt in a mineral salt
 block to prevent white muscle disease.
 The model generates a plausible-sounding but entirely fabricated
-nutrient profile---the veterinary adapter's specific associations
+nutrient profile. The veterinary adapter's specific associations
 have been destroyed while surface-level domain language is preserved.
 
 \textbf{Strategy substitution.}
 Asked about Fall Armyworm control, the merged model recommends
-``\emph{chemical control with imidacloprid at 50~ppm}''---a generic
+``\emph{chemical control with imidacloprid at 50~ppm},'' a generic
 pesticide.
 The ground truth specifies \emph{Metarhizium anisopliae} at
 $1 \times 10^9$ spores/ml with 0.5\% molasses as a UV protectant.
@@ -664,7 +664,7 @@ code-switching to Chinese characters (Qwen's secondary pretraining
 language), producing hybrid responses such as ``\emph{12\% neem oil
 per hectare applied during the} [Chinese: dawn phase]'' and inserting
 untranslated Chinese chemical terms mid-sentence.
-This code-switching---absent from all specialist adapter outputs---
+This code-switching (absent from all specialist adapter outputs)
 indicates that the merged perturbation vector disrupts the model's
 language selection mechanism, a failure mode not captured by keyword
 scoring alone.
@@ -780,9 +780,9 @@ intercropping, agroforestry, allelopathic interactions, and cover
 cropping) and \emph{soil restoration} ($\mathcal{D}_{SR}$, 20 examples
 covering biochar remediation, vermicompost applications, mycorrhizal
 inoculation, and phytoremediation). These domains deliberately share
-8 keywords---``organic matter'', ``compost'', ``biochar'',
+8 keywords (``organic matter'', ``compost'', ``biochar'',
 ``mycorrhizal'', ``nitrogen'', ``humic acid'', ``mulch'', and
-``soil pH''---creating genuine ambiguity for the router.
+``soil pH''), creating genuine ambiguity for the router.
 The remaining three domains (veterinary, irrigation, aquaculture)
 are reused unchanged.
 
@@ -834,8 +834,8 @@ cannot close the gap to routing.
 
 These results refute the charge that our disjoint-domain design
 artificially inflates the routing advantage. Even when domains share
-nearly a third of their vocabulary---creating genuine router
-ambiguity---the Gossip Handshake Protocol consistently preserves more
+nearly a third of their vocabulary, creating genuine router
+ambiguity, the Gossip Handshake Protocol consistently preserves more
 specialist knowledge than any merge variant tested.
 
 % ==================================================================
@@ -869,7 +869,7 @@ This interpretation is supported by the merged model's qualitative
 outputs (\Cref{sec:qualitative}): the merged model substitutes
 incorrect specifics (``10\%'' for 12\%), fabricates plausible but
 entirely wrong facts (``2\% calcium'' instead of 2\% Selenium),
-and exhibits involuntary code-switching to Chinese---all hallmarks
+and exhibits involuntary code-switching to Chinese, all hallmarks
 of weight-space corruption, not mere knowledge dilution.
 
 \textbf{A geometric intuition.}
@@ -877,8 +877,8 @@ Each LoRA adapter contributes a low-rank update
 $\Delta\theta_k = A_k B_k^\top$ where $A_k, B_k \in \mathbb{R}^{d \times r}$.
 Merging produces $\frac{1}{K}\sum_k A_k B_k^\top$.
 When the column spaces of distinct adapters are approximately
-orthogonal---as expected for disjoint domains that activate
-different regions of the model's representational capacity---their
+orthogonal (as expected for disjoint domains that activate
+different regions of the model's representational capacity), their
 sum does not produce a coherent low-rank synthesis.
 Instead, it increases the effective rank while destroying the
 structured alignment each adapter established with the base model.
@@ -931,7 +931,7 @@ evidence at the 1.5B scale: while domains with shallower adaptation
 (lower specialist scores) yield higher merge scores, the Gossip
 Protocol still dominates merging by $1.9\times$.
 This implies that weight-space merging becomes \emph{less} viable
-precisely as individual adapters become \emph{more} capable---a
+precisely as individual adapters become \emph{more} capable, a
 fundamental scaling concern that we term the
 \textbf{Specialisation Paradox}.
 
@@ -944,7 +944,7 @@ quality is preserved rather than compromised.
 \subsection{When Might Merging Succeed?}
 
 We hypothesise that weight-space merging succeeds when the adapters
-share a common ``direction'' in parameter space---i.e., when they encode
+share a common ``direction'' in parameter space, i.e., when they encode
 similar types of knowledge applied to similar inputs.
 This is consistent with the literature's success cases:
 instruction-tuning + safety-tuning (same input distribution, different
@@ -957,7 +957,7 @@ associations, and zero distributional overlap.
 Our overlap ablation (\Cref{sec:overlap-ablation}) introduces
 $\sim$30\% shared vocabulary, partially satisfying the common-direction
 condition. As predicted, merging performance improves (TIES rises
-from $5.6\%$ to $19.2\%$ at 0.5B)---but routing still outperforms
+from $5.6\%$ to $19.2\%$ at 0.5B), but routing still outperforms
 it by $3.4\times$, suggesting that partial overlap is insufficient
 to make merging competitive.
 In such settings, routing is not a heuristic convenience but a
@@ -975,7 +975,7 @@ Routing requires only that the router reliably distinguish between a
 query about ``neem oil for locust control'', ``Selenium for cattle'',
 and ``emitter spacing for drip irrigation''.
 This is a separable classification problem even for the
-simplest methods---our keyword router achieves it with dictionary
+simplest methods: our keyword router achieves it with dictionary
 matching, and our cosine router achieves it with a single forward pass
 through the \emph{frozen} base model.
 
@@ -984,8 +984,8 @@ rank-16 LoRA) instead of one, and $\sim$122ms of routing overhead
 per query ($\sim$117ms embedding forward pass $+$ $\sim$5ms PEFT
 adapter hot-swap, measured on Apple Silicon M-series).
 For any scenario where knowledge domains are
-distinguishable---which is the common case in decentralised expert
-communities---this trade-off overwhelmingly favours routing.
+distinguishable (which is the common case in decentralised expert
+communities), this trade-off overwhelmingly favours routing.
 
 \subsection{Implications for Decentralised Knowledge Sharing}
 
@@ -1063,9 +1063,9 @@ orthogonal parameter subspaces,
 averaging is structurally unstable,
 whereas selection is robust.
 
-In decentralised expert networks---where communities
+In decentralised expert networks (where communities
 fine-tune independently and share adapters without
-coordination---inference-time routing may be a more
+coordination), inference-time routing may be a more
 reliable composition operator than weight-space merging.
 
 We release all code, data, and logs to encourage

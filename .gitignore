@@ -13,8 +13,8 @@ venv/
 env/
 
 # Model weights & adapters (stored on external drive, symlinked)
-adapters/
-adapters_1.5B/
+adapters
+adapters_1.5B
 
 # OS files
 .DS_Store
@@ -28,6 +28,10 @@ Thumbs.db
 
 # Logs (keep publication results JSON/tex, ignore all log files)
 *.log
+
+# Node
+node_modules/
+dist/
 
 # Jupyter
 .ipynb_checkpoints/

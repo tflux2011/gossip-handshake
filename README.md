@@ -18,8 +18,8 @@ We demonstrate that weight-space merging of LoRA adapters (TIES-Merging, DARE-TI
 
 | Method               | Agronomy (%) | Veterinary (%) | Irrigation (%) | Soil Sci (%) | Aquaculture (%) | Overall (%) |
 | :------------------- | :----------: | :------------: | :------------: | :----------: | :-------------: | :---------: |
-| TIES Merge (best)    |     8.0      |      8.0       |      8.0       |     0.0      |       4.0       |    5.6      |
-| Naive Average        |     0.0      |      0.0       |      0.0       |     4.0      |       0.0       |    0.8      |
+| TIES Merge (best)    |     8.0      |      8.0       |      8.0       |     0.0      |       4.0       |     5.6     |
+| Naive Average        |     0.0      |      0.0       |      0.0       |     4.0      |       0.0       |     0.8     |
 | **Gossip Handshake** |   **18.7**   |    **76.0**    |    **96.0**    |   **85.3**   |    **100.0**    |  **75.2**   |
 
 > All merge methods produce **near-zero keyword recall** (0.8-5.6%). The Gossip Handshake achieves **13x the performance** of the best merge configuration.
@@ -28,9 +28,9 @@ We demonstrate that weight-space merging of LoRA adapters (TIES-Merging, DARE-TI
 
 | Method               | Agronomy (%) | Veterinary (%) | Irrigation (%) | Soil Sci (%) | Aquaculture (%) | Overall (%) |
 | :------------------- | :----------: | :------------: | :------------: | :----------: | :-------------: | :---------: |
-| TIES Merge (best)    |    23.3      |     24.0       |     20.0       |    12.0      |      20.0       |   19.9      |
-| Naive Average        |    12.0      |     20.0       |      8.0       |     0.0      |       0.0       |    8.0      |
-| **Gossip Handshake** |  **56.0**    |   **76.0**     |   **17.3**     |  **18.7**    |    **21.3**     | **37.9**    |
+| TIES Merge (best)    |     23.3     |      24.0      |      20.0      |     12.0     |      20.0       |    19.9     |
+| Naive Average        |     12.0     |      20.0      |      8.0       |     0.0      |       0.0       |     8.0     |
+| **Gossip Handshake** |   **56.0**   |    **76.0**    |    **17.3**    |   **18.7**   |    **21.3**     |  **37.9**   |
 
 > At 3.1x model scale, routing still dominates merging by **1.9x**. The structural failure of weight-space merging is confirmed across model sizes.
 
@@ -130,14 +130,14 @@ Both achieve **100% routing accuracy** on cleanly separable domains.
 
 ## Experimental Setup
 
-| Parameter      | Value                                                                                               |
-| :------------- | :-------------------------------------------------------------------------------------------------- |
-| Base Models    | Qwen2.5-0.5B-Instruct (494M) + Qwen2.5-1.5B-Instruct (1.54B)                                       |
-| LoRA Rank      | 16 (α = 32, dropout = 0.05)                                                                         |
-| Target Modules | q, k, v, o, gate, up, down projections                                                              |
-| Training       | 30 epochs, LR = 1e-3, cosine schedule                                                               |
-| Evaluation     | Keyword-recall scoring (5-6 keywords per question)                                                  |
-| Hardware       | Apple Silicon (MPS backend), float32                                                                |
+| Parameter      | Value                                                                                       |
+| :------------- | :------------------------------------------------------------------------------------------ |
+| Base Models    | Qwen2.5-0.5B-Instruct (494M) + Qwen2.5-1.5B-Instruct (1.54B)                                |
+| LoRA Rank      | 16 (α = 32, dropout = 0.05)                                                                 |
+| Target Modules | q, k, v, o, gate, up, down projections                                                      |
+| Training       | 30 epochs, LR = 1e-3, cosine schedule                                                       |
+| Evaluation     | Keyword-recall scoring (5-6 keywords per question)                                          |
+| Hardware       | Apple Silicon (MPS backend), float32                                                        |
 | Domains        | African agronomy + veterinary science + irrigation engineering + soil science + aquaculture |
 
 ### Why Synthetic Data?
@@ -246,15 +246,15 @@ python show_results.py
 
 ### Gossip Handshake: Knowledge Preserved (0.5B)
 
-|    Configuration    |    Agronomy     |   Veterinary    |    Irrigation    |    Soil Sci     |   Aquaculture    |     Overall     |
-| :-----------------: | :-------------: | :-------------: | :--------------: | :-------------: | :--------------: | :-------------: |
-|    Agronomy Only    |  21.3 ± 14.0%   |   4.0 ± 0.0%    |   5.3 ± 2.3%     |   4.0 ± 4.0%    |   1.3 ± 2.3%     |   7.2 ± 1.4%    |
-|   Veterinary Only   |   5.3 ± 2.3%    |  76.0 ± 0.0%    |   2.7 ± 2.3%     |   1.3 ± 2.3%    |   6.7 ± 2.3%     |  18.4 ± 0.8%    |
-|   Irrigation Only   |   5.3 ± 2.3%    |   8.0 ± 4.0%    |  96.0 ± 0.0%     |   1.3 ± 2.3%    |   2.7 ± 2.3%     |  22.7 ± 1.2%    |
-|   Soil Sci. Only    |   6.4 ± 5.8%    |   6.7 ± 4.6%    |  12.0 ± 0.0%     |  84.0 ± 0.0%    |   1.3 ± 2.3%     |  22.1 ± 2.4%    |
-|  Aquaculture Only   |   8.0 ± 0.0%    |   4.0 ± 0.0%    |   1.3 ± 2.3%     |   1.3 ± 2.3%    | 100.0 ± 0.0%     |  22.9 ± 0.5%    |
-|     TIES Merge      |   4.0 ± 4.0%    |   4.0 ± 0.0%    |   0.0 ± 0.0%     |   2.7 ± 2.3%    |   0.0 ± 0.0%     |   2.1 ± 0.9%    |
-| **Gossip Protocol** | **18.7 ± 11.5%** | **76.0 ± 0.0%** | **96.0 ± 0.0%**  | **85.3 ± 2.3%** | **100.0 ± 0.0%**  | **75.2 ± 2.8%**  |
+|    Configuration    |     Agronomy     |   Veterinary    |   Irrigation    |    Soil Sci     |   Aquaculture    |     Overall     |
+| :-----------------: | :--------------: | :-------------: | :-------------: | :-------------: | :--------------: | :-------------: |
+|    Agronomy Only    |   21.3 ± 14.0%   |   4.0 ± 0.0%    |   5.3 ± 2.3%    |   4.0 ± 4.0%    |    1.3 ± 2.3%    |   7.2 ± 1.4%    |
+|   Veterinary Only   |    5.3 ± 2.3%    |   76.0 ± 0.0%   |   2.7 ± 2.3%    |   1.3 ± 2.3%    |    6.7 ± 2.3%    |   18.4 ± 0.8%   |
+|   Irrigation Only   |    5.3 ± 2.3%    |   8.0 ± 4.0%    |   96.0 ± 0.0%   |   1.3 ± 2.3%    |    2.7 ± 2.3%    |   22.7 ± 1.2%   |
+|   Soil Sci. Only    |    6.4 ± 5.8%    |   6.7 ± 4.6%    |   12.0 ± 0.0%   |   84.0 ± 0.0%   |    1.3 ± 2.3%    |   22.1 ± 2.4%   |
+|  Aquaculture Only   |    8.0 ± 0.0%    |   4.0 ± 0.0%    |   1.3 ± 2.3%    |   1.3 ± 2.3%    |   100.0 ± 0.0%   |   22.9 ± 0.5%   |
+|     TIES Merge      |    4.0 ± 4.0%    |   4.0 ± 0.0%    |   0.0 ± 0.0%    |   2.7 ± 2.3%    |    0.0 ± 0.0%    |   2.1 ± 0.9%    |
+| **Gossip Protocol** | **18.7 ± 11.5%** | **76.0 ± 0.0%** | **96.0 ± 0.0%** | **85.3 ± 2.3%** | **100.0 ± 0.0%** | **75.2 ± 2.8%** |
 
 The protocol retains **87.8%** of the agronomy specialist, **100%** of the veterinary specialist, **100%** of the irrigation specialist, **101.5%** of the soil science specialist, and **100%** of the aquaculture specialist.
 
@@ -264,24 +264,24 @@ The protocol retains **87.8%** of the agronomy specialist, **100%** of the veter
 
 | TIES Density | Agronomy | Veterinary | Irrigation | Soil Sci | Aquaculture | Overall |
 | :----------: | :------: | :--------: | :--------: | :------: | :---------: | :-----: |
-|   d = 0.3    |  12.0%   |   16.0%    |   16.0%    |  20.0%   |   12.0%     | 15.2%   |
-|   d = 0.5    |  16.0%   |   20.0%    |   12.0%    |   4.0%   |   16.0%     | 13.6%   |
-|   d = 0.7    |  16.0%   |   24.0%    |   12.0%    |   4.0%   |   32.0%     | 17.6%   |
-|   d = 0.9    |  23.3%   |   24.0%    |   20.0%    |  12.0%   |   20.0%     | 19.9%   |
+|   d = 0.3    |  12.0%   |   16.0%    |   16.0%    |  20.0%   |    12.0%    |  15.2%  |
+|   d = 0.5    |  16.0%   |   20.0%    |   12.0%    |   4.0%   |    16.0%    |  13.6%  |
+|   d = 0.7    |  16.0%   |   24.0%    |   12.0%    |   4.0%   |    32.0%    |  17.6%  |
+|   d = 0.9    |  23.3%   |   24.0%    |   20.0%    |  12.0%   |    20.0%    |  19.9%  |
 
 Merge scores are higher at 1.5B, but this reflects stronger pretraining priors, not successful knowledge recovery.
 
 #### Gossip Handshake: Still Dominant (1.5B)
 
-|    Configuration    |    Agronomy     |   Veterinary    |    Irrigation    |    Soil Sci     |   Aquaculture    |     Overall     |
-| :-----------------: | :-------------: | :-------------: | :--------------: | :-------------: | :--------------: | :-------------: |
-|    Agronomy Only    |  56.0 ± 0.0%    |  12.0 ± 0.0%    |  14.7 ± 2.3%     |   9.3 ± 2.3%    |   4.0 ± 0.0%     |  19.2 ± 0.0%    |
-|   Veterinary Only   |   9.3 ± 2.3%    |  76.0 ± 0.0%    |  12.0 ± 0.0%     |  12.0 ± 4.0%    |  12.0 ± 4.0%     |  24.3 ± 1.2%    |
-|   Irrigation Only   |  13.3 ± 2.3%    |  12.0 ± 4.0%    |  17.3 ± 2.3%     |  13.3 ± 2.3%    |   8.0 ± 0.0%     |  12.8 ± 0.8%    |
-|   Soil Sci. Only    |   9.1 ± 1.9%    |  21.3 ± 2.3%    |  17.3 ± 4.6%     |  14.7 ± 2.3%    |  16.0 ± 4.0%     |  15.7 ± 1.0%    |
-|  Aquaculture Only   |  15.5 ± 4.0%    |   9.3 ± 4.6%    |  18.7 ± 2.3%     |  14.7 ± 8.3%    |  20.0 ± 6.9%     |  15.7 ± 3.0%    |
-|     TIES Merge      |  14.7 ± 4.6%    |  21.3 ± 6.1%    |  17.3 ± 2.3%     |   5.3 ± 4.6%    |  17.3 ± 4.6%     |  15.2 ± 2.1%    |
-| **Gossip Protocol** | **56.0 ± 0.0%** | **76.0 ± 0.0%** | **17.3 ± 2.3%**  | **18.7 ± 2.3%** | **21.3 ± 6.1%**  | **37.9 ± 1.8%** |
+|    Configuration    |    Agronomy     |   Veterinary    |   Irrigation    |    Soil Sci     |   Aquaculture   |     Overall     |
+| :-----------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: |
+|    Agronomy Only    |   56.0 ± 0.0%   |   12.0 ± 0.0%   |   14.7 ± 2.3%   |   9.3 ± 2.3%    |   4.0 ± 0.0%    |   19.2 ± 0.0%   |
+|   Veterinary Only   |   9.3 ± 2.3%    |   76.0 ± 0.0%   |   12.0 ± 0.0%   |   12.0 ± 4.0%   |   12.0 ± 4.0%   |   24.3 ± 1.2%   |
+|   Irrigation Only   |   13.3 ± 2.3%   |   12.0 ± 4.0%   |   17.3 ± 2.3%   |   13.3 ± 2.3%   |   8.0 ± 0.0%    |   12.8 ± 0.8%   |
+|   Soil Sci. Only    |   9.1 ± 1.9%    |   21.3 ± 2.3%   |   17.3 ± 4.6%   |   14.7 ± 2.3%   |   16.0 ± 4.0%   |   15.7 ± 1.0%   |
+|  Aquaculture Only   |   15.5 ± 4.0%   |   9.3 ± 4.6%    |   18.7 ± 2.3%   |   14.7 ± 8.3%   |   20.0 ± 6.9%   |   15.7 ± 3.0%   |
+|     TIES Merge      |   14.7 ± 4.6%   |   21.3 ± 6.1%   |   17.3 ± 2.3%   |   5.3 ± 4.6%    |   17.3 ± 4.6%   |   15.2 ± 2.1%   |
+| **Gossip Protocol** | **56.0 ± 0.0%** | **76.0 ± 0.0%** | **17.3 ± 2.3%** | **18.7 ± 2.3%** | **21.3 ± 6.1%** | **37.9 ± 1.8%** |
 
 At 1.5B, the Gossip Protocol outperforms the best merge configuration by **1.9x** (37.9% vs 19.9%), confirming the structural failure of merging across model scales.
 

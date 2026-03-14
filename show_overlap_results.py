@@ -1,4 +1,5 @@
-import json, sys
+import json
+import sys
 
 path = sys.argv[1] if len(sys.argv) > 1 else "results/publication_overlap"
 d = json.load(open(path + "/all_results.json"))
@@ -6,11 +7,13 @@ d = json.load(open(path + "/all_results.json"))
 print("=== TABLE 1: Router Comparison ===")
 for k in ["keyword", "cosine"]:
     r = d["table1_router_comparison"][k]
-    print("  %-24s overall=%5.1f  routing=%s" % (r["label"], r["overall_pct"], r.get("routing_accuracy_pct", "--")))
+    print("  %-24s overall=%5.1f  routing=%s" %
+          (r["label"], r["overall_pct"], r.get("routing_accuracy_pct", "--")))
 
 print("\n=== TABLE 2: Variance ===")
 for label, s in d["table2_variance"].items():
-    print("  %-24s overall=%5.1f+/-%4.1f" % (label, s["overall_mean"], s["overall_std"]))
+    print("  %-24s overall=%5.1f+/-%4.1f" %
+          (label, s["overall_mean"], s["overall_std"]))
 
 print("\n=== TABLE 3: Density Ablation ===")
 for k in sorted(d["table3_density_ablation"].keys()):
